@@ -1,0 +1,117 @@
+{
+    "name": {
+        "en": "Everest Base Camp Trek",
+        "zh": "珠峰南坡大本营徒步",
+        "fr": "Trek du camp de base de l'Everest"
+    },
+    "description": {
+        "en": "Through Sherpa villages of the Khumbu to the foot of Everest",
+        "zh": "穿越昆布地区的夏尔巴村落，走到珠穆朗玛峰脚下",
+        "fr": "À travers les villages sherpas du Khumbu jusqu'au pied de l'Everest"
+    },
+    "stats": {
+        "en": "≈ 130 km round trip · 12–14 days",
+        "zh": "往返约 130 公里 · 12–14 天",
+        "fr": "≈ 130 km aller-retour · 12–14 jours"
+    },
+    "color": "#8e44ad",
+    "locations": [
+        {
+            "name": {
+                "en": "Lukla",
+                "zh": "卢卡拉",
+                "fr": "Lukla"
+            },
+            "lat": 27.687,
+            "lng": 86.7314,
+            "description": {
+                "en": "Mountain airstrip where the trek begins",
+                "zh": "徒步起点的高山机场",
+                "fr": "Aérodrome de montagne, départ du trek"
+            }
+        },
+        {
+            "name": {
+                "en": "Namche Bazaar",
+                "zh": "南池市集",
+                "fr": "Namche Bazar"
+            },
+            "lat": 27.8069,
+            "lng": 86.714,
+            "description": {
+                "en": "Sherpa capital, acclimatisation stop",
+                "zh": "夏尔巴人的\"首府\"，适应海拔",
+                "fr": "Capitale sherpa, étape d'acclimatation"
+            }
+        },
+        {
+            "name": {
+                "en": "Tengboche",
+                "zh": "滕波切",
+                "fr": "Tengboche"
+            },
+            "lat": 27.8362,
+            "lng": 86.7644,
+            "description": {
+                "en": "Largest monastery in the Khumbu",
+                "zh": "昆布地区最大的寺院",
+                "fr": "Plus grand monastère du Khumbu"
+            }
+        },
+        {
+            "name": {
+                "en": "Dingboche",
+                "zh": "丁波切",
+                "fr": "Dingboche"
+            },
+            "lat": 27.8923,
+            "lng": 86.8314
+        },
+        {
+            "name": {
+                "en": "Lobuche",
+                "zh": "罗布切",
+                "fr": "Lobuche"
+            },
+            "lat": 27.9483,
+            "lng": 86.8103
+        },
+        {
+            "name": {
+                "en": "Gorak Shep",
+                "zh": "戈拉克谢普",
+                "fr": "Gorak Shep"
+            },
+            "lat": 27.9806,
+            "lng": 86.8289
+        },
+        {
+            "name": {
+                "en": "Everest Base Camp",
+                "zh": "珠峰大本营",
+                "fr": "Camp de base de l'Everest"
+            },
+            "lat": 28.0026,
+            "lng": 86.8528,
+            "description": {
+                "en": "5,364 m, at the Khumbu Icefall",
+                "zh": "海拔 5364 米，昆布冰瀑脚下",
+                "fr": "5 364 m, au pied de la cascade de glace du Khumbu"
+            }
+        },
+        {
+            "name": {
+                "en": "Kala Patthar",
+                "zh": "卡拉帕塔",
+                "fr": "Kala Patthar"
+            },
+            "lat": 27.9957,
+            "lng": 86.8285,
+            "description": {
+                "en": "Best viewpoint of Everest, 5,644 m",
+                "zh": "观赏珠峰的最佳地点，海拔 5644 米",
+                "fr": "Meilleur point de vue sur l'Everest, 5 644 m"
+            }
+        }
+    ]
+}

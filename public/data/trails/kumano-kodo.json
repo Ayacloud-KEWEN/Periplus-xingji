@@ -1,0 +1,85 @@
+{
+    "name": {
+        "en": "Kumano Kodo (Nakahechi)",
+        "zh": "熊野古道（中边路）",
+        "fr": "Kumano Kodo (Nakahechi)"
+    },
+    "description": {
+        "en": "Ancient pilgrimage routes to the three grand shrines of Kumano, Japan",
+        "zh": "通往日本熊野三山的古老参拜道",
+        "fr": "Anciens chemins de pèlerinage vers les trois grands sanctuaires de Kumano"
+    },
+    "stats": {
+        "en": "≈ 70 km · 4–5 days",
+        "zh": "约 70 公里 · 4–5 天",
+        "fr": "≈ 70 km · 4–5 jours"
+    },
+    "color": "#27ae60",
+    "locations": [
+        {
+            "name": {
+                "en": "Takijiri-oji",
+                "zh": "泷尻王子",
+                "fr": "Takijiri-oji"
+            },
+            "lat": 33.7886,
+            "lng": 135.51,
+            "description": {
+                "en": "Entrance to the sacred Kumano mountains",
+                "zh": "进入熊野圣域的入口",
+                "fr": "Entrée des montagnes sacrées de Kumano"
+            }
+        },
+        {
+            "name": {
+                "en": "Chikatsuyu",
+                "zh": "近露",
+                "fr": "Chikatsuyu"
+            },
+            "lat": 33.8266,
+            "lng": 135.5872
+        },
+        {
+            "name": {
+                "en": "Kumano Hongu Taisha",
+                "zh": "熊野本宫大社",
+                "fr": "Kumano Hongu Taisha"
+            },
+            "lat": 33.8403,
+            "lng": 135.7733,
+            "description": {
+                "en": "Head shrine of the Kumano faith",
+                "zh": "熊野信仰的总本社",
+                "fr": "Sanctuaire principal du culte de Kumano"
+            }
+        },
+        {
+            "name": {
+                "en": "Kumano Hayatama Taisha",
+                "zh": "熊野速玉大社",
+                "fr": "Kumano Hayatama Taisha"
+            },
+            "lat": 33.7302,
+            "lng": 135.9837,
+            "description": {
+                "en": "Traditionally reached by boat down the Kumano River",
+                "zh": "传统上沿熊野川乘船抵达",
+                "fr": "Traditionnellement atteint en bateau par la rivière Kumano"
+            }
+        },
+        {
+            "name": {
+                "en": "Kumano Nachi Taisha",
+                "zh": "熊野那智大社",
+                "fr": "Kumano Nachi Taisha"
+            },
+            "lat": 33.6689,
+            "lng": 135.8906,
+            "description": {
+                "en": "Beside Nachi Falls, Japan's tallest waterfall",
+                "zh": "紧邻日本落差最大的那智瀑布",
+                "fr": "À côté des chutes de Nachi, les plus hautes du Japon"
+            }
+        }
+    ]
+}

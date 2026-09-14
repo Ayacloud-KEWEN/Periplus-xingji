@@ -1,0 +1,2 @@
+# 所有文本文件统一用 LF 换行：deploy/*.sh 在树莓派上运行，CRLF 会导致脚本报错
+* text=auto eol=lf

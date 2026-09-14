@@ -1,0 +1,174 @@
+{
+    "name": {
+        "en": "Camino de Santiago (French Way)",
+        "zh": "圣地亚哥朝圣之路（法国之路）",
+        "fr": "Chemin de Saint-Jacques (Camino francés)"
+    },
+    "description": {
+        "en": "The classic pilgrimage across the Pyrenees and northern Spain to Santiago de Compostela",
+        "zh": "翻越比利牛斯山、横穿西班牙北部，前往圣地亚哥-德孔波斯特拉的经典朝圣路",
+        "fr": "Le pèlerinage classique à travers les Pyrénées et le nord de l'Espagne jusqu'à Compostelle"
+    },
+    "stats": {
+        "en": "≈ 780 km · 30–35 days",
+        "zh": "约 780 公里 · 30–35 天",
+        "fr": "≈ 780 km · 30–35 jours"
+    },
+    "color": "#d4a017",
+    "locations": [
+        {
+            "name": {
+                "en": "Saint-Jean-Pied-de-Port",
+                "zh": "圣让-皮耶德波尔",
+                "fr": "Saint-Jean-Pied-de-Port"
+            },
+            "lat": 43.1636,
+            "lng": -1.2376,
+            "description": {
+                "en": "Traditional starting point in the French Basque Country",
+                "zh": "法国巴斯克地区的传统起点",
+                "fr": "Point de départ traditionnel au Pays basque"
+            }
+        },
+        {
+            "name": {
+                "en": "Roncesvalles",
+                "zh": "龙塞斯瓦列斯",
+                "fr": "Roncevaux"
+            },
+            "lat": 43.0092,
+            "lng": -1.3194,
+            "description": {
+                "en": "First stage over the Pyrenees",
+                "zh": "第一天翻越比利牛斯山",
+                "fr": "Première étape à travers les Pyrénées"
+            }
+        },
+        {
+            "name": {
+                "en": "Pamplona",
+                "zh": "潘普洛纳",
+                "fr": "Pampelune"
+            },
+            "lat": 42.8125,
+            "lng": -1.6458,
+            "description": {
+                "en": "Capital of Navarre, city of the San Fermín festival",
+                "zh": "纳瓦拉首府，奔牛节之城",
+                "fr": "Capitale de la Navarre, ville des fêtes de San Fermín"
+            }
+        },
+        {
+            "name": {
+                "en": "Logroño",
+                "zh": "洛格罗尼奥",
+                "fr": "Logroño"
+            },
+            "lat": 42.465,
+            "lng": -2.4456,
+            "description": {
+                "en": "Heart of the Rioja wine region",
+                "zh": "里奥哈葡萄酒产区的中心",
+                "fr": "Cœur de la région viticole de la Rioja"
+            }
+        },
+        {
+            "name": {
+                "en": "Burgos",
+                "zh": "布尔戈斯",
+                "fr": "Burgos"
+            },
+            "lat": 42.3439,
+            "lng": -3.6969,
+            "description": {
+                "en": "Gothic cathedral, UNESCO World Heritage",
+                "zh": "哥特式大教堂，世界遗产",
+                "fr": "Cathédrale gothique, patrimoine mondial"
+            }
+        },
+        {
+            "name": {
+                "en": "León",
+                "zh": "莱昂",
+                "fr": "León"
+            },
+            "lat": 42.5987,
+            "lng": -5.5671,
+            "description": {
+                "en": "After the long plateau of the Meseta",
+                "zh": "走完漫长的梅塞塔高原后抵达",
+                "fr": "Après le long plateau de la Meseta"
+            }
+        },
+        {
+            "name": {
+                "en": "Astorga",
+                "zh": "阿斯托加",
+                "fr": "Astorga"
+            },
+            "lat": 42.4589,
+            "lng": -6.0563,
+            "description": {
+                "en": "Gaudí's Episcopal Palace",
+                "zh": "高迪设计的主教宫",
+                "fr": "Palais épiscopal de Gaudí"
+            }
+        },
+        {
+            "name": {
+                "en": "Cruz de Ferro",
+                "zh": "铁十字",
+                "fr": "Croix de fer"
+            },
+            "lat": 42.4886,
+            "lng": -6.3614,
+            "description": {
+                "en": "Pilgrims leave a stone brought from home",
+                "zh": "朝圣者在此放下从家乡带来的石头",
+                "fr": "Les pèlerins y déposent une pierre apportée de chez eux"
+            }
+        },
+        {
+            "name": {
+                "en": "O Cebreiro",
+                "zh": "奥塞夫雷罗",
+                "fr": "O Cebreiro"
+            },
+            "lat": 42.7079,
+            "lng": -7.0433,
+            "description": {
+                "en": "Mountain village at the gateway to Galicia",
+                "zh": "进入加利西亚的山村",
+                "fr": "Village de montagne à l'entrée de la Galice"
+            }
+        },
+        {
+            "name": {
+                "en": "Sarria",
+                "zh": "萨里亚",
+                "fr": "Sarria"
+            },
+            "lat": 42.7808,
+            "lng": -7.4147,
+            "description": {
+                "en": "Start of the last 100 km needed for the Compostela",
+                "zh": "获得朝圣证书所需最后 100 公里的起点",
+                "fr": "Début des 100 derniers km requis pour la Compostela"
+            }
+        },
+        {
+            "name": {
+                "en": "Santiago de Compostela",
+                "zh": "圣地亚哥-德孔波斯特拉",
+                "fr": "Saint-Jacques-de-Compostelle"
+            },
+            "lat": 42.8806,
+            "lng": -8.5446,
+            "description": {
+                "en": "Cathedral said to hold the tomb of St James",
+                "zh": "相传安葬圣雅各的大教堂",
+                "fr": "Cathédrale abritant le tombeau de saint Jacques"
+            }
+        }
+    ]
+}

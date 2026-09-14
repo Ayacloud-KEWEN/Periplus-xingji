@@ -1,0 +1,131 @@
+{
+    "name": {
+        "en": "Appalachian Trail",
+        "zh": "阿巴拉契亚步道",
+        "fr": "Sentier des Appalaches"
+    },
+    "description": {
+        "en": "The classic thru-hike along the Appalachian Mountains from Georgia to Maine",
+        "zh": "沿阿巴拉契亚山脉从佐治亚州走到缅因州的经典长线",
+        "fr": "La grande traversée des Appalaches, de la Géorgie au Maine"
+    },
+    "stats": {
+        "en": "≈ 3,500 km · 5–7 months",
+        "zh": "约 3500 公里 · 5–7 个月",
+        "fr": "≈ 3 500 km · 5–7 mois"
+    },
+    "color": "#6d4c41",
+    "locations": [
+        {
+            "name": {
+                "en": "Springer Mountain, GA",
+                "zh": "斯普林格山（佐治亚）",
+                "fr": "Springer Mountain (Géorgie)"
+            },
+            "lat": 34.6268,
+            "lng": -84.1938,
+            "description": {
+                "en": "Southern terminus",
+                "zh": "南端起点",
+                "fr": "Terminus sud"
+            }
+        },
+        {
+            "name": {
+                "en": "Clingmans Dome, Great Smoky Mountains",
+                "zh": "克林曼斯穹顶（大烟山）",
+                "fr": "Clingmans Dome (Great Smoky Mountains)"
+            },
+            "lat": 35.5628,
+            "lng": -83.4985,
+            "description": {
+                "en": "Highest point of the trail",
+                "zh": "全程最高点",
+                "fr": "Point culminant du sentier"
+            }
+        },
+        {
+            "name": {
+                "en": "Damascus, VA",
+                "zh": "大马士革镇（弗吉尼亚）",
+                "fr": "Damascus (Virginie)"
+            },
+            "lat": 36.6357,
+            "lng": -81.7876,
+            "description": {
+                "en": "\"Trail Town USA\"",
+                "zh": "号称\"步道小镇\"",
+                "fr": "« Trail Town USA »"
+            }
+        },
+        {
+            "name": {
+                "en": "Shenandoah National Park",
+                "zh": "仙纳度国家公园",
+                "fr": "Parc national de Shenandoah"
+            },
+            "lat": 38.5236,
+            "lng": -78.4403
+        },
+        {
+            "name": {
+                "en": "Harpers Ferry, WV",
+                "zh": "哈珀斯费里（西弗吉尼亚）",
+                "fr": "Harpers Ferry (Virginie-Occidentale)"
+            },
+            "lat": 39.3254,
+            "lng": -77.7389,
+            "description": {
+                "en": "Psychological halfway point",
+                "zh": "心理上的中点",
+                "fr": "Mi-parcours symbolique"
+            }
+        },
+        {
+            "name": {
+                "en": "Delaware Water Gap",
+                "zh": "特拉华水峡",
+                "fr": "Delaware Water Gap"
+            },
+            "lat": 40.9687,
+            "lng": -75.1427
+        },
+        {
+            "name": {
+                "en": "Mount Greylock, MA",
+                "zh": "格雷洛克山（马萨诸塞）",
+                "fr": "Mont Greylock (Massachusetts)"
+            },
+            "lat": 42.6376,
+            "lng": -73.1662
+        },
+        {
+            "name": {
+                "en": "Mount Washington, NH",
+                "zh": "华盛顿山（新罕布什尔）",
+                "fr": "Mont Washington (New Hampshire)"
+            },
+            "lat": 44.2706,
+            "lng": -71.3033,
+            "description": {
+                "en": "Notorious for extreme weather",
+                "zh": "以极端天气闻名",
+                "fr": "Réputé pour sa météo extrême"
+            }
+        },
+        {
+            "name": {
+                "en": "Mount Katahdin, ME",
+                "zh": "卡塔丁山（缅因）",
+                "fr": "Mont Katahdin (Maine)"
+            },
+            "lat": 45.9044,
+            "lng": -68.9213,
+            "description": {
+                "en": "Northern terminus",
+                "zh": "北端终点",
+                "fr": "Terminus nord"
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+[Unit]
+Description=Periplus · 行纪 个人地图
+After=network-online.target postgresql.service
+Wants=network-online.target postgresql.service
+
+[Service]
+Type=simple
+User=__APP_USER__
+WorkingDirectory=__APP_DIR__
+ExecStart=/usr/bin/node server/index.js
+Restart=on-failure
+RestartSec=5
+Environment=NODE_ENV=production
+
+# 基本加固：系统目录只读、独立 /tmp、禁止提权
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,107 @@
+{
+    "name": {
+        "en": "West Highland Way",
+        "zh": "西高地之路",
+        "fr": "West Highland Way"
+    },
+    "description": {
+        "en": "Scotland's first long-distance trail, from Glasgow's edge to Ben Nevis",
+        "zh": "苏格兰第一条长距离步道，从格拉斯哥郊外走到本尼维斯山下",
+        "fr": "Premier sentier de grande randonnée d'Écosse, de Glasgow au Ben Nevis"
+    },
+    "stats": {
+        "en": "≈ 154 km · 7–8 days",
+        "zh": "约 154 公里 · 7–8 天",
+        "fr": "≈ 154 km · 7–8 jours"
+    },
+    "color": "#16a085",
+    "locations": [
+        {
+            "name": {
+                "en": "Milngavie",
+                "zh": "米尔盖伊",
+                "fr": "Milngavie"
+            },
+            "lat": 55.9422,
+            "lng": -4.317
+        },
+        {
+            "name": {
+                "en": "Drymen",
+                "zh": "德赖门",
+                "fr": "Drymen"
+            },
+            "lat": 56.0647,
+            "lng": -4.4533
+        },
+        {
+            "name": {
+                "en": "Rowardennan",
+                "zh": "罗瓦德南",
+                "fr": "Rowardennan"
+            },
+            "lat": 56.1545,
+            "lng": -4.643,
+            "description": {
+                "en": "Along the shores of Loch Lomond",
+                "zh": "沿罗蒙湖岸前行",
+                "fr": "Le long du Loch Lomond"
+            }
+        },
+        {
+            "name": {
+                "en": "Inverarnan",
+                "zh": "因弗阿南",
+                "fr": "Inverarnan"
+            },
+            "lat": 56.3294,
+            "lng": -4.7231
+        },
+        {
+            "name": {
+                "en": "Tyndrum",
+                "zh": "廷德拉姆",
+                "fr": "Tyndrum"
+            },
+            "lat": 56.4351,
+            "lng": -4.712
+        },
+        {
+            "name": {
+                "en": "Kingshouse",
+                "zh": "金斯豪斯",
+                "fr": "Kingshouse"
+            },
+            "lat": 56.6356,
+            "lng": -4.8505,
+            "description": {
+                "en": "Across the wild Rannoch Moor to Glen Coe",
+                "zh": "穿越荒凉的兰诺赫沼地，到达格伦科",
+                "fr": "À travers la lande de Rannoch jusqu'à Glen Coe"
+            }
+        },
+        {
+            "name": {
+                "en": "Kinlochleven",
+                "zh": "金洛赫利文",
+                "fr": "Kinlochleven"
+            },
+            "lat": 56.7136,
+            "lng": -4.9667
+        },
+        {
+            "name": {
+                "en": "Fort William",
+                "zh": "威廉堡",
+                "fr": "Fort William"
+            },
+            "lat": 56.8198,
+            "lng": -5.1052,
+            "description": {
+                "en": "Finish at the foot of Ben Nevis",
+                "zh": "终点，本尼维斯山脚下",
+                "fr": "Arrivée au pied du Ben Nevis"
+            }
+        }
+    ]
+}

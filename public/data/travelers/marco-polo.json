@@ -1,0 +1,174 @@
+{
+    "traveler": {
+        "en": "Marco Polo",
+        "zh": "马可·波罗",
+        "fr": "Marco Polo"
+    },
+    "description": {
+        "en": "13th century Italian merchant and explorer, author of 'The Travels of Marco Polo'",
+        "zh": "13世纪意大利商人和探险家，著有《马可·波罗游记》",
+        "fr": "Marchand et explorateur italien du XIIIe siècle, auteur des 'Voyages de Marco Polo'"
+    },
+    "color": "#ff6b6b",
+        "timePeriod": {
+        "start": 1271,
+        "end": 1295
+    },
+    "historicalContext": {
+        "en": "Yuan Dynasty China, Mongol Empire at its height",
+        "zh": "元朝中国，蒙古帝国鼎盛时期", 
+        "fr": "Chine de la dynastie Yuan, Empire mongol à son apogée"
+    },
+    "locations": [
+        {
+            "name": {
+                "en": "Venice",
+                "zh": "威尼斯",
+                "fr": "Venise"
+            },
+            "lat": 45.4408,
+            "lng": 12.3155,
+            "year": 1271,
+            "description": {
+                "en": "Starting point of the journey",
+                "zh": "旅程起点",
+                "fr": "Point de départ du voyage"
+            },
+            "duration": {
+                "en": "Departure",
+                "zh": "出发",
+                "fr": "Départ"
+            }
+        },
+        {
+            "name": {
+                "en": "Constantinople",
+                "zh": "君士坦丁堡",
+                "fr": "Constantinople"
+            },
+            "lat": 41.0082,
+            "lng": 28.9784,
+            "year": 1272,
+            "description": {
+                "en": "Capital of the Byzantine Empire",
+                "zh": "拜占庭帝国首都",
+                "fr": "Capitale de l'Empire byzantin"
+            }
+        },
+        {
+            "name": {
+                "en": "Baghdad",
+                "zh": "巴格达",
+                "fr": "Bagdad"
+            },
+            "lat": 33.3152,
+            "lng": 44.3661,
+            "year": 1273,
+            "description": {
+                "en": "Capital of the Abbasid Caliphate",
+                "zh": "阿巴斯王朝都城",
+                "fr": "Capitale du califat abbasside"
+            }
+        },
+        {
+            "name": {
+                "en": "Samarkand",
+                "zh": "撒马尔罕",
+                "fr": "Samarcande"
+            },
+            "lat": 39.6542,
+            "lng": 66.9758,
+            "year": 1274,
+            "description": {
+                "en": "Important city on the Silk Road",
+                "zh": "丝绸之路重要城市",
+                "fr": "Ville importante sur la Route de la Soie"
+            }
+        },
+        {
+            "name": {
+                "en": "Dunhuang",
+                "zh": "敦煌",
+                "fr": "Dunhuang"
+            },
+            "lat": 40.1378,
+            "lng": 94.6622,
+            "year": 1275,
+            "description": {
+                "en": "Entered Chinese territory",
+                "zh": "进入中国境内",
+                "fr": "Entrée sur le territoire chinois"
+            }
+        },
+        {
+            "name": {
+                "en": "Khanbaliq (Beijing)",
+                "zh": "大都（北京）",
+                "fr": "Khanbalik (Pékin)"
+            },
+            "lat": 39.9042,
+            "lng": 116.4074,
+            "year": 1275,
+            "description": {
+                "en": "Capital of Yuan Dynasty, met Kublai Khan",
+                "zh": "元朝首都，觐见忽必烈",
+                "fr": "Capitale de la dynastie Yuan, rencontre avec Kubilai Khan"
+            },
+            "duration": {
+                "en": "17 years",
+                "zh": "17年",
+                "fr": "17 ans"
+            }
+        },
+        {
+            "name": {
+                "en": "Hangzhou",
+                "zh": "杭州",
+                "fr": "Hangzhou"
+            },
+            "lat": 30.2741,
+            "lng": 120.1551,
+            "year": 1276,
+            "description": {
+                "en": "Former Southern Song capital, described as 'Heavenly City'",
+                "zh": "南宋故都，马可·波罗称为'天堂城市'",
+                "fr": "Ancienne capitale des Song du Sud, décrite comme 'Cité Céleste'"
+            }
+        },
+        {
+            "name": {
+                "en": "Quanzhou",
+                "zh": "泉州",
+                "fr": "Quanzhou"
+            },
+            "lat": 24.8801,
+            "lng": 118.6759,
+            "year": 1291,
+            "description": {
+                "en": "Departure from Quanzhou back to Europe",
+                "zh": "从泉州启程回国",
+                "fr": "Départ de Quanzhou pour retourner en Europe"
+            }
+        },
+        {
+            "name": {
+                "en": "Venice",
+                "zh": "威尼斯",
+                "fr": "Venise"
+            },
+            "lat": 45.4408,
+            "lng": 12.3155,
+            "year": 1295,
+            "description": {
+                "en": "Returned to hometown",
+                "zh": "返回故乡",
+                "fr": "Retour au pays natal"
+            },
+            "duration": {
+                "en": "Destination",
+                "zh": "终点",
+                "fr": "Destination"
+            }
+        }
+    ]
+}

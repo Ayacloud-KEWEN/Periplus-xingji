@@ -1,0 +1,169 @@
+{
+    "traveler": {
+        "en": "Zheng He",
+        "zh": "郑和",
+        "fr": "Zheng He"
+    },
+    "description": {
+        "en": "Ming Dynasty admiral who led seven major maritime expeditions",
+        "zh": "明代航海家，七次率领大型船队下西洋",
+        "fr": "Amiral de la dynastie Ming qui a mené sept grandes expéditions maritimes"
+    },
+    "color": "#1abc9c",
+    "timePeriod": {
+        "start": 1405,
+        "end": 1433
+    },
+    "historicalContext": {
+        "en": "Ming Dynasty China, maritime trade and diplomacy",
+        "zh": "明朝中国，海上贸易与外交",
+        "fr": "Chine de la dynastie Ming, commerce maritime et diplomatie"
+    },
+    "locations": [
+        {
+            "name": {
+                "en": "Nanjing",
+                "zh": "南京",
+                "fr": "Nankin"
+            },
+            "lat": 32.0603,
+            "lng": 118.7965,
+            "year": 1405,
+            "description": {
+                "en": "Capital of the Ming Dynasty, where the expeditions began",
+                "zh": "明朝都城，下西洋的起点",
+                "fr": "Capitale de la dynastie Ming, d'où les expéditions ont commencé"
+            },
+            "duration": {
+                "en": "Departure",
+                "zh": "出发",
+                "fr": "Départ"
+            }
+        },
+        {
+            "name": {
+                "en": "Changle, Fujian",
+                "zh": "福建长乐",
+                "fr": "Changle, Fujian"
+            },
+            "lat": 25.9686,
+            "lng": 119.5397,
+            "year": 1405,
+            "description": {
+                "en": "Sailed from here, passing through the Taiwan Strait",
+                "zh": "从这里扬帆起航，途经台湾海峡",
+                "fr": "A navigué d'ici, passant par le détroit de Taiwan"
+            }
+        },
+        {
+            "name": {
+                "en": "Quanzhou, Fujian",
+                "zh": "福建泉州",
+                "fr": "Quanzhou, Fujian"
+            },
+            "lat": 24.9126,
+            "lng": 118.5759,
+            "year": 1417,
+            "description": {
+                "en": "Left the 'Zheng He Offering Incense Stele'",
+                "zh": "留下“郑和行香碑”",
+                "fr": "A laissé la 'stèle de l'encens de Zheng He'"
+            }
+        },
+        {
+            "name": {
+                "en": "Southeast Asia",
+                "zh": "东南亚",
+                "fr": "Asie du Sud-Est"
+            },
+            "lat": 5.0000,
+            "lng": 105.0000,
+            "year": 1405,
+            "description": {
+                "en": "Visited numerous countries and promoted trade",
+                "zh": "遍访多国，促进贸易",
+                "fr": "A visité de nombreux pays et a promu le commerce"
+            }
+        },
+        {
+            "name": {
+                "en": "Indian Ocean",
+                "zh": "印度洋",
+                "fr": "Océan Indien"
+            },
+            "lat": -20.0000,
+            "lng": 80.0000,
+            "year": 1405,
+            "description": {
+                "en": "Sailed extensively through this region",
+                "zh": "广泛航行于该地区",
+                "fr": "A navigué intensivement dans cette région"
+            }
+        },
+        {
+            "name": {
+                "en": "Calicut, India",
+                "zh": "印度古里",
+                "fr": "Calicut, Inde"
+            },
+            "lat": 11.2588,
+            "lng": 75.7804,
+            "year": 1433,
+            "description": {
+                "en": "Died here on the seventh voyage",
+                "zh": "第七次下西洋时在此地病逝",
+                "fr": "Est mort ici lors du septième voyage"
+            }
+        },
+        {
+            "name": {
+                "en": "East Coast of Africa",
+                "zh": "非洲东海岸",
+                "fr": "Côte Est de l'Afrique"
+            },
+            "lat": -5.0000,
+            "lng": 40.0000,
+            "year": 1417,
+            "description": {
+                "en": "The fleet's farthest point, visiting dozens of countries",
+                "zh": "船队到达最远的地方，遍访亚非三十多个国家",
+                "fr": "Le point le plus éloigné de la flotte, visitant des dizaines de pays"
+            }
+        },
+        {
+            "name": {
+                "en": "Hormuz",
+                "zh": "忽鲁谟斯",
+                "fr": "Hormuz"
+            },
+            "lat": 27.1895,
+            "lng": 56.4673,
+            "year": 1417,
+            "description": {
+                "en": "Visited on the fifth voyage",
+                "zh": "第五次下西洋时到访",
+                "fr": "Visité lors du cinquième voyage"
+            }
+        },
+        {
+            "name": {
+                "en": "Nanjing",
+                "zh": "南京",
+                "fr": "Nankin"
+            },
+            "lat": 32.0603,
+            "lng": 118.7965,
+            "year": 1433,
+            "description": {
+                "en": "Returned with a successful conclusion to the voyages",
+                "zh": "顺利完成航海任务，载誉而归",
+                "fr": "Retour réussi des voyages, en revenant avec honneur"
+            },
+            "duration": {
+                "en": "Destination",
+                "zh": "终点",
+                "fr": "Destination"
+            }
+        }
+    ]
+}

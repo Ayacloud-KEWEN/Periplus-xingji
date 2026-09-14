@@ -1,0 +1,94 @@
+{
+    "name": {
+        "en": "GR20 (Corsica)",
+        "zh": "GR20（科西嘉）",
+        "fr": "GR20 (Corse)"
+    },
+    "description": {
+        "en": "Often called Europe's toughest trail, along Corsica's mountain spine",
+        "zh": "常被称为欧洲最难的步道，纵贯科西嘉岛山脊",
+        "fr": "Souvent dit le sentier le plus difficile d'Europe, sur la dorsale corse"
+    },
+    "stats": {
+        "en": "≈ 180 km · +13,000 m · 15 days",
+        "zh": "约 180 公里 · 累计爬升 1.3 万米 · 15 天",
+        "fr": "≈ 180 km · +13 000 m · 15 jours"
+    },
+    "color": "#c0392b",
+    "locations": [
+        {
+            "name": {
+                "en": "Calenzana",
+                "zh": "卡伦扎纳",
+                "fr": "Calenzana"
+            },
+            "lat": 42.5086,
+            "lng": 8.8553,
+            "description": {
+                "en": "Northern start",
+                "zh": "北端起点",
+                "fr": "Départ au nord"
+            }
+        },
+        {
+            "name": {
+                "en": "Haut-Asco",
+                "zh": "上阿斯科",
+                "fr": "Haut-Asco"
+            },
+            "lat": 42.427,
+            "lng": 8.927
+        },
+        {
+            "name": {
+                "en": "Castel de Vergio",
+                "zh": "韦尔焦",
+                "fr": "Castel de Vergio"
+            },
+            "lat": 42.293,
+            "lng": 8.871
+        },
+        {
+            "name": {
+                "en": "Vizzavona",
+                "zh": "维扎沃纳",
+                "fr": "Vizzavona"
+            },
+            "lat": 42.1266,
+            "lng": 9.1289,
+            "description": {
+                "en": "Halfway point, end of the northern section",
+                "zh": "中点，北段终点",
+                "fr": "Mi-parcours, fin de la partie nord"
+            }
+        },
+        {
+            "name": {
+                "en": "Bavella",
+                "zh": "巴韦拉",
+                "fr": "Bavella"
+            },
+            "lat": 41.7955,
+            "lng": 9.229,
+            "description": {
+                "en": "Needles of Bavella",
+                "zh": "巴韦拉尖峰群",
+                "fr": "Aiguilles de Bavella"
+            }
+        },
+        {
+            "name": {
+                "en": "Conca",
+                "zh": "孔卡",
+                "fr": "Conca"
+            },
+            "lat": 41.7343,
+            "lng": 9.3431,
+            "description": {
+                "en": "Southern finish",
+                "zh": "南端终点",
+                "fr": "Arrivée au sud"
+            }
+        }
+    ]
+}

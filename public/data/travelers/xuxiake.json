@@ -1,0 +1,169 @@
+{
+    "traveler": {
+        "en": "Xu Xiake",
+        "zh": "徐霞客",
+        "fr": "Xu Xiake"
+    },
+    "description": {
+        "en": "Ming Dynasty geographer, travel writer, and explorer",
+        "zh": "明代地理学家、旅行家和探险家",
+        "fr": "Géographe, écrivain de voyages et explorateur de la dynastie Ming"
+    },
+    "color": "#3498db",
+    "timePeriod": {
+        "start": 1613,
+        "end": 1639
+    },
+    "historicalContext": {
+        "en": "Late Ming Dynasty China, personal exploration and scientific inquiry",
+        "zh": "明朝末年，个人探险与科学考察",
+        "fr": "Fin de la dynastie Ming, exploration personnelle et recherche scientifique"
+    },
+    "locations": [
+        {
+            "name": {
+                "en": "Jiangyin, Jiangsu",
+                "zh": "江苏江阴",
+                "fr": "Jiangyin, Jiangsu"
+            },
+            "lat": 31.9135,
+            "lng": 120.2608,
+            "year": 1613,
+            "description": {
+                "en": "Began his travels from his hometown at age 22",
+                "zh": "22岁从家乡开始他的旅程",
+                "fr": "A commencé ses voyages depuis sa ville natale à 22 ans"
+            },
+            "duration": {
+                "en": "Departure",
+                "zh": "出发",
+                "fr": "Départ"
+            }
+        },
+        {
+            "name": {
+                "en": "Mount Huangshan, Anhui",
+                "zh": "安徽黄山",
+                "fr": "Mont Huangshan, Anhui"
+            },
+            "lat": 30.1444,
+            "lng": 118.1506,
+            "year": 1616,
+            "description": {
+                "en": "Wrote vivid descriptions of his difficult climb in the snow",
+                "zh": "生动描写了在大雪中艰险的攀登过程",
+                "fr": "A écrit des descriptions vives de son ascension difficile dans la neige"
+            }
+        },
+        {
+            "name": {
+                "en": "Mount Tiantai, Zhejiang",
+                "zh": "浙江天台山",
+                "fr": "Mont Tiantai, Zhejiang"
+            },
+            "lat": 29.1360,
+            "lng": 121.0560,
+            "year": 1613,
+            "description": {
+                "en": "One of his early famous explorations",
+                "zh": "早期著名探险之一",
+                "fr": "Une de ses premières explorations célèbres"
+            }
+        },
+        {
+            "name": {
+                "en": "Mount Emei, Sichuan",
+                "zh": "四川峨眉山",
+                "fr": "Mont Emei, Sichuan"
+            },
+            "lat": 29.5937,
+            "lng": 103.3516,
+            "year": 1618,
+            "description": {
+                "en": "Visited this famous Buddhist mountain",
+                "zh": "到访这座著名的佛教名山",
+                "fr": "A visité cette célèbre montagne bouddhiste"
+            }
+        },
+        {
+            "name": {
+                "en": "Guangxi",
+                "zh": "广西",
+                "fr": "Guangxi"
+            },
+            "lat": 23.6331,
+            "lng": 108.9666,
+            "year": 1637,
+            "description": {
+                "en": "Explored karst landscapes and documented over 270 caves",
+                "zh": "考察喀斯特地貌并记录了270多个洞穴",
+                "fr": "A exploré les paysages karstiques et a documenté plus de 270 grottes"
+            }
+        },
+        {
+            "name": {
+                "en": "Guizhou",
+                "zh": "贵州",
+                "fr": "Guizhou"
+            },
+            "lat": 26.8154,
+            "lng": 106.8748,
+            "year": 1637,
+            "description": {
+                "en": "Traveled through this province and observed its geography",
+                "zh": "穿越此省，观察其地理特征",
+                "fr": "A traversé cette province et a observé ses caractéristiques géographiques"
+            }
+        },
+        {
+            "name": {
+                "en": "Yunnan",
+                "zh": "云南",
+                "fr": "Yunnan"
+            },
+            "lat": 25.0406,
+            "lng": 102.7093,
+            "year": 1638,
+            "description": {
+                "en": "Conducted in-depth investigations, covering over 2000 km",
+                "zh": "进行了深入考察，行程超过2000公里",
+                "fr": "A mené des enquêtes approfondies, parcourant plus de 2000 km"
+            }
+        },
+        {
+            "name": {
+                "en": "Tengchong, Yunnan",
+                "zh": "云南腾冲",
+                "fr": "Tengchong, Yunnan"
+            },
+            "lat": 24.9602,
+            "lng": 98.4900,
+            "year": 1639,
+            "description": {
+                "en": "Reached this point near the border with Myanmar",
+                "zh": "到达靠近缅甸边界的此地",
+                "fr": "A atteint ce point près de la frontière avec le Myanmar"
+            }
+        },
+        {
+            "name": {
+                "en": "Jiangyin, Jiangsu",
+                "zh": "江苏江阴",
+                "fr": "Jiangyin, Jiangsu"
+            },
+            "lat": 31.9135,
+            "lng": 120.2608,
+            "year": 1640,
+            "description": {
+                "en": "Returned home after falling ill",
+                "zh": "生病后返回家乡",
+                "fr": "Est rentré chez lui après être tombé malade"
+            },
+            "duration": {
+                "en": "Destination",
+                "zh": "终点",
+                "fr": "Destination"
+            }
+        }
+    ]
+}

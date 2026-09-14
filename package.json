@@ -1,0 +1,30 @@
+{
+  "name": "periplus-xingji",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Periplus · 行纪：自托管的个人地图——足迹、照片、运动轨迹、历史疆域",
+  "type": "module",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "db:init": "node scripts/init-db.js",
+    "import:history": "node scripts/import-history.js",
+    "build:heritage": "node scripts/build-heritage.js",
+    "places:reset": "node scripts/reset-places.js",
+    "import:regions": "node scripts/import-regions.js",
+    "build:polity-names": "node scripts/build-polity-names.js"
+  },
+  "dependencies": {
+    "compression": "^1.8.0",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3",
+    "yazl": "^3.3.1"
+  },
+  "license": "MIT"
+}

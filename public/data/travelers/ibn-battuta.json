@@ -1,0 +1,334 @@
+{
+    "traveler": {
+        "en": "Ibn Battuta",
+        "zh": "伊本·白图泰",
+        "fr": "Ibn Battuta"
+    },
+    "description": {
+        "en": "14th century Moroccan scholar and explorer, traveled 120,000 km across Africa, Asia and Europe for 29 years",
+        "zh": "14世纪摩洛哥学者和探险家，29年间游历12万公里，足迹遍及非洲、亚洲和欧洲",
+        "fr": "Érudit et explorateur marocain du XIVe siècle, a parcouru 120 000 km à travers l'Afrique, l'Asie et l'Europe pendant 29 ans"
+    },
+    "color": "#4ecdc4",
+        "timePeriod": {
+        "start": 1325,
+        "end": 1354
+    },
+    "historicalContext": {
+        "en": "Mamluk Sultanate, Delhi Sultanate, Yuan Dynasty",
+        "zh": "马穆鲁克苏丹国，德里苏丹国，元朝",
+        "fr": "Sultanat mamelouk, Sultanat de Delhi, Dynastie Yuan"
+    },
+    "locations": [
+        {
+            "name": {
+                "en": "Tangier",
+                "zh": "丹吉尔",
+                "fr": "Tanger"
+            },
+            "lat": 35.7595,
+            "lng": -5.8340,
+            "year": 1325,
+            "description": {
+                "en": "Started his journey to Mecca at age 21",
+                "zh": "21岁时开始前往麦加的旅程",
+                "fr": "Commence son voyage vers La Mecque à l'âge de 21 ans"
+            },
+            "duration": {
+                "en": "Departure",
+                "zh": "出发",
+                "fr": "Départ"
+            }
+        },
+        {
+            "name": {
+                "en": "Alexandria",
+                "zh": "亚历山大港",
+                "fr": "Alexandrie"
+            },
+            "lat": 31.2001,
+            "lng": 29.9187,
+            "year": 1326,
+            "description": {
+                "en": "First major city in Egypt, impressed by its lighthouse",
+                "zh": "埃及第一大城市，被其灯塔所震撼",
+                "fr": "Première grande ville d'Égypte, impressionné par son phare"
+            }
+        },
+        {
+            "name": {
+                "en": "Cairo",
+                "zh": "开罗",
+                "fr": "Le Caire"
+            },
+            "lat": 30.0444,
+            "lng": 31.2357,
+            "year": 1326,
+            "description": {
+                "en": "Capital of Mamluk Sultanate, 'mother of cities'",
+                "zh": "马穆鲁克苏丹国首都，'城市之母'",
+                "fr": "Capitale du sultanat mamelouk, 'mère des villes'"
+            }
+        },
+        {
+            "name": {
+                "en": "Mecca",
+                "zh": "麦加",
+                "fr": "La Mecque"
+            },
+            "lat": 21.4225,
+            "lng": 39.8262,
+            "year": 1326,
+            "description": {
+                "en": "Completed his first Hajj pilgrimage",
+                "zh": "完成第一次朝觐",
+                "fr": "Achevé son premier pèlerinage du Hajj"
+            },
+            "duration": {
+                "en": "1 month",
+                "zh": "1个月",
+                "fr": "1 mois"
+            }
+        },
+        {
+            "name": {
+                "en": "Baghdad",
+                "zh": "巴格达",
+                "fr": "Bagdad"
+            },
+            "lat": 33.3152,
+            "lng": 44.3661,
+            "year": 1327,
+            "description": {
+                "en": "Former capital of Abbasid Caliphate",
+                "zh": "阿巴斯王朝故都",
+                "fr": "Ancienne capitale du califat abbasside"
+            }
+        },
+        {
+            "name": {
+                "en": "Mogadishu",
+                "zh": "摩加迪沙",
+                "fr": "Mogadiscio"
+            },
+            "lat": 2.0469,
+            "lng": 45.3182,
+            "year": 1331,
+            "description": {
+                "en": "Prosperous trading city in East Africa",
+                "zh": "东非繁荣的贸易城市",
+                "fr": "Ville commerçante prospère en Afrique de l'Est"
+            }
+        },
+        {
+            "name": {
+                "en": "Kilwa",
+                "zh": "基尔瓦",
+                "fr": "Kilwa"
+            },
+            "lat": -8.9590,
+            "lng": 39.5000,
+            "year": 1331,
+            "description": {
+                "en": "One of the most beautiful cities in the world",
+                "zh": "世界上最美丽的城市之一",
+                "fr": "Une des plus belles villes du monde"
+            }
+        },
+        {
+            "name": {
+                "en": "Delhi",
+                "zh": "德里",
+                "fr": "Delhi"
+            },
+            "lat": 28.7041,
+            "lng": 77.1025,
+            "year": 1334,
+            "description": {
+                "en": "Served as qadi (judge) for Sultan Muhammad bin Tughluq",
+                "zh": "担任穆罕默德·本·图格鲁克苏丹的法官",
+                "fr": "Servi comme qadi (juge) pour le sultan Muhammad bin Tughluq"
+            },
+            "duration": {
+                "en": "7 years",
+                "zh": "7年",
+                "fr": "7 ans"
+            }
+        },
+        {
+            "name": {
+                "en": "Malabar Coast",
+                "zh": "马拉巴尔海岸",
+                "fr": "Côte de Malabar"
+            },
+            "lat": 11.2588,
+            "lng": 75.7804,
+            "year": 1342,
+            "description": {
+                "en": "Coastal region of southwestern India",
+                "zh": "印度西南部沿海地区",
+                "fr": "Région côtière du sud-ouest de l'Inde"
+            }
+        },
+        {
+            "name": {
+                "en": "Maldives",
+                "zh": "马尔代夫",
+                "fr": "Maldives"
+            },
+            "lat": 3.2028,
+            "lng": 73.2207,
+            "year": 1343,
+            "description": {
+                "en": "Served as chief judge, married into local royalty",
+                "zh": "担任首席法官，与当地王室联姻",
+                "fr": "Servi comme juge en chef, marié à la royauté locale"
+            },
+            "duration": {
+                "en": "1.5 years",
+                "zh": "1年半",
+                "fr": "1 an et demi"
+            }
+        },
+        {
+            "name": {
+                "en": "Sri Lanka",
+                "zh": "斯里兰卡",
+                "fr": "Sri Lanka"
+            },
+            "lat": 7.8731,
+            "lng": 80.7718,
+            "year": 1344,
+            "description": {
+                "en": "Visited Adam's Peak pilgrimage site",
+                "zh": "参观亚当峰朝圣地",
+                "fr": "Visité le site de pèlerinage du pic d'Adam"
+            }
+        },
+        {
+            "name": {
+                "en": "Bengal",
+                "zh": "孟加拉",
+                "fr": "Bengale"
+            },
+            "lat": 23.6850,
+            "lng": 90.3563,
+            "year": 1345,
+            "description": {
+                "en": "Explored the Ganges delta region",
+                "zh": "探索恒河三角洲地区",
+                "fr": "Exploré la région du delta du Gange"
+            }
+        },
+        {
+            "name": {
+                "en": "Sumatra",
+                "zh": "苏门答腊",
+                "fr": "Sumatra"
+            },
+            "lat": -0.5897,
+            "lng": 101.3431,
+            "year": 1345,
+            "description": {
+                "en": "Visited Samudra Pasai Sultanate",
+                "zh": "访问苏木都剌国",
+                "fr": "Visité le sultanat de Samudra Pasai"
+            }
+        },
+        {
+            "name": {
+                "en": "Quanzhou",
+                "zh": "泉州",
+                "fr": "Quanzhou"
+            },
+            "lat": 24.8801,
+            "lng": 118.6759,
+            "year": 1345,
+            "description": {
+                "en": "Major port in Yuan Dynasty China",
+                "zh": "元朝中国的主要港口",
+                "fr": "Port majeur de la Chine de la dynastie Yuan"
+            }
+        },
+        {
+            "name": {
+                "en": "Hangzhou",
+                "zh": "杭州",
+                "fr": "Hangzhou"
+            },
+            "lat": 30.2741,
+            "lng": 120.1551,
+            "year": 1346,
+            "description": {
+                "en": "Largest city in the world at that time",
+                "zh": "当时世界上最大的城市",
+                "fr": "Plus grande ville du monde à cette époque"
+            }
+        },
+        {
+            "name": {
+                "en": "Beijing",
+                "zh": "北京",
+                "fr": "Pékin"
+            },
+            "lat": 39.9042,
+            "lng": 116.4074,
+            "year": 1346,
+            "description": {
+                "en": "Capital of Yuan Dynasty",
+                "zh": "元朝首都",
+                "fr": "Capitale de la dynastie Yuan"
+            }
+        },
+        {
+            "name": {
+                "en": "Granada",
+                "zh": "格拉纳达",
+                "fr": "Grenade"
+            },
+            "lat": 37.1773,
+            "lng": -3.5986,
+            "year": 1350,
+            "description": {
+                "en": "Last Muslim kingdom in Iberia",
+                "zh": "伊比利亚半岛最后一个穆斯林王国",
+                "fr": "Dernier royaume musulman en Ibérie"
+            }
+        },
+        {
+            "name": {
+                "en": "Timbuktu",
+                "zh": "廷巴克图",
+                "fr": "Tombouctou"
+            },
+            "lat": 16.7666,
+            "lng": -3.0026,
+            "year": 1352,
+            "description": {
+                "en": "Major trading and scholarly center in Mali Empire",
+                "zh": "马里帝国重要的贸易和学术中心",
+                "fr": "Important centre commercial et savant de l'empire du Mali"
+            }
+        },
+        {
+            "name": {
+                "en": "Tangier",
+                "zh": "丹吉尔",
+                "fr": "Tanger"
+            },
+            "lat": 35.7595,
+            "lng": -5.8340,
+            "year": 1354,
+            "description": {
+                "en": "Returned home after 29 years of travels",
+                "zh": "29年旅程后返回故乡",
+                "fr": "Retourné chez lui après 29 ans de voyages"
+            },
+            "duration": {
+                "en": "Destination",
+                "zh": "终点",
+                "fr": "Destination"
+            }
+        }
+    ]
+}

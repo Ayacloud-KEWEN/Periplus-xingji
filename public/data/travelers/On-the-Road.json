@@ -1,0 +1,124 @@
+{
+    "traveler": {
+        "en": "Jack Kerouac (as Sal Paradise)",
+        "zh": "杰克·凯鲁亚克 (以萨尔·帕拉迪斯为名)",
+        "fr": "Jack Kerouac (sous le nom de Sal Paradise)"
+    },
+    "description": {
+        "en": "American novelist and poet, a key figure of the Beat Generation",
+        "zh": "美国小说家、诗人，“垮掉的一代”的核心人物",
+        "fr": "Romancier et poète américain, figure clé de la Beat Generation"
+    },
+    "color": "#e74c3c",
+    "timePeriod": {
+        "start": 1947,
+        "end": 1950
+    },
+    "historicalContext": {
+        "en": "Post-WWII America, the rise of the Beat Generation, search for freedom and meaning",
+        "zh": "二战后的美国，“垮掉的一代”兴起，追寻自由与意义",
+        "fr": "Amérique après la Seconde Guerre mondiale, montée de la Beat Generation, quête de liberté et de sens"
+    },
+    "locations": [
+        {
+            "name": {
+                "en": "New York City, NY",
+                "zh": "纽约市，纽约州",
+                "fr": "New York, NY"
+            },
+            "lat": 40.7128,
+            "lng": -74.0060,
+            "year": 1947,
+            "description": {
+                "en": "Starting point of the first major journey westward",
+                "zh": "第一次西行之旅的起点",
+                "fr": "Point de départ du premier grand voyage vers l'ouest"
+            },
+            "duration": {
+                "en": "Departure",
+                "zh": "出发",
+                "fr": "Départ"
+            }
+        },
+        {
+            "name": {
+                "en": "Denver, CO",
+                "zh": "丹佛，科罗拉多州",
+                "fr": "Denver, CO"
+            },
+            "lat": 39.7392,
+            "lng": -104.9903,
+            "year": 1947,
+            "description": {
+                "en": "A central hub where Sal reunites with Dean Moriarty and other friends",
+                "zh": "一个核心地点，萨尔在这里与迪安·莫里亚蒂及其他朋友重聚",
+                "fr": "Un point central où Sal retrouve Dean Moriarty et d'autres amis"
+            }
+        },
+        {
+            "name": {
+                "en": "San Francisco, CA",
+                "zh": "旧金山，加利福尼亚州",
+                "fr": "San Francisco, CA"
+            },
+            "lat": 37.7749,
+            "lng": -122.4194,
+            "year": 1947,
+            "description": {
+                "en": "Reached the West Coast and explored the city with friends",
+                "zh": "到达西海岸，与朋友们一起探索这座城市",
+                "fr": "Atteint la côte ouest et explore la ville avec des amis"
+            }
+        },
+        {
+            "name": {
+                "en": "New Orleans, LA",
+                "zh": "新奥尔良，路易斯安那州",
+                "fr": "Nouvelle-Orléans, LA"
+            },
+            "lat": 29.9511,
+            "lng": -90.0715,
+            "year": 1949,
+            "description": {
+                "en": "Visited with Dean Moriarty on a journey through the South",
+                "zh": "与迪安·莫里亚蒂一起南下旅行时到访",
+                "fr": "Visité avec Dean Moriarty lors d'un voyage à travers le Sud"
+            }
+        },
+        {
+            "name": {
+                "en": "Mexico City, Mexico",
+                "zh": "墨西哥城，墨西哥",
+                "fr": "Mexico, Mexique"
+            },
+            "lat": 19.4326,
+            "lng": -99.1332,
+            "year": 1950,
+            "description": {
+                "en": "The final destination of the last major journey",
+                "zh": "最后一次重要旅程的终点",
+                "fr": "La destination finale du dernier grand voyage"
+            }
+        },
+        {
+            "name": {
+                "en": "New York City, NY",
+                "zh": "纽约市，纽约州",
+                "fr": "New York, NY"
+            },
+            "lat": 40.7128,
+            "lng": -74.0060,
+            "year": 1950,
+            "description": {
+                "en": "The end of the road, returning to the starting point",
+                "zh": "旅程的终点，返回了起点",
+                "fr": "La fin de la route, retour au point de départ"
+            },
+            "duration": {
+                "en": "Destination",
+                "zh": "终点",
+                "fr": "Destination"
+            }
+        }
+    ]
+}

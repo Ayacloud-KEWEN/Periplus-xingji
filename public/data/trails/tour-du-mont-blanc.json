@@ -1,0 +1,154 @@
+{
+    "name": {
+        "en": "Tour du Mont Blanc",
+        "zh": "环勃朗峰徒步",
+        "fr": "Tour du Mont-Blanc"
+    },
+    "description": {
+        "en": "A loop around the Mont Blanc massif through France, Italy and Switzerland",
+        "zh": "环绕勃朗峰山脉，穿越法国、意大利和瑞士",
+        "fr": "Boucle autour du massif du Mont-Blanc en France, Italie et Suisse"
+    },
+    "stats": {
+        "en": "≈ 170 km · +10,000 m · 10–11 days",
+        "zh": "约 170 公里 · 累计爬升 1 万米 · 10–11 天",
+        "fr": "≈ 170 km · +10 000 m · 10–11 jours"
+    },
+    "color": "#2e86de",
+    "locations": [
+        {
+            "name": {
+                "en": "Les Houches",
+                "zh": "莱苏什",
+                "fr": "Les Houches"
+            },
+            "lat": 45.8906,
+            "lng": 6.7986,
+            "description": {
+                "en": "Traditional start, counter-clockwise",
+                "zh": "传统起点，逆时针方向",
+                "fr": "Départ traditionnel, sens antihoraire"
+            }
+        },
+        {
+            "name": {
+                "en": "Les Contamines-Montjoie",
+                "zh": "莱孔塔米讷-蒙茹瓦",
+                "fr": "Les Contamines-Montjoie"
+            },
+            "lat": 45.8214,
+            "lng": 6.7272
+        },
+        {
+            "name": {
+                "en": "Col de la Seigne",
+                "zh": "塞涅山口",
+                "fr": "Col de la Seigne"
+            },
+            "lat": 45.7516,
+            "lng": 6.8069,
+            "description": {
+                "en": "Border pass into Italy, 2,516 m",
+                "zh": "法意边境山口，海拔 2516 米",
+                "fr": "Col frontière vers l'Italie, 2 516 m"
+            }
+        },
+        {
+            "name": {
+                "en": "Courmayeur",
+                "zh": "库马约尔",
+                "fr": "Courmayeur"
+            },
+            "lat": 45.7917,
+            "lng": 6.9716,
+            "description": {
+                "en": "Italian side of Mont Blanc",
+                "zh": "勃朗峰的意大利一侧",
+                "fr": "Versant italien du Mont-Blanc"
+            }
+        },
+        {
+            "name": {
+                "en": "Grand Col Ferret",
+                "zh": "大费雷山口",
+                "fr": "Grand Col Ferret"
+            },
+            "lat": 45.893,
+            "lng": 7.0555,
+            "description": {
+                "en": "Border pass into Switzerland, 2,537 m",
+                "zh": "意瑞边境山口，海拔 2537 米",
+                "fr": "Col frontière vers la Suisse, 2 537 m"
+            }
+        },
+        {
+            "name": {
+                "en": "La Fouly",
+                "zh": "拉富利",
+                "fr": "La Fouly"
+            },
+            "lat": 45.9337,
+            "lng": 7.096
+        },
+        {
+            "name": {
+                "en": "Champex-Lac",
+                "zh": "尚佩湖",
+                "fr": "Champex-Lac"
+            },
+            "lat": 46.0319,
+            "lng": 7.1156,
+            "description": {
+                "en": "Alpine lake village",
+                "zh": "高山湖畔小村",
+                "fr": "Village au bord d'un lac alpin"
+            }
+        },
+        {
+            "name": {
+                "en": "Trient",
+                "zh": "特里安",
+                "fr": "Trient"
+            },
+            "lat": 46.0564,
+            "lng": 6.995
+        },
+        {
+            "name": {
+                "en": "Col de Balme",
+                "zh": "巴尔姆山口",
+                "fr": "Col de Balme"
+            },
+            "lat": 46.0288,
+            "lng": 6.9608,
+            "description": {
+                "en": "Back into France",
+                "zh": "返回法国",
+                "fr": "Retour en France"
+            }
+        },
+        {
+            "name": {
+                "en": "Chamonix",
+                "zh": "霞慕尼",
+                "fr": "Chamonix"
+            },
+            "lat": 45.9237,
+            "lng": 6.8694
+        },
+        {
+            "name": {
+                "en": "Les Houches",
+                "zh": "莱苏什",
+                "fr": "Les Houches"
+            },
+            "lat": 45.8906,
+            "lng": 6.7986,
+            "description": {
+                "en": "Loop completed",
+                "zh": "完成环线",
+                "fr": "Boucle bouclée"
+            }
+        }
+    ]
+}

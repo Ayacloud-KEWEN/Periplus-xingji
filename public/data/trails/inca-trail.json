@@ -1,0 +1,94 @@
+{
+    "name": {
+        "en": "Inca Trail to Machu Picchu",
+        "zh": "印加古道",
+        "fr": "Chemin de l'Inca"
+    },
+    "description": {
+        "en": "Stone paths through the Andes to the Sun Gate above Machu Picchu",
+        "zh": "沿安第斯山中的印加石径抵达马丘比丘的太阳门",
+        "fr": "Sentiers de pierre à travers les Andes jusqu'à la Porte du Soleil"
+    },
+    "stats": {
+        "en": "≈ 43 km · 4 days",
+        "zh": "约 43 公里 · 4 天",
+        "fr": "≈ 43 km · 4 jours"
+    },
+    "color": "#e67e22",
+    "locations": [
+        {
+            "name": {
+                "en": "Km 82 (Piscacucho)",
+                "zh": "82 公里处（皮斯卡库乔）",
+                "fr": "Km 82 (Piscacucho)"
+            },
+            "lat": -13.256,
+            "lng": -72.389,
+            "description": {
+                "en": "Trailhead in the Sacred Valley",
+                "zh": "圣谷中的起点",
+                "fr": "Départ dans la Vallée sacrée"
+            }
+        },
+        {
+            "name": {
+                "en": "Wayllabamba",
+                "zh": "瓦伊利亚班巴",
+                "fr": "Wayllabamba"
+            },
+            "lat": -13.278,
+            "lng": -72.428
+        },
+        {
+            "name": {
+                "en": "Dead Woman's Pass",
+                "zh": "亡女垭口",
+                "fr": "Col de la Femme morte"
+            },
+            "lat": -13.2515,
+            "lng": -72.4906,
+            "description": {
+                "en": "Highest point, 4,215 m",
+                "zh": "最高点，海拔 4215 米",
+                "fr": "Point culminant, 4 215 m"
+            }
+        },
+        {
+            "name": {
+                "en": "Wiñay Wayna",
+                "zh": "维纳伊瓦伊纳",
+                "fr": "Wiñay Wayna"
+            },
+            "lat": -13.192,
+            "lng": -72.539,
+            "description": {
+                "en": "Terraced Inca ruins",
+                "zh": "印加梯田遗址",
+                "fr": "Ruines incas en terrasses"
+            }
+        },
+        {
+            "name": {
+                "en": "Inti Punku (Sun Gate)",
+                "zh": "太阳门",
+                "fr": "Inti Punku (Porte du Soleil)"
+            },
+            "lat": -13.169,
+            "lng": -72.54,
+            "description": {
+                "en": "First view of Machu Picchu at sunrise",
+                "zh": "日出时第一眼望见马丘比丘",
+                "fr": "Première vue sur le Machu Picchu au lever du soleil"
+            }
+        },
+        {
+            "name": {
+                "en": "Machu Picchu",
+                "zh": "马丘比丘",
+                "fr": "Machu Picchu"
+            },
+            "lat": -13.1631,
+            "lng": -72.545
+        }
+    ]
+}

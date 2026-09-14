@@ -1,0 +1,344 @@
+{
+    "traveler": {
+        "en": "Xuanzang",
+        "zh": "玄奘",
+        "fr": "Xuanzang"
+    },
+    "description": {
+        "en": "7th century Chinese Buddhist monk, scholar and translator who traveled to India to obtain Buddhist scriptures",
+        "zh": "7世纪中国佛教僧侣、学者和翻译家，前往印度求取佛经",
+        "fr": "Moine bouddhiste, érudit et traducteur chinois du VIIe siècle qui a voyagé en Inde pour obtenir des écritures bouddhistes"
+    },
+    "color": "#ff9ff3",
+        "timePeriod": {
+        "start": 629,
+        "end": 645
+    },
+    "historicalContext": {
+        "en": "Tang Dynasty China, Harsha Empire in India",
+        "zh": "唐朝中国，印度戒日王朝",
+        "fr": "Chine de la dynastie Tang, Empire Harsha en Inde"
+    },
+    "locations": [
+        {
+            "name": {
+                "en": "Chang'an",
+                "zh": "长安",
+                "fr": "Chang'an"
+            },
+            "lat": 34.3416,
+            "lng": 108.9398,
+            "year": 629,
+            "description": {
+                "en": "Capital of Tang Dynasty, started journey westward",
+                "zh": "唐朝首都，开始西行求法",
+                "fr": "Capitale de la dynastie Tang, commence son voyage vers l'ouest"
+            },
+            "duration": {
+                "en": "Departure",
+                "zh": "出发",
+                "fr": "Départ"
+            }
+        },
+        {
+            "name": {
+                "en": "Dunhuang",
+                "zh": "敦煌",
+                "fr": "Dunhuang"
+            },
+            "lat": 40.1378,
+            "lng": 94.6622,
+            "year": 629,
+            "description": {
+                "en": "Gateway to the Western Regions, Mogao Caves",
+                "zh": "西域门户，莫高窟所在地",
+                "fr": "Porte vers les régions occidentales, grottes de Mogao"
+            }
+        },
+        {
+            "name": {
+                "en": "Turpan",
+                "zh": "吐鲁番",
+                "fr": "Turpan"
+            },
+            "lat": 42.9512,
+            "lng": 89.1896,
+            "year": 630,
+            "description": {
+                "en": "Oasis city in the Taklamakan Desert",
+                "zh": "塔克拉玛干沙漠中的绿洲城市",
+                "fr": "Ville oasis dans le désert du Taklamakan"
+            }
+        },
+        {
+            "name": {
+                "en": "Kucha",
+                "zh": "龟兹",
+                "fr": "Kucha"
+            },
+            "lat": 41.7278,
+            "lng": 82.9364,
+            "year": 630,
+            "description": {
+                "en": "Buddhist center on the Silk Road",
+                "zh": "丝绸之路上的佛教中心",
+                "fr": "Centre bouddhiste sur la Route de la Soie"
+            }
+        },
+        {
+            "name": {
+                "en": "Tashkent",
+                "zh": "塔什干",
+                "fr": "Tachkent"
+            },
+            "lat": 41.2995,
+            "lng": 69.2401,
+            "year": 630,
+            "description": {
+                "en": "Major city in Transoxiana",
+                "zh": "河中地区主要城市",
+                "fr": "Ville majeure en Transoxiane"
+            }
+        },
+        {
+            "name": {
+                "en": "Samarkand",
+                "zh": "撒马尔罕",
+                "fr": "Samarcande"
+            },
+            "lat": 39.6542,
+            "lng": 66.9758,
+            "year": 630,
+            "description": {
+                "en": "Ancient city on the Silk Road",
+                "zh": "丝绸之路古城",
+                "fr": "Ville ancienne sur la Route de la Soie"
+            }
+        },
+        {
+            "name": {
+                "en": "Balkh",
+                "zh": "巴尔赫",
+                "fr": "Balkh"
+            },
+            "lat": 36.7551,
+            "lng": 66.8975,
+            "year": 630,
+            "description": {
+                "en": "Ancient Buddhist center in Afghanistan",
+                "zh": "阿富汗古代佛教中心",
+                "fr": "Ancien centre bouddhiste en Afghanistan"
+            }
+        },
+        {
+            "name": {
+                "en": "Bamiyan",
+                "zh": "巴米扬",
+                "fr": "Bamiyan"
+            },
+            "lat": 34.8219,
+            "lng": 67.8270,
+            "year": 630,
+            "description": {
+                "en": "Site of giant Buddha statues",
+                "zh": "大佛立像所在地",
+                "fr": "Site des statues géantes de Bouddha"
+            }
+        },
+        {
+            "name": {
+                "en": "Peshawar",
+                "zh": "白沙瓦",
+                "fr": "Peshawar"
+            },
+            "lat": 34.0151,
+            "lng": 71.5249,
+            "year": 630,
+            "description": {
+                "en": "Ancient Gandharan city",
+                "zh": "古犍陀罗城市",
+                "fr": "Ancienne ville du Gandhara"
+            }
+        },
+        {
+            "name": {
+                "en": "Taxila",
+                "zh": "塔克西拉",
+                "fr": "Taxila"
+            },
+            "lat": 33.7456,
+            "lng": 72.7875,
+            "year": 630,
+            "description": {
+                "en": "Ancient university and Buddhist center",
+                "zh": "古代大学和佛教中心",
+                "fr": "Ancienne université et centre bouddhiste"
+            }
+        },
+        {
+            "name": {
+                "en": "Kashmir",
+                "zh": "克什米尔",
+                "fr": "Cachemire"
+            },
+            "lat": 34.0837,
+            "lng": 74.7973,
+            "year": 631,
+            "description": {
+                "en": "Studied Buddhist texts for 2 years",
+                "zh": "学习佛教经典2年",
+                "fr": "Étudié les textes bouddhistes pendant 2 ans"
+            },
+            "duration": {
+                "en": "2 years",
+                "zh": "2年",
+                "fr": "2 ans"
+            }
+        },
+        {
+            "name": {
+                "en": "Mathura",
+                "zh": "马图拉",
+                "fr": "Mathura"
+            },
+            "lat": 27.4924,
+            "lng": 77.6737,
+            "year": 634,
+            "description": {
+                "en": "Important Buddhist pilgrimage site",
+                "zh": "重要佛教朝圣地",
+                "fr": "Important site de pèlerinage bouddhiste"
+            }
+        },
+        {
+            "name": {
+                "en": "Sarnath",
+                "zh": "鹿野苑",
+                "fr": "Sarnath"
+            },
+            "lat": 25.3811,
+            "lng": 83.0215,
+            "year": 635,
+            "description": {
+                "en": "Where Buddha gave his first sermon",
+                "zh": "佛陀初次讲法之地",
+                "fr": "Lieu où Bouddha a donné son premier sermon"
+            }
+        },
+        {
+            "name": {
+                "en": "Bodh Gaya",
+                "zh": "菩提伽耶",
+                "fr": "Bodh Gaya"
+            },
+            "lat": 24.6951,
+            "lng": 84.9913,
+            "year": 635,
+            "description": {
+                "en": "Where Buddha attained enlightenment",
+                "zh": "佛陀悟道之地",
+                "fr": "Lieu où Bouddha a atteint l'illumination"
+            }
+        },
+        {
+            "name": {
+                "en": "Nalanda",
+                "zh": "那烂陀寺",
+                "fr": "Nalanda"
+            },
+            "lat": 25.1368,
+            "lng": 85.4439,
+            "year": 637,
+            "description": {
+                "en": "Great Buddhist university, studied for 5 years",
+                "zh": "伟大的佛教大学，学习5年",
+                "fr": "Grande université bouddhiste, étudié pendant 5 ans"
+            },
+            "duration": {
+                "en": "5 years",
+                "zh": "5年",
+                "fr": "5 ans"
+            }
+        },
+        {
+            "name": {
+                "en": "Kanchipuram",
+                "zh": "建志补罗",
+                "fr": "Kanchipuram"
+            },
+            "lat": 12.8300,
+            "lng": 79.7000,
+            "year": 640,
+            "description": {
+                "en": "Important Buddhist and Hindu center",
+                "zh": "重要佛教和印度教中心",
+                "fr": "Important centre bouddhiste et hindou"
+            }
+        },
+        {
+            "name": {
+                "en": "Sri Lanka",
+                "zh": "斯里兰卡",
+                "fr": "Sri Lanka"
+            },
+            "lat": 7.8731,
+            "lng": 80.7718,
+            "year": 641,
+            "description": {
+                "en": "Collected more Buddhist scriptures",
+                "zh": "收集更多佛教经典",
+                "fr": "Collecté plus d'écritures bouddhistes"
+            }
+        },
+        {
+            "name": {
+                "en": "Pataliputra",
+                "zh": "华氏城",
+                "fr": "Pataliputra"
+            },
+            "lat": 25.6111,
+            "lng": 85.1444,
+            "year": 642,
+            "description": {
+                "en": "Ancient capital of Magadha",
+                "zh": "摩揭陀古都",
+                "fr": "Ancienne capitale du Magadha"
+            }
+        },
+        {
+            "name": {
+                "en": "Khotan",
+                "zh": "于阗",
+                "fr": "Khotan"
+            },
+            "lat": 37.1125,
+            "lng": 79.9125,
+            "year": 644,
+            "description": {
+                "en": "Buddhist kingdom on return journey",
+                "zh": "返程途中的佛教王国",
+                "fr": "Royaume bouddhiste sur le chemin du retour"
+            }
+        },
+        {
+            "name": {
+                "en": "Chang'an",
+                "zh": "长安",
+                "fr": "Chang'an"
+            },
+            "lat": 34.3416,
+            "lng": 108.9398,
+            "year": 645,
+            "description": {
+                "en": "Returned with 657 Buddhist texts, welcomed by Emperor Taizong",
+                "zh": "带回657部佛经，受到唐太宗欢迎",
+                "fr": "Retourné avec 657 textes bouddhistes, accueilli par l'empereur Taizong"
+            },
+            "duration": {
+                "en": "Destination",
+                "zh": "终点",
+                "fr": "Destination"
+            }
+        }
+    ]
+}

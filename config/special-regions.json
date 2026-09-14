@@ -1,0 +1,32 @@
+{
+  "说明": "特殊地区规则：把 OpenStreetMap 归入某个国家、但你想单独统计的地方分出来。修改后重启服务生效，不需要重新查询行政区。字段说明见 README 的「特殊地区」一节。",
+  "rules": [
+    {
+      "code": "north-cyprus",
+      "name": { "zh": "北塞浦路斯", "en": "Northern Cyprus", "fr": "Chypre du Nord" },
+      "continent": "AS",
+      "match": {
+        "countryCodes": ["cy"],
+        "countryNames": ["北塞浦路斯", "北賽普勒斯", "Northern Cyprus", "Kuzey Kıbrıs", "Kuzey Kıbrıs Türk Cumhuriyeti"]
+      }
+    },
+    {
+      "code": "somaliland",
+      "name": { "zh": "索马里兰", "en": "Somaliland", "fr": "Somaliland" },
+      "continent": "AF",
+      "match": {
+        "countryCodes": ["so"],
+        "countryNames": ["索马里兰", "索馬利蘭", "索馬里蘭", "Somaliland", "Soomaaliland", "Jamhuuriyadda Soomaaliland"]
+      }
+    },
+    {
+      "code": "eh",
+      "name": { "zh": "西撒哈拉", "en": "Western Sahara", "fr": "Sahara occidental" },
+      "continent": "AF",
+      "match": {
+        "countryCodes": ["ma"],
+        "bbox": [-17.2, 20.7, -8.6, 27.667]
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+node_modules/
+
+# 本机配置（含数据库密码、MapTiler key），每台机器各自生成
+.env
+.env.*
+!.env.example
+
+# 运行时数据：上传的照片等。开头的 / 表示只匹配仓库根目录，server/data、public/data 要提交
+/data/
+
+# 历史疆域原始数据约 200MB，从 Cliopatria 下载后导入即可
+*.geojson

@@ -1,0 +1,14 @@
+{
+  "name": "Periplus · 行纪",
+  "short_name": "Periplus",
+  "description": "个人地图：足迹、照片与历史",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f1ec",
+  "theme_color": "#3D2B1F",
+  "icons": [
+    { "src": "img/mapweb-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "img/mapweb-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
