@@ -1,6 +1,6 @@
 // Service Worker：缓存应用本身，服务器暂时连不上时也能打开并查看上次的标注
 // 发布新版本时修改 VERSION，页面会提示刷新
-const VERSION = 'v2.13.0';
+const VERSION = 'v2.20.0';
 const SHELL_CACHE = `mapweb-shell-${VERSION}`;
 const RUNTIME_CACHE = 'mapweb-runtime';
 
@@ -11,7 +11,7 @@ const SHELL_FILES = [
     'css/app.css',
     'js/main.js', 'js/api.js', 'js/i18n.js', 'js/ui.js', 'js/settings.js', 'js/map.js', 'js/pins.js',
     'js/photos.js', 'js/timebar.js', 'js/history.js', 'js/journeys.js', 'js/search.js', 'js/io.js', 'js/panels.js',
-    'js/categories.js', 'js/stats.js', 'js/route.js', 'js/trips.js', 'js/lighten.js', 'js/tracks.js', 'js/gpx.js', 'js/review.js', 'js/gallery.js',
+    'js/categories.js', 'js/stats.js', 'js/route.js', 'js/trips.js', 'js/lighten.js', 'js/tracks.js', 'js/gpx.js', 'js/review.js', 'js/gallery.js', 'js/markdown.js',
     'lang/zh.json', 'lang/en.json', 'lang/fr.json',
     'vendor/leaflet/leaflet.css', 'vendor/leaflet/leaflet.js',
     'vendor/markercluster/leaflet.markercluster.js', 'vendor/markercluster/MarkerCluster.css', 'vendor/markercluster/MarkerCluster.Default.css',

@@ -74,3 +74,8 @@ export function matchHeritage(points) {
         }))
         .sort((a, b) => new Date(a.firstVisit) - new Date(b.firstVisit));
 }
+
+// 完整名录（给"数据统计"工具页用）：名称、所属国家、列入年份，不含坐标
+export function heritageSites() {
+    return sites.map(({ id, name, countries, year }) => ({ id, name, countries, year }));
+}

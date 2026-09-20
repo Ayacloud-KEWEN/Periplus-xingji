@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界年表</title>
+    <style>
+        :root {
+            --bg: #f5f3ef;
+            --surface: #ffffff;
+            --text: #2b2118;
+            --muted: #7a6a5c;
+            --border: #e3dcd0;
+            --accent: #c8893b;
+            --grid: rgba(60, 40, 20, .07);
+            --label-w: 132px;
+            --axis-h: 30px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1b1714;
+                --surface: #26211d;
+                --text: #eee6dc;
+                --muted: #a8998a;
+                --border: #3a332d;
+                --grid: rgba(255, 255, 255, .06);
+            }
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; margin: 0; }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px 16px;
+            padding: 10px 16px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 { margin: 0; font-size: 20px; }
+        header .sub { color: var(--muted); font-size: 13px; }
+        .controls { margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+        button, select {
+            font: inherit;
+            font-size: 14px;
+            padding: 5px 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        button:hover, select:hover { border-color: var(--accent); }
+        .check { display: flex; align-items: center; gap: 4px; font-size: 14px; cursor: pointer; }
+        .back { color: var(--accent); font-size: 14px; text-decoration: none; }
+
+        /* 参照读数：光标所在年份和同期的中国 */
+        .readout {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 4px 14px;
+            min-height: 34px;
+            padding: 6px 16px;
+            font-size: 14px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .readout .year { font-size: 16px; font-weight: 700; }
+        .readout .china { color: var(--muted); }
+        .readout .china b { color: var(--text); }
+
+        .scroller { flex: 1; overflow: auto; position: relative; overscroll-behavior: contain; }
+        .canvas { position: relative; min-height: 100%; }
+
+        .axis {
+            position: sticky;
+            top: 0;
+            z-index: 6;
+            display: flex;
+            height: var(--axis-h);
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .row { position: relative; display: flex; border-bottom: 1px solid var(--border); }
+
+        /* 中国一行固定在时间轴下方，上下滚动时一直可见，作为参照 */
+        .row.reference {
+            position: sticky;
+            top: var(--axis-h);
+            z-index: 4;
+            background: var(--surface);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, .1);
+        }
+
+        .row-label, .corner {
+            position: sticky;
+            left: 0;
+            z-index: 3;
+            flex: 0 0 var(--label-w);
+            width: var(--label-w);
+            padding: 4px 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .corner { z-index: 7; font-weight: 400; color: var(--muted); font-size: 12px; }
+        .row-label small { font-weight: 400; color: var(--muted); font-size: 11px; }
+        .track { position: relative; flex: 0 0 auto; }
+
+        .tick { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--border); }
+        .tick span { position: absolute; left: 4px; bottom: 5px; font-size: 11px; color: var(--muted); white-space: nowrap; }
+        .gridlines { position: absolute; top: 0; bottom: 0; pointer-events: none; }
+        .gridlines i { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--grid); }
+
+        .bar {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 6px;
+            border: 0;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 12px;
+            line-height: 1.2;
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .12);
+        }
+
+        .bar span { overflow: hidden; text-overflow: ellipsis; }
+        .bar .alt { font-size: 10px; opacity: .85; }
+        .bar:hover { filter: brightness(1.08); }
+        .bar.active { box-shadow: 0 0 0 2px var(--text); z-index: 1; }
+        .bar.hit { box-shadow: inset 0 0 0 2px #fff, 0 0 0 2px var(--accent); }
+
+        /* 大事记：每行底部一条细带上的小圆点 */
+        .event {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            margin-left: -5px;
+            padding: 0;
+            border: 2px solid var(--surface);
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .25);
+        }
+
+        .event:hover, .event.active { transform: scale(1.4); z-index: 2; }
+        .detail .events { display: flex; flex-direction: column; gap: 4px; }
+
+        .detail .events button {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .detail .events button small { flex: 0 0 auto; min-width: 70px; color: var(--muted); }
+
+        .cursor {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            border-left: 2px dashed var(--accent);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .detail {
+            position: fixed;
+            right: 16px;
+            bottom: 16px;
+            z-index: 10;
+            width: min(380px, calc(100% - 32px));
+            max-height: 62vh;
+            overflow: auto;
+            padding: 14px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+        }
+
+        .detail .close { position: absolute; top: 8px; right: 8px; padding: 2px 8px; }
+        .detail .row-name { font-size: 12px; color: var(--muted); }
+        .detail .main-name { margin: 2px 32px 2px 0; font-size: 20px; font-weight: 700; }
+        .detail .alt-name { color: var(--muted); font-size: 14px; }
+        .detail .years { margin-top: 8px; font-size: 14px; }
+        .detail .note { margin: 8px 0 0; font-size: 14px; line-height: 1.5; }
+        .detail h3 { margin: 14px 0 6px; font-size: 13px; color: var(--muted); }
+        .detail h4 { margin: 10px 0 4px; font-size: 13px; }
+        .related { display: flex; flex-direction: column; gap: 4px; }
+
+        .related button {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            width: 100%;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .related button small { color: var(--muted); white-space: nowrap; }
+        .empty { color: var(--muted); font-size: 13px; }
+
+        footer {
+            padding: 6px 16px;
+            font-size: 12px;
+            color: var(--muted);
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
+            :root { --label-w: 86px; }
+            header h1 { font-size: 17px; }
+            header .sub { display: none; }
+            .controls { margin-left: 0; }
+            .detail { left: 8px; right: 8px; bottom: 8px; width: auto; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1 id="title"></h1>
+            <div class="sub" id="subtitle"></div>
+        </div>
+        <div class="controls">
+            <select id="lang" aria-label="Language">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+            <label class="check"><input type="checkbox" id="trilingual"><span id="trilingual-label"></span></label>
+            <button type="button" id="zoom-out">−</button>
+            <button type="button" id="zoom-in">+</button>
+            <button type="button" id="fit"></button>
+            <a class="back" id="back" href="/"></a>
+        </div>
+    </header>
+    <div class="readout" id="readout"></div>
+    <div class="scroller" id="scroller">
+        <div class="canvas" id="canvas"></div>
+    </div>
+    <footer id="footer"></footer>
+    <div class="detail" id="detail" hidden></div>
+
+    <script>
+        (async () => {
+            const LANGS = ['zh', 'en', 'fr'];
+            const UI = {
+                title: { zh: '世界年表', en: 'World Chronology', fr: 'Chronologie mondiale' },
+                subtitle: {
+                    zh: '主要文明编年对照，以中国历史为参照',
+                    en: 'Major civilisations side by side, with Chinese history as the reference',
+                    fr: "Les grandes civilisations en parallèle, avec l'histoire chinoise comme référence"
+                },
+                trilingual: { zh: '三语对照', en: 'Trilingual', fr: 'Trilingue' },
+                zoomIn: { zh: '放大', en: 'Zoom in', fr: 'Zoom avant' },
+                zoomOut: { zh: '缩小', en: 'Zoom out', fr: 'Zoom arrière' },
+                fit: { zh: '全览', en: 'Fit all', fr: 'Tout afficher' },
+                back: { zh: '返回地图', en: 'Back to map', fr: 'Retour à la carte' },
+                corner: { zh: '文明', en: 'Civilisation', fr: 'Civilisation' },
+                china: { zh: '同期中国', en: 'China', fr: 'Chine' },
+                none: { zh: '（无记录）', en: '(none)', fr: '(aucune)' },
+                present: { zh: '至今', en: 'present', fr: "aujourd'hui" },
+                duration: { zh: '历时约 {n} 年', en: 'about {n} years', fr: 'environ {n} ans' },
+                sameChina: { zh: '同时期的中国', en: 'China at the same time', fr: 'La Chine à la même époque' },
+                sameOthers: { zh: '同时期的其他文明', en: 'Other civilisations at the same time', fr: 'Autres civilisations à la même époque' },
+                close: { zh: '关闭', en: 'Close', fr: 'Fermer' },
+                event: { zh: '大事', en: 'Event', fr: 'Événement' },
+                capital: { zh: '都城', en: 'Capital', fr: 'Capitale' },
+                founder: { zh: '开国者', en: 'Founder', fr: 'Fondateur' },
+                eventsInPeriod: { zh: '这一时期的大事', en: 'Events in this period', fr: 'Événements de cette période' },
+                footer: {
+                    zh: '滚动浏览，Ctrl + 滚轮缩放，点击时期查看详情。年代为通行的近似值，部分时期（尤其是早期）仍有学术争议。',
+                    en: 'Scroll to browse, Ctrl + wheel to zoom, click a period for details. Dates are conventional approximations; some, especially early ones, are debated.',
+                    fr: "Faites défiler pour parcourir, Ctrl + molette pour zoomer, cliquez sur une période pour les détails. Les dates sont des approximations usuelles ; certaines, surtout anciennes, restent débattues."
+                },
+                loadFailed: { zh: '年表数据加载失败：', en: 'Failed to load the chronology: ', fr: 'Échec du chargement de la chronologie : ' }
+            };
+            const TICK_STEPS = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000];
+            const CURRENT_YEAR = new Date().getFullYear();
+            const START = -3500;
+            const END = CURRENT_YEAR + 15;
+            const MAX_PPY = 24; // 放到最大时每年多少像素
+
+            const $ = (id) => document.getElementById(id);
+            const scroller = $('scroller');
+            const canvas = $('canvas');
+            const readout = $('readout');
+            const detail = $('detail');
+
+            const store = {
+                get(key) { try { return localStorage.getItem(key); } catch { return null; } },
+                set(key, value) { try { localStorage.setItem(key, value); } catch { /* 忽略 */ } }
+            };
+
+            // 默认跟随地图应用的语言
+            let lang = [store.get('chronology.lang'), store.get('mapweb.lang'), (navigator.language || '').slice(0, 2)]
+                .find(code => LANGS.includes(code)) || 'en';
+            let trilingual = store.get('chronology.trilingual') === '1';
+            let ppy = 0;             // 每年多少像素
+            let cursorX = null;      // 竖线在可视区域里的横坐标；null 表示放在正中间
+            let active = null;       // 详情面板里的 { row, period }
+            let rows = [];
+            let reference = null;
+            let events = [];         // 大事记 { year, row, text }，按年份排好序
+            const EVENT_STRIP = 14;  // 有大事的行，底部多留一条放圆点
+
+            const t = (key, params) => {
+                const text = UI[key][lang];
+                return params ? text.replace(/\{(\w+)\}/g, (_, name) => params[name]) : text;
+            };
+            const esc = (value) => String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+            const nameOf = (item, code = lang) => item.name[code] || item.name.en || '';
+            const endOf = (period) => period.end ?? CURRENT_YEAR;
+            const labelWidth = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--label-w')) || 132;
+            const trackWidth = () => Math.max(100, scroller.clientWidth - labelWidth());
+            const minPpy = () => trackWidth() / (END - START);
+            const laneHeight = () => (trilingual ? 42 : 26);
+
+            // 没有公元 0 年：跨过公元元年的时期要少算一年
+            const duration = (start, end) => end - start - (start < 0 && end > 0 ? 1 : 0);
+
+            function formatYear(year, code = lang) {
+                if (year < 0) return { zh: `公元前${-year}年`, en: `${-year} BCE`, fr: `${-year} av. J.-C.` }[code];
+                const y = Math.max(1, year);
+                return { zh: `公元${y}年`, en: y < 1000 ? `${y} CE` : String(y), fr: y < 1000 ? `${y} apr. J.-C.` : String(y) }[code];
+            }
+
+            function tickLabel(year) {
+                if (year < 0) return { zh: `前${-year}`, en: `${-year} BCE`, fr: `${-year} av. J.-C.` }[lang];
+                if (year === 0) return { zh: '公元元年', en: '1 CE', fr: '1 apr. J.-C.' }[lang];
+                return String(year);
+            }
+
+            function yearRange(period) {
+                return `${formatYear(period.start)} – ${period.end == null ? t('present') : formatYear(period.end)}`;
+            }
+
+            // 同一行里时间重叠的时期（比如宋、辽、金）分到不同的轨道上
+            function assignLanes(row) {
+                const laneEnds = [];
+                const sorted = [...row.periods].sort((a, b) => a.start - b.start || endOf(b) - endOf(a));
+                for (const period of sorted) {
+                    let lane = laneEnds.findIndex(end => end <= period.start);
+                    if (lane < 0) {
+                        lane = laneEnds.length;
+                        laneEnds.push(0);
+                    }
+                    laneEnds[lane] = endOf(period);
+                    period.lane = lane;
+                }
+                row.lanes = Math.max(1, laneEnds.length);
+            }
+
+            function barColor(row, index) {
+                const light = 38 + (index % 3) * 7;
+                return `hsl(${row.hue}, 42%, ${light}%)`;
+            }
+
+            // ---------- 绘制 ----------
+
+            function render() {
+                // 页面打开时窗口可能还很窄，之后变宽了也不能比"全览"更小，否则右边会空出一大片
+                ppy = Math.min(MAX_PPY, Math.max(minPpy(), ppy));
+                const width = (END - START) * ppy;
+                const labelW = labelWidth();
+                const step = TICK_STEPS.find(n => n * ppy >= 90) ?? 1000;
+                const ticks = [];
+                for (let year = Math.ceil(START / step) * step; year <= END; year += step) ticks.push(year);
+                const x = (year) => (Math.max(START, year) - START) * ppy;
+
+                const axis = `<div class="axis"><div class="corner">${esc(t('corner'))}</div>
+                    <div class="track" style="width:${width}px">${ticks.map(year =>
+                        `<div class="tick" style="left:${x(year)}px"><span>${esc(tickLabel(year))}</span></div>`).join('')}</div></div>`;
+
+                const laneH = laneHeight();
+                const rowHtml = rows.map((row, rowIndex) => {
+                    const bars = row.periods.map((period, index) => {
+                        const left = x(period.start);
+                        const barWidth = Math.max(3, x(endOf(period)) - left - 1);
+                        const alt = trilingual
+                            ? `<span class="alt">${esc(LANGS.filter(code => code !== lang).map(code => nameOf(period, code)).join(' · '))}</span>`
+                            : '';
+                        const title = `${LANGS.map(code => nameOf(period, code)).join(' / ')}\n${yearRange(period)}`;
+                        const isActive = active && active.row === row && active.period === period;
+                        return `<button type="button" class="bar${isActive ? ' active' : ''}" data-row="${rowIndex}" data-index="${index}"
+                            style="left:${left}px;width:${barWidth}px;top:${period.lane * laneH + 3}px;height:${laneH - 6}px;background:${barColor(row, index)}"
+                            title="${esc(title)}">${barWidth > 18 ? `<span>${esc(nameOf(period))}</span>${alt}` : ''}</button>`;
+                    }).join('');
+                    const lanesHeight = row.periods.length ? row.lanes * laneH : 0;
+                    const dots = row.events.map(event => {
+                        const title = `${formatYear(event.year)}\n${event.text[lang] || event.text.zh}`;
+                        const isActive = active && active.event === event;
+                        return `<button type="button" class="event${isActive ? ' active' : ''}" data-event="${events.indexOf(event)}"
+                            style="left:${x(event.year)}px;top:${lanesHeight + 2}px" title="${esc(title)}"></button>`;
+                    }).join('');
+                    const height = lanesHeight + (row.events.length ? EVENT_STRIP : 0) + 2;
+                    const others = LANGS.filter(code => code !== lang).map(code => nameOf(row, code)).join(' · ');
+                    return `<div class="row${row.reference ? ' reference' : ''}">
+                        <div class="row-label"><span>${esc(nameOf(row))}</span>${trilingual ? `<small>${esc(others)}</small>` : ''}</div>
+                        <div class="track" style="width:${width}px;height:${Math.max(height, laneH)}px">${bars}${dots}</div>
+                    </div>`;
+                }).join('');
+
+                const grid = `<div class="gridlines" style="left:${labelW}px;width:${width}px">${ticks.map(year => `<i style="left:${x(year)}px"></i>`).join('')}</div>`;
+                canvas.style.width = `${labelW + width}px`;
+                canvas.innerHTML = axis + grid + rowHtml + '<div class="cursor" id="cursor"></div>';
+                updateCursor();
+            }
+
+            // ---------- 参照线 ----------
+
+            function yearAtViewportX(viewportX) {
+                return START + (scroller.scrollLeft + viewportX - labelWidth()) / ppy;
+            }
+
+            function updateCursor() {
+                const cursor = $('cursor');
+                const labelW = labelWidth();
+                const viewportX = cursorX ?? labelW + trackWidth() / 2;
+                const rawYear = yearAtViewportX(viewportX);
+                if (viewportX < labelW || rawYear < START || rawYear > END) {
+                    cursor.hidden = true;
+                    return;
+                }
+                cursor.hidden = false;
+                cursor.style.left = `${scroller.scrollLeft + viewportX}px`;
+                const year = Math.round(rawYear);
+                const current = reference.periods.filter(period => period.start <= year && year < endOf(period));
+                readout.innerHTML = `<span class="year">${esc(formatYear(year))}</span>
+                    <span class="china">${esc(t('china'))}${lang === 'zh' ? '：' : ': '}${current.length
+                        ? current.map(period => `<b>${esc(nameOf(period))}</b>`).join('、')
+                        : esc(t('none'))}</span>`;
+                const referenceIndex = rows.indexOf(reference);
+                canvas.querySelectorAll(`.bar[data-row="${referenceIndex}"]`).forEach(bar => {
+                    bar.classList.toggle('hit', current.includes(reference.periods[Number(bar.dataset.index)]));
+                });
+            }
+
+            // ---------- 缩放 ----------
+
+            function zoomTo(nextPpy, viewportX = labelWidth() + trackWidth() / 2) {
+                const anchorYear = yearAtViewportX(viewportX);
+                ppy = Math.min(MAX_PPY, Math.max(minPpy(), nextPpy));
+                render();
+                scroller.scrollLeft = (anchorYear - START) * ppy - (viewportX - labelWidth());
+                updateCursor();
+            }
+
+            function scrollToYear(year) {
+                scroller.scrollLeft = (year - START) * ppy - trackWidth() / 2;
+            }
+
+            // ---------- 详情 ----------
+
+            function relatedButton(row, period) {
+                const rowIndex = rows.indexOf(row);
+                const index = row.periods.indexOf(period);
+                return `<button type="button" data-row="${rowIndex}" data-index="${index}">
+                    <span>${esc(nameOf(period))}</span><small>${esc(yearRange(period))}</small></button>`;
+            }
+
+            function overlaps(period, start, end) {
+                return period.start < end && endOf(period) > start;
+            }
+
+            function showDetail(row, period) {
+                active = { row, period };
+                const start = period.start;
+                const end = endOf(period);
+                const names = [lang, ...LANGS.filter(code => code !== lang)]
+                    .map((code, i) => `<div class="${i ? 'alt-name' : 'main-name'}">${esc(nameOf(period, code))}</div>`).join('');
+                const note = period.note ? `<p class="note">${esc(period.note[lang] || period.note.en)}</p>` : '';
+                // 都城（含今址）和开国者，来自《朝代跨度表》的"纪年"表
+                const colon = lang === 'zh' ? '：' : ': ';
+                const facts = [['capital', period.capital], ['founder', period.founder]]
+                    .filter(([, value]) => value)
+                    .map(([key, value]) => `<div class="years"><b>${esc(t(key))}</b>${colon}${esc(value[lang] || value.zh)}</div>`)
+                    .join('');
+
+                let related;
+                if (row.reference) {
+                    const groups = rows.filter(other => !other.reference)
+                        .map(other => ({ other, list: other.periods.filter(item => overlaps(item, start, end)) }))
+                        .filter(group => group.list.length);
+                    related = `<h3>${esc(t('sameOthers'))}</h3>` + (groups.length
+                        ? groups.map(({ other, list }) => `<h4>${esc(nameOf(other))}</h4><div class="related">${list.map(item => relatedButton(other, item)).join('')}</div>`).join('')
+                        : `<p class="empty">${esc(t('none'))}</p>`);
+                } else {
+                    const list = reference.periods.filter(item => overlaps(item, start, end));
+                    related = `<h3>${esc(t('sameChina'))}</h3>` + (list.length
+                        ? `<div class="related">${list.map(item => relatedButton(reference, item)).join('')}</div>`
+                        : `<p class="empty">${esc(t('none'))}</p>`);
+                }
+
+                const inPeriod = row.events.filter(event => event.year >= start && event.year < end);
+                const eventList = inPeriod.length
+                    ? `<h3>${esc(t('eventsInPeriod'))}</h3><div class="events">${inPeriod.map(eventButton).join('')}</div>`
+                    : '';
+
+                detail.innerHTML = `<button type="button" class="close" data-close aria-label="${esc(t('close'))}">×</button>
+                    <div class="row-name">${esc(LANGS.map(code => nameOf(row, code)).join(' · '))}</div>
+                    ${names}
+                    <div class="years">${esc(yearRange(period))} · ${esc(t('duration', { n: duration(start, end) }))}</div>
+                    ${facts}${note}${eventList}${related}`;
+                detail.hidden = false;
+                detail.scrollTop = 0;
+                canvas.querySelectorAll('.bar.active').forEach(bar => bar.classList.remove('active'));
+                canvas.querySelector(`.bar[data-row="${rows.indexOf(row)}"][data-index="${row.periods.indexOf(period)}"]`)?.classList.add('active');
+            }
+
+            function eventButton(event) {
+                return `<button type="button" data-event="${events.indexOf(event)}">
+                    <small>${esc(formatYear(event.year))}</small><span>${esc(event.text[lang] || event.text.zh)}</span></button>`;
+            }
+
+            // 一条大事的详情：三语原文，以及这一年的中国（点中国大事时列出同年的其他文明）
+            function showEvent(event) {
+                active = { event };
+                const row = rows.find(item => item.id === event.row) || reference;
+                const texts = [lang, ...LANGS.filter(code => code !== lang)]
+                    .map((code, i) => `<div class="${i ? 'alt-name' : 'main-name'}" style="${i ? '' : 'font-size:17px'}">${esc(event.text[code] || '')}</div>`).join('');
+                const at = (item) => item.start <= event.year && event.year < endOf(item);
+                let related;
+                if (row.reference) {
+                    const list = rows.filter(other => !other.reference)
+                        .flatMap(other => other.periods.filter(at).map(item => ({ other, item })));
+                    related = list.length
+                        ? `<h3>${esc(t('sameOthers'))}</h3><div class="related">${list.map(({ other, item }) => relatedButton(other, item)).join('')}</div>`
+                        : '';
+                } else {
+                    const list = reference.periods.filter(at);
+                    related = `<h3>${esc(t('sameChina'))}</h3>` + (list.length
+                        ? `<div class="related">${list.map(item => relatedButton(reference, item)).join('')}</div>`
+                        : `<p class="empty">${esc(t('none'))}</p>`);
+                }
+                detail.innerHTML = `<button type="button" class="close" data-close aria-label="${esc(t('close'))}">×</button>
+                    <div class="row-name">${esc(t('event'))} · ${esc(nameOf(row))}</div>
+                    <div class="years" style="margin:2px 0 6px">${esc(formatYear(event.year))}</div>
+                    ${texts}${related}`;
+                detail.hidden = false;
+                detail.scrollTop = 0;
+                canvas.querySelectorAll('.bar.active, .event.active').forEach(item => item.classList.remove('active'));
+                canvas.querySelector(`.event[data-event="${events.indexOf(event)}"]`)?.classList.add('active');
+            }
+
+            function closeDetail() {
+                active = null;
+                detail.hidden = true;
+                canvas.querySelectorAll('.bar.active, .event.active').forEach(item => item.classList.remove('active'));
+            }
+
+            // 从详情里的列表跳过去：把这个时期滚到可视区域中间，再打开它的详情
+            function jumpTo(row, period) {
+                const middle = (Math.max(START, period.start) + endOf(period)) / 2;
+                scrollToYear(middle);
+                const bar = canvas.querySelector(`.bar[data-row="${rows.indexOf(row)}"][data-index="${row.periods.indexOf(period)}"]`);
+                if (bar && !row.reference) {
+                    const rowEl = bar.closest('.row');
+                    const top = rowEl.offsetTop - scroller.clientHeight / 2;
+                    scroller.scrollTop = Math.max(0, top);
+                }
+                cursorX = null;
+                showDetail(row, period);
+                updateCursor();
+            }
+
+            // ---------- 界面文字 ----------
+
+            function applyTexts() {
+                document.documentElement.lang = lang;
+                document.title = t('title');
+                $('title').textContent = t('title');
+                $('subtitle').textContent = t('subtitle');
+                $('trilingual-label').textContent = t('trilingual');
+                $('zoom-in').title = t('zoomIn');
+                $('zoom-out').title = t('zoomOut');
+                $('fit').textContent = t('fit');
+                $('back').textContent = `‹ ${t('back')}`;
+                $('footer').textContent = t('footer');
+                $('lang').value = lang;
+                $('trilingual').checked = trilingual;
+            }
+
+            // ---------- 事件 ----------
+
+            $('lang').addEventListener('change', (e) => {
+                lang = e.target.value;
+                store.set('chronology.lang', lang);
+                applyTexts();
+                render();
+                if (active?.event) showEvent(active.event);
+                else if (active) showDetail(active.row, active.period);
+            });
+            $('trilingual').addEventListener('change', (e) => {
+                trilingual = e.target.checked;
+                store.set('chronology.trilingual', trilingual ? '1' : '0');
+                render();
+            });
+            $('zoom-in').addEventListener('click', () => zoomTo(ppy * 1.6));
+            $('zoom-out').addEventListener('click', () => zoomTo(ppy / 1.6));
+            $('fit').addEventListener('click', () => zoomTo(minPpy()));
+
+            canvas.addEventListener('click', (e) => {
+                const dot = e.target.closest('.event');
+                if (dot) return showEvent(events[Number(dot.dataset.event)]);
+                const bar = e.target.closest('.bar');
+                if (!bar) return;
+                const row = rows[Number(bar.dataset.row)];
+                showDetail(row, row.periods[Number(bar.dataset.index)]);
+            });
+            detail.addEventListener('click', (e) => {
+                if (e.target.closest('[data-close]')) return closeDetail();
+                const eventButtonEl = e.target.closest('[data-event]');
+                if (eventButtonEl) {
+                    const event = events[Number(eventButtonEl.dataset.event)];
+                    scrollToYear(event.year);
+                    cursorX = null;
+                    updateCursor();
+                    return showEvent(event);
+                }
+                const button = e.target.closest('[data-row]');
+                if (!button) return;
+                const row = rows[Number(button.dataset.row)];
+                jumpTo(row, row.periods[Number(button.dataset.index)]);
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeDetail();
+                if (e.target.closest('input, select')) return;
+                if (e.key === '+' || e.key === '=') zoomTo(ppy * 1.6);
+                if (e.key === '-') zoomTo(ppy / 1.6);
+            });
+
+            // 鼠标：竖线跟着指针走；触屏：竖线留在中间，左右滑动时读数跟着变
+            scroller.addEventListener('pointermove', (e) => {
+                if (e.pointerType !== 'mouse') return;
+                cursorX = e.clientX - scroller.getBoundingClientRect().left;
+                updateCursor();
+            });
+            scroller.addEventListener('pointerleave', (e) => {
+                if (e.pointerType !== 'mouse') return;
+                cursorX = null;
+                updateCursor();
+            });
+            scroller.addEventListener('scroll', updateCursor, { passive: true });
+            scroller.addEventListener('wheel', (e) => {
+                if (!e.ctrlKey) return; // 触控板双指捏合也会带上 ctrlKey
+                e.preventDefault();
+                zoomTo(ppy * Math.exp(-e.deltaY * 0.004), e.clientX - scroller.getBoundingClientRect().left);
+            }, { passive: false });
+
+            // 监听滚动区域本身的尺寸：窗口大小、侧边栏、屏幕旋转都会触发
+            let resizeTimer = 0;
+            let lastWidth = 0;
+            new ResizeObserver(() => {
+                if (!rows.length || scroller.clientWidth === lastWidth) return;
+                lastWidth = scroller.clientWidth;
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => zoomTo(ppy), 120);
+            }).observe(scroller);
+
+            // ---------- 启动 ----------
+
+            applyTexts();
+            try {
+                const response = await fetch('../data/chronology.json');
+                if (!response.ok) throw new Error(`${response.status}`);
+                rows = (await response.json()).rows;
+            } catch (err) {
+                readout.textContent = t('loadFailed') + err.message;
+                return;
+            }
+            // 参照行（中国）排在最前面
+            rows.sort((a, b) => Number(Boolean(b.reference)) - Number(Boolean(a.reference)));
+            reference = rows.find(row => row.reference) || rows[0];
+            rows.forEach(row => {
+                assignLanes(row);
+                row.events = []; // 下面读大事记期间可能先重画一次
+            });
+
+            // 大事记单独一个文件；读不到时年表照常显示，只是没有圆点
+            try {
+                const response = await fetch('../data/chronology-events.json');
+                if (response.ok) {
+                    const rowIds = new Set(rows.map(row => row.id));
+                    events = (await response.json()).events
+                        .filter(event => Number.isInteger(event.year) && event.year >= START && rowIds.has(event.row))
+                        .sort((a, b) => a.year - b.year);
+                }
+            } catch { /* 没有大事记 */ }
+            rows.forEach(row => { row.events = events.filter(event => event.row === row.id); });
+
+            // 初始视图：大约 2200 年宽，以公元元年为中心
+            ppy = Math.min(MAX_PPY, Math.max(minPpy(), trackWidth() / 2200));
+            render();
+            scrollToYear(0);
+            updateCursor();
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+/* "数据统计"三个名录页（国家、TCC 名单、世界遗产）共用的样式。
+   这几个页面和工具箱里的其它页一样是独立页面，不走应用的 CSS 变量，自己定义一套浅色主题。 */
+
+:root {
+    --bg: #f5f5f7;
+    --card: #fff;
+    --line: #e3e0da;
+    --text: #1d1d1f;
+    --muted: #7a6a5c;
+    --brand: #3d2b1f;
+    /* 去过的条目用这个琥珀色系突出，和应用里的强调色一致 */
+    --hit: #c8893b;
+    --hit-bg: #fdf4e7;
+    --hit-line: #edc999;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: 1.9em;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-link,
+select {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 12px;
+    border: 1px solid #d2d2d7;
+    background: var(--card);
+    color: var(--text);
+    font-size: .95em;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.back-link:hover {
+    border-color: var(--hit);
+    color: var(--hit);
+}
+
+/* --- 三个名录之间切换 --- */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.tabs a {
+    padding: 9px 16px;
+    border-radius: 12px;
+    border: 1px solid #d2d2d7;
+    background: var(--card);
+    color: var(--text);
+    text-decoration: none;
+    font-size: .95em;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+}
+
+.tabs a:hover {
+    border-color: var(--hit);
+}
+
+.tabs a[aria-current="page"] {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
+.tabs a small {
+    font-size: .82em;
+    opacity: .7;
+    font-variant-numeric: tabular-nums;
+}
+
+/* --- 顶部概览 --- */
+.summary {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+}
+
+.score {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.score strong {
+    font-size: 2.4em;
+    line-height: 1;
+    color: var(--hit);
+    font-variant-numeric: tabular-nums;
+}
+
+.score span {
+    font-size: 1.05em;
+    color: var(--muted);
+}
+
+.bar {
+    position: relative;
+    height: 10px;
+    border-radius: 999px;
+    background: #ece8e1;
+    margin: 14px 0 8px;
+    overflow: hidden;
+}
+
+.bar i {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #d9a763, var(--hit));
+}
+
+/* 进度条上的参考线（比如 TCC 的入会门槛 100） */
+.bar b {
+    position: absolute;
+    top: -3px;
+    bottom: -3px;
+    width: 2px;
+    background: var(--brand);
+    opacity: .45;
+}
+
+.summary p {
+    margin: 6px 0 0;
+    font-size: .86em;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* --- 筛选 --- */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+#search {
+    flex: 1 1 220px;
+    min-width: 180px;
+    padding: 9px 14px;
+    border-radius: 12px;
+    border: 1px solid #d2d2d7;
+    background: var(--card);
+    font-size: .95em;
+    color: var(--text);
+}
+
+.chips {
+    display: flex;
+    gap: 6px;
+}
+
+.chip {
+    padding: 9px 14px;
+    border-radius: 12px;
+    border: 1px solid #d2d2d7;
+    background: var(--card);
+    font-size: .9em;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.chip[aria-pressed="true"] {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
+/* --- 分组 --- */
+.zone {
+    margin-bottom: 22px;
+}
+
+.zone-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--line);
+}
+
+.zone-head h2 {
+    font-size: 1.15em;
+    margin: 0;
+}
+
+.zone-head em {
+    font-style: normal;
+    font-size: .85em;
+    color: var(--muted);
+}
+
+.zone-head .zone-score {
+    margin-left: auto;
+    font-size: .9em;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.zone-head .zone-score b {
+    color: var(--hit);
+    font-size: 1.1em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 8px;
+}
+
+.grid.wide {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+/* --- 单个条目 --- */
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: var(--card);
+}
+
+.item .mark {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    border-radius: 50%;
+    border: 1.5px solid #d8d3cb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: transparent;
+}
+
+/* 国旗：没去过的稍微灰一点，去过的正常显示 */
+.item .flag {
+    flex: none;
+    width: 34px;
+    height: 25.5px;
+    margin-top: 1px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    object-fit: cover;
+    background: #f0ece6;
+    filter: saturate(.25) opacity(.55);
+}
+
+.item.visited .flag {
+    filter: none;
+}
+
+.item .names {
+    min-width: 0;
+    flex: 1;
+}
+
+.item .primary {
+    font-weight: 600;
+    font-size: .97em;
+    line-height: 1.35;
+}
+
+.item .alt {
+    font-size: .8em;
+    color: var(--muted);
+    line-height: 1.45;
+    margin-top: 2px;
+}
+
+.item .meta {
+    font-size: .78em;
+    color: var(--hit);
+    margin-top: 2px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 去过的：琥珀色底、实心对勾 */
+.item.visited {
+    background: var(--hit-bg);
+    border-color: var(--hit-line);
+}
+
+.item.visited .mark {
+    background: var(--hit);
+    border-color: var(--hit);
+    color: #fff;
+}
+
+.item.visited .primary {
+    color: #8a5a1c;
+}
+
+/* 没法自动判定的条目：虚线边框加问号 */
+.item.unknown {
+    border-style: dashed;
+}
+
+.item.unknown .mark::after {
+    content: "?";
+    color: var(--muted);
+}
+
+.empty {
+    color: var(--muted);
+    font-size: .9em;
+    padding: 10px 2px;
+}
+
+footer {
+    margin: 24px 0 8px;
+    font-size: .8em;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+footer a,
+.summary a {
+    color: var(--hit);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 14px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .grid,
+    .grid.wide {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据统计 · 世界遗产</title>
+    <link rel="stylesheet" href="lists.css">
+</head>
+
+<body>
+    <script type="module">
+        import {
+            LANGS, SHELL, buildShell, escapeHtml, fill, localized, makeFilter, otherNames, pickLang,
+            pinsMeta, renderChrome, renderSummary, renderTabs, wireControls, zoneHtml
+        } from './lists.js';
+
+        const UI = {
+            tab: { zh: '世界遗产', en: 'World Heritage', fr: 'Patrimoine mondial' },
+            scoreLabel: {
+                zh: '已去过 / 共 {total} 处世界遗产',
+                en: 'visited of {total} World Heritage sites',
+                fr: 'visités sur {total} sites du patrimoine mondial'
+            },
+            search: { zh: '搜索遗产名称（三种语言都可以）…', en: 'Search a site (any of the three languages)…', fr: 'Rechercher un site (dans les trois langues)…' },
+            note: {
+                zh: '按国家分组，跨国遗产归到「多国共有」。标注落在遗产范围内就算去过，范围按遗产面积估算，所以是近似的。',
+                en: 'Grouped by country; sites shared by several countries go under "Shared". A pin inside a site’s radius counts as visited; the radius is estimated from the site’s area, so matching is approximate.',
+                fr: "Groupés par pays ; les sites partagés vont sous « Partagés ». Un point dans le rayon d’un site compte comme visité ; le rayon est estimé d’après la superficie, la correspondance est donc approximative."
+            },
+            shared: { zh: '多国共有', en: 'Shared between countries', fr: 'Partagés entre pays' },
+            unknownCountry: { zh: '未标注国家', en: 'No country listed', fr: 'Pays non indiqué' },
+            inscribed: { zh: '{year} 年列入', en: 'inscribed {year}', fr: 'inscrit en {year}' },
+            footer: {
+                zh: '数据来自 <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>（CC0），存在本机。点名称可以打开 <a href="https://whc.unesco.org" target="_blank" rel="noopener">UNESCO 官网</a>的介绍。部分遗产没有中文名，显示英文或法文。',
+                en: 'Data from <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a> (CC0), stored locally. Click a name to open its page on the <a href="https://whc.unesco.org" target="_blank" rel="noopener">UNESCO site</a>.',
+                fr: 'Données de <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a> (CC0), stockées localement. Cliquez un nom pour ouvrir sa page sur le <a href="https://whc.unesco.org" target="_blank" rel="noopener">site de l’UNESCO</a>.'
+            }
+        };
+
+        const SHARED = '*shared*';
+        const UNESCO_LANGS = { zh: 'zh', fr: 'fr' };
+        const unescoUrl = (id, lang) => `https://whc.unesco.org/${UNESCO_LANGS[lang] || 'en'}/list/${id}/`;
+
+        const state = { lang: pickLang(), filter: 'all', keyword: '' };
+        let sites = [];
+        let hits = new Map();
+        let failed = false;
+
+        const countryName = (code, lang) => {
+            try {
+                return new Intl.DisplayNames([lang], { type: 'region' }).of(code.toUpperCase()) || code;
+            } catch {
+                return code;
+            }
+        };
+
+        // 分组用的键：跨国的归到"多国共有"，没有国家的归到"未标注国家"
+        const groupKey = (site) => (site.countries?.length > 1 ? SHARED : (site.countries?.[0] || ''));
+
+        function itemHtml(site) {
+            const hit = hits.get(site.id);
+            const primary = localized(site.name, state.lang) || site.id;
+            const others = otherNames(site.name, state.lang);
+            const sub = [
+                site.year ? fill(UI.inscribed[state.lang], { year: site.year }) : '',
+                (site.countries || []).map(code => countryName(code, state.lang)).join(' · ')
+            ].filter(Boolean).join(' · ');
+            const meta = pinsMeta(hit, state.lang);
+            return `<div class="item${hit ? ' visited' : ''}">
+                <span class="mark" aria-hidden="true">${hit ? '✓' : ''}</span>
+                <div class="names">
+                    <div class="primary"><a href="${escapeHtml(unescoUrl(site.id, state.lang))}"
+                        target="_blank" rel="noopener">${escapeHtml(primary)}</a></div>
+                    ${others.length ? `<div class="alt">${escapeHtml(others.join(' · '))}</div>` : ''}
+                    <div class="alt">${escapeHtml(sub)}</div>
+                    ${meta ? `<div class="meta">${escapeHtml(meta)}</div>` : ''}
+                </div>
+            </div>`;
+        }
+
+        function render() {
+            renderChrome(state, UI.tab, UI.search);
+            renderTabs('heritage', state.lang, sites.length ? { heritage: `${hits.size} / ${sites.length}` } : {});
+
+            const list = document.getElementById('list');
+            if (failed) {
+                list.innerHTML = `<p class="empty">${escapeHtml(SHELL.loadError[state.lang])}</p>`;
+                return;
+            }
+            if (!sites.length) {
+                list.innerHTML = `<p class="empty">${escapeHtml(SHELL.loading[state.lang])}</p>`;
+                return;
+            }
+
+            renderSummary({
+                done: hits.size,
+                total: sites.length,
+                label: fill(UI.scoreLabel[state.lang], { total: sites.length }),
+                note: UI.note[state.lang]
+            });
+
+            const wanted = makeFilter(state, site => hits.has(site.id), site => Object.values(site.name || {}));
+            const collator = new Intl.Collator(state.lang);
+
+            // 分组：去过得多的国家排前面，其次按名称；"多国共有"和"未标注国家"放最后
+            const groups = new Map();
+            for (const site of sites) {
+                const key = groupKey(site);
+                if (!groups.has(key)) groups.set(key, []);
+                groups.get(key).push(site);
+            }
+            const ordered = [...groups.entries()].map(([key, all]) => ({
+                key,
+                all,
+                done: all.filter(site => hits.has(site.id)).length,
+                title: key === SHARED ? UI.shared[state.lang]
+                    : key === '' ? UI.unknownCountry[state.lang]
+                        : countryName(key, state.lang)
+            })).sort((a, b) => {
+                const rank = (group) => (group.key === SHARED ? 1 : group.key === '' ? 2 : 0);
+                return rank(a) - rank(b) || b.done - a.done || collator.compare(a.title, b.title);
+            });
+
+            const sections = ordered.map(group => {
+                const shown = group.all.filter(wanted)
+                    .sort((a, b) => collator.compare(localized(a.name, state.lang), localized(b.name, state.lang)));
+                if (!shown.length) return '';
+                return zoneHtml({
+                    title: group.title,
+                    subtitle: '',
+                    done: group.done,
+                    total: group.all.length,
+                    body: { html: shown.map(itemHtml).join(''), wide: true }
+                });
+            }).join('');
+
+            list.innerHTML = sections || `<p class="empty">${escapeHtml(SHELL.noMatch[state.lang])}</p>`;
+            document.getElementById('footer').innerHTML = UI.footer[state.lang];
+        }
+
+        buildShell('heritage');
+        wireControls(state, render);
+        render();
+
+        fetch('/api/lists/heritage')
+            .then(response => response.ok ? response.json() : Promise.reject(new Error(response.status)))
+            .then(data => {
+                sites = data.sites;
+                hits = new Map(data.visited.map(site => [site.id, site]));
+                render();
+            })
+            .catch(() => {
+                failed = true;
+                render();
+            });
+    </script>
+</body>
+
+</html>

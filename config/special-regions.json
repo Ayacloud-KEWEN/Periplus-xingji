@@ -1,31 +1,307 @@
 {
-  "说明": "特殊地区规则：把 OpenStreetMap 归入某个国家、但你想单独统计的地方分出来。修改后重启服务生效，不需要重新查询行政区。字段说明见 README 的「特殊地区」一节。",
+  "说明": "特殊地区规则：把 OpenStreetMap 归入某个国家、但你想单独统计的地方分出来。修改后重启服务生效，不需要重新查询行政区。字段说明见 README 的「特殊地区」一节。法国的海外属地（留尼汪、瓜德罗普、新喀里多尼亚……）Nominatim 一律返回 country_code=fr，所以这里按坐标把它们分出来，否则会被并进法国。",
   "rules": [
     {
       "code": "north-cyprus",
-      "name": { "zh": "北塞浦路斯", "en": "Northern Cyprus", "fr": "Chypre du Nord" },
+      "name": {
+        "zh": "北塞浦路斯",
+        "en": "Northern Cyprus",
+        "fr": "Chypre du Nord"
+      },
       "continent": "AS",
       "match": {
-        "countryCodes": ["cy"],
-        "countryNames": ["北塞浦路斯", "北賽普勒斯", "Northern Cyprus", "Kuzey Kıbrıs", "Kuzey Kıbrıs Türk Cumhuriyeti"]
+        "countryCodes": [
+          "cy"
+        ],
+        "countryNames": [
+          "北塞浦路斯",
+          "北賽普勒斯",
+          "Northern Cyprus",
+          "Kuzey Kıbrıs",
+          "Kuzey Kıbrıs Türk Cumhuriyeti"
+        ]
       }
     },
     {
       "code": "somaliland",
-      "name": { "zh": "索马里兰", "en": "Somaliland", "fr": "Somaliland" },
+      "name": {
+        "zh": "索马里兰",
+        "en": "Somaliland",
+        "fr": "Somaliland"
+      },
       "continent": "AF",
       "match": {
-        "countryCodes": ["so"],
-        "countryNames": ["索马里兰", "索馬利蘭", "索馬里蘭", "Somaliland", "Soomaaliland", "Jamhuuriyadda Soomaaliland"]
+        "countryCodes": [
+          "so"
+        ],
+        "countryNames": [
+          "索马里兰",
+          "索馬利蘭",
+          "索馬里蘭",
+          "Somaliland",
+          "Soomaaliland",
+          "Jamhuuriyadda Soomaaliland"
+        ]
       }
     },
     {
       "code": "eh",
-      "name": { "zh": "西撒哈拉", "en": "Western Sahara", "fr": "Sahara occidental" },
+      "name": {
+        "zh": "西撒哈拉",
+        "en": "Western Sahara",
+        "fr": "Sahara occidental"
+      },
       "continent": "AF",
       "match": {
-        "countryCodes": ["ma"],
-        "bbox": [-17.2, 20.7, -8.6, 27.667]
+        "countryCodes": [
+          "ma"
+        ],
+        "bbox": [
+          -17.2,
+          20.7,
+          -8.6,
+          27.667
+        ]
+      }
+    },
+    {
+      "code": "gp",
+      "name": {
+        "zh": "瓜德罗普",
+        "en": "Guadeloupe",
+        "fr": "Guadeloupe"
+      },
+      "continent": "NA",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          -61.9,
+          15.75,
+          -60.9,
+          16.6
+        ]
+      }
+    },
+    {
+      "code": "mq",
+      "name": {
+        "zh": "马提尼克",
+        "en": "Martinique",
+        "fr": "Martinique"
+      },
+      "continent": "NA",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          -61.3,
+          14.35,
+          -60.75,
+          14.95
+        ]
+      }
+    },
+    {
+      "code": "gf",
+      "name": {
+        "zh": "法属圭亚那",
+        "en": "French Guiana",
+        "fr": "Guyane française"
+      },
+      "continent": "SA",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          -54.7,
+          2.05,
+          -51.55,
+          5.85
+        ]
+      }
+    },
+    {
+      "code": "re",
+      "name": {
+        "zh": "留尼汪",
+        "en": "Réunion",
+        "fr": "La Réunion"
+      },
+      "continent": "AF",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          55.15,
+          -21.45,
+          55.95,
+          -20.8
+        ]
+      }
+    },
+    {
+      "code": "yt",
+      "name": {
+        "zh": "马约特",
+        "en": "Mayotte",
+        "fr": "Mayotte"
+      },
+      "continent": "AF",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          44.95,
+          -13.1,
+          45.4,
+          -12.58
+        ]
+      }
+    },
+    {
+      "code": "pm",
+      "name": {
+        "zh": "圣皮埃尔和密克隆",
+        "en": "St. Pierre & Miquelon",
+        "fr": "Saint-Pierre-et-Miquelon"
+      },
+      "continent": "NA",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          -56.55,
+          46.7,
+          -56.05,
+          47.2
+        ]
+      }
+    },
+    {
+      "code": "bl",
+      "name": {
+        "zh": "圣巴泰勒米",
+        "en": "St. Barthélemy",
+        "fr": "Saint-Barthélemy"
+      },
+      "continent": "NA",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          -62.95,
+          17.85,
+          -62.75,
+          18.0
+        ]
+      }
+    },
+    {
+      "code": "mf",
+      "name": {
+        "zh": "法属圣马丁",
+        "en": "St. Martin",
+        "fr": "Saint-Martin"
+      },
+      "continent": "NA",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          -63.2,
+          18.0,
+          -62.95,
+          18.15
+        ]
+      }
+    },
+    {
+      "code": "pf",
+      "name": {
+        "zh": "法属波利尼西亚",
+        "en": "French Polynesia",
+        "fr": "Polynésie française"
+      },
+      "continent": "OC",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          -155.5,
+          -28.5,
+          -133.5,
+          -7.0
+        ]
+      }
+    },
+    {
+      "code": "nc",
+      "name": {
+        "zh": "新喀里多尼亚",
+        "en": "New Caledonia",
+        "fr": "Nouvelle-Calédonie"
+      },
+      "continent": "OC",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          163.0,
+          -23.0,
+          169.0,
+          -19.0
+        ]
+      }
+    },
+    {
+      "code": "wf",
+      "name": {
+        "zh": "瓦利斯和富图纳",
+        "en": "Wallis & Futuna",
+        "fr": "Wallis-et-Futuna"
+      },
+      "continent": "OC",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          -178.5,
+          -14.5,
+          -175.8,
+          -13.0
+        ]
+      }
+    },
+    {
+      "code": "tf",
+      "name": {
+        "zh": "法属南部领地",
+        "en": "French Southern Territories",
+        "fr": "Terres australes françaises"
+      },
+      "continent": "AN",
+      "match": {
+        "countryCodes": [
+          "fr"
+        ],
+        "bbox": [
+          50.0,
+          -50.5,
+          80.0,
+          -37.0
+        ]
       }
     }
   ]

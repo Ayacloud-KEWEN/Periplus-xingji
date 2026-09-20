@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据统计 · 国家和地区</title>
+    <link rel="stylesheet" href="lists.css">
+</head>
+
+<body>
+    <script type="module">
+        import {
+            LANGS, SHELL, buildShell, escapeHtml, fill, localized, makeFilter, pickLang,
+            pinsMeta, renderChrome, renderSummary, renderTabs, wireControls, zoneHtml
+        } from './lists.js';
+
+        const UI = {
+            tab: { zh: '国家和地区', en: 'Countries', fr: 'Pays' },
+            scoreLabel: {
+                zh: '已去过 / 共 {total} 个国家和地区',
+                en: 'visited of {total} countries & territories',
+                fr: 'visités sur {total} pays et territoires'
+            },
+            search: { zh: '搜索国家或地区（三种语言都可以）…', en: 'Search a country (any of the three languages)…', fr: 'Rechercher un pays (dans les trois langues)…' },
+            note: {
+                zh: '按 ISO 3166-1 的国家和地区代码统计，另加规则里单独分出来的地区（留尼汪、北塞浦路斯等）。和地图上的「国家和地区」数一致。',
+                en: 'Based on ISO 3166-1 codes, plus the places split out by the special-region rules (Réunion, Northern Cyprus…). Same count as on the map.',
+                fr: "Basé sur les codes ISO 3166-1, plus les lieux séparés par les règles spéciales (La Réunion, Chypre du Nord…). Même compte que sur la carte."
+            },
+            continents: {
+                AS: { zh: '亚洲', en: 'Asia', fr: 'Asie' },
+                EU: { zh: '欧洲', en: 'Europe', fr: 'Europe' },
+                AF: { zh: '非洲', en: 'Africa', fr: 'Afrique' },
+                NA: { zh: '北美洲', en: 'North America', fr: 'Amérique du Nord' },
+                SA: { zh: '南美洲', en: 'South America', fr: 'Amérique du Sud' },
+                OC: { zh: '大洋洲', en: 'Oceania', fr: 'Océanie' },
+                AN: { zh: '南极洲', en: 'Antarctica', fr: 'Antarctique' },
+                '': { zh: '其它', en: 'Other', fr: 'Autre' }
+            },
+            footer: {
+                zh: '国旗来自 <a href="https://github.com/lipis/flag-icons" target="_blank" rel="noopener">flag-icons</a>（MIT 协议），存在本机，不联网。没去过的国旗是灰的。',
+                en: 'Flags from <a href="https://github.com/lipis/flag-icons" target="_blank" rel="noopener">flag-icons</a> (MIT), served locally. Flags of places not yet visited are greyed out.',
+                fr: 'Drapeaux de <a href="https://github.com/lipis/flag-icons" target="_blank" rel="noopener">flag-icons</a> (MIT), servis localement. Les drapeaux des lieux non visités sont grisés.'
+            }
+        };
+
+        const ZONES = ['AS', 'EU', 'AF', 'NA', 'SA', 'OC', 'AN', ''];
+
+        const state = { lang: pickLang(), filter: 'all', keyword: '' };
+        let entries = [];
+        let hits = new Map();
+        let failed = false;
+
+        // 有 ISO 代码的用浏览器内置的地区名称表（三种语言都有）；特殊地区用规则里写的名称
+        function namesOf(country) {
+            if (country.name) return country.name;
+            const names = {};
+            for (const lang of LANGS) {
+                try {
+                    names[lang] = new Intl.DisplayNames([lang], { type: 'region' }).of(country.code.toUpperCase()) || country.code;
+                } catch {
+                    names[lang] = country.code;
+                }
+            }
+            return names;
+        }
+
+        function itemHtml(entry) {
+            const hit = hits.get(entry.code);
+            const primary = localized(entry.names, state.lang);
+            const others = LANGS.filter(lang => lang !== state.lang)
+                .map(lang => entry.names[lang]).filter(name => name && name !== primary);
+            const meta = pinsMeta(hit, state.lang);
+            // 没有国旗文件的（单独分出来的地区）留一个同样大小的空位，免得排版错位
+            const flag = entry.flag
+                ? `<img class="flag" src="/vendor/flags/${escapeHtml(entry.code)}.svg" alt="" loading="lazy" decoding="async">`
+                : '<span class="flag" aria-hidden="true"></span>';
+            return `<div class="item${hit ? ' visited' : ''}">
+                ${flag}
+                <div class="names">
+                    <div class="primary">${escapeHtml(primary)}</div>
+                    <div class="alt">${escapeHtml(others.join(' · '))}</div>
+                    ${meta ? `<div class="meta">${escapeHtml(meta)}</div>` : ''}
+                </div>
+            </div>`;
+        }
+
+        function render() {
+            renderChrome(state, UI.tab, UI.search);
+            renderTabs('countries', state.lang, entries.length ? { countries: `${hits.size} / ${entries.length}` } : {});
+
+            const list = document.getElementById('list');
+            if (failed) {
+                list.innerHTML = `<p class="empty">${escapeHtml(SHELL.loadError[state.lang])}</p>`;
+                return;
+            }
+            if (!entries.length) {
+                list.innerHTML = `<p class="empty">${escapeHtml(SHELL.loading[state.lang])}</p>`;
+                return;
+            }
+
+            renderSummary({
+                done: hits.size,
+                total: entries.length,
+                label: fill(UI.scoreLabel[state.lang], { total: entries.length }),
+                note: UI.note[state.lang]
+            });
+
+            const wanted = makeFilter(state, entry => hits.has(entry.code), entry => Object.values(entry.names));
+            const collator = new Intl.Collator(state.lang);
+            const sections = ZONES.map(zone => {
+                const all = entries.filter(entry => entry.continent === zone);
+                const shown = all.filter(wanted)
+                    .sort((a, b) => collator.compare(localized(a.names, state.lang), localized(b.names, state.lang)));
+                if (!shown.length) return '';
+                const label = UI.continents[zone];
+                return zoneHtml({
+                    title: label[state.lang],
+                    subtitle: LANGS.filter(lang => lang !== state.lang).map(lang => label[lang]).join(' · '),
+                    done: all.filter(entry => hits.has(entry.code)).length,
+                    total: all.length,
+                    body: { html: shown.map(itemHtml).join('') }
+                });
+            }).join('');
+
+            list.innerHTML = sections || `<p class="empty">${escapeHtml(SHELL.noMatch[state.lang])}</p>`;
+            document.getElementById('footer').innerHTML = UI.footer[state.lang];
+        }
+
+        buildShell('countries');
+        wireControls(state, render);
+        render();
+
+        fetch('/api/lists/countries')
+            .then(response => response.ok ? response.json() : Promise.reject(new Error(response.status)))
+            .then(data => {
+                entries = data.countries.map(country => ({ ...country, names: namesOf(country) }));
+                hits = new Map(data.visited.map(country => [country.code, country]));
+                render();
+            })
+            .catch(() => {
+                failed = true;
+                render();
+            });
+    </script>
+</body>
+
+</html>

@@ -6,6 +6,7 @@ import { t, LANGUAGES, getLanguage, loadLanguage, formatDate } from './i18n.js';
 import { escapeHtml, fragment, panel, toast, toastError } from './ui.js';
 import { openTimebar, closeTimebar, timebarOwner, calendarTicks } from './timebar.js';
 import { exportBackup } from './io.js';
+import { exportMarkdown } from './markdown.js';
 import { ensureTracks, trackTimes, setTracksDateFilter } from './tracks.js';
 
 const DAY = 24 * 60 * 60 * 1000;
@@ -76,11 +77,13 @@ function renderData() {
     const body = fragment(`
         ${item('photos', 'i-camera', 'importPhotos', 'importPhotosHint')}
         ${item('export', 'i-download', 'exportZip', 'exportZipHint')}
+        ${item('markdown', 'i-review', 'exportMarkdown', 'exportMarkdownHint')}
         ${item('import', 'i-upload', 'importFile', 'importFileHint')}
         <p class="muted">${escapeHtml(t('pinCount', { count: getPins().length }))}</p>`);
 
     body.querySelector('[data-act="photos"]').addEventListener('click', () => document.getElementById('photo-input').click());
     body.querySelector('[data-act="export"]').addEventListener('click', exportBackup);
+    body.querySelector('[data-act="markdown"]').addEventListener('click', exportMarkdown);
     body.querySelector('[data-act="import"]').addEventListener('click', () => document.getElementById('backup-input').click());
     return { title: t('data'), body };
 }

@@ -1,0 +1,3681 @@
+{
+    "about": "世界年表数据。年份用整数，公元前为负数；end 为 null 表示延续至今。年代为通行的近似值。大事记在 chronology-events.json。",
+    "rows": [
+        {
+            "id": "china",
+            "reference": true,
+            "hue": 4,
+            "name": {
+                "zh": "中国",
+                "en": "China",
+                "fr": "Chine"
+            },
+            "periods": [
+                {
+                    "start": -5000,
+                    "end": -3000,
+                    "name": {
+                        "zh": "仰韶文化",
+                        "en": "Yangshao culture",
+                        "fr": "Culture de Yangshao"
+                    }
+                },
+                {
+                    "start": -3300,
+                    "end": -2300,
+                    "name": {
+                        "zh": "良渚文化",
+                        "en": "Liangzhu culture",
+                        "fr": "Culture de Liangzhu"
+                    }
+                },
+                {
+                    "start": -3000,
+                    "end": -1900,
+                    "name": {
+                        "zh": "龙山文化",
+                        "en": "Longshan culture",
+                        "fr": "Culture de Longshan"
+                    }
+                },
+                {
+                    "start": -2070,
+                    "end": -1600,
+                    "name": {
+                        "zh": "夏",
+                        "en": "Xia dynasty",
+                        "fr": "Dynastie Xia"
+                    },
+                    "note": {
+                        "zh": "夏朝的年代采用夏商周断代工程的结论，其存在仍有学术讨论。",
+                        "en": "Dates follow the Xia–Shang–Zhou Chronology Project; the Xia remains debated.",
+                        "fr": "Dates selon le Projet de chronologie Xia-Shang-Zhou ; l'existence des Xia reste débattue."
+                    },
+                    "capital": {
+                        "zh": "阳城、阳翟、斟鄩等（今河南登封、禹州、偃师一带）",
+                        "en": "Yangcheng, Yangzhai, Zhenxun and others (around Dengfeng, Yuzhou and Yanshi, Henan)",
+                        "fr": "Yangcheng, Yangzhai, Zhenxun, etc. (vers Dengfeng, Yuzhou et Yanshi, Henan)"
+                    },
+                    "founder": {
+                        "zh": "禹（姒文命）",
+                        "en": "Yu the Great (Si Wenming)",
+                        "fr": "Yu le Grand (Si Wenming)"
+                    }
+                },
+                {
+                    "start": -1600,
+                    "end": -1046,
+                    "name": {
+                        "zh": "商",
+                        "en": "Shang dynasty",
+                        "fr": "Dynastie Shang"
+                    },
+                    "capital": {
+                        "zh": "亳、殷等（今河南商丘、郑州、安阳一带）",
+                        "en": "Bo, Yin and others (around Shangqiu, Zhengzhou and Anyang, Henan)",
+                        "fr": "Bo, Yin, etc. (vers Shangqiu, Zhengzhou et Anyang, Henan)"
+                    },
+                    "founder": {
+                        "zh": "汤（子天乙）",
+                        "en": "Tang of Shang (Zi Tianyi)",
+                        "fr": "Tang des Shang (Zi Tianyi)"
+                    }
+                },
+                {
+                    "start": -1046,
+                    "end": -771,
+                    "name": {
+                        "zh": "西周",
+                        "en": "Western Zhou",
+                        "fr": "Zhou occidentaux"
+                    },
+                    "capital": {
+                        "zh": "镐京（今陕西西安）",
+                        "en": "Haojing (today's Xi'an, Shaanxi)",
+                        "fr": "Haojing (actuelle Xi'an, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "周武王姬发",
+                        "en": "King Wu of Zhou (Ji Fa)",
+                        "fr": "Le roi Wu de Zhou (Ji Fa)"
+                    }
+                },
+                {
+                    "start": -770,
+                    "end": -476,
+                    "name": {
+                        "zh": "春秋",
+                        "en": "Spring and Autumn period",
+                        "fr": "Période des Printemps et Automnes"
+                    },
+                    "note": {
+                        "zh": "东周前期，孔子生活的时代。",
+                        "en": "First half of the Eastern Zhou; the age of Confucius.",
+                        "fr": "Première moitié des Zhou orientaux ; l'époque de Confucius."
+                    },
+                    "capital": {
+                        "zh": "洛邑（今河南洛阳）",
+                        "en": "Luoyi (today's Luoyang, Henan)",
+                        "fr": "Luoyi (actuelle Luoyang, Henan)"
+                    },
+                    "founder": {
+                        "zh": "周平王姬宜臼（东周）",
+                        "en": "King Ping of Zhou (Eastern Zhou)",
+                        "fr": "Le roi Ping de Zhou (Zhou orientaux)"
+                    }
+                },
+                {
+                    "start": -475,
+                    "end": -221,
+                    "name": {
+                        "zh": "战国",
+                        "en": "Warring States period",
+                        "fr": "Période des Royaumes combattants"
+                    },
+                    "capital": {
+                        "zh": "洛邑（今河南洛阳），东周王室所在",
+                        "en": "Luoyi (today's Luoyang), seat of the Eastern Zhou court",
+                        "fr": "Luoyi (actuelle Luoyang), siège de la cour des Zhou orientaux"
+                    }
+                },
+                {
+                    "start": -221,
+                    "end": -207,
+                    "name": {
+                        "zh": "秦",
+                        "en": "Qin dynasty",
+                        "fr": "Dynastie Qin"
+                    },
+                    "note": {
+                        "zh": "中国第一个统一的中央集权王朝。",
+                        "en": "The first unified imperial dynasty of China.",
+                        "fr": "Première dynastie impériale unifiée de Chine."
+                    },
+                    "capital": {
+                        "zh": "咸阳（今陕西咸阳）",
+                        "en": "Xianyang (today's Xianyang, Shaanxi)",
+                        "fr": "Xianyang (actuelle Xianyang, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "秦始皇嬴政",
+                        "en": "Qin Shi Huang (Ying Zheng)",
+                        "fr": "Qin Shi Huang (Ying Zheng)"
+                    }
+                },
+                {
+                    "start": -206,
+                    "end": -202,
+                    "name": {
+                        "zh": "西楚",
+                        "en": "Western Chu",
+                        "fr": "Chu occidental"
+                    },
+                    "capital": {
+                        "zh": "彭城（今江苏徐州）",
+                        "en": "Pengcheng (today's Xuzhou, Jiangsu)",
+                        "fr": "Pengcheng (actuelle Xuzhou, Jiangsu)"
+                    },
+                    "founder": {
+                        "zh": "西楚霸王项羽",
+                        "en": "Xiang Yu, Hegemon-King of Western Chu",
+                        "fr": "Xiang Yu, roi hégémon de Chu occidental"
+                    }
+                },
+                {
+                    "start": -202,
+                    "end": 8,
+                    "name": {
+                        "zh": "西汉",
+                        "en": "Western Han",
+                        "fr": "Han occidentaux"
+                    },
+                    "capital": {
+                        "zh": "长安（今陕西西安）",
+                        "en": "Chang'an (today's Xi'an, Shaanxi)",
+                        "fr": "Chang'an (actuelle Xi'an, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "汉高祖刘邦",
+                        "en": "Emperor Gaozu of Han (Liu Bang)",
+                        "fr": "L'empereur Gaozu des Han (Liu Bang)"
+                    }
+                },
+                {
+                    "start": 9,
+                    "end": 23,
+                    "name": {
+                        "zh": "新",
+                        "en": "Xin dynasty",
+                        "fr": "Dynastie Xin"
+                    },
+                    "capital": {
+                        "zh": "长安（今陕西西安）",
+                        "en": "Chang'an (today's Xi'an, Shaanxi)",
+                        "fr": "Chang'an (actuelle Xi'an, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "王莽",
+                        "en": "Wang Mang",
+                        "fr": "Wang Mang"
+                    }
+                },
+                {
+                    "start": 23,
+                    "end": 25,
+                    "name": {
+                        "zh": "玄汉",
+                        "en": "Xuan Han (Gengshi)",
+                        "fr": "Han de Gengshi"
+                    },
+                    "capital": {
+                        "zh": "长安（今陕西西安）",
+                        "en": "Chang'an (today's Xi'an, Shaanxi)",
+                        "fr": "Chang'an (actuelle Xi'an, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "更始帝刘玄",
+                        "en": "The Gengshi Emperor (Liu Xuan)",
+                        "fr": "L'empereur Gengshi (Liu Xuan)"
+                    }
+                },
+                {
+                    "start": 25,
+                    "end": 220,
+                    "name": {
+                        "zh": "东汉",
+                        "en": "Eastern Han",
+                        "fr": "Han orientaux"
+                    },
+                    "capital": {
+                        "zh": "洛阳（今河南洛阳）",
+                        "en": "Luoyang (today's Luoyang, Henan)",
+                        "fr": "Luoyang (actuelle Luoyang, Henan)"
+                    },
+                    "founder": {
+                        "zh": "光武帝刘秀",
+                        "en": "Emperor Guangwu (Liu Xiu)",
+                        "fr": "L'empereur Guangwu (Liu Xiu)"
+                    }
+                },
+                {
+                    "start": 220,
+                    "end": 266,
+                    "name": {
+                        "zh": "曹魏",
+                        "en": "Cao Wei",
+                        "fr": "Wei (Cao Wei)"
+                    },
+                    "capital": {
+                        "zh": "洛阳（今河南洛阳）",
+                        "en": "Luoyang (today's Luoyang, Henan)",
+                        "fr": "Luoyang (actuelle Luoyang, Henan)"
+                    },
+                    "founder": {
+                        "zh": "魏文帝曹丕",
+                        "en": "Emperor Wen of Wei (Cao Pi)",
+                        "fr": "L'empereur Wen des Wei (Cao Pi)"
+                    }
+                },
+                {
+                    "start": 221,
+                    "end": 263,
+                    "name": {
+                        "zh": "蜀汉",
+                        "en": "Shu Han",
+                        "fr": "Shu Han"
+                    },
+                    "capital": {
+                        "zh": "成都（今四川成都）",
+                        "en": "Chengdu (today's Chengdu, Sichuan)",
+                        "fr": "Chengdu (actuelle Chengdu, Sichuan)"
+                    },
+                    "founder": {
+                        "zh": "昭烈帝刘备",
+                        "en": "Emperor Zhaolie (Liu Bei)",
+                        "fr": "L'empereur Zhaolie (Liu Bei)"
+                    }
+                },
+                {
+                    "start": 222,
+                    "end": 280,
+                    "name": {
+                        "zh": "东吴",
+                        "en": "Eastern Wu",
+                        "fr": "Wu oriental"
+                    },
+                    "capital": {
+                        "zh": "建业（今江苏南京）",
+                        "en": "Jianye (today's Nanjing, Jiangsu)",
+                        "fr": "Jianye (actuelle Nankin, Jiangsu)"
+                    },
+                    "founder": {
+                        "zh": "吴大帝孙权",
+                        "en": "Emperor Da of Wu (Sun Quan)",
+                        "fr": "L'empereur Da de Wu (Sun Quan)"
+                    }
+                },
+                {
+                    "start": 266,
+                    "end": 316,
+                    "name": {
+                        "zh": "西晋",
+                        "en": "Western Jin",
+                        "fr": "Jin occidentaux"
+                    },
+                    "capital": {
+                        "zh": "洛阳、长安（今河南洛阳、陕西西安）",
+                        "en": "Luoyang and Chang'an (today's Luoyang and Xi'an)",
+                        "fr": "Luoyang et Chang'an (actuelles Luoyang et Xi'an)"
+                    },
+                    "founder": {
+                        "zh": "晋武帝司马炎",
+                        "en": "Emperor Wu of Jin (Sima Yan)",
+                        "fr": "L'empereur Wu des Jin (Sima Yan)"
+                    }
+                },
+                {
+                    "start": 304,
+                    "end": 439,
+                    "name": {
+                        "zh": "十六国",
+                        "en": "Sixteen Kingdoms",
+                        "fr": "Seize Royaumes"
+                    },
+                    "capital": {
+                        "zh": "各国不一，如平阳（今山西临汾）",
+                        "en": "Varied by state, e.g. Pingyang (today's Linfen, Shanxi)",
+                        "fr": "Variable selon les États, p. ex. Pingyang (actuelle Linfen, Shanxi)"
+                    },
+                    "founder": {
+                        "zh": "刘渊、石勒等",
+                        "en": "Liu Yuan, Shi Le and others",
+                        "fr": "Liu Yuan, Shi Le et d'autres"
+                    }
+                },
+                {
+                    "start": 317,
+                    "end": 420,
+                    "name": {
+                        "zh": "东晋",
+                        "en": "Eastern Jin",
+                        "fr": "Jin orientaux"
+                    },
+                    "capital": {
+                        "zh": "建康（今江苏南京）",
+                        "en": "Jiankang (today's Nanjing, Jiangsu)",
+                        "fr": "Jiankang (actuelle Nankin, Jiangsu)"
+                    },
+                    "founder": {
+                        "zh": "晋元帝司马睿",
+                        "en": "Emperor Yuan of Jin (Sima Rui)",
+                        "fr": "L'empereur Yuan des Jin (Sima Rui)"
+                    }
+                },
+                {
+                    "start": 386,
+                    "end": 534,
+                    "name": {
+                        "zh": "北魏",
+                        "en": "Northern Wei",
+                        "fr": "Wei du Nord"
+                    },
+                    "capital": {
+                        "zh": "平城、洛阳（今山西大同、河南洛阳）",
+                        "en": "Pingcheng and Luoyang (today's Datong and Luoyang)",
+                        "fr": "Pingcheng et Luoyang (actuelles Datong et Luoyang)"
+                    },
+                    "founder": {
+                        "zh": "道武帝拓跋珪",
+                        "en": "Emperor Daowu (Tuoba Gui)",
+                        "fr": "L'empereur Daowu (Tuoba Gui)"
+                    }
+                },
+                {
+                    "start": 420,
+                    "end": 479,
+                    "name": {
+                        "zh": "刘宋",
+                        "en": "Liu Song",
+                        "fr": "Song (Liu Song)"
+                    },
+                    "capital": {
+                        "zh": "建康（今江苏南京）",
+                        "en": "Jiankang (today's Nanjing, Jiangsu)",
+                        "fr": "Jiankang (actuelle Nankin, Jiangsu)"
+                    },
+                    "founder": {
+                        "zh": "宋武帝刘裕",
+                        "en": "Emperor Wu of Song (Liu Yu)",
+                        "fr": "L'empereur Wu des Song (Liu Yu)"
+                    }
+                },
+                {
+                    "start": 479,
+                    "end": 502,
+                    "name": {
+                        "zh": "南齐",
+                        "en": "Southern Qi",
+                        "fr": "Qi du Sud"
+                    },
+                    "capital": {
+                        "zh": "建康（今江苏南京）",
+                        "en": "Jiankang (today's Nanjing, Jiangsu)",
+                        "fr": "Jiankang (actuelle Nankin, Jiangsu)"
+                    },
+                    "founder": {
+                        "zh": "齐高帝萧道成",
+                        "en": "Emperor Gao of Qi (Xiao Daocheng)",
+                        "fr": "L'empereur Gao des Qi (Xiao Daocheng)"
+                    }
+                },
+                {
+                    "start": 502,
+                    "end": 557,
+                    "name": {
+                        "zh": "南梁",
+                        "en": "Liang",
+                        "fr": "Liang"
+                    },
+                    "capital": {
+                        "zh": "建康（今江苏南京）",
+                        "en": "Jiankang (today's Nanjing, Jiangsu)",
+                        "fr": "Jiankang (actuelle Nankin, Jiangsu)"
+                    },
+                    "founder": {
+                        "zh": "梁武帝萧衍",
+                        "en": "Emperor Wu of Liang (Xiao Yan)",
+                        "fr": "L'empereur Wu des Liang (Xiao Yan)"
+                    }
+                },
+                {
+                    "start": 534,
+                    "end": 550,
+                    "name": {
+                        "zh": "东魏",
+                        "en": "Eastern Wei",
+                        "fr": "Wei de l'Est"
+                    },
+                    "capital": {
+                        "zh": "邺城（今河北临漳）",
+                        "en": "Ye (today's Linzhang, Hebei)",
+                        "fr": "Ye (actuelle Linzhang, Hebei)"
+                    },
+                    "founder": {
+                        "zh": "孝静帝元善见（高欢掌权）",
+                        "en": "Emperor Xiaojing (Yuan Shanjian), with Gao Huan in power",
+                        "fr": "L'empereur Xiaojing (Yuan Shanjian), Gao Huan détenant le pouvoir"
+                    }
+                },
+                {
+                    "start": 535,
+                    "end": 557,
+                    "name": {
+                        "zh": "西魏",
+                        "en": "Western Wei",
+                        "fr": "Wei de l'Ouest"
+                    },
+                    "capital": {
+                        "zh": "长安（今陕西西安）",
+                        "en": "Chang'an (today's Xi'an, Shaanxi)",
+                        "fr": "Chang'an (actuelle Xi'an, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "文帝元宝炬（宇文泰掌权）",
+                        "en": "Emperor Wen (Yuan Baoju), with Yuwen Tai in power",
+                        "fr": "L'empereur Wen (Yuan Baoju), Yuwen Tai détenant le pouvoir"
+                    }
+                },
+                {
+                    "start": 550,
+                    "end": 577,
+                    "name": {
+                        "zh": "北齐",
+                        "en": "Northern Qi",
+                        "fr": "Qi du Nord"
+                    },
+                    "capital": {
+                        "zh": "邺城（今河北临漳）",
+                        "en": "Ye (today's Linzhang, Hebei)",
+                        "fr": "Ye (actuelle Linzhang, Hebei)"
+                    },
+                    "founder": {
+                        "zh": "文宣帝高洋",
+                        "en": "Emperor Wenxuan (Gao Yang)",
+                        "fr": "L'empereur Wenxuan (Gao Yang)"
+                    }
+                },
+                {
+                    "start": 557,
+                    "end": 589,
+                    "name": {
+                        "zh": "陈",
+                        "en": "Chen",
+                        "fr": "Chen"
+                    },
+                    "capital": {
+                        "zh": "建康（今江苏南京）",
+                        "en": "Jiankang (today's Nanjing, Jiangsu)",
+                        "fr": "Jiankang (actuelle Nankin, Jiangsu)"
+                    },
+                    "founder": {
+                        "zh": "陈武帝陈霸先",
+                        "en": "Emperor Wu of Chen (Chen Baxian)",
+                        "fr": "L'empereur Wu des Chen (Chen Baxian)"
+                    }
+                },
+                {
+                    "start": 557,
+                    "end": 581,
+                    "name": {
+                        "zh": "北周",
+                        "en": "Northern Zhou",
+                        "fr": "Zhou du Nord"
+                    },
+                    "capital": {
+                        "zh": "长安（今陕西西安）",
+                        "en": "Chang'an (today's Xi'an, Shaanxi)",
+                        "fr": "Chang'an (actuelle Xi'an, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "孝闵帝宇文觉（奠基者宇文泰）",
+                        "en": "Emperor Xiaomin (Yuwen Jue); laid down by Yuwen Tai",
+                        "fr": "L'empereur Xiaomin (Yuwen Jue) ; fondée par Yuwen Tai"
+                    }
+                },
+                {
+                    "start": 581,
+                    "end": 618,
+                    "name": {
+                        "zh": "隋",
+                        "en": "Sui dynasty",
+                        "fr": "Dynastie Sui"
+                    },
+                    "capital": {
+                        "zh": "大兴（今陕西西安）",
+                        "en": "Daxing (today's Xi'an, Shaanxi)",
+                        "fr": "Daxing (actuelle Xi'an, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "隋文帝杨坚",
+                        "en": "Emperor Wen of Sui (Yang Jian)",
+                        "fr": "L'empereur Wen des Sui (Yang Jian)"
+                    }
+                },
+                {
+                    "start": 618,
+                    "end": 907,
+                    "name": {
+                        "zh": "唐",
+                        "en": "Tang dynasty",
+                        "fr": "Dynastie Tang"
+                    },
+                    "capital": {
+                        "zh": "长安（今陕西西安）",
+                        "en": "Chang'an (today's Xi'an, Shaanxi)",
+                        "fr": "Chang'an (actuelle Xi'an, Shaanxi)"
+                    },
+                    "founder": {
+                        "zh": "唐高祖李渊",
+                        "en": "Emperor Gaozu of Tang (Li Yuan)",
+                        "fr": "L'empereur Gaozu des Tang (Li Yuan)"
+                    }
+                },
+                {
+                    "start": 690,
+                    "end": 705,
+                    "name": {
+                        "zh": "武周",
+                        "en": "Wu Zhou",
+                        "fr": "Zhou de Wu"
+                    },
+                    "note": {
+                        "zh": "武则天称帝改国号为周，唐朝中断 15 年。",
+                        "en": "Wu Zetian proclaimed her own Zhou dynasty, interrupting the Tang for 15 years.",
+                        "fr": "Wu Zetian proclame sa propre dynastie Zhou, interrompant les Tang pendant 15 ans."
+                    },
+                    "capital": {
+                        "zh": "神都洛阳、长安（今河南洛阳、陕西西安）",
+                        "en": "Shendu (Luoyang) and Chang'an",
+                        "fr": "Shendu (Luoyang) et Chang'an"
+                    },
+                    "founder": {
+                        "zh": "武则天",
+                        "en": "Wu Zetian",
+                        "fr": "Wu Zetian"
+                    }
+                },
+                {
+                    "start": 907,
+                    "end": 979,
+                    "name": {
+                        "zh": "十国",
+                        "en": "Ten Kingdoms",
+                        "fr": "Dix Royaumes"
+                    },
+                    "note": {
+                        "zh": "南方的吴、南唐、吴越、闽、楚、南汉、前蜀、后蜀、荆南和北方的北汉。",
+                        "en": "Wu, Southern Tang, Wuyue, Min, Chu, Southern Han, Former Shu, Later Shu and Jingnan in the south, and Northern Han in the north.",
+                        "fr": "Wu, Tang du Sud, Wuyue, Min, Chu, Han du Sud, Shu antérieurs, Shu postérieurs et Jingnan au sud, Han du Nord au nord."
+                    }
+                },
+                {
+                    "start": 907,
+                    "end": 923,
+                    "name": {
+                        "zh": "后梁",
+                        "en": "Later Liang",
+                        "fr": "Liang postérieurs"
+                    },
+                    "capital": {
+                        "zh": "开封（今河南开封）",
+                        "en": "Kaifeng (today's Kaifeng, Henan)",
+                        "fr": "Kaifeng (actuelle Kaifeng, Henan)"
+                    },
+                    "founder": {
+                        "zh": "梁太祖朱温",
+                        "en": "Emperor Taizu of Later Liang (Zhu Wen)",
+                        "fr": "L'empereur Taizu des Liang postérieurs (Zhu Wen)"
+                    }
+                },
+                {
+                    "start": 916,
+                    "end": 1125,
+                    "name": {
+                        "zh": "辽",
+                        "en": "Liao dynasty",
+                        "fr": "Dynastie Liao"
+                    },
+                    "capital": {
+                        "zh": "上京（今内蒙古巴林左旗）",
+                        "en": "Shangjing (today's Bairin Left Banner, Inner Mongolia)",
+                        "fr": "Shangjing (actuelle bannière gauche de Bairin, Mongolie-Intérieure)"
+                    },
+                    "founder": {
+                        "zh": "耶律阿保机",
+                        "en": "Yelü Abaoji",
+                        "fr": "Yelü Abaoji"
+                    }
+                },
+                {
+                    "start": 923,
+                    "end": 936,
+                    "name": {
+                        "zh": "后唐",
+                        "en": "Later Tang",
+                        "fr": "Tang postérieurs"
+                    },
+                    "capital": {
+                        "zh": "洛阳（今河南洛阳）",
+                        "en": "Luoyang (today's Luoyang, Henan)",
+                        "fr": "Luoyang (actuelle Luoyang, Henan)"
+                    },
+                    "founder": {
+                        "zh": "唐庄宗李存勖",
+                        "en": "Emperor Zhuangzong (Li Cunxu)",
+                        "fr": "L'empereur Zhuangzong (Li Cunxu)"
+                    }
+                },
+                {
+                    "start": 936,
+                    "end": 947,
+                    "name": {
+                        "zh": "后晋",
+                        "en": "Later Jin",
+                        "fr": "Jin postérieurs"
+                    },
+                    "capital": {
+                        "zh": "开封（今河南开封）",
+                        "en": "Kaifeng (today's Kaifeng, Henan)",
+                        "fr": "Kaifeng (actuelle Kaifeng, Henan)"
+                    },
+                    "founder": {
+                        "zh": "晋高祖石敬瑭",
+                        "en": "Emperor Gaozu of Later Jin (Shi Jingtang)",
+                        "fr": "L'empereur Gaozu des Jin postérieurs (Shi Jingtang)"
+                    }
+                },
+                {
+                    "start": 947,
+                    "end": 951,
+                    "name": {
+                        "zh": "后汉",
+                        "en": "Later Han",
+                        "fr": "Han postérieurs"
+                    },
+                    "capital": {
+                        "zh": "开封（今河南开封）",
+                        "en": "Kaifeng (today's Kaifeng, Henan)",
+                        "fr": "Kaifeng (actuelle Kaifeng, Henan)"
+                    },
+                    "founder": {
+                        "zh": "汉高祖刘知远",
+                        "en": "Emperor Gaozu of Later Han (Liu Zhiyuan)",
+                        "fr": "L'empereur Gaozu des Han postérieurs (Liu Zhiyuan)"
+                    }
+                },
+                {
+                    "start": 951,
+                    "end": 960,
+                    "name": {
+                        "zh": "后周",
+                        "en": "Later Zhou",
+                        "fr": "Zhou postérieurs"
+                    },
+                    "capital": {
+                        "zh": "开封（今河南开封）",
+                        "en": "Kaifeng (today's Kaifeng, Henan)",
+                        "fr": "Kaifeng (actuelle Kaifeng, Henan)"
+                    },
+                    "founder": {
+                        "zh": "周太祖郭威",
+                        "en": "Emperor Taizu of Later Zhou (Guo Wei)",
+                        "fr": "L'empereur Taizu des Zhou postérieurs (Guo Wei)"
+                    }
+                },
+                {
+                    "start": 960,
+                    "end": 1127,
+                    "name": {
+                        "zh": "北宋",
+                        "en": "Northern Song",
+                        "fr": "Song du Nord"
+                    },
+                    "capital": {
+                        "zh": "开封（今河南开封）",
+                        "en": "Kaifeng (today's Kaifeng, Henan)",
+                        "fr": "Kaifeng (actuelle Kaifeng, Henan)"
+                    },
+                    "founder": {
+                        "zh": "宋太祖赵匡胤",
+                        "en": "Emperor Taizu of Song (Zhao Kuangyin)",
+                        "fr": "L'empereur Taizu des Song (Zhao Kuangyin)"
+                    }
+                },
+                {
+                    "start": 1038,
+                    "end": 1227,
+                    "name": {
+                        "zh": "西夏",
+                        "en": "Western Xia",
+                        "fr": "Xia occidentaux"
+                    },
+                    "capital": {
+                        "zh": "兴庆府（今宁夏银川）",
+                        "en": "Xingqing (today's Yinchuan, Ningxia)",
+                        "fr": "Xingqing (actuelle Yinchuan, Ningxia)"
+                    },
+                    "founder": {
+                        "zh": "李元昊",
+                        "en": "Li Yuanhao",
+                        "fr": "Li Yuanhao"
+                    }
+                },
+                {
+                    "start": 1115,
+                    "end": 1234,
+                    "name": {
+                        "zh": "金",
+                        "en": "Jin dynasty (Jurchen)",
+                        "fr": "Dynastie Jin (Jürchen)"
+                    },
+                    "capital": {
+                        "zh": "会宁、中都、汴京（今黑龙江阿城、北京、河南开封）",
+                        "en": "Huining, Zhongdu and Bianjing (today's Acheng, Beijing and Kaifeng)",
+                        "fr": "Huining, Zhongdu et Bianjing (actuelles Acheng, Pékin et Kaifeng)"
+                    },
+                    "founder": {
+                        "zh": "完颜阿骨打",
+                        "en": "Wanyan Aguda",
+                        "fr": "Wanyan Aguda"
+                    }
+                },
+                {
+                    "start": 1127,
+                    "end": 1279,
+                    "name": {
+                        "zh": "南宋",
+                        "en": "Southern Song",
+                        "fr": "Song du Sud"
+                    },
+                    "capital": {
+                        "zh": "临安（今浙江杭州），初立于应天府（今河南商丘）",
+                        "en": "Lin'an (today's Hangzhou), first proclaimed at Yingtian (today's Shangqiu)",
+                        "fr": "Lin'an (actuelle Hangzhou), proclamée d'abord à Yingtian (actuelle Shangqiu)"
+                    },
+                    "founder": {
+                        "zh": "宋高宗赵构",
+                        "en": "Emperor Gaozong of Song (Zhao Gou)",
+                        "fr": "L'empereur Gaozong des Song (Zhao Gou)"
+                    }
+                },
+                {
+                    "start": 1271,
+                    "end": 1368,
+                    "name": {
+                        "zh": "元",
+                        "en": "Yuan dynasty",
+                        "fr": "Dynastie Yuan"
+                    },
+                    "capital": {
+                        "zh": "大都（今北京）",
+                        "en": "Dadu (today's Beijing)",
+                        "fr": "Dadu (actuelle Pékin)"
+                    },
+                    "founder": {
+                        "zh": "元世祖忽必烈（追尊成吉思汗为元太祖）",
+                        "en": "Kublai Khan (Emperor Shizu); Genghis Khan was posthumously honoured as Taizu",
+                        "fr": "Kubilai Khan (empereur Shizu) ; Gengis Khan honoré à titre posthume comme Taizu"
+                    }
+                },
+                {
+                    "start": 1368,
+                    "end": 1644,
+                    "name": {
+                        "zh": "明",
+                        "en": "Ming dynasty",
+                        "fr": "Dynastie Ming"
+                    },
+                    "capital": {
+                        "zh": "应天府、顺天府（今江苏南京、北京）",
+                        "en": "Yingtian and Shuntian (today's Nanjing and Beijing)",
+                        "fr": "Yingtian et Shuntian (actuelles Nankin et Pékin)"
+                    },
+                    "founder": {
+                        "zh": "明太祖朱元璋",
+                        "en": "The Hongwu Emperor (Zhu Yuanzhang)",
+                        "fr": "L'empereur Hongwu (Zhu Yuanzhang)"
+                    }
+                },
+                {
+                    "start": 1636,
+                    "end": 1912,
+                    "name": {
+                        "zh": "清",
+                        "en": "Qing dynasty",
+                        "fr": "Dynastie Qing"
+                    },
+                    "note": {
+                        "zh": "1636 年改国号为清，1644 年入关。",
+                        "en": "Proclaimed in 1636; ruled China proper from 1644.",
+                        "fr": "Proclamée en 1636 ; règne sur la Chine propre à partir de 1644."
+                    },
+                    "capital": {
+                        "zh": "盛京、北京（今辽宁沈阳、北京）",
+                        "en": "Shengjing and Beijing (today's Shenyang and Beijing)",
+                        "fr": "Shengjing et Pékin (actuelles Shenyang et Pékin)"
+                    },
+                    "founder": {
+                        "zh": "努尔哈赤建后金，皇太极改国号为清",
+                        "en": "Nurhaci founded the Later Jin; Hong Taiji renamed it Qing",
+                        "fr": "Nurhaci fonde les Jin postérieurs ; Hong Taiji les renomme Qing"
+                    }
+                },
+                {
+                    "start": 1912,
+                    "end": 1949,
+                    "name": {
+                        "zh": "中华民国",
+                        "en": "Republic of China",
+                        "fr": "République de Chine"
+                    },
+                    "note": {
+                        "zh": "这里标注的是在中国大陆执政的时期。",
+                        "en": "Shown here for its period of government on the mainland.",
+                        "fr": "Indiquée ici pour sa période de gouvernement sur le continent."
+                    },
+                    "capital": {
+                        "zh": "南京、北京（北平）等，抗战期间陪都重庆",
+                        "en": "Nanjing, Beijing (Beiping) and others; Chongqing as wartime capital",
+                        "fr": "Nankin, Pékin (Beiping), etc. ; Chongqing comme capitale de guerre"
+                    },
+                    "founder": {
+                        "zh": "孙中山",
+                        "en": "Sun Yat-sen",
+                        "fr": "Sun Yat-sen"
+                    }
+                },
+                {
+                    "start": 1949,
+                    "end": null,
+                    "name": {
+                        "zh": "中华人民共和国",
+                        "en": "People's Republic of China",
+                        "fr": "République populaire de Chine"
+                    },
+                    "capital": {
+                        "zh": "北京",
+                        "en": "Beijing",
+                        "fr": "Pékin"
+                    },
+                    "founder": {
+                        "zh": "毛泽东",
+                        "en": "Mao Zedong",
+                        "fr": "Mao Zedong"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "xiyu",
+            "hue": 38,
+            "name": {
+                "zh": "西域（新疆）",
+                "en": "Western Regions (Xinjiang)",
+                "fr": "Contrées occidentales (Xinjiang)"
+            },
+            "periods": [
+                {
+                    "start": -210,
+                    "end": -170,
+                    "name": {
+                        "zh": "西域诸国",
+                        "en": "City-states of the Western Regions",
+                        "fr": "Cités-États des Contrées occidentales"
+                    }
+                },
+                {
+                    "start": -170,
+                    "end": -60,
+                    "name": {
+                        "zh": "西域诸国（受匈奴控制）",
+                        "en": "Western Regions under Xiongnu control",
+                        "fr": "Contrées occidentales sous contrôle xiongnu"
+                    }
+                },
+                {
+                    "start": -60,
+                    "end": 10,
+                    "name": {
+                        "zh": "西域都护府（西汉）",
+                        "en": "Protectorate of the Western Regions (Western Han)",
+                        "fr": "Protectorat des Contrées occidentales (Han occidentaux)"
+                    }
+                },
+                {
+                    "start": 10,
+                    "end": 70,
+                    "name": {
+                        "zh": "西域诸国",
+                        "en": "City-states of the Western Regions",
+                        "fr": "Cités-États des Contrées occidentales"
+                    }
+                },
+                {
+                    "start": 70,
+                    "end": 190,
+                    "name": {
+                        "zh": "西域都护府、西域长史（东汉）",
+                        "en": "Protectorate and Chief Clerk of the Western Regions (Eastern Han)",
+                        "fr": "Protectorat et chancelier des Contrées occidentales (Han orientaux)"
+                    }
+                },
+                {
+                    "start": 190,
+                    "end": 230,
+                    "name": {
+                        "zh": "西域诸国",
+                        "en": "City-states of the Western Regions",
+                        "fr": "Cités-États des Contrées occidentales"
+                    }
+                },
+                {
+                    "start": 230,
+                    "end": 320,
+                    "name": {
+                        "zh": "西域长史府（魏晋）",
+                        "en": "Office of the Chief Clerk of the Western Regions (Wei and Jin)",
+                        "fr": "Chancellerie des Contrées occidentales (Wei et Jin)"
+                    }
+                },
+                {
+                    "start": 320,
+                    "end": 376,
+                    "name": {
+                        "zh": "前凉",
+                        "en": "Former Liang",
+                        "fr": "Liang antérieurs"
+                    }
+                },
+                {
+                    "start": 386,
+                    "end": 403,
+                    "name": {
+                        "zh": "后凉",
+                        "en": "Later Liang (Sixteen Kingdoms)",
+                        "fr": "Liang postérieurs (Seize Royaumes)"
+                    }
+                },
+                {
+                    "start": 400,
+                    "end": 421,
+                    "name": {
+                        "zh": "西凉",
+                        "en": "Western Liang",
+                        "fr": "Liang de l'Ouest"
+                    }
+                },
+                {
+                    "start": 397,
+                    "end": 439,
+                    "name": {
+                        "zh": "北凉",
+                        "en": "Northern Liang",
+                        "fr": "Liang du Nord"
+                    }
+                },
+                {
+                    "start": 450,
+                    "end": 570,
+                    "name": {
+                        "zh": "西域诸国",
+                        "en": "City-states of the Western Regions",
+                        "fr": "Cités-États des Contrées occidentales"
+                    }
+                },
+                {
+                    "start": 490,
+                    "end": 610,
+                    "name": {
+                        "zh": "吐谷浑（东部）",
+                        "en": "Tuyuhun (in the east)",
+                        "fr": "Tuyuhun (à l'est)"
+                    }
+                },
+                {
+                    "start": 552,
+                    "end": 583,
+                    "name": {
+                        "zh": "突厥",
+                        "en": "Göktürk Khaganate",
+                        "fr": "Khaganat turc"
+                    }
+                },
+                {
+                    "start": 583,
+                    "end": 657,
+                    "name": {
+                        "zh": "西突厥",
+                        "en": "Western Turkic Khaganate",
+                        "fr": "Khaganat turc occidental"
+                    }
+                },
+                {
+                    "start": 640,
+                    "end": 790,
+                    "name": {
+                        "zh": "安西都护府（唐）",
+                        "en": "Protectorate General to Pacify the West (Tang)",
+                        "fr": "Protectorat général pour pacifier l'Ouest (Tang)"
+                    }
+                },
+                {
+                    "start": 790,
+                    "end": 850,
+                    "name": {
+                        "zh": "吐蕃",
+                        "en": "Tibetan Empire",
+                        "fr": "Empire tibétain"
+                    }
+                },
+                {
+                    "start": 848,
+                    "end": 1036,
+                    "name": {
+                        "zh": "归义军（河西敦煌）",
+                        "en": "Guiyi Circuit (Dunhuang, Hexi)",
+                        "fr": "Circuit de Guiyi (Dunhuang, Hexi)"
+                    }
+                },
+                {
+                    "start": 850,
+                    "end": 1250,
+                    "name": {
+                        "zh": "高昌回鹘",
+                        "en": "Uyghur Kingdom of Qocho",
+                        "fr": "Royaume ouïghour de Qocho"
+                    }
+                },
+                {
+                    "start": 1030,
+                    "end": 1227,
+                    "name": {
+                        "zh": "西夏（河西）",
+                        "en": "Western Xia (Hexi Corridor)",
+                        "fr": "Xia occidentaux (corridor du Hexi)"
+                    }
+                },
+                {
+                    "start": 1130,
+                    "end": 1218,
+                    "name": {
+                        "zh": "西辽",
+                        "en": "Western Liao (Qara Khitai)",
+                        "fr": "Liao occidentaux (Qara Khitai)"
+                    }
+                },
+                {
+                    "start": 1218,
+                    "end": 1370,
+                    "name": {
+                        "zh": "蒙古（察合台汗国等）",
+                        "en": "Mongols (Chagatai Khanate and others)",
+                        "fr": "Mongols (khanat de Djaghataï, etc.)"
+                    }
+                },
+                {
+                    "start": 1370,
+                    "end": 1420,
+                    "name": {
+                        "zh": "北元及蒙古诸部",
+                        "en": "Northern Yuan and Mongol tribes",
+                        "fr": "Yuan du Nord et tribus mongoles"
+                    }
+                },
+                {
+                    "start": 1420,
+                    "end": 1514,
+                    "name": {
+                        "zh": "蒙古残部分裂割据（东察合台汗国）",
+                        "en": "Fragmented Mongol remnants (Moghulistan)",
+                        "fr": "Restes mongols morcelés (Moghulistan)"
+                    }
+                },
+                {
+                    "start": 1514,
+                    "end": 1680,
+                    "name": {
+                        "zh": "叶尔羌汗国",
+                        "en": "Yarkent Khanate",
+                        "fr": "Khanat de Yarkand"
+                    },
+                    "note": {
+                        "zh": "原表此处写作\"羌族\"，应为叶尔羌汗国。",
+                        "en": "The source table has \"Qiang people\" here; this is the Yarkent Khanate.",
+                        "fr": "Le tableau source indique « Qiang » ici ; il s'agit du khanat de Yarkand."
+                    }
+                },
+                {
+                    "start": 1660,
+                    "end": 1757,
+                    "name": {
+                        "zh": "准噶尔蒙古",
+                        "en": "Dzungar Khanate",
+                        "fr": "Khanat dzoungar"
+                    }
+                },
+                {
+                    "start": 1757,
+                    "end": 1759,
+                    "name": {
+                        "zh": "大小和卓之乱",
+                        "en": "Revolt of the Khoja brothers",
+                        "fr": "Révolte des frères khodja"
+                    }
+                },
+                {
+                    "start": 1759,
+                    "end": 1912,
+                    "name": {
+                        "zh": "清朝统治（1884 年设新疆省）",
+                        "en": "Qing rule (Xinjiang province from 1884)",
+                        "fr": "Domination Qing (province du Xinjiang à partir de 1884)"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1912,
+                    "end": 1949,
+                    "name": {
+                        "zh": "民国时期（杨增新、金树仁、盛世才等主政，河西马家军）",
+                        "en": "Republican era (Yang Zengxin, Jin Shuren, Sheng Shicai; the Ma clique in Hexi)",
+                        "fr": "Époque républicaine (Yang Zengxin, Jin Shuren, Sheng Shicai ; clique des Ma au Hexi)"
+                    }
+                },
+                {
+                    "start": 1949,
+                    "end": null,
+                    "name": {
+                        "zh": "中华人民共和国",
+                        "en": "People's Republic of China",
+                        "fr": "République populaire de Chine"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "tibet",
+            "hue": 190,
+            "name": {
+                "zh": "青藏高原",
+                "en": "Tibetan Plateau",
+                "fr": "Plateau tibétain"
+            },
+            "periods": [
+                {
+                    "start": -210,
+                    "end": -160,
+                    "name": {
+                        "zh": "西羌诸部",
+                        "en": "Western Qiang tribes",
+                        "fr": "Tribus qiang occidentales"
+                    }
+                },
+                {
+                    "start": -160,
+                    "end": 310,
+                    "name": {
+                        "zh": "发羌、象雄等部",
+                        "en": "Fa Qiang, Zhangzhung and other peoples",
+                        "fr": "Fa Qiang, Zhangzhung et autres peuples"
+                    }
+                },
+                {
+                    "start": 310,
+                    "end": 630,
+                    "name": {
+                        "zh": "党项、女国等部",
+                        "en": "Tangut, \"Women's Kingdom\" and other peoples",
+                        "fr": "Tangoutes, « royaume des Femmes » et autres peuples"
+                    }
+                },
+                {
+                    "start": 310,
+                    "end": 663,
+                    "name": {
+                        "zh": "吐谷浑（青海）",
+                        "en": "Tuyuhun (Qinghai)",
+                        "fr": "Tuyuhun (Qinghai)"
+                    }
+                },
+                {
+                    "start": 629,
+                    "end": 842,
+                    "name": {
+                        "zh": "吐蕃王朝",
+                        "en": "Tibetan Empire",
+                        "fr": "Empire tibétain"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。松赞干布统一青藏高原，与唐朝和亲。",
+                        "en": "Missing in the source table; filled in. Songtsen Gampo unified the plateau and allied with the Tang by marriage.",
+                        "fr": "Absent du tableau source ; complété. Songtsen Gampo unifie le plateau et s'allie aux Tang par mariage."
+                    }
+                },
+                {
+                    "start": 842,
+                    "end": 1270,
+                    "name": {
+                        "zh": "吐蕃诸部（分裂时期）",
+                        "en": "Tibetan tribes (era of fragmentation)",
+                        "fr": "Tribus tibétaines (époque de fragmentation)"
+                    }
+                },
+                {
+                    "start": 1030,
+                    "end": 1100,
+                    "name": {
+                        "zh": "黄头回鹘（青海）",
+                        "en": "Yellow Uyghurs (Qinghai)",
+                        "fr": "Ouïghours jaunes (Qinghai)"
+                    }
+                },
+                {
+                    "start": 1100,
+                    "end": 1130,
+                    "name": {
+                        "zh": "北宋（河湟地区）",
+                        "en": "Northern Song (Hehuang region)",
+                        "fr": "Song du Nord (région du Hehuang)"
+                    }
+                },
+                {
+                    "start": 1270,
+                    "end": 1354,
+                    "name": {
+                        "zh": "元朝统治（宣政院、萨迦政权）",
+                        "en": "Yuan rule (Bureau of Buddhist and Tibetan Affairs, Sakya regime)",
+                        "fr": "Domination Yuan (bureau des affaires bouddhiques et tibétaines, régime Sakya)"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1354,
+                    "end": 1470,
+                    "name": {
+                        "zh": "帕木竹巴",
+                        "en": "Phagmodrupa dynasty",
+                        "fr": "Dynastie Phagmodrupa"
+                    }
+                },
+                {
+                    "start": 1470,
+                    "end": 1565,
+                    "name": {
+                        "zh": "仁蚌巴",
+                        "en": "Rinpungpa",
+                        "fr": "Rinpungpa"
+                    }
+                },
+                {
+                    "start": 1565,
+                    "end": 1642,
+                    "name": {
+                        "zh": "藏巴汗",
+                        "en": "Tsangpa dynasty",
+                        "fr": "Dynastie Tsangpa"
+                    }
+                },
+                {
+                    "start": 1642,
+                    "end": 1717,
+                    "name": {
+                        "zh": "藏族诸部与和硕特蒙古（甘丹颇章）",
+                        "en": "Tibetan groups and the Khoshut Mongols (Ganden Phodrang)",
+                        "fr": "Groupes tibétains et Mongols khoshut (Ganden Phodrang)"
+                    }
+                },
+                {
+                    "start": 1717,
+                    "end": 1720,
+                    "name": {
+                        "zh": "准噶尔蒙古",
+                        "en": "Dzungar occupation",
+                        "fr": "Occupation dzoungare"
+                    }
+                },
+                {
+                    "start": 1720,
+                    "end": 1912,
+                    "name": {
+                        "zh": "清朝统治（1727 年设驻藏大臣）",
+                        "en": "Qing rule (Imperial Residents from 1727)",
+                        "fr": "Domination Qing (résidents impériaux à partir de 1727)"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1912,
+                    "end": 1951,
+                    "name": {
+                        "zh": "民国时期（西藏地方噶厦政府）",
+                        "en": "Republican era (local Kashag government in Tibet)",
+                        "fr": "Époque républicaine (gouvernement local du Kashag au Tibet)"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1951,
+                    "end": null,
+                    "name": {
+                        "zh": "中华人民共和国",
+                        "en": "People's Republic of China",
+                        "fr": "République populaire de Chine"
+                    },
+                    "note": {
+                        "zh": "1951 年西藏和平解放。",
+                        "en": "Tibet was peacefully liberated in 1951.",
+                        "fr": "Libération pacifique du Tibet en 1951."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "northeast",
+            "hue": 120,
+            "name": {
+                "zh": "东北",
+                "en": "Northeast China",
+                "fr": "Nord-Est de la Chine"
+            },
+            "periods": [
+                {
+                    "start": -210,
+                    "end": -110,
+                    "name": {
+                        "zh": "肃慎",
+                        "en": "Sushen",
+                        "fr": "Sushen"
+                    }
+                },
+                {
+                    "start": -210,
+                    "end": -110,
+                    "name": {
+                        "zh": "东胡",
+                        "en": "Donghu",
+                        "fr": "Donghu"
+                    }
+                },
+                {
+                    "start": -210,
+                    "end": 494,
+                    "name": {
+                        "zh": "扶余",
+                        "en": "Buyeo",
+                        "fr": "Buyeo"
+                    }
+                },
+                {
+                    "start": -110,
+                    "end": 10,
+                    "name": {
+                        "zh": "卫满朝鲜、汉四郡",
+                        "en": "Wiman Joseon and the Han commanderies",
+                        "fr": "Joseon de Wiman et commanderies Han"
+                    },
+                    "note": {
+                        "zh": "公元前 108 年汉武帝灭卫满朝鲜，设乐浪等四郡。",
+                        "en": "In 108 BCE Emperor Wu of Han conquered Wiman Joseon and set up four commanderies.",
+                        "fr": "En 108 av. J.-C., l'empereur Wu des Han conquiert le Joseon de Wiman et crée quatre commanderies."
+                    }
+                },
+                {
+                    "start": -110,
+                    "end": 150,
+                    "name": {
+                        "zh": "鲜卑",
+                        "en": "Xianbei",
+                        "fr": "Xianbei"
+                    }
+                },
+                {
+                    "start": -37,
+                    "end": 668,
+                    "name": {
+                        "zh": "高句丽",
+                        "en": "Goguryeo",
+                        "fr": "Koguryo"
+                    }
+                },
+                {
+                    "start": 10,
+                    "end": 460,
+                    "name": {
+                        "zh": "挹娄",
+                        "en": "Yilou",
+                        "fr": "Yilou"
+                    }
+                },
+                {
+                    "start": 460,
+                    "end": 590,
+                    "name": {
+                        "zh": "勿吉",
+                        "en": "Wuji",
+                        "fr": "Wuji"
+                    }
+                },
+                {
+                    "start": 460,
+                    "end": 900,
+                    "name": {
+                        "zh": "室韦（失韦）",
+                        "en": "Shiwei",
+                        "fr": "Shiwei"
+                    }
+                },
+                {
+                    "start": 590,
+                    "end": 730,
+                    "name": {
+                        "zh": "靺鞨",
+                        "en": "Mohe",
+                        "fr": "Mohe"
+                    }
+                },
+                {
+                    "start": 668,
+                    "end": 760,
+                    "name": {
+                        "zh": "安东都护府（唐）",
+                        "en": "Protectorate General to Pacify the East (Tang)",
+                        "fr": "Protectorat général pour pacifier l'Est (Tang)"
+                    }
+                },
+                {
+                    "start": 698,
+                    "end": 926,
+                    "name": {
+                        "zh": "渤海国",
+                        "en": "Balhae",
+                        "fr": "Balhae"
+                    },
+                    "note": {
+                        "zh": "原表写作 760—970 年，这里按通行年代 698—926 年。",
+                        "en": "The source table gives 760–970; standard dates 698–926 are used here.",
+                        "fr": "Le tableau source indique 760-970 ; les dates usuelles 698-926 sont retenues."
+                    }
+                },
+                {
+                    "start": 730,
+                    "end": 780,
+                    "name": {
+                        "zh": "黑水都护府（唐）",
+                        "en": "Heishui Protectorate (Tang)",
+                        "fr": "Protectorat de Heishui (Tang)"
+                    }
+                },
+                {
+                    "start": 780,
+                    "end": 980,
+                    "name": {
+                        "zh": "黑水靺鞨",
+                        "en": "Heishui Mohe",
+                        "fr": "Mohe de Heishui"
+                    }
+                },
+                {
+                    "start": 916,
+                    "end": 1125,
+                    "name": {
+                        "zh": "辽",
+                        "en": "Liao dynasty",
+                        "fr": "Dynastie Liao"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1115,
+                    "end": 1234,
+                    "name": {
+                        "zh": "金",
+                        "en": "Jin dynasty (Jurchen)",
+                        "fr": "Dynastie Jin (Jürchen)"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1234,
+                    "end": 1368,
+                    "name": {
+                        "zh": "蒙古、元朝",
+                        "en": "Mongol Empire and Yuan",
+                        "fr": "Empire mongol et Yuan"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1368,
+                    "end": 1388,
+                    "name": {
+                        "zh": "北元",
+                        "en": "Northern Yuan",
+                        "fr": "Yuan du Nord"
+                    }
+                },
+                {
+                    "start": 1409,
+                    "end": 1616,
+                    "name": {
+                        "zh": "女真诸部归附明朝（奴儿干都司）",
+                        "en": "Jurchen tribes under the Ming (Nurgan Regional Commission)",
+                        "fr": "Tribus jürchen soumises aux Ming (commission régionale de Nurgan)"
+                    }
+                },
+                {
+                    "start": 1616,
+                    "end": 1912,
+                    "name": {
+                        "zh": "后金、清",
+                        "en": "Later Jin and Qing",
+                        "fr": "Jin postérieurs et Qing"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1916,
+                    "end": 1931,
+                    "name": {
+                        "zh": "奉系军阀",
+                        "en": "Fengtian clique",
+                        "fr": "Clique du Fengtian"
+                    }
+                },
+                {
+                    "start": 1931,
+                    "end": 1945,
+                    "name": {
+                        "zh": "日本侵占（伪满洲国）",
+                        "en": "Japanese occupation (Manchukuo)",
+                        "fr": "Occupation japonaise (Mandchoukouo)"
+                    }
+                },
+                {
+                    "start": 1949,
+                    "end": null,
+                    "name": {
+                        "zh": "中华人民共和国",
+                        "en": "People's Republic of China",
+                        "fr": "République populaire de Chine"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "mongolia",
+            "hue": 75,
+            "name": {
+                "zh": "蒙古高原",
+                "en": "Mongolian Plateau",
+                "fr": "Plateau mongol"
+            },
+            "periods": [
+                {
+                    "start": -209,
+                    "end": 48,
+                    "name": {
+                        "zh": "匈奴",
+                        "en": "Xiongnu",
+                        "fr": "Xiongnu"
+                    }
+                },
+                {
+                    "start": 48,
+                    "end": 155,
+                    "name": {
+                        "zh": "北匈奴",
+                        "en": "Northern Xiongnu",
+                        "fr": "Xiongnu du Nord"
+                    }
+                },
+                {
+                    "start": 155,
+                    "end": 320,
+                    "name": {
+                        "zh": "鲜卑",
+                        "en": "Xianbei",
+                        "fr": "Xianbei"
+                    }
+                },
+                {
+                    "start": 320,
+                    "end": 402,
+                    "name": {
+                        "zh": "敕勒（高车）",
+                        "en": "Chile (Gaoche)",
+                        "fr": "Chile (Gaoche)"
+                    }
+                },
+                {
+                    "start": 402,
+                    "end": 555,
+                    "name": {
+                        "zh": "柔然",
+                        "en": "Rouran Khaganate",
+                        "fr": "Khaganat rouran"
+                    }
+                },
+                {
+                    "start": 552,
+                    "end": 583,
+                    "name": {
+                        "zh": "突厥",
+                        "en": "Göktürk Khaganate",
+                        "fr": "Khaganat turc"
+                    }
+                },
+                {
+                    "start": 583,
+                    "end": 630,
+                    "name": {
+                        "zh": "东突厥",
+                        "en": "Eastern Turkic Khaganate",
+                        "fr": "Khaganat turc oriental"
+                    }
+                },
+                {
+                    "start": 630,
+                    "end": 646,
+                    "name": {
+                        "zh": "薛延陀",
+                        "en": "Xueyantuo",
+                        "fr": "Xueyantuo"
+                    }
+                },
+                {
+                    "start": 647,
+                    "end": 682,
+                    "name": {
+                        "zh": "燕然（安北）都护府（唐）",
+                        "en": "Yanran (Anbei) Protectorate (Tang)",
+                        "fr": "Protectorat de Yanran (Anbei) (Tang)"
+                    }
+                },
+                {
+                    "start": 682,
+                    "end": 744,
+                    "name": {
+                        "zh": "后突厥",
+                        "en": "Second Turkic Khaganate",
+                        "fr": "Second khaganat turc"
+                    }
+                },
+                {
+                    "start": 744,
+                    "end": 840,
+                    "name": {
+                        "zh": "回纥（回鹘）",
+                        "en": "Uyghur Khaganate",
+                        "fr": "Khaganat ouïghour"
+                    }
+                },
+                {
+                    "start": 840,
+                    "end": 910,
+                    "name": {
+                        "zh": "黠戛斯",
+                        "en": "Kyrgyz",
+                        "fr": "Kirghiz"
+                    }
+                },
+                {
+                    "start": 910,
+                    "end": 1125,
+                    "name": {
+                        "zh": "阻卜诸部（辽朝羁縻）",
+                        "en": "Zubu tribes (under loose Liao control)",
+                        "fr": "Tribus zubu (sous contrôle lâche des Liao)"
+                    }
+                },
+                {
+                    "start": 1125,
+                    "end": 1206,
+                    "name": {
+                        "zh": "蒙古诸部",
+                        "en": "Mongol tribes",
+                        "fr": "Tribus mongoles"
+                    }
+                },
+                {
+                    "start": 1206,
+                    "end": 1271,
+                    "name": {
+                        "zh": "大蒙古国",
+                        "en": "Mongol Empire",
+                        "fr": "Empire mongol"
+                    }
+                },
+                {
+                    "start": 1271,
+                    "end": 1368,
+                    "name": {
+                        "zh": "元",
+                        "en": "Yuan dynasty",
+                        "fr": "Dynastie Yuan"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1368,
+                    "end": 1402,
+                    "name": {
+                        "zh": "北元",
+                        "en": "Northern Yuan",
+                        "fr": "Yuan du Nord"
+                    }
+                },
+                {
+                    "start": 1402,
+                    "end": 1480,
+                    "name": {
+                        "zh": "鞑靼",
+                        "en": "Tatars (Eastern Mongols)",
+                        "fr": "Tatars (Mongols orientaux)"
+                    }
+                },
+                {
+                    "start": 1430,
+                    "end": 1570,
+                    "name": {
+                        "zh": "瓦剌蒙古",
+                        "en": "Oirat Mongols",
+                        "fr": "Mongols oïrats"
+                    }
+                },
+                {
+                    "start": 1500,
+                    "end": 1691,
+                    "name": {
+                        "zh": "喀尔喀蒙古",
+                        "en": "Khalkha Mongols",
+                        "fr": "Mongols khalkha"
+                    }
+                },
+                {
+                    "start": 1670,
+                    "end": 1690,
+                    "name": {
+                        "zh": "准噶尔",
+                        "en": "Dzungars",
+                        "fr": "Dzoungars"
+                    }
+                },
+                {
+                    "start": 1691,
+                    "end": 1911,
+                    "name": {
+                        "zh": "清朝统治（多伦会盟后）",
+                        "en": "Qing rule (after the Dolon Nor assembly)",
+                        "fr": "Domination Qing (après l'assemblée de Dolon Nor)"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1911,
+                    "end": 1924,
+                    "name": {
+                        "zh": "博克多汗国",
+                        "en": "Bogd Khanate",
+                        "fr": "Khanat du Bogd"
+                    },
+                    "note": {
+                        "zh": "原表此段空缺，按通行年代补上。",
+                        "en": "Missing in the source table; filled in with standard dates.",
+                        "fr": "Absent du tableau source ; complété avec les dates usuelles."
+                    }
+                },
+                {
+                    "start": 1924,
+                    "end": 1992,
+                    "name": {
+                        "zh": "蒙古人民共和国",
+                        "en": "Mongolian People's Republic",
+                        "fr": "République populaire de Mongolie"
+                    }
+                },
+                {
+                    "start": 1992,
+                    "end": null,
+                    "name": {
+                        "zh": "蒙古国",
+                        "en": "Mongolia",
+                        "fr": "Mongolie"
+                    },
+                    "note": {
+                        "zh": "原表只标到\"蒙古人民共和国\"，1992 年改称蒙古国；内蒙古属中国，见中国行。",
+                        "en": "The source stops at the Mongolian People's Republic, renamed Mongolia in 1992; Inner Mongolia belongs to China.",
+                        "fr": "Le tableau s'arrête à la République populaire de Mongolie, renommée Mongolie en 1992 ; la Mongolie-Intérieure appartient à la Chine."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "egypt",
+            "hue": 40,
+            "name": {
+                "zh": "埃及",
+                "en": "Egypt",
+                "fr": "Égypte"
+            },
+            "periods": [
+                {
+                    "start": -3500,
+                    "end": -3100,
+                    "name": {
+                        "zh": "前王朝时期",
+                        "en": "Predynastic period",
+                        "fr": "Période prédynastique"
+                    }
+                },
+                {
+                    "start": -3100,
+                    "end": -2686,
+                    "name": {
+                        "zh": "早王朝时期",
+                        "en": "Early Dynastic period",
+                        "fr": "Période thinite"
+                    }
+                },
+                {
+                    "start": -2686,
+                    "end": -2181,
+                    "name": {
+                        "zh": "古王国",
+                        "en": "Old Kingdom",
+                        "fr": "Ancien Empire"
+                    },
+                    "note": {
+                        "zh": "金字塔时代，吉萨大金字塔建于这一时期。",
+                        "en": "The age of the pyramids, including the Great Pyramid of Giza.",
+                        "fr": "L'âge des pyramides, dont la grande pyramide de Gizeh."
+                    }
+                },
+                {
+                    "start": -2181,
+                    "end": -2055,
+                    "name": {
+                        "zh": "第一中间期",
+                        "en": "First Intermediate Period",
+                        "fr": "Première Période intermédiaire"
+                    }
+                },
+                {
+                    "start": -2055,
+                    "end": -1650,
+                    "name": {
+                        "zh": "中王国",
+                        "en": "Middle Kingdom",
+                        "fr": "Moyen Empire"
+                    }
+                },
+                {
+                    "start": -1650,
+                    "end": -1550,
+                    "name": {
+                        "zh": "第二中间期",
+                        "en": "Second Intermediate Period",
+                        "fr": "Deuxième Période intermédiaire"
+                    }
+                },
+                {
+                    "start": -1550,
+                    "end": -1069,
+                    "name": {
+                        "zh": "新王国",
+                        "en": "New Kingdom",
+                        "fr": "Nouvel Empire"
+                    },
+                    "note": {
+                        "zh": "图坦卡蒙、拉美西斯二世所在的时代。",
+                        "en": "The era of Tutankhamun and Ramesses II.",
+                        "fr": "L'époque de Toutânkhamon et de Ramsès II."
+                    }
+                },
+                {
+                    "start": -1069,
+                    "end": -664,
+                    "name": {
+                        "zh": "第三中间期",
+                        "en": "Third Intermediate Period",
+                        "fr": "Troisième Période intermédiaire"
+                    }
+                },
+                {
+                    "start": -664,
+                    "end": -332,
+                    "name": {
+                        "zh": "后期王朝",
+                        "en": "Late Period",
+                        "fr": "Basse époque"
+                    }
+                },
+                {
+                    "start": -332,
+                    "end": -305,
+                    "name": {
+                        "zh": "马其顿统治",
+                        "en": "Macedonian rule",
+                        "fr": "Domination macédonienne"
+                    }
+                },
+                {
+                    "start": -305,
+                    "end": -30,
+                    "name": {
+                        "zh": "托勒密王朝",
+                        "en": "Ptolemaic Kingdom",
+                        "fr": "Royaume lagide"
+                    }
+                },
+                {
+                    "start": -30,
+                    "end": 641,
+                    "name": {
+                        "zh": "罗马与拜占庭统治",
+                        "en": "Roman and Byzantine rule",
+                        "fr": "Domination romaine et byzantine"
+                    }
+                },
+                {
+                    "start": 641,
+                    "end": 969,
+                    "name": {
+                        "zh": "早期伊斯兰时期",
+                        "en": "Early Islamic period",
+                        "fr": "Période islamique ancienne"
+                    }
+                },
+                {
+                    "start": 969,
+                    "end": 1171,
+                    "name": {
+                        "zh": "法蒂玛王朝",
+                        "en": "Fatimid Caliphate",
+                        "fr": "Califat fatimide"
+                    }
+                },
+                {
+                    "start": 1171,
+                    "end": 1250,
+                    "name": {
+                        "zh": "阿尤布王朝",
+                        "en": "Ayyubid dynasty",
+                        "fr": "Dynastie ayyoubide"
+                    }
+                },
+                {
+                    "start": 1250,
+                    "end": 1517,
+                    "name": {
+                        "zh": "马穆鲁克苏丹国",
+                        "en": "Mamluk Sultanate",
+                        "fr": "Sultanat mamelouk"
+                    }
+                },
+                {
+                    "start": 1517,
+                    "end": 1805,
+                    "name": {
+                        "zh": "奥斯曼统治",
+                        "en": "Ottoman rule",
+                        "fr": "Domination ottomane"
+                    }
+                },
+                {
+                    "start": 1805,
+                    "end": 1953,
+                    "name": {
+                        "zh": "穆罕默德·阿里王朝",
+                        "en": "Muhammad Ali dynasty",
+                        "fr": "Dynastie de Méhémet Ali"
+                    }
+                },
+                {
+                    "start": 1953,
+                    "end": null,
+                    "name": {
+                        "zh": "埃及共和国",
+                        "en": "Republic of Egypt",
+                        "fr": "République d'Égypte"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "mesopotamia",
+            "hue": 25,
+            "name": {
+                "zh": "两河流域与波斯",
+                "en": "Mesopotamia & Persia",
+                "fr": "Mésopotamie et Perse"
+            },
+            "periods": [
+                {
+                    "start": -3500,
+                    "end": -3100,
+                    "name": {
+                        "zh": "乌鲁克时期",
+                        "en": "Uruk period",
+                        "fr": "Période d'Uruk"
+                    },
+                    "note": {
+                        "zh": "最早的城市和楔形文字出现。",
+                        "en": "The first cities and the earliest cuneiform writing.",
+                        "fr": "Premières villes et premières écritures cunéiformes."
+                    }
+                },
+                {
+                    "start": -3100,
+                    "end": -2334,
+                    "name": {
+                        "zh": "苏美尔城邦",
+                        "en": "Sumerian city-states",
+                        "fr": "Cités-États sumériennes"
+                    }
+                },
+                {
+                    "start": -2334,
+                    "end": -2154,
+                    "name": {
+                        "zh": "阿卡德帝国",
+                        "en": "Akkadian Empire",
+                        "fr": "Empire d'Akkad"
+                    }
+                },
+                {
+                    "start": -2112,
+                    "end": -2004,
+                    "name": {
+                        "zh": "乌尔第三王朝",
+                        "en": "Third Dynasty of Ur",
+                        "fr": "Troisième dynastie d'Ur"
+                    }
+                },
+                {
+                    "start": -1894,
+                    "end": -1595,
+                    "name": {
+                        "zh": "古巴比伦王国",
+                        "en": "Old Babylonian Empire",
+                        "fr": "Empire paléo-babylonien"
+                    },
+                    "note": {
+                        "zh": "汉谟拉比法典制定于这一时期。",
+                        "en": "The Code of Hammurabi dates from this period.",
+                        "fr": "Le code de Hammurabi date de cette période."
+                    }
+                },
+                {
+                    "start": -1595,
+                    "end": -1155,
+                    "name": {
+                        "zh": "加喜特巴比伦",
+                        "en": "Kassite Babylonia",
+                        "fr": "Babylonie kassite"
+                    }
+                },
+                {
+                    "start": -1365,
+                    "end": -1050,
+                    "name": {
+                        "zh": "中亚述帝国",
+                        "en": "Middle Assyrian Empire",
+                        "fr": "Empire médio-assyrien"
+                    }
+                },
+                {
+                    "start": -911,
+                    "end": -609,
+                    "name": {
+                        "zh": "新亚述帝国",
+                        "en": "Neo-Assyrian Empire",
+                        "fr": "Empire néo-assyrien"
+                    }
+                },
+                {
+                    "start": -626,
+                    "end": -539,
+                    "name": {
+                        "zh": "新巴比伦王国",
+                        "en": "Neo-Babylonian Empire",
+                        "fr": "Empire néo-babylonien"
+                    }
+                },
+                {
+                    "start": -550,
+                    "end": -330,
+                    "name": {
+                        "zh": "阿契美尼德帝国",
+                        "en": "Achaemenid Empire",
+                        "fr": "Empire achéménide"
+                    }
+                },
+                {
+                    "start": -312,
+                    "end": -63,
+                    "name": {
+                        "zh": "塞琉古帝国",
+                        "en": "Seleucid Empire",
+                        "fr": "Empire séleucide"
+                    }
+                },
+                {
+                    "start": -247,
+                    "end": 224,
+                    "name": {
+                        "zh": "帕提亚帝国（安息）",
+                        "en": "Parthian Empire",
+                        "fr": "Empire parthe"
+                    }
+                },
+                {
+                    "start": 224,
+                    "end": 651,
+                    "name": {
+                        "zh": "萨珊帝国",
+                        "en": "Sasanian Empire",
+                        "fr": "Empire sassanide"
+                    }
+                },
+                {
+                    "start": 661,
+                    "end": 750,
+                    "name": {
+                        "zh": "倭马亚王朝",
+                        "en": "Umayyad Caliphate",
+                        "fr": "Califat omeyyade"
+                    }
+                },
+                {
+                    "start": 750,
+                    "end": 1258,
+                    "name": {
+                        "zh": "阿拔斯王朝",
+                        "en": "Abbasid Caliphate",
+                        "fr": "Califat abbasside"
+                    },
+                    "note": {
+                        "zh": "都城巴格达，唐代史书称为黑衣大食。",
+                        "en": "Capital Baghdad; known in Tang Chinese sources as the \"Black-robed Arabs\".",
+                        "fr": "Capitale Bagdad ; appelé « Arabes aux habits noirs » dans les sources chinoises des Tang."
+                    }
+                },
+                {
+                    "start": 1037,
+                    "end": 1194,
+                    "name": {
+                        "zh": "塞尔柱帝国",
+                        "en": "Seljuk Empire",
+                        "fr": "Empire seldjoukide"
+                    }
+                },
+                {
+                    "start": 1256,
+                    "end": 1335,
+                    "name": {
+                        "zh": "伊儿汗国",
+                        "en": "Ilkhanate",
+                        "fr": "Ilkhanat"
+                    }
+                },
+                {
+                    "start": 1370,
+                    "end": 1507,
+                    "name": {
+                        "zh": "帖木儿帝国",
+                        "en": "Timurid Empire",
+                        "fr": "Empire timouride"
+                    }
+                },
+                {
+                    "start": 1501,
+                    "end": 1736,
+                    "name": {
+                        "zh": "萨法维王朝",
+                        "en": "Safavid dynasty",
+                        "fr": "Dynastie séfévide"
+                    }
+                },
+                {
+                    "start": 1736,
+                    "end": 1794,
+                    "name": {
+                        "zh": "阿夫沙尔与赞德王朝",
+                        "en": "Afsharid and Zand dynasties",
+                        "fr": "Dynasties afcharide et zend"
+                    }
+                },
+                {
+                    "start": 1789,
+                    "end": 1925,
+                    "name": {
+                        "zh": "恺加王朝",
+                        "en": "Qajar dynasty",
+                        "fr": "Dynastie Kadjar"
+                    }
+                },
+                {
+                    "start": 1925,
+                    "end": 1979,
+                    "name": {
+                        "zh": "巴列维王朝",
+                        "en": "Pahlavi dynasty",
+                        "fr": "Dynastie Pahlavi"
+                    }
+                },
+                {
+                    "start": 1979,
+                    "end": null,
+                    "name": {
+                        "zh": "伊朗伊斯兰共和国",
+                        "en": "Islamic Republic of Iran",
+                        "fr": "République islamique d'Iran"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "india",
+            "hue": 300,
+            "name": {
+                "zh": "印度",
+                "en": "India",
+                "fr": "Inde"
+            },
+            "periods": [
+                {
+                    "start": -3300,
+                    "end": -1300,
+                    "name": {
+                        "zh": "印度河流域文明",
+                        "en": "Indus Valley Civilisation",
+                        "fr": "Civilisation de la vallée de l'Indus"
+                    }
+                },
+                {
+                    "start": -1500,
+                    "end": -500,
+                    "name": {
+                        "zh": "吠陀时代",
+                        "en": "Vedic period",
+                        "fr": "Période védique"
+                    }
+                },
+                {
+                    "start": -600,
+                    "end": -345,
+                    "name": {
+                        "zh": "十六雄国",
+                        "en": "Mahajanapadas",
+                        "fr": "Mahajanapadas"
+                    },
+                    "note": {
+                        "zh": "佛陀生活的时代。",
+                        "en": "The age of the Buddha.",
+                        "fr": "L'époque du Bouddha."
+                    }
+                },
+                {
+                    "start": -345,
+                    "end": -322,
+                    "name": {
+                        "zh": "难陀王朝",
+                        "en": "Nanda Empire",
+                        "fr": "Empire Nanda"
+                    }
+                },
+                {
+                    "start": -322,
+                    "end": -185,
+                    "name": {
+                        "zh": "孔雀王朝",
+                        "en": "Maurya Empire",
+                        "fr": "Empire maurya"
+                    }
+                },
+                {
+                    "start": -230,
+                    "end": 220,
+                    "name": {
+                        "zh": "百乘王朝",
+                        "en": "Satavahana dynasty",
+                        "fr": "Dynastie Satavahana"
+                    }
+                },
+                {
+                    "start": -185,
+                    "end": -73,
+                    "name": {
+                        "zh": "巽伽王朝",
+                        "en": "Shunga Empire",
+                        "fr": "Empire Shunga"
+                    }
+                },
+                {
+                    "start": 30,
+                    "end": 375,
+                    "name": {
+                        "zh": "贵霜帝国",
+                        "en": "Kushan Empire",
+                        "fr": "Empire kouchan"
+                    }
+                },
+                {
+                    "start": 320,
+                    "end": 550,
+                    "name": {
+                        "zh": "笈多王朝",
+                        "en": "Gupta Empire",
+                        "fr": "Empire Gupta"
+                    }
+                },
+                {
+                    "start": 606,
+                    "end": 647,
+                    "name": {
+                        "zh": "戒日王朝",
+                        "en": "Empire of Harsha",
+                        "fr": "Empire de Harsha"
+                    },
+                    "note": {
+                        "zh": "玄奘西行时到访的王朝。",
+                        "en": "The kingdom visited by the Chinese pilgrim Xuanzang.",
+                        "fr": "Le royaume visité par le pèlerin chinois Xuanzang."
+                    }
+                },
+                {
+                    "start": 750,
+                    "end": 1161,
+                    "name": {
+                        "zh": "波罗王朝",
+                        "en": "Pala Empire",
+                        "fr": "Empire Pala"
+                    }
+                },
+                {
+                    "start": 848,
+                    "end": 1279,
+                    "name": {
+                        "zh": "朱罗王朝",
+                        "en": "Chola dynasty",
+                        "fr": "Dynastie Chola"
+                    }
+                },
+                {
+                    "start": 1206,
+                    "end": 1526,
+                    "name": {
+                        "zh": "德里苏丹国",
+                        "en": "Delhi Sultanate",
+                        "fr": "Sultanat de Delhi"
+                    }
+                },
+                {
+                    "start": 1336,
+                    "end": 1646,
+                    "name": {
+                        "zh": "毗奢耶那伽罗帝国",
+                        "en": "Vijayanagara Empire",
+                        "fr": "Empire de Vijayanagara"
+                    }
+                },
+                {
+                    "start": 1526,
+                    "end": 1857,
+                    "name": {
+                        "zh": "莫卧儿帝国",
+                        "en": "Mughal Empire",
+                        "fr": "Empire moghol"
+                    }
+                },
+                {
+                    "start": 1757,
+                    "end": 1858,
+                    "name": {
+                        "zh": "东印度公司统治",
+                        "en": "Company rule",
+                        "fr": "Domination de la Compagnie"
+                    }
+                },
+                {
+                    "start": 1858,
+                    "end": 1947,
+                    "name": {
+                        "zh": "英属印度",
+                        "en": "British Raj",
+                        "fr": "Raj britannique"
+                    }
+                },
+                {
+                    "start": 1947,
+                    "end": null,
+                    "name": {
+                        "zh": "印度共和国",
+                        "en": "Republic of India",
+                        "fr": "République de l'Inde"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "greece",
+            "hue": 210,
+            "name": {
+                "zh": "希腊",
+                "en": "Greece",
+                "fr": "Grèce"
+            },
+            "periods": [
+                {
+                    "start": -3200,
+                    "end": -2000,
+                    "name": {
+                        "zh": "基克拉泽斯文明",
+                        "en": "Cycladic civilisation",
+                        "fr": "Civilisation cycladique"
+                    }
+                },
+                {
+                    "start": -3100,
+                    "end": -1100,
+                    "name": {
+                        "zh": "米诺斯文明",
+                        "en": "Minoan civilisation",
+                        "fr": "Civilisation minoenne"
+                    }
+                },
+                {
+                    "start": -1600,
+                    "end": -1100,
+                    "name": {
+                        "zh": "迈锡尼文明",
+                        "en": "Mycenaean Greece",
+                        "fr": "Civilisation mycénienne"
+                    }
+                },
+                {
+                    "start": -1100,
+                    "end": -800,
+                    "name": {
+                        "zh": "黑暗时代",
+                        "en": "Greek Dark Ages",
+                        "fr": "Siècles obscurs"
+                    }
+                },
+                {
+                    "start": -800,
+                    "end": -480,
+                    "name": {
+                        "zh": "古风时期",
+                        "en": "Archaic period",
+                        "fr": "Époque archaïque"
+                    },
+                    "note": {
+                        "zh": "公元前 776 年举行第一届古代奥运会。",
+                        "en": "The first ancient Olympic Games were held in 776 BCE.",
+                        "fr": "Les premiers Jeux olympiques antiques ont eu lieu en 776 av. J.-C."
+                    }
+                },
+                {
+                    "start": -480,
+                    "end": -323,
+                    "name": {
+                        "zh": "古典时期",
+                        "en": "Classical period",
+                        "fr": "Époque classique"
+                    },
+                    "note": {
+                        "zh": "苏格拉底、柏拉图、亚里士多德的时代。",
+                        "en": "The age of Socrates, Plato and Aristotle.",
+                        "fr": "L'époque de Socrate, Platon et Aristote."
+                    }
+                },
+                {
+                    "start": -323,
+                    "end": -146,
+                    "name": {
+                        "zh": "希腊化时期",
+                        "en": "Hellenistic period",
+                        "fr": "Époque hellénistique"
+                    },
+                    "note": {
+                        "zh": "从亚历山大大帝去世算起；这里只标到罗马征服希腊本土为止。",
+                        "en": "From the death of Alexander the Great; shown here until the Roman conquest of mainland Greece.",
+                        "fr": "Depuis la mort d'Alexandre le Grand ; indiquée ici jusqu'à la conquête romaine de la Grèce continentale."
+                    }
+                },
+                {
+                    "start": -146,
+                    "end": 330,
+                    "name": {
+                        "zh": "罗马统治",
+                        "en": "Roman Greece",
+                        "fr": "Grèce romaine"
+                    }
+                },
+                {
+                    "start": 330,
+                    "end": 1453,
+                    "name": {
+                        "zh": "拜占庭时期",
+                        "en": "Byzantine Greece",
+                        "fr": "Grèce byzantine"
+                    }
+                },
+                {
+                    "start": 1453,
+                    "end": 1821,
+                    "name": {
+                        "zh": "奥斯曼统治",
+                        "en": "Ottoman Greece",
+                        "fr": "Grèce ottomane"
+                    }
+                },
+                {
+                    "start": 1821,
+                    "end": 1830,
+                    "name": {
+                        "zh": "希腊独立战争",
+                        "en": "Greek War of Independence",
+                        "fr": "Guerre d'indépendance grecque"
+                    }
+                },
+                {
+                    "start": 1830,
+                    "end": null,
+                    "name": {
+                        "zh": "现代希腊",
+                        "en": "Modern Greece",
+                        "fr": "Grèce moderne"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "rome",
+            "hue": 350,
+            "name": {
+                "zh": "罗马与意大利",
+                "en": "Rome & Italy",
+                "fr": "Rome et Italie"
+            },
+            "periods": [
+                {
+                    "start": -900,
+                    "end": -100,
+                    "name": {
+                        "zh": "伊特鲁里亚文明",
+                        "en": "Etruscan civilisation",
+                        "fr": "Civilisation étrusque"
+                    }
+                },
+                {
+                    "start": -753,
+                    "end": -509,
+                    "name": {
+                        "zh": "罗马王政时代",
+                        "en": "Roman Kingdom",
+                        "fr": "Royauté romaine"
+                    },
+                    "note": {
+                        "zh": "公元前 753 年是传说中的建城年份。",
+                        "en": "753 BCE is the traditional founding date of Rome.",
+                        "fr": "753 av. J.-C. est la date traditionnelle de la fondation de Rome."
+                    }
+                },
+                {
+                    "start": -509,
+                    "end": -27,
+                    "name": {
+                        "zh": "罗马共和国",
+                        "en": "Roman Republic",
+                        "fr": "République romaine"
+                    }
+                },
+                {
+                    "start": -27,
+                    "end": 395,
+                    "name": {
+                        "zh": "罗马帝国",
+                        "en": "Roman Empire",
+                        "fr": "Empire romain"
+                    },
+                    "note": {
+                        "zh": "与东汉并称当时世界上最大的两个帝国，《后汉书》称之为大秦。",
+                        "en": "With Han China, one of the two largest empires of its time; Chinese sources called it Daqin.",
+                        "fr": "Avec la Chine des Han, l'un des deux plus grands empires de son temps ; les sources chinoises l'appelaient Daqin."
+                    }
+                },
+                {
+                    "start": 395,
+                    "end": 476,
+                    "name": {
+                        "zh": "西罗马帝国",
+                        "en": "Western Roman Empire",
+                        "fr": "Empire romain d'Occident"
+                    }
+                },
+                {
+                    "start": 395,
+                    "end": 1453,
+                    "name": {
+                        "zh": "东罗马帝国（拜占庭）",
+                        "en": "Eastern Roman (Byzantine) Empire",
+                        "fr": "Empire romain d'Orient (byzantin)"
+                    },
+                    "note": {
+                        "zh": "都城君士坦丁堡，1453 年被奥斯曼帝国攻陷。",
+                        "en": "Capital Constantinople, taken by the Ottomans in 1453.",
+                        "fr": "Capitale Constantinople, prise par les Ottomans en 1453."
+                    }
+                },
+                {
+                    "start": 493,
+                    "end": 553,
+                    "name": {
+                        "zh": "东哥特王国",
+                        "en": "Ostrogothic Kingdom",
+                        "fr": "Royaume ostrogoth"
+                    }
+                },
+                {
+                    "start": 568,
+                    "end": 774,
+                    "name": {
+                        "zh": "伦巴第王国",
+                        "en": "Kingdom of the Lombards",
+                        "fr": "Royaume lombard"
+                    }
+                },
+                {
+                    "start": 756,
+                    "end": 1870,
+                    "name": {
+                        "zh": "教皇国",
+                        "en": "Papal States",
+                        "fr": "États pontificaux"
+                    }
+                },
+                {
+                    "start": 1000,
+                    "end": 1797,
+                    "name": {
+                        "zh": "意大利城邦",
+                        "en": "Italian city-states",
+                        "fr": "Cités-États italiennes"
+                    },
+                    "note": {
+                        "zh": "威尼斯、热那亚、佛罗伦萨等；1797 年威尼斯共和国灭亡。",
+                        "en": "Venice, Genoa, Florence and others; the Republic of Venice fell in 1797.",
+                        "fr": "Venise, Gênes, Florence, etc. ; la République de Venise tombe en 1797."
+                    }
+                },
+                {
+                    "start": 1861,
+                    "end": 1946,
+                    "name": {
+                        "zh": "意大利王国",
+                        "en": "Kingdom of Italy",
+                        "fr": "Royaume d'Italie"
+                    }
+                },
+                {
+                    "start": 1946,
+                    "end": null,
+                    "name": {
+                        "zh": "意大利共和国",
+                        "en": "Italian Republic",
+                        "fr": "République italienne"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "west",
+            "hue": 230,
+            "name": {
+                "zh": "西欧",
+                "en": "Western Europe",
+                "fr": "Europe occidentale"
+            },
+            "periods": [
+                {
+                    "start": -800,
+                    "end": -450,
+                    "name": {
+                        "zh": "哈尔施塔特文化",
+                        "en": "Hallstatt culture",
+                        "fr": "Culture de Hallstatt"
+                    }
+                },
+                {
+                    "start": -450,
+                    "end": -50,
+                    "name": {
+                        "zh": "拉坦诺文化（凯尔特）",
+                        "en": "La Tène culture (Celts)",
+                        "fr": "Culture de La Tène (Celtes)"
+                    }
+                },
+                {
+                    "start": -50,
+                    "end": 476,
+                    "name": {
+                        "zh": "罗马统治时期",
+                        "en": "Roman period",
+                        "fr": "Période romaine"
+                    }
+                },
+                {
+                    "start": 476,
+                    "end": 1000,
+                    "name": {
+                        "zh": "中世纪早期",
+                        "en": "Early Middle Ages",
+                        "fr": "Haut Moyen Âge"
+                    }
+                },
+                {
+                    "start": 962,
+                    "end": 1806,
+                    "name": {
+                        "zh": "神圣罗马帝国",
+                        "en": "Holy Roman Empire",
+                        "fr": "Saint-Empire romain germanique"
+                    },
+                    "note": {
+                        "zh": "从奥托一世加冕算起；也有人从 800 年查理曼加冕算起。",
+                        "en": "Counted from the coronation of Otto I; some count from Charlemagne's coronation in 800.",
+                        "fr": "Compté depuis le couronnement d'Otton Ier ; certains partent du couronnement de Charlemagne en 800."
+                    }
+                },
+                {
+                    "start": 1000,
+                    "end": 1300,
+                    "name": {
+                        "zh": "中世纪盛期",
+                        "en": "High Middle Ages",
+                        "fr": "Moyen Âge central"
+                    }
+                },
+                {
+                    "start": 1300,
+                    "end": 1500,
+                    "name": {
+                        "zh": "中世纪晚期",
+                        "en": "Late Middle Ages",
+                        "fr": "Bas Moyen Âge"
+                    }
+                },
+                {
+                    "start": 1400,
+                    "end": 1600,
+                    "name": {
+                        "zh": "文艺复兴",
+                        "en": "Renaissance",
+                        "fr": "Renaissance"
+                    }
+                },
+                {
+                    "start": 1415,
+                    "end": 1600,
+                    "name": {
+                        "zh": "大航海时代",
+                        "en": "Age of Discovery",
+                        "fr": "Grandes découvertes"
+                    },
+                    "note": {
+                        "zh": "与郑和下西洋（1405–1433）大致同期开始。",
+                        "en": "Began around the same time as Zheng He's voyages (1405–1433).",
+                        "fr": "Commence à peu près en même temps que les voyages de Zheng He (1405-1433)."
+                    }
+                },
+                {
+                    "start": 1517,
+                    "end": 1648,
+                    "name": {
+                        "zh": "宗教改革",
+                        "en": "Reformation",
+                        "fr": "Réforme protestante"
+                    }
+                },
+                {
+                    "start": 1685,
+                    "end": 1815,
+                    "name": {
+                        "zh": "启蒙时代",
+                        "en": "Age of Enlightenment",
+                        "fr": "Siècle des Lumières"
+                    }
+                },
+                {
+                    "start": 1760,
+                    "end": 1840,
+                    "name": {
+                        "zh": "工业革命",
+                        "en": "Industrial Revolution",
+                        "fr": "Révolution industrielle"
+                    }
+                },
+                {
+                    "start": 1914,
+                    "end": 1945,
+                    "name": {
+                        "zh": "两次世界大战",
+                        "en": "World Wars",
+                        "fr": "Guerres mondiales"
+                    }
+                },
+                {
+                    "start": 1951,
+                    "end": null,
+                    "name": {
+                        "zh": "欧洲一体化",
+                        "en": "European integration",
+                        "fr": "Construction européenne"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "france",
+            "hue": 260,
+            "name": {
+                "zh": "法国",
+                "en": "France",
+                "fr": "France"
+            },
+            "periods": [
+                {
+                    "start": -600,
+                    "end": -50,
+                    "name": {
+                        "zh": "高卢（凯尔特人）",
+                        "en": "Gaul (Celts)",
+                        "fr": "Gaule (Celtes)"
+                    },
+                    "note": {
+                        "zh": "约公元前 600 年希腊人建立马赛。",
+                        "en": "Greek colonists founded Marseille around 600 BCE.",
+                        "fr": "Des colons grecs fondent Marseille vers 600 av. J.-C."
+                    }
+                },
+                {
+                    "start": -50,
+                    "end": 486,
+                    "name": {
+                        "zh": "罗马高卢",
+                        "en": "Roman Gaul",
+                        "fr": "Gaule romaine"
+                    },
+                    "note": {
+                        "zh": "恺撒于公元前 52 年在阿莱西亚战胜维钦托利。",
+                        "en": "Caesar defeated Vercingetorix at Alesia in 52 BCE.",
+                        "fr": "César bat Vercingétorix à Alésia en 52 av. J.-C."
+                    }
+                },
+                {
+                    "start": 481,
+                    "end": 751,
+                    "name": {
+                        "zh": "墨洛温王朝",
+                        "en": "Merovingian dynasty",
+                        "fr": "Mérovingiens"
+                    },
+                    "note": {
+                        "zh": "克洛维一世统一法兰克人并皈依基督教。",
+                        "en": "Clovis I united the Franks and converted to Christianity.",
+                        "fr": "Clovis Ier unifie les Francs et se convertit au christianisme."
+                    }
+                },
+                {
+                    "start": 751,
+                    "end": 987,
+                    "name": {
+                        "zh": "加洛林王朝",
+                        "en": "Carolingian dynasty",
+                        "fr": "Carolingiens"
+                    },
+                    "note": {
+                        "zh": "查理曼于 800 年加冕为皇帝；843 年《凡尔登条约》三分帝国，西法兰克成为法国的前身。",
+                        "en": "Charlemagne was crowned emperor in 800; the Treaty of Verdun (843) split the empire, and West Francia became France.",
+                        "fr": "Charlemagne est couronné empereur en 800 ; le traité de Verdun (843) partage l'empire, et la Francie occidentale devient la France."
+                    }
+                },
+                {
+                    "start": 987,
+                    "end": 1328,
+                    "name": {
+                        "zh": "卡佩王朝",
+                        "en": "Capetian dynasty",
+                        "fr": "Capétiens directs"
+                    }
+                },
+                {
+                    "start": 1328,
+                    "end": 1589,
+                    "name": {
+                        "zh": "瓦卢瓦王朝",
+                        "en": "Valois dynasty",
+                        "fr": "Valois"
+                    }
+                },
+                {
+                    "start": 1337,
+                    "end": 1453,
+                    "name": {
+                        "zh": "英法百年战争",
+                        "en": "Hundred Years' War",
+                        "fr": "Guerre de Cent Ans"
+                    },
+                    "note": {
+                        "zh": "圣女贞德于 1429 年解奥尔良之围。",
+                        "en": "Joan of Arc lifted the siege of Orléans in 1429.",
+                        "fr": "Jeanne d'Arc délivre Orléans en 1429."
+                    }
+                },
+                {
+                    "start": 1589,
+                    "end": 1792,
+                    "name": {
+                        "zh": "波旁王朝",
+                        "en": "Bourbon dynasty",
+                        "fr": "Bourbons"
+                    },
+                    "note": {
+                        "zh": "路易十四（1643–1715 在位）与清康熙帝同时代，曾派耶稣会士来华。",
+                        "en": "Louis XIV (r. 1643–1715) was a contemporary of the Kangxi Emperor and sent Jesuits to China.",
+                        "fr": "Louis XIV (règne 1643-1715), contemporain de l'empereur Kangxi, envoie des jésuites en Chine."
+                    }
+                },
+                {
+                    "start": 1789,
+                    "end": 1804,
+                    "name": {
+                        "zh": "法国大革命与第一共和国",
+                        "en": "French Revolution and First Republic",
+                        "fr": "Révolution et Première République"
+                    }
+                },
+                {
+                    "start": 1804,
+                    "end": 1815,
+                    "name": {
+                        "zh": "第一帝国",
+                        "en": "First French Empire",
+                        "fr": "Premier Empire"
+                    },
+                    "note": {
+                        "zh": "拿破仑一世统治时期。",
+                        "en": "The reign of Napoleon I.",
+                        "fr": "Le règne de Napoléon Ier."
+                    }
+                },
+                {
+                    "start": 1815,
+                    "end": 1830,
+                    "name": {
+                        "zh": "波旁复辟",
+                        "en": "Bourbon Restoration",
+                        "fr": "Restauration"
+                    }
+                },
+                {
+                    "start": 1830,
+                    "end": 1848,
+                    "name": {
+                        "zh": "七月王朝",
+                        "en": "July Monarchy",
+                        "fr": "Monarchie de Juillet"
+                    }
+                },
+                {
+                    "start": 1848,
+                    "end": 1852,
+                    "name": {
+                        "zh": "第二共和国",
+                        "en": "Second Republic",
+                        "fr": "Deuxième République"
+                    }
+                },
+                {
+                    "start": 1852,
+                    "end": 1870,
+                    "name": {
+                        "zh": "第二帝国",
+                        "en": "Second French Empire",
+                        "fr": "Second Empire"
+                    },
+                    "note": {
+                        "zh": "拿破仑三世统治时期；1860 年英法联军焚毁圆明园。",
+                        "en": "The reign of Napoleon III; Anglo-French troops burned the Old Summer Palace in 1860.",
+                        "fr": "Le règne de Napoléon III ; les troupes franco-britanniques incendient le palais d'Été en 1860."
+                    }
+                },
+                {
+                    "start": 1870,
+                    "end": 1940,
+                    "name": {
+                        "zh": "第三共和国",
+                        "en": "Third Republic",
+                        "fr": "Troisième République"
+                    }
+                },
+                {
+                    "start": 1940,
+                    "end": 1944,
+                    "name": {
+                        "zh": "维希法国",
+                        "en": "Vichy France",
+                        "fr": "Régime de Vichy"
+                    }
+                },
+                {
+                    "start": 1944,
+                    "end": 1946,
+                    "name": {
+                        "zh": "临时政府",
+                        "en": "Provisional Government",
+                        "fr": "Gouvernement provisoire"
+                    }
+                },
+                {
+                    "start": 1946,
+                    "end": 1958,
+                    "name": {
+                        "zh": "第四共和国",
+                        "en": "Fourth Republic",
+                        "fr": "Quatrième République"
+                    }
+                },
+                {
+                    "start": 1958,
+                    "end": null,
+                    "name": {
+                        "zh": "第五共和国",
+                        "en": "Fifth Republic",
+                        "fr": "Cinquième République"
+                    },
+                    "note": {
+                        "zh": "1964 年法国与中华人民共和国建交，是第一个与之建交的西方大国。",
+                        "en": "In 1964 France became the first major Western country to recognise the People's Republic of China.",
+                        "fr": "En 1964, la France est la première grande puissance occidentale à reconnaître la République populaire de Chine."
+                    }
+                }
+            ]
+        },
+        {
+            "id": "japan",
+            "hue": 330,
+            "name": {
+                "zh": "日本",
+                "en": "Japan",
+                "fr": "Japon"
+            },
+            "periods": [
+                {
+                    "start": -14000,
+                    "end": -300,
+                    "name": {
+                        "zh": "绳文时代",
+                        "en": "Jōmon period",
+                        "fr": "Époque Jōmon"
+                    }
+                },
+                {
+                    "start": -300,
+                    "end": 250,
+                    "name": {
+                        "zh": "弥生时代",
+                        "en": "Yayoi period",
+                        "fr": "Époque Yayoi"
+                    },
+                    "note": {
+                        "zh": "水稻种植从大陆传入；《后汉书》记载了倭奴国遣使。",
+                        "en": "Rice farming arrived from the continent; the Book of the Later Han records an embassy from Wa.",
+                        "fr": "La riziculture arrive du continent ; le Livre des Han postérieurs mentionne une ambassade du Wa."
+                    }
+                },
+                {
+                    "start": 250,
+                    "end": 538,
+                    "name": {
+                        "zh": "古坟时代",
+                        "en": "Kofun period",
+                        "fr": "Époque Kofun"
+                    }
+                },
+                {
+                    "start": 538,
+                    "end": 710,
+                    "name": {
+                        "zh": "飞鸟时代",
+                        "en": "Asuka period",
+                        "fr": "Époque d'Asuka"
+                    }
+                },
+                {
+                    "start": 710,
+                    "end": 794,
+                    "name": {
+                        "zh": "奈良时代",
+                        "en": "Nara period",
+                        "fr": "Époque de Nara"
+                    },
+                    "note": {
+                        "zh": "仿照唐长安建平城京，派遣遣唐使。",
+                        "en": "Heijō-kyō was modelled on Tang Chang'an; envoys were sent to the Tang court.",
+                        "fr": "Heijō-kyō est calquée sur Chang'an des Tang ; ambassades envoyées à la cour Tang."
+                    }
+                },
+                {
+                    "start": 794,
+                    "end": 1185,
+                    "name": {
+                        "zh": "平安时代",
+                        "en": "Heian period",
+                        "fr": "Époque de Heian"
+                    }
+                },
+                {
+                    "start": 1185,
+                    "end": 1333,
+                    "name": {
+                        "zh": "镰仓时代",
+                        "en": "Kamakura period",
+                        "fr": "Époque de Kamakura"
+                    }
+                },
+                {
+                    "start": 1336,
+                    "end": 1573,
+                    "name": {
+                        "zh": "室町时代",
+                        "en": "Muromachi period",
+                        "fr": "Époque de Muromachi"
+                    }
+                },
+                {
+                    "start": 1336,
+                    "end": 1392,
+                    "name": {
+                        "zh": "南北朝时代",
+                        "en": "Nanboku-chō period",
+                        "fr": "Époque Nanboku-chō"
+                    }
+                },
+                {
+                    "start": 1467,
+                    "end": 1615,
+                    "name": {
+                        "zh": "战国时代",
+                        "en": "Sengoku period",
+                        "fr": "Époque Sengoku"
+                    }
+                },
+                {
+                    "start": 1573,
+                    "end": 1603,
+                    "name": {
+                        "zh": "安土桃山时代",
+                        "en": "Azuchi–Momoyama period",
+                        "fr": "Époque Azuchi Momoyama"
+                    }
+                },
+                {
+                    "start": 1603,
+                    "end": 1868,
+                    "name": {
+                        "zh": "江户时代",
+                        "en": "Edo period",
+                        "fr": "Époque d'Edo"
+                    }
+                },
+                {
+                    "start": 1868,
+                    "end": 1912,
+                    "name": {
+                        "zh": "明治",
+                        "en": "Meiji era",
+                        "fr": "Ère Meiji"
+                    }
+                },
+                {
+                    "start": 1912,
+                    "end": 1926,
+                    "name": {
+                        "zh": "大正",
+                        "en": "Taishō era",
+                        "fr": "Ère Taishō"
+                    }
+                },
+                {
+                    "start": 1926,
+                    "end": 1989,
+                    "name": {
+                        "zh": "昭和",
+                        "en": "Shōwa era",
+                        "fr": "Ère Shōwa"
+                    }
+                },
+                {
+                    "start": 1989,
+                    "end": 2019,
+                    "name": {
+                        "zh": "平成",
+                        "en": "Heisei era",
+                        "fr": "Ère Heisei"
+                    }
+                },
+                {
+                    "start": 2019,
+                    "end": null,
+                    "name": {
+                        "zh": "令和",
+                        "en": "Reiwa era",
+                        "fr": "Ère Reiwa"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "americas",
+            "hue": 150,
+            "name": {
+                "zh": "美洲",
+                "en": "Americas",
+                "fr": "Amériques"
+            },
+            "periods": [
+                {
+                    "start": -3500,
+                    "end": -1800,
+                    "name": {
+                        "zh": "卡拉尔-苏佩文明",
+                        "en": "Caral–Supe civilisation",
+                        "fr": "Civilisation de Caral"
+                    },
+                    "note": {
+                        "zh": "位于今秘鲁，美洲已知最早的文明。",
+                        "en": "In present-day Peru; the oldest known civilisation of the Americas.",
+                        "fr": "Dans l'actuel Pérou ; la plus ancienne civilisation connue des Amériques."
+                    }
+                },
+                {
+                    "start": -1500,
+                    "end": -400,
+                    "name": {
+                        "zh": "奥尔梅克文明",
+                        "en": "Olmec civilisation",
+                        "fr": "Civilisation olmèque"
+                    }
+                },
+                {
+                    "start": -1000,
+                    "end": 1697,
+                    "name": {
+                        "zh": "玛雅文明",
+                        "en": "Maya civilisation",
+                        "fr": "Civilisation maya"
+                    },
+                    "note": {
+                        "zh": "古典期约为 250–900 年；1697 年最后一座独立城邦被西班牙征服。",
+                        "en": "Classic period c. 250–900; the last independent city fell to Spain in 1697.",
+                        "fr": "Période classique vers 250-900 ; la dernière cité indépendante tombe aux mains des Espagnols en 1697."
+                    }
+                },
+                {
+                    "start": -900,
+                    "end": -200,
+                    "name": {
+                        "zh": "查文文化",
+                        "en": "Chavín culture",
+                        "fr": "Culture Chavín"
+                    }
+                },
+                {
+                    "start": -100,
+                    "end": 550,
+                    "name": {
+                        "zh": "特奥蒂瓦坎",
+                        "en": "Teotihuacan",
+                        "fr": "Teotihuacan"
+                    }
+                },
+                {
+                    "start": -100,
+                    "end": 800,
+                    "name": {
+                        "zh": "纳斯卡文化",
+                        "en": "Nazca culture",
+                        "fr": "Culture Nazca"
+                    }
+                },
+                {
+                    "start": 100,
+                    "end": 800,
+                    "name": {
+                        "zh": "莫切文化",
+                        "en": "Moche culture",
+                        "fr": "Culture moche"
+                    }
+                },
+                {
+                    "start": 500,
+                    "end": 1000,
+                    "name": {
+                        "zh": "蒂瓦纳科",
+                        "en": "Tiwanaku",
+                        "fr": "Tiwanaku"
+                    }
+                },
+                {
+                    "start": 600,
+                    "end": 1000,
+                    "name": {
+                        "zh": "瓦里帝国",
+                        "en": "Wari Empire",
+                        "fr": "Empire Wari"
+                    }
+                },
+                {
+                    "start": 800,
+                    "end": 1600,
+                    "name": {
+                        "zh": "密西西比文化",
+                        "en": "Mississippian culture",
+                        "fr": "Culture du Mississippi"
+                    }
+                },
+                {
+                    "start": 900,
+                    "end": 1168,
+                    "name": {
+                        "zh": "托尔特克文明",
+                        "en": "Toltec civilisation",
+                        "fr": "Civilisation toltèque"
+                    }
+                },
+                {
+                    "start": 1428,
+                    "end": 1521,
+                    "name": {
+                        "zh": "阿兹特克帝国",
+                        "en": "Aztec Empire",
+                        "fr": "Empire aztèque"
+                    }
+                },
+                {
+                    "start": 1438,
+                    "end": 1533,
+                    "name": {
+                        "zh": "印加帝国",
+                        "en": "Inca Empire",
+                        "fr": "Empire inca"
+                    }
+                },
+                {
+                    "start": 1492,
+                    "end": 1825,
+                    "name": {
+                        "zh": "欧洲殖民时期",
+                        "en": "European colonisation",
+                        "fr": "Colonisation européenne"
+                    }
+                },
+                {
+                    "start": 1776,
+                    "end": null,
+                    "name": {
+                        "zh": "美利坚合众国",
+                        "en": "United States",
+                        "fr": "États-Unis"
+                    }
+                },
+                {
+                    "start": 1825,
+                    "end": null,
+                    "name": {
+                        "zh": "拉丁美洲独立国家",
+                        "en": "Independent Latin America",
+                        "fr": "Amérique latine indépendante"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "africa",
+            "hue": 90,
+            "name": {
+                "zh": "非洲",
+                "en": "Africa",
+                "fr": "Afrique"
+            },
+            "periods": [
+                {
+                    "start": -2500,
+                    "end": -1500,
+                    "name": {
+                        "zh": "凯尔马文化（努比亚）",
+                        "en": "Kerma culture (Nubia)",
+                        "fr": "Culture de Kerma (Nubie)"
+                    }
+                },
+                {
+                    "start": -1500,
+                    "end": 500,
+                    "name": {
+                        "zh": "诺克文化",
+                        "en": "Nok culture",
+                        "fr": "Culture Nok"
+                    }
+                },
+                {
+                    "start": -1070,
+                    "end": 350,
+                    "name": {
+                        "zh": "库施王国",
+                        "en": "Kingdom of Kush",
+                        "fr": "Royaume de Koush"
+                    }
+                },
+                {
+                    "start": -814,
+                    "end": -146,
+                    "name": {
+                        "zh": "迦太基",
+                        "en": "Carthage",
+                        "fr": "Carthage"
+                    }
+                },
+                {
+                    "start": -202,
+                    "end": -46,
+                    "name": {
+                        "zh": "努米底亚王国",
+                        "en": "Numidia",
+                        "fr": "Numidie"
+                    }
+                },
+                {
+                    "start": 100,
+                    "end": 940,
+                    "name": {
+                        "zh": "阿克苏姆王国",
+                        "en": "Kingdom of Aksum",
+                        "fr": "Royaume d'Aksoum"
+                    }
+                },
+                {
+                    "start": 300,
+                    "end": 1200,
+                    "name": {
+                        "zh": "加纳帝国",
+                        "en": "Ghana Empire",
+                        "fr": "Empire du Ghana"
+                    }
+                },
+                {
+                    "start": 1000,
+                    "end": 1500,
+                    "name": {
+                        "zh": "斯瓦希里城邦",
+                        "en": "Swahili city-states",
+                        "fr": "Cités-États swahilies"
+                    },
+                    "note": {
+                        "zh": "郑和船队曾到访东非沿岸的这些港口。",
+                        "en": "Zheng He's fleet visited these East African ports.",
+                        "fr": "La flotte de Zheng He a visité ces ports d'Afrique de l'Est."
+                    }
+                },
+                {
+                    "start": 1100,
+                    "end": 1450,
+                    "name": {
+                        "zh": "大津巴布韦",
+                        "en": "Great Zimbabwe",
+                        "fr": "Grand Zimbabwe"
+                    }
+                },
+                {
+                    "start": 1180,
+                    "end": 1897,
+                    "name": {
+                        "zh": "贝宁王国",
+                        "en": "Kingdom of Benin",
+                        "fr": "Royaume du Bénin"
+                    }
+                },
+                {
+                    "start": 1235,
+                    "end": 1670,
+                    "name": {
+                        "zh": "马里帝国",
+                        "en": "Mali Empire",
+                        "fr": "Empire du Mali"
+                    }
+                },
+                {
+                    "start": 1270,
+                    "end": 1974,
+                    "name": {
+                        "zh": "埃塞尔比亚帝国",
+                        "en": "Ethiopian Empire",
+                        "fr": "Empire éthiopien"
+                    }
+                },
+                {
+                    "start": 1390,
+                    "end": 1857,
+                    "name": {
+                        "zh": "刚果王国",
+                        "en": "Kingdom of Kongo",
+                        "fr": "Royaume du Kongo"
+                    }
+                },
+                {
+                    "start": 1464,
+                    "end": 1591,
+                    "name": {
+                        "zh": "桑海帝国",
+                        "en": "Songhai Empire",
+                        "fr": "Empire songhaï"
+                    }
+                },
+                {
+                    "start": 1816,
+                    "end": 1897,
+                    "name": {
+                        "zh": "祖鲁王国",
+                        "en": "Zulu Kingdom",
+                        "fr": "Royaume zoulou"
+                    }
+                },
+                {
+                    "start": 1884,
+                    "end": 1960,
+                    "name": {
+                        "zh": "欧洲殖民时期",
+                        "en": "European colonial period",
+                        "fr": "Période coloniale européenne"
+                    },
+                    "note": {
+                        "zh": "从柏林会议算起，到大多数国家独立的 1960 年前后。",
+                        "en": "From the Berlin Conference to around 1960, when most countries became independent.",
+                        "fr": "De la conférence de Berlin jusque vers 1960, année des indépendances de la plupart des pays."
+                    }
+                },
+                {
+                    "start": 1960,
+                    "end": null,
+                    "name": {
+                        "zh": "独立的非洲国家",
+                        "en": "Independent African states",
+                        "fr": "États africains indépendants"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "world",
+            "hue": 200,
+            "name": {
+                "zh": "世界大事",
+                "en": "World events",
+                "fr": "Événements mondiaux"
+            },
+            "periods": []
+        }
+    ]
+}

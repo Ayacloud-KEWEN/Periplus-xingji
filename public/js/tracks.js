@@ -65,18 +65,18 @@ function notify() {
 
 // ---------- 数值格式 ----------
 
-function formatDistance(meters) {
+export function formatDistance(meters) {
     return meters >= 1000 ? `${(meters / 1000).toFixed(1)} km` : `${Math.round(meters)} m`;
 }
 
-function formatDuration(seconds) {
+export function formatDuration(seconds) {
     if (!Number.isFinite(seconds) || seconds <= 0) return null;
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.round((seconds % 3600) / 60);
     return hours ? `${hours} h ${minutes} min` : `${minutes} min`;
 }
 
-function durationOf(track) {
+export function durationOf(track) {
     if (!track.ended_at) return null;
     return (new Date(track.ended_at) - new Date(track.started_at)) / 1000;
 }
@@ -84,7 +84,7 @@ function durationOf(track) {
 const mmss = (seconds) => `${Math.floor(seconds / 60)}:${String(Math.round(seconds % 60)).padStart(2, '0')}`;
 
 // 跑步、徒步看配速（每公里几分几秒），骑行看时速，游泳看每 100 米几分几秒
-function formatPace(track) {
+export function formatPace(track) {
     const seconds = durationOf(track);
     if (!seconds || track.distance_m < 100) return null;
     if (track.sport === 'cycling') return `${(track.distance_m / 1000 / (seconds / 3600)).toFixed(1)} km/h`;

@@ -4,6 +4,7 @@ import { pool } from '../db.js';
 import { geocoderStatus } from '../geocoder.js';
 import { heritageTotal, matchHeritage } from '../heritage.js';
 import { resolvePlace } from '../special-regions.js';
+import { matchTcc, tccMeta } from '../tcc.js';
 
 const router = Router();
 const LEVELS = ['continent', 'country', 'state', 'city', 'county', 'town'];
@@ -49,6 +50,7 @@ router.get('/', async (req, res) => {
     // 各级去重计数（顶部数字卡片）：用完整路径去重，不同省的同名区县分开算
     const seen = Object.fromEntries(LEVELS.map(level => [level, new Set()]));
     const tree = newNode({});
+    const tccPoints = []; // TCC 名单用：套用过特殊地区规则的国家代码，外加省名和坐标（细分条目要用）
     let located = 0;
     let pending = 0;
 
@@ -60,6 +62,10 @@ router.get('/', async (req, res) => {
         }
         if (!place.countryCode) continue; // 海上等无法定位的地点
         located++;
+        tccPoints.push({
+            id: Number(point.id), countryCode: place.countryCode, state: place.state,
+            lat: point.lat, lng: point.lng, visitedAt: point.visited_at
+        });
 
         let node = tree;
         let path = '';
@@ -81,7 +87,8 @@ router.get('/', async (req, res) => {
         geocoder: geocoderStatus(),
         counts: Object.fromEntries(LEVELS.map(level => [level, seen[level].size])),
         tree: serialize(tree),
-        heritage: { total: heritageTotal(), visited: matchHeritage(rows) }
+        heritage: { total: heritageTotal(), visited: matchHeritage(rows) },
+        tcc: { ...tccMeta(), visited: matchTcc(tccPoints) }
     });
 });
 

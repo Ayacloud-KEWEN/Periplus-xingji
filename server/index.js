@@ -8,6 +8,7 @@ import { pool } from './db.js';
 import pointsRouter from './routes/points.js';
 import historyRouter from './routes/history.js';
 import statsRouter from './routes/stats.js';
+import listsRouter from './routes/lists.js';
 import regionsRouter from './routes/regions.js';
 import backupRouter from './routes/backup.js';
 import tracksRouter from './routes/tracks.js';
@@ -39,6 +40,7 @@ app.get('/api/health', async (req, res) => {
 app.use('/api/points', pointsRouter);
 app.use('/api/history', historyRouter);
 app.use('/api/stats', statsRouter);
+app.use('/api/lists', listsRouter);
 app.use('/api/regions', regionsRouter);
 app.use('/api/backup', backupRouter);
 app.use('/api/tracks', tracksRouter);

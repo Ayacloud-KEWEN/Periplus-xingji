@@ -144,7 +144,7 @@ export function buildTrips(pins, gapDays, manual = overrides) {
         .reverse();
 }
 
-function tripTitle(trip) {
+export function tripTitle(trip) {
     return trip.name || trip.places.join(' · ') || dateRange(trip.start, trip.end);
 }
 

@@ -1,0 +1,5080 @@
+{
+  "说明": "Travelers' Century Club（TCC）官方「国家和地区」名单，共 330 条，2022 年 1 月版，抓自 travelerscenturyclub.org。countryCodes 是标注所在的国家 / 地区代码（和逆地理编码结果一致，含 config/special-regions.json 的特殊地区代码）；when 是同一个国家里再细分的条件，满足任意一条即命中，一条规则里的 stateNames（省 / 州名，任一语言）和 bbox（[西经度, 南纬度, 东经度, 北纬度]）都要满足；没有 when 的是这个国家的默认条目，带 when 的先判。pending 为 true 的条目没有可靠的分法（南极洲那几个互相重叠的领地声索），不参与匹配，只计入分母。",
+  "version": "2022-01",
+  "source": "https://travelerscenturyclub.org/countries-and-territories/",
+  "zones": [
+    {
+      "code": "pacific",
+      "name": {
+        "zh": "太平洋",
+        "en": "Pacific Ocean",
+        "fr": "Océan Pacifique"
+      }
+    },
+    {
+      "code": "north-america",
+      "name": {
+        "zh": "北美洲",
+        "en": "North America",
+        "fr": "Amérique du Nord"
+      }
+    },
+    {
+      "code": "central-america",
+      "name": {
+        "zh": "中美洲",
+        "en": "Central America",
+        "fr": "Amérique centrale"
+      }
+    },
+    {
+      "code": "south-america",
+      "name": {
+        "zh": "南美洲",
+        "en": "South America",
+        "fr": "Amérique du Sud"
+      }
+    },
+    {
+      "code": "caribbean",
+      "name": {
+        "zh": "加勒比",
+        "en": "Caribbean",
+        "fr": "Caraïbes"
+      }
+    },
+    {
+      "code": "atlantic",
+      "name": {
+        "zh": "大西洋",
+        "en": "Atlantic Ocean",
+        "fr": "Océan Atlantique"
+      }
+    },
+    {
+      "code": "europe",
+      "name": {
+        "zh": "欧洲与地中海",
+        "en": "Europe & Mediterranean",
+        "fr": "Europe et Méditerranée"
+      }
+    },
+    {
+      "code": "antarctica",
+      "name": {
+        "zh": "南极",
+        "en": "Antarctica",
+        "fr": "Antarctique"
+      }
+    },
+    {
+      "code": "africa",
+      "name": {
+        "zh": "非洲",
+        "en": "Africa",
+        "fr": "Afrique"
+      }
+    },
+    {
+      "code": "middle-east",
+      "name": {
+        "zh": "中东",
+        "en": "Middle East",
+        "fr": "Moyen-Orient"
+      }
+    },
+    {
+      "code": "indian-ocean",
+      "name": {
+        "zh": "印度洋",
+        "en": "Indian Ocean",
+        "fr": "Océan Indien"
+      }
+    },
+    {
+      "code": "asia",
+      "name": {
+        "zh": "亚洲",
+        "en": "Asia",
+        "fr": "Asie"
+      }
+    }
+  ],
+  "regions": [
+    {
+      "code": "austral-islands",
+      "zone": "pacific",
+      "name": {
+        "zh": "南方群岛",
+        "en": "Austral Islands",
+        "fr": "Îles Australes"
+      },
+      "countryCodes": [
+        "pf"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -152,
+            -24,
+            -146,
+            -21.5
+          ]
+        }
+      ]
+    },
+    {
+      "code": "australia",
+      "zone": "pacific",
+      "name": {
+        "zh": "澳大利亚",
+        "en": "Australia",
+        "fr": "Australie"
+      },
+      "countryCodes": [
+        "au"
+      ]
+    },
+    {
+      "code": "chatham-islands",
+      "zone": "pacific",
+      "name": {
+        "zh": "查塔姆群岛",
+        "en": "Chatham Islands",
+        "fr": "Îles Chatham"
+      },
+      "countryCodes": [
+        "nz"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -177.2,
+            -44.5,
+            -175.7,
+            -43.6
+          ]
+        }
+      ]
+    },
+    {
+      "code": "cook-islands",
+      "zone": "pacific",
+      "name": {
+        "zh": "库克群岛",
+        "en": "Cook Islands",
+        "fr": "Îles Cook"
+      },
+      "countryCodes": [
+        "ck"
+      ]
+    },
+    {
+      "code": "easter-island",
+      "zone": "pacific",
+      "name": {
+        "zh": "复活节岛",
+        "en": "Easter Island",
+        "fr": "Île de Pâques"
+      },
+      "countryCodes": [
+        "cl"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -109.6,
+            -27.35,
+            -109.1,
+            -27.0
+          ]
+        }
+      ]
+    },
+    {
+      "code": "fiji",
+      "zone": "pacific",
+      "name": {
+        "zh": "斐济",
+        "en": "Fiji Islands",
+        "fr": "Fidji"
+      },
+      "countryCodes": [
+        "fj"
+      ]
+    },
+    {
+      "code": "french-polynesia",
+      "zone": "pacific",
+      "name": {
+        "zh": "法属波利尼西亚",
+        "en": "French Polynesia",
+        "fr": "Polynésie française"
+      },
+      "countryCodes": [
+        "pf"
+      ]
+    },
+    {
+      "code": "galapagos",
+      "zone": "pacific",
+      "name": {
+        "zh": "加拉帕戈斯群岛",
+        "en": "Galapagos Islands",
+        "fr": "Îles Galápagos"
+      },
+      "countryCodes": [
+        "ec"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -92.2,
+            -1.6,
+            -89.0,
+            1.9
+          ]
+        }
+      ]
+    },
+    {
+      "code": "guam",
+      "zone": "pacific",
+      "name": {
+        "zh": "关岛",
+        "en": "Guam",
+        "fr": "Guam"
+      },
+      "countryCodes": [
+        "gu"
+      ]
+    },
+    {
+      "code": "hawaii",
+      "zone": "pacific",
+      "name": {
+        "zh": "夏威夷群岛",
+        "en": "Hawaiian Islands",
+        "fr": "Îles Hawaï"
+      },
+      "countryCodes": [
+        "us"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -161.5,
+            18.5,
+            -154.5,
+            22.6
+          ]
+        }
+      ]
+    },
+    {
+      "code": "juan-fernandez",
+      "zone": "pacific",
+      "name": {
+        "zh": "胡安·费尔南德斯群岛",
+        "en": "Juan Fernandez Islands",
+        "fr": "Îles Juan Fernández"
+      },
+      "countryCodes": [
+        "cl"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -81.0,
+            -34.0,
+            -78.7,
+            -33.5
+          ]
+        }
+      ]
+    },
+    {
+      "code": "kiribati",
+      "zone": "pacific",
+      "name": {
+        "zh": "基里巴斯（吉尔伯特群岛）",
+        "en": "Kiribati",
+        "fr": "Kiribati"
+      },
+      "countryCodes": [
+        "ki"
+      ]
+    },
+    {
+      "code": "line-phoenix",
+      "zone": "pacific",
+      "name": {
+        "zh": "莱恩与菲尼克斯群岛",
+        "en": "Line/Phoenix Islands",
+        "fr": "Îles de la Ligne et Phœnix"
+      },
+      "countryCodes": [
+        "ki"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -162,
+            -11.7,
+            -150,
+            6.6
+          ]
+        },
+        {
+          "bbox": [
+            -175.5,
+            -5.2,
+            -169.5,
+            -2.4
+          ]
+        }
+      ]
+    },
+    {
+      "code": "lord-howe",
+      "zone": "pacific",
+      "name": {
+        "zh": "豪勋爵岛",
+        "en": "Lord Howe Island",
+        "fr": "Île Lord Howe"
+      },
+      "countryCodes": [
+        "au"
+      ],
+      "when": [
+        {
+          "bbox": [
+            158.85,
+            -31.85,
+            159.2,
+            -31.4
+          ]
+        }
+      ]
+    },
+    {
+      "code": "marquesas",
+      "zone": "pacific",
+      "name": {
+        "zh": "马克萨斯群岛",
+        "en": "Marquesas Islands",
+        "fr": "Îles Marquises"
+      },
+      "countryCodes": [
+        "pf"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -141.5,
+            -11.2,
+            -137.8,
+            -7.6
+          ]
+        }
+      ]
+    },
+    {
+      "code": "marshall-islands",
+      "zone": "pacific",
+      "name": {
+        "zh": "马绍尔群岛",
+        "en": "Marshall Islands",
+        "fr": "Îles Marshall"
+      },
+      "countryCodes": [
+        "mh"
+      ]
+    },
+    {
+      "code": "micronesia",
+      "zone": "pacific",
+      "name": {
+        "zh": "密克罗尼西亚联邦",
+        "en": "Micronesia, Federated States of",
+        "fr": "États fédérés de Micronésie"
+      },
+      "countryCodes": [
+        "fm"
+      ]
+    },
+    {
+      "code": "midway",
+      "zone": "pacific",
+      "name": {
+        "zh": "中途岛",
+        "en": "Midway Island",
+        "fr": "Île Midway"
+      },
+      "countryCodes": [
+        "um",
+        "us"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -177.6,
+            28.0,
+            -177.2,
+            28.4
+          ]
+        }
+      ]
+    },
+    {
+      "code": "nauru",
+      "zone": "pacific",
+      "name": {
+        "zh": "瑙鲁",
+        "en": "Nauru",
+        "fr": "Nauru"
+      },
+      "countryCodes": [
+        "nr"
+      ]
+    },
+    {
+      "code": "new-caledonia",
+      "zone": "pacific",
+      "name": {
+        "zh": "新喀里多尼亚",
+        "en": "New Caledonia & Dependencies",
+        "fr": "Nouvelle-Calédonie et dépendances"
+      },
+      "countryCodes": [
+        "nc"
+      ]
+    },
+    {
+      "code": "new-zealand",
+      "zone": "pacific",
+      "name": {
+        "zh": "新西兰",
+        "en": "New Zealand",
+        "fr": "Nouvelle-Zélande"
+      },
+      "countryCodes": [
+        "nz"
+      ]
+    },
+    {
+      "code": "niue",
+      "zone": "pacific",
+      "name": {
+        "zh": "纽埃",
+        "en": "Niue",
+        "fr": "Niue"
+      },
+      "countryCodes": [
+        "nu"
+      ]
+    },
+    {
+      "code": "norfolk-island",
+      "zone": "pacific",
+      "name": {
+        "zh": "诺福克岛",
+        "en": "Norfolk Island",
+        "fr": "Île Norfolk"
+      },
+      "countryCodes": [
+        "nf"
+      ]
+    },
+    {
+      "code": "northern-marianas",
+      "zone": "pacific",
+      "name": {
+        "zh": "北马里亚纳群岛",
+        "en": "Northern Marianas",
+        "fr": "Mariannes du Nord"
+      },
+      "countryCodes": [
+        "mp"
+      ]
+    },
+    {
+      "code": "ogasawara",
+      "zone": "pacific",
+      "name": {
+        "zh": "小笠原群岛",
+        "en": "Ogasawara",
+        "fr": "Îles Ogasawara"
+      },
+      "countryCodes": [
+        "jp"
+      ],
+      "when": [
+        {
+          "bbox": [
+            136,
+            20,
+            154.6,
+            28.0
+          ]
+        }
+      ]
+    },
+    {
+      "code": "palau",
+      "zone": "pacific",
+      "name": {
+        "zh": "帕劳",
+        "en": "Palau, Republic of",
+        "fr": "Palaos"
+      },
+      "countryCodes": [
+        "pw"
+      ]
+    },
+    {
+      "code": "papua-new-guinea",
+      "zone": "pacific",
+      "name": {
+        "zh": "巴布亚新几内亚",
+        "en": "Papua New Guinea",
+        "fr": "Papouasie-Nouvelle-Guinée"
+      },
+      "countryCodes": [
+        "pg"
+      ]
+    },
+    {
+      "code": "png-islands",
+      "zone": "pacific",
+      "name": {
+        "zh": "巴新岛屿区",
+        "en": "Papua New Guinea – Islands Region",
+        "fr": "Papouasie-Nouvelle-Guinée – région des Îles"
+      },
+      "countryCodes": [
+        "pg"
+      ],
+      "when": [
+        {
+          "bbox": [
+            148.0,
+            -7.0,
+            156.5,
+            -1.0
+          ]
+        },
+        {
+          "bbox": [
+            146.5,
+            -3.2,
+            148.0,
+            -1.0
+          ]
+        }
+      ]
+    },
+    {
+      "code": "pitcairn",
+      "zone": "pacific",
+      "name": {
+        "zh": "皮特凯恩岛",
+        "en": "Pitcairn Island",
+        "fr": "Île Pitcairn"
+      },
+      "countryCodes": [
+        "pn"
+      ]
+    },
+    {
+      "code": "ryukyu",
+      "zone": "pacific",
+      "name": {
+        "zh": "琉球群岛（冲绳）",
+        "en": "Ryukyu Islands",
+        "fr": "Îles Ryūkyū"
+      },
+      "countryCodes": [
+        "jp"
+      ],
+      "when": [
+        {
+          "bbox": [
+            122.8,
+            24.0,
+            131.4,
+            27.95
+          ]
+        }
+      ]
+    },
+    {
+      "code": "american-samoa",
+      "zone": "pacific",
+      "name": {
+        "zh": "美属萨摩亚",
+        "en": "Samoa, American",
+        "fr": "Samoa américaines"
+      },
+      "countryCodes": [
+        "as"
+      ]
+    },
+    {
+      "code": "samoa",
+      "zone": "pacific",
+      "name": {
+        "zh": "萨摩亚",
+        "en": "Samoa",
+        "fr": "Samoa"
+      },
+      "countryCodes": [
+        "ws"
+      ]
+    },
+    {
+      "code": "solomon-islands",
+      "zone": "pacific",
+      "name": {
+        "zh": "所罗门群岛",
+        "en": "Solomon Islands",
+        "fr": "Îles Salomon"
+      },
+      "countryCodes": [
+        "sb"
+      ]
+    },
+    {
+      "code": "tasmania",
+      "zone": "pacific",
+      "name": {
+        "zh": "塔斯马尼亚",
+        "en": "Tasmania",
+        "fr": "Tasmanie"
+      },
+      "countryCodes": [
+        "au"
+      ],
+      "when": [
+        {
+          "bbox": [
+            143.5,
+            -44.2,
+            149.1,
+            -39.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "tokelau",
+      "zone": "pacific",
+      "name": {
+        "zh": "托克劳",
+        "en": "Tokelau Islands",
+        "fr": "Tokelau"
+      },
+      "countryCodes": [
+        "tk"
+      ]
+    },
+    {
+      "code": "tonga",
+      "zone": "pacific",
+      "name": {
+        "zh": "汤加",
+        "en": "Tonga",
+        "fr": "Tonga"
+      },
+      "countryCodes": [
+        "to"
+      ]
+    },
+    {
+      "code": "tuvalu",
+      "zone": "pacific",
+      "name": {
+        "zh": "图瓦卢",
+        "en": "Tuvalu",
+        "fr": "Tuvalu"
+      },
+      "countryCodes": [
+        "tv"
+      ]
+    },
+    {
+      "code": "vanuatu",
+      "zone": "pacific",
+      "name": {
+        "zh": "瓦努阿图",
+        "en": "Vanuatu",
+        "fr": "Vanuatu"
+      },
+      "countryCodes": [
+        "vu"
+      ]
+    },
+    {
+      "code": "wake",
+      "zone": "pacific",
+      "name": {
+        "zh": "威克岛",
+        "en": "Wake Island",
+        "fr": "Île Wake"
+      },
+      "countryCodes": [
+        "um",
+        "us"
+      ],
+      "when": [
+        {
+          "bbox": [
+            166.5,
+            19.2,
+            166.75,
+            19.4
+          ]
+        }
+      ]
+    },
+    {
+      "code": "wallis-futuna",
+      "zone": "pacific",
+      "name": {
+        "zh": "瓦利斯和富图纳",
+        "en": "Wallis & Futuna Islands",
+        "fr": "Wallis-et-Futuna"
+      },
+      "countryCodes": [
+        "wf"
+      ]
+    },
+    {
+      "code": "alaska",
+      "zone": "north-america",
+      "name": {
+        "zh": "阿拉斯加",
+        "en": "Alaska",
+        "fr": "Alaska"
+      },
+      "countryCodes": [
+        "us"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -180,
+            51.0,
+            -129.5,
+            71.9
+          ]
+        },
+        {
+          "bbox": [
+            172,
+            51,
+            180,
+            56
+          ]
+        }
+      ]
+    },
+    {
+      "code": "canada",
+      "zone": "north-america",
+      "name": {
+        "zh": "加拿大",
+        "en": "Canada",
+        "fr": "Canada"
+      },
+      "countryCodes": [
+        "ca"
+      ]
+    },
+    {
+      "code": "mexico",
+      "zone": "north-america",
+      "name": {
+        "zh": "墨西哥",
+        "en": "Mexico",
+        "fr": "Mexique"
+      },
+      "countryCodes": [
+        "mx"
+      ]
+    },
+    {
+      "code": "prince-edward-island",
+      "zone": "north-america",
+      "name": {
+        "zh": "爱德华王子岛",
+        "en": "Prince Edward Island",
+        "fr": "Île-du-Prince-Édouard"
+      },
+      "countryCodes": [
+        "ca"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -64.6,
+            45.9,
+            -61.9,
+            47.1
+          ]
+        }
+      ]
+    },
+    {
+      "code": "st-pierre-miquelon",
+      "zone": "north-america",
+      "name": {
+        "zh": "圣皮埃尔和密克隆",
+        "en": "St. Pierre & Miquelon",
+        "fr": "Saint-Pierre-et-Miquelon"
+      },
+      "countryCodes": [
+        "pm"
+      ]
+    },
+    {
+      "code": "united-states",
+      "zone": "north-america",
+      "name": {
+        "zh": "美国本土",
+        "en": "United States (Contiguous)",
+        "fr": "États-Unis (contigus)"
+      },
+      "countryCodes": [
+        "us"
+      ]
+    },
+    {
+      "code": "belize",
+      "zone": "central-america",
+      "name": {
+        "zh": "伯利兹",
+        "en": "Belize",
+        "fr": "Belize"
+      },
+      "countryCodes": [
+        "bz"
+      ]
+    },
+    {
+      "code": "costa-rica",
+      "zone": "central-america",
+      "name": {
+        "zh": "哥斯达黎加",
+        "en": "Costa Rica",
+        "fr": "Costa Rica"
+      },
+      "countryCodes": [
+        "cr"
+      ]
+    },
+    {
+      "code": "el-salvador",
+      "zone": "central-america",
+      "name": {
+        "zh": "萨尔瓦多",
+        "en": "El Salvador",
+        "fr": "Salvador"
+      },
+      "countryCodes": [
+        "sv"
+      ]
+    },
+    {
+      "code": "guatemala",
+      "zone": "central-america",
+      "name": {
+        "zh": "危地马拉",
+        "en": "Guatemala",
+        "fr": "Guatemala"
+      },
+      "countryCodes": [
+        "gt"
+      ]
+    },
+    {
+      "code": "honduras",
+      "zone": "central-america",
+      "name": {
+        "zh": "洪都拉斯",
+        "en": "Honduras",
+        "fr": "Honduras"
+      },
+      "countryCodes": [
+        "hn"
+      ]
+    },
+    {
+      "code": "nicaragua",
+      "zone": "central-america",
+      "name": {
+        "zh": "尼加拉瓜",
+        "en": "Nicaragua",
+        "fr": "Nicaragua"
+      },
+      "countryCodes": [
+        "ni"
+      ]
+    },
+    {
+      "code": "panama",
+      "zone": "central-america",
+      "name": {
+        "zh": "巴拿马",
+        "en": "Panama",
+        "fr": "Panama"
+      },
+      "countryCodes": [
+        "pa"
+      ]
+    },
+    {
+      "code": "argentina",
+      "zone": "south-america",
+      "name": {
+        "zh": "阿根廷",
+        "en": "Argentina",
+        "fr": "Argentine"
+      },
+      "countryCodes": [
+        "ar"
+      ]
+    },
+    {
+      "code": "bolivia",
+      "zone": "south-america",
+      "name": {
+        "zh": "玻利维亚",
+        "en": "Bolivia",
+        "fr": "Bolivie"
+      },
+      "countryCodes": [
+        "bo"
+      ]
+    },
+    {
+      "code": "brazil",
+      "zone": "south-america",
+      "name": {
+        "zh": "巴西",
+        "en": "Brazil",
+        "fr": "Brésil"
+      },
+      "countryCodes": [
+        "br"
+      ]
+    },
+    {
+      "code": "chile",
+      "zone": "south-america",
+      "name": {
+        "zh": "智利",
+        "en": "Chile",
+        "fr": "Chili"
+      },
+      "countryCodes": [
+        "cl"
+      ]
+    },
+    {
+      "code": "colombia",
+      "zone": "south-america",
+      "name": {
+        "zh": "哥伦比亚",
+        "en": "Colombia",
+        "fr": "Colombie"
+      },
+      "countryCodes": [
+        "co"
+      ]
+    },
+    {
+      "code": "ecuador",
+      "zone": "south-america",
+      "name": {
+        "zh": "厄瓜多尔",
+        "en": "Ecuador",
+        "fr": "Équateur"
+      },
+      "countryCodes": [
+        "ec"
+      ]
+    },
+    {
+      "code": "french-guiana",
+      "zone": "south-america",
+      "name": {
+        "zh": "法属圭亚那",
+        "en": "French Guiana",
+        "fr": "Guyane française"
+      },
+      "countryCodes": [
+        "gf"
+      ]
+    },
+    {
+      "code": "guyana",
+      "zone": "south-america",
+      "name": {
+        "zh": "圭亚那",
+        "en": "Guyana",
+        "fr": "Guyana"
+      },
+      "countryCodes": [
+        "gy"
+      ]
+    },
+    {
+      "code": "nueva-esparta",
+      "zone": "south-america",
+      "name": {
+        "zh": "新埃斯帕塔州（玛格丽塔岛）",
+        "en": "Nueva Esparta",
+        "fr": "Nueva Esparta"
+      },
+      "countryCodes": [
+        "ve"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -64.6,
+            10.7,
+            -63.6,
+            11.25
+          ]
+        }
+      ]
+    },
+    {
+      "code": "paraguay",
+      "zone": "south-america",
+      "name": {
+        "zh": "巴拉圭",
+        "en": "Paraguay",
+        "fr": "Paraguay"
+      },
+      "countryCodes": [
+        "py"
+      ]
+    },
+    {
+      "code": "peru",
+      "zone": "south-america",
+      "name": {
+        "zh": "秘鲁",
+        "en": "Peru",
+        "fr": "Pérou"
+      },
+      "countryCodes": [
+        "pe"
+      ]
+    },
+    {
+      "code": "suriname",
+      "zone": "south-america",
+      "name": {
+        "zh": "苏里南",
+        "en": "Suriname",
+        "fr": "Suriname"
+      },
+      "countryCodes": [
+        "sr"
+      ]
+    },
+    {
+      "code": "uruguay",
+      "zone": "south-america",
+      "name": {
+        "zh": "乌拉圭",
+        "en": "Uruguay",
+        "fr": "Uruguay"
+      },
+      "countryCodes": [
+        "uy"
+      ]
+    },
+    {
+      "code": "venezuela",
+      "zone": "south-america",
+      "name": {
+        "zh": "委内瑞拉",
+        "en": "Venezuela",
+        "fr": "Venezuela"
+      },
+      "countryCodes": [
+        "ve"
+      ]
+    },
+    {
+      "code": "anguilla",
+      "zone": "caribbean",
+      "name": {
+        "zh": "安圭拉",
+        "en": "Anguilla",
+        "fr": "Anguilla"
+      },
+      "countryCodes": [
+        "ai"
+      ]
+    },
+    {
+      "code": "antigua-barbuda",
+      "zone": "caribbean",
+      "name": {
+        "zh": "安提瓜和巴布达",
+        "en": "Antigua & Barbuda",
+        "fr": "Antigua-et-Barbuda"
+      },
+      "countryCodes": [
+        "ag"
+      ]
+    },
+    {
+      "code": "aruba",
+      "zone": "caribbean",
+      "name": {
+        "zh": "阿鲁巴",
+        "en": "Aruba",
+        "fr": "Aruba"
+      },
+      "countryCodes": [
+        "aw"
+      ]
+    },
+    {
+      "code": "bahamas",
+      "zone": "caribbean",
+      "name": {
+        "zh": "巴哈马",
+        "en": "Bahamas",
+        "fr": "Bahamas"
+      },
+      "countryCodes": [
+        "bs"
+      ]
+    },
+    {
+      "code": "barbados",
+      "zone": "caribbean",
+      "name": {
+        "zh": "巴巴多斯",
+        "en": "Barbados",
+        "fr": "Barbade"
+      },
+      "countryCodes": [
+        "bb"
+      ]
+    },
+    {
+      "code": "bonaire",
+      "zone": "caribbean",
+      "name": {
+        "zh": "博奈尔",
+        "en": "Bonaire",
+        "fr": "Bonaire"
+      },
+      "countryCodes": [
+        "bq"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -68.5,
+            11.9,
+            -68.1,
+            12.4
+          ]
+        }
+      ]
+    },
+    {
+      "code": "cayman-islands",
+      "zone": "caribbean",
+      "name": {
+        "zh": "开曼群岛",
+        "en": "Cayman Islands",
+        "fr": "Îles Caïmans"
+      },
+      "countryCodes": [
+        "ky"
+      ]
+    },
+    {
+      "code": "cuba",
+      "zone": "caribbean",
+      "name": {
+        "zh": "古巴",
+        "en": "Cuba",
+        "fr": "Cuba"
+      },
+      "countryCodes": [
+        "cu"
+      ]
+    },
+    {
+      "code": "curacao",
+      "zone": "caribbean",
+      "name": {
+        "zh": "库拉索",
+        "en": "Curacao",
+        "fr": "Curaçao"
+      },
+      "countryCodes": [
+        "cw"
+      ]
+    },
+    {
+      "code": "dominica",
+      "zone": "caribbean",
+      "name": {
+        "zh": "多米尼克",
+        "en": "Dominica",
+        "fr": "Dominique"
+      },
+      "countryCodes": [
+        "dm"
+      ]
+    },
+    {
+      "code": "dominican-republic",
+      "zone": "caribbean",
+      "name": {
+        "zh": "多米尼加共和国",
+        "en": "Dominican Republic",
+        "fr": "République dominicaine"
+      },
+      "countryCodes": [
+        "do"
+      ]
+    },
+    {
+      "code": "grenada",
+      "zone": "caribbean",
+      "name": {
+        "zh": "格林纳达",
+        "en": "Grenada & Dependencies",
+        "fr": "Grenade et dépendances"
+      },
+      "countryCodes": [
+        "gd"
+      ]
+    },
+    {
+      "code": "guadeloupe",
+      "zone": "caribbean",
+      "name": {
+        "zh": "瓜德罗普",
+        "en": "Guadeloupe & Dependencies",
+        "fr": "Guadeloupe et dépendances"
+      },
+      "countryCodes": [
+        "gp"
+      ]
+    },
+    {
+      "code": "haiti",
+      "zone": "caribbean",
+      "name": {
+        "zh": "海地",
+        "en": "Haiti",
+        "fr": "Haïti"
+      },
+      "countryCodes": [
+        "ht"
+      ]
+    },
+    {
+      "code": "jamaica",
+      "zone": "caribbean",
+      "name": {
+        "zh": "牙买加",
+        "en": "Jamaica",
+        "fr": "Jamaïque"
+      },
+      "countryCodes": [
+        "jm"
+      ]
+    },
+    {
+      "code": "martinique",
+      "zone": "caribbean",
+      "name": {
+        "zh": "马提尼克",
+        "en": "Martinique",
+        "fr": "Martinique"
+      },
+      "countryCodes": [
+        "mq"
+      ]
+    },
+    {
+      "code": "montserrat",
+      "zone": "caribbean",
+      "name": {
+        "zh": "蒙特塞拉特",
+        "en": "Montserrat",
+        "fr": "Montserrat"
+      },
+      "countryCodes": [
+        "ms"
+      ]
+    },
+    {
+      "code": "nevis",
+      "zone": "caribbean",
+      "name": {
+        "zh": "尼维斯",
+        "en": "Nevis",
+        "fr": "Niévès"
+      },
+      "countryCodes": [
+        "kn"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -62.68,
+            17.05,
+            -62.5,
+            17.28
+          ]
+        }
+      ]
+    },
+    {
+      "code": "puerto-rico",
+      "zone": "caribbean",
+      "name": {
+        "zh": "波多黎各",
+        "en": "Puerto Rico",
+        "fr": "Porto Rico"
+      },
+      "countryCodes": [
+        "pr"
+      ]
+    },
+    {
+      "code": "saba-st-eustatius",
+      "zone": "caribbean",
+      "name": {
+        "zh": "萨巴与圣尤斯特歇斯",
+        "en": "Saba & Sint Eustatius",
+        "fr": "Saba et Saint-Eustache"
+      },
+      "countryCodes": [
+        "bq"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -63.35,
+            17.4,
+            -62.9,
+            17.72
+          ]
+        }
+      ]
+    },
+    {
+      "code": "st-barthelemy",
+      "zone": "caribbean",
+      "name": {
+        "zh": "圣巴泰勒米",
+        "en": "St. Barthélemy",
+        "fr": "Saint-Barthélemy"
+      },
+      "countryCodes": [
+        "bl"
+      ]
+    },
+    {
+      "code": "st-kitts",
+      "zone": "caribbean",
+      "name": {
+        "zh": "圣基茨",
+        "en": "St. Kitts",
+        "fr": "Saint-Christophe"
+      },
+      "countryCodes": [
+        "kn"
+      ]
+    },
+    {
+      "code": "st-lucia",
+      "zone": "caribbean",
+      "name": {
+        "zh": "圣卢西亚",
+        "en": "St. Lucia",
+        "fr": "Sainte-Lucie"
+      },
+      "countryCodes": [
+        "lc"
+      ]
+    },
+    {
+      "code": "st-martin",
+      "zone": "caribbean",
+      "name": {
+        "zh": "法属圣马丁",
+        "en": "St. Martin (France)",
+        "fr": "Saint-Martin (France)"
+      },
+      "countryCodes": [
+        "mf"
+      ]
+    },
+    {
+      "code": "st-vincent",
+      "zone": "caribbean",
+      "name": {
+        "zh": "圣文森特和格林纳丁斯",
+        "en": "St. Vincent & the Grenadines",
+        "fr": "Saint-Vincent-et-les-Grenadines"
+      },
+      "countryCodes": [
+        "vc"
+      ]
+    },
+    {
+      "code": "san-andres",
+      "zone": "caribbean",
+      "name": {
+        "zh": "圣安德烈斯与普罗维登西亚",
+        "en": "San Andres & Providencia",
+        "fr": "San Andrés et Providencia"
+      },
+      "countryCodes": [
+        "co"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -81.8,
+            12.1,
+            -81.3,
+            13.45
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sint-maarten",
+      "zone": "caribbean",
+      "name": {
+        "zh": "荷属圣马丁",
+        "en": "Sint Maarten (Netherlands)",
+        "fr": "Saint-Martin (Pays-Bas)"
+      },
+      "countryCodes": [
+        "sx"
+      ]
+    },
+    {
+      "code": "trinidad-tobago",
+      "zone": "caribbean",
+      "name": {
+        "zh": "特立尼达和多巴哥",
+        "en": "Trinidad & Tobago",
+        "fr": "Trinité-et-Tobago"
+      },
+      "countryCodes": [
+        "tt"
+      ]
+    },
+    {
+      "code": "turks-caicos",
+      "zone": "caribbean",
+      "name": {
+        "zh": "特克斯和凯科斯群岛",
+        "en": "Turks & Caicos Islands",
+        "fr": "Îles Turques-et-Caïques"
+      },
+      "countryCodes": [
+        "tc"
+      ]
+    },
+    {
+      "code": "british-virgin-islands",
+      "zone": "caribbean",
+      "name": {
+        "zh": "英属维尔京群岛",
+        "en": "Virgin Islands, British",
+        "fr": "Îles Vierges britanniques"
+      },
+      "countryCodes": [
+        "vg"
+      ]
+    },
+    {
+      "code": "us-virgin-islands",
+      "zone": "caribbean",
+      "name": {
+        "zh": "美属维尔京群岛",
+        "en": "Virgin Islands, U.S.",
+        "fr": "Îles Vierges des États-Unis"
+      },
+      "countryCodes": [
+        "vi"
+      ]
+    },
+    {
+      "code": "ascension",
+      "zone": "atlantic",
+      "name": {
+        "zh": "阿森松岛",
+        "en": "Ascension",
+        "fr": "Ascension"
+      },
+      "countryCodes": [
+        "sh"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -14.5,
+            -8.1,
+            -14.2,
+            -7.85
+          ]
+        }
+      ]
+    },
+    {
+      "code": "azores",
+      "zone": "atlantic",
+      "name": {
+        "zh": "亚速尔群岛",
+        "en": "Azores Islands",
+        "fr": "Açores"
+      },
+      "countryCodes": [
+        "pt"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -31.4,
+            36.85,
+            -24.7,
+            39.8
+          ]
+        }
+      ]
+    },
+    {
+      "code": "bermuda",
+      "zone": "atlantic",
+      "name": {
+        "zh": "百慕大",
+        "en": "Bermuda",
+        "fr": "Bermudes"
+      },
+      "countryCodes": [
+        "bm"
+      ]
+    },
+    {
+      "code": "canary-islands",
+      "zone": "atlantic",
+      "name": {
+        "zh": "加那利群岛",
+        "en": "Canary Islands",
+        "fr": "Îles Canaries"
+      },
+      "countryCodes": [
+        "es"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -18.3,
+            27.5,
+            -13.3,
+            29.5
+          ]
+        }
+      ]
+    },
+    {
+      "code": "cape-verde",
+      "zone": "atlantic",
+      "name": {
+        "zh": "佛得角",
+        "en": "Cape Verde Islands",
+        "fr": "Cap-Vert"
+      },
+      "countryCodes": [
+        "cv"
+      ]
+    },
+    {
+      "code": "falkland-islands",
+      "zone": "atlantic",
+      "name": {
+        "zh": "福克兰群岛",
+        "en": "Falkland Islands",
+        "fr": "Îles Malouines"
+      },
+      "countryCodes": [
+        "fk"
+      ]
+    },
+    {
+      "code": "faroe-islands",
+      "zone": "atlantic",
+      "name": {
+        "zh": "法罗群岛",
+        "en": "Faroe Islands",
+        "fr": "Îles Féroé"
+      },
+      "countryCodes": [
+        "fo"
+      ]
+    },
+    {
+      "code": "fernando-de-noronha",
+      "zone": "atlantic",
+      "name": {
+        "zh": "费尔南多-迪诺罗尼亚",
+        "en": "Fernando de Noronha",
+        "fr": "Fernando de Noronha"
+      },
+      "countryCodes": [
+        "br"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -32.55,
+            -4.0,
+            -32.3,
+            -3.78
+          ]
+        }
+      ]
+    },
+    {
+      "code": "greenland",
+      "zone": "atlantic",
+      "name": {
+        "zh": "格陵兰",
+        "en": "Greenland",
+        "fr": "Groenland"
+      },
+      "countryCodes": [
+        "gl"
+      ]
+    },
+    {
+      "code": "iceland",
+      "zone": "atlantic",
+      "name": {
+        "zh": "冰岛",
+        "en": "Iceland",
+        "fr": "Islande"
+      },
+      "countryCodes": [
+        "is"
+      ]
+    },
+    {
+      "code": "madeira",
+      "zone": "atlantic",
+      "name": {
+        "zh": "马德拉群岛",
+        "en": "Madeira",
+        "fr": "Madère"
+      },
+      "countryCodes": [
+        "pt"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -17.35,
+            32.3,
+            -16.2,
+            33.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "south-georgia",
+      "zone": "atlantic",
+      "name": {
+        "zh": "南乔治亚和南桑威奇群岛",
+        "en": "South Georgia & the South Sandwich Islands",
+        "fr": "Géorgie du Sud-et-les Îles Sandwich du Sud"
+      },
+      "countryCodes": [
+        "gs"
+      ]
+    },
+    {
+      "code": "st-helena",
+      "zone": "atlantic",
+      "name": {
+        "zh": "圣赫勒拿",
+        "en": "St. Helena",
+        "fr": "Sainte-Hélène"
+      },
+      "countryCodes": [
+        "sh"
+      ]
+    },
+    {
+      "code": "tristan-da-cunha",
+      "zone": "atlantic",
+      "name": {
+        "zh": "特里斯坦-达库尼亚",
+        "en": "Tristan da Cunha",
+        "fr": "Tristan da Cunha"
+      },
+      "countryCodes": [
+        "sh"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -12.9,
+            -37.45,
+            -12.2,
+            -37.0
+          ]
+        },
+        {
+          "bbox": [
+            -10.0,
+            -40.5,
+            -9.7,
+            -40.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "aland",
+      "zone": "europe",
+      "name": {
+        "zh": "奥兰群岛",
+        "en": "Aland Islands",
+        "fr": "Îles Åland"
+      },
+      "countryCodes": [
+        "ax"
+      ]
+    },
+    {
+      "code": "albania",
+      "zone": "europe",
+      "name": {
+        "zh": "阿尔巴尼亚",
+        "en": "Albania",
+        "fr": "Albanie"
+      },
+      "countryCodes": [
+        "al"
+      ]
+    },
+    {
+      "code": "andorra",
+      "zone": "europe",
+      "name": {
+        "zh": "安道尔",
+        "en": "Andorra",
+        "fr": "Andorre"
+      },
+      "countryCodes": [
+        "ad"
+      ]
+    },
+    {
+      "code": "austria",
+      "zone": "europe",
+      "name": {
+        "zh": "奥地利",
+        "en": "Austria",
+        "fr": "Autriche"
+      },
+      "countryCodes": [
+        "at"
+      ]
+    },
+    {
+      "code": "balearic-islands",
+      "zone": "europe",
+      "name": {
+        "zh": "巴利阿里群岛",
+        "en": "Balearic Islands",
+        "fr": "Îles Baléares"
+      },
+      "countryCodes": [
+        "es"
+      ],
+      "when": [
+        {
+          "bbox": [
+            1.1,
+            38.6,
+            4.4,
+            40.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "belarus",
+      "zone": "europe",
+      "name": {
+        "zh": "白俄罗斯",
+        "en": "Belarus",
+        "fr": "Biélorussie"
+      },
+      "countryCodes": [
+        "by"
+      ]
+    },
+    {
+      "code": "belgium",
+      "zone": "europe",
+      "name": {
+        "zh": "比利时",
+        "en": "Belgium",
+        "fr": "Belgique"
+      },
+      "countryCodes": [
+        "be"
+      ]
+    },
+    {
+      "code": "bosnia",
+      "zone": "europe",
+      "name": {
+        "zh": "波黑（联邦）",
+        "en": "Bosnia & Herzegovina",
+        "fr": "Bosnie-Herzégovine"
+      },
+      "countryCodes": [
+        "ba"
+      ]
+    },
+    {
+      "code": "bulgaria",
+      "zone": "europe",
+      "name": {
+        "zh": "保加利亚",
+        "en": "Bulgaria",
+        "fr": "Bulgarie"
+      },
+      "countryCodes": [
+        "bg"
+      ]
+    },
+    {
+      "code": "corsica",
+      "zone": "europe",
+      "name": {
+        "zh": "科西嘉",
+        "en": "Corsica",
+        "fr": "Corse"
+      },
+      "countryCodes": [
+        "fr"
+      ],
+      "when": [
+        {
+          "bbox": [
+            8.45,
+            41.3,
+            9.6,
+            43.1
+          ]
+        }
+      ]
+    },
+    {
+      "code": "crete",
+      "zone": "europe",
+      "name": {
+        "zh": "克里特",
+        "en": "Crete",
+        "fr": "Crète"
+      },
+      "countryCodes": [
+        "gr"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "克里特",
+            "克里特岛",
+            "Crete",
+            "Kriti",
+            "Crète"
+          ]
+        },
+        {
+          "bbox": [
+            23.4,
+            34.75,
+            26.4,
+            35.8
+          ]
+        }
+      ]
+    },
+    {
+      "code": "croatia",
+      "zone": "europe",
+      "name": {
+        "zh": "克罗地亚",
+        "en": "Croatia",
+        "fr": "Croatie"
+      },
+      "countryCodes": [
+        "hr"
+      ]
+    },
+    {
+      "code": "akrotiri-dhekelia",
+      "zone": "europe",
+      "name": {
+        "zh": "阿克罗蒂里与泽凯利亚（英属基地区）",
+        "en": "Cyprus, British Sovereign Base Areas",
+        "fr": "Akrotiri et Dhekelia"
+      },
+      "countryCodes": [
+        "cy"
+      ],
+      "when": [
+        {
+          "bbox": [
+            32.75,
+            34.53,
+            33.05,
+            34.72
+          ]
+        },
+        {
+          "bbox": [
+            33.6,
+            34.93,
+            34.05,
+            35.08
+          ]
+        }
+      ]
+    },
+    {
+      "code": "cyprus",
+      "zone": "europe",
+      "name": {
+        "zh": "塞浦路斯共和国",
+        "en": "Cyprus, Republic",
+        "fr": "Chypre"
+      },
+      "countryCodes": [
+        "cy"
+      ]
+    },
+    {
+      "code": "northern-cyprus",
+      "zone": "europe",
+      "name": {
+        "zh": "北塞浦路斯",
+        "en": "Cyprus, Turkish Fed. State",
+        "fr": "Chypre du Nord"
+      },
+      "countryCodes": [
+        "north-cyprus"
+      ]
+    },
+    {
+      "code": "czechia",
+      "zone": "europe",
+      "name": {
+        "zh": "捷克",
+        "en": "Czech Republic",
+        "fr": "Tchéquie"
+      },
+      "countryCodes": [
+        "cz"
+      ]
+    },
+    {
+      "code": "denmark",
+      "zone": "europe",
+      "name": {
+        "zh": "丹麦",
+        "en": "Denmark",
+        "fr": "Danemark"
+      },
+      "countryCodes": [
+        "dk"
+      ]
+    },
+    {
+      "code": "england",
+      "zone": "europe",
+      "name": {
+        "zh": "英格兰",
+        "en": "England",
+        "fr": "Angleterre"
+      },
+      "countryCodes": [
+        "gb"
+      ]
+    },
+    {
+      "code": "estonia",
+      "zone": "europe",
+      "name": {
+        "zh": "爱沙尼亚",
+        "en": "Estonia",
+        "fr": "Estonie"
+      },
+      "countryCodes": [
+        "ee"
+      ]
+    },
+    {
+      "code": "finland",
+      "zone": "europe",
+      "name": {
+        "zh": "芬兰",
+        "en": "Finland",
+        "fr": "Finlande"
+      },
+      "countryCodes": [
+        "fi"
+      ]
+    },
+    {
+      "code": "france",
+      "zone": "europe",
+      "name": {
+        "zh": "法国",
+        "en": "France",
+        "fr": "France"
+      },
+      "countryCodes": [
+        "fr"
+      ]
+    },
+    {
+      "code": "germany",
+      "zone": "europe",
+      "name": {
+        "zh": "德国",
+        "en": "Germany",
+        "fr": "Allemagne"
+      },
+      "countryCodes": [
+        "de"
+      ]
+    },
+    {
+      "code": "gibraltar",
+      "zone": "europe",
+      "name": {
+        "zh": "直布罗陀",
+        "en": "Gibraltar",
+        "fr": "Gibraltar"
+      },
+      "countryCodes": [
+        "gi"
+      ]
+    },
+    {
+      "code": "greece",
+      "zone": "europe",
+      "name": {
+        "zh": "希腊（本土）",
+        "en": "Greece",
+        "fr": "Grèce"
+      },
+      "countryCodes": [
+        "gr"
+      ]
+    },
+    {
+      "code": "greek-aegean-islands",
+      "zone": "europe",
+      "name": {
+        "zh": "爱琴海诸岛",
+        "en": "Greek Aegean Islands",
+        "fr": "Îles grecques de la mer Égée"
+      },
+      "countryCodes": [
+        "gr"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "北爱琴",
+            "北爱琴大区",
+            "南爱琴",
+            "南爱琴大区",
+            "North Aegean",
+            "South Aegean"
+          ]
+        },
+        {
+          "bbox": [
+            24.3,
+            35.8,
+            28.3,
+            39.95
+          ]
+        }
+      ]
+    },
+    {
+      "code": "guernsey",
+      "zone": "europe",
+      "name": {
+        "zh": "根西",
+        "en": "Guernsey & Dependencies",
+        "fr": "Guernesey et dépendances"
+      },
+      "countryCodes": [
+        "gg"
+      ]
+    },
+    {
+      "code": "hungary",
+      "zone": "europe",
+      "name": {
+        "zh": "匈牙利",
+        "en": "Hungary",
+        "fr": "Hongrie"
+      },
+      "countryCodes": [
+        "hu"
+      ]
+    },
+    {
+      "code": "ionian-islands",
+      "zone": "europe",
+      "name": {
+        "zh": "伊奥尼亚群岛（科孚等）",
+        "en": "Ionian Islands",
+        "fr": "Îles Ioniennes"
+      },
+      "countryCodes": [
+        "gr"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "伊奥尼亚群岛",
+            "爱奥尼亚群岛",
+            "Ionian Islands",
+            "Iles Ioniennes"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ireland",
+      "zone": "europe",
+      "name": {
+        "zh": "爱尔兰",
+        "en": "Ireland (Eire)",
+        "fr": "Irlande"
+      },
+      "countryCodes": [
+        "ie"
+      ]
+    },
+    {
+      "code": "northern-ireland",
+      "zone": "europe",
+      "name": {
+        "zh": "北爱尔兰",
+        "en": "Ireland, Northern",
+        "fr": "Irlande du Nord"
+      },
+      "countryCodes": [
+        "gb"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "北爱尔兰",
+            "Northern Ireland"
+          ]
+        },
+        {
+          "bbox": [
+            -8.25,
+            54.0,
+            -5.35,
+            55.35
+          ]
+        }
+      ]
+    },
+    {
+      "code": "isle-of-man",
+      "zone": "europe",
+      "name": {
+        "zh": "马恩岛",
+        "en": "Isle of Man",
+        "fr": "Île de Man"
+      },
+      "countryCodes": [
+        "im"
+      ]
+    },
+    {
+      "code": "italy",
+      "zone": "europe",
+      "name": {
+        "zh": "意大利",
+        "en": "Italy",
+        "fr": "Italie"
+      },
+      "countryCodes": [
+        "it"
+      ]
+    },
+    {
+      "code": "jersey",
+      "zone": "europe",
+      "name": {
+        "zh": "泽西",
+        "en": "Jersey",
+        "fr": "Jersey"
+      },
+      "countryCodes": [
+        "je"
+      ]
+    },
+    {
+      "code": "kaliningrad",
+      "zone": "europe",
+      "name": {
+        "zh": "加里宁格勒",
+        "en": "Kaliningrad",
+        "fr": "Kaliningrad"
+      },
+      "countryCodes": [
+        "ru"
+      ],
+      "when": [
+        {
+          "bbox": [
+            19.6,
+            54.3,
+            22.95,
+            55.35
+          ]
+        }
+      ]
+    },
+    {
+      "code": "kosovo",
+      "zone": "europe",
+      "name": {
+        "zh": "科索沃",
+        "en": "Kosovo",
+        "fr": "Kosovo"
+      },
+      "countryCodes": [
+        "xk"
+      ]
+    },
+    {
+      "code": "lampedusa",
+      "zone": "europe",
+      "name": {
+        "zh": "兰佩杜萨",
+        "en": "Lampedusa",
+        "fr": "Lampedusa"
+      },
+      "countryCodes": [
+        "it"
+      ],
+      "when": [
+        {
+          "bbox": [
+            12.5,
+            35.4,
+            12.72,
+            35.6
+          ]
+        }
+      ]
+    },
+    {
+      "code": "latvia",
+      "zone": "europe",
+      "name": {
+        "zh": "拉脱维亚",
+        "en": "Latvia",
+        "fr": "Lettonie"
+      },
+      "countryCodes": [
+        "lv"
+      ]
+    },
+    {
+      "code": "liechtenstein",
+      "zone": "europe",
+      "name": {
+        "zh": "列支敦士登",
+        "en": "Liechtenstein",
+        "fr": "Liechtenstein"
+      },
+      "countryCodes": [
+        "li"
+      ]
+    },
+    {
+      "code": "lithuania",
+      "zone": "europe",
+      "name": {
+        "zh": "立陶宛",
+        "en": "Lithuania",
+        "fr": "Lituanie"
+      },
+      "countryCodes": [
+        "lt"
+      ]
+    },
+    {
+      "code": "luxembourg",
+      "zone": "europe",
+      "name": {
+        "zh": "卢森堡",
+        "en": "Luxembourg",
+        "fr": "Luxembourg"
+      },
+      "countryCodes": [
+        "lu"
+      ]
+    },
+    {
+      "code": "malta",
+      "zone": "europe",
+      "name": {
+        "zh": "马耳他",
+        "en": "Malta",
+        "fr": "Malte"
+      },
+      "countryCodes": [
+        "mt"
+      ]
+    },
+    {
+      "code": "moldova",
+      "zone": "europe",
+      "name": {
+        "zh": "摩尔多瓦",
+        "en": "Moldova",
+        "fr": "Moldavie"
+      },
+      "countryCodes": [
+        "md"
+      ]
+    },
+    {
+      "code": "monaco",
+      "zone": "europe",
+      "name": {
+        "zh": "摩纳哥",
+        "en": "Monaco",
+        "fr": "Monaco"
+      },
+      "countryCodes": [
+        "mc"
+      ]
+    },
+    {
+      "code": "montenegro",
+      "zone": "europe",
+      "name": {
+        "zh": "黑山",
+        "en": "Montenegro",
+        "fr": "Monténégro"
+      },
+      "countryCodes": [
+        "me"
+      ]
+    },
+    {
+      "code": "netherlands",
+      "zone": "europe",
+      "name": {
+        "zh": "荷兰",
+        "en": "Netherlands",
+        "fr": "Pays-Bas"
+      },
+      "countryCodes": [
+        "nl"
+      ]
+    },
+    {
+      "code": "north-macedonia",
+      "zone": "europe",
+      "name": {
+        "zh": "北马其顿",
+        "en": "North Macedonia",
+        "fr": "Macédoine du Nord"
+      },
+      "countryCodes": [
+        "mk"
+      ]
+    },
+    {
+      "code": "norway",
+      "zone": "europe",
+      "name": {
+        "zh": "挪威",
+        "en": "Norway",
+        "fr": "Norvège"
+      },
+      "countryCodes": [
+        "no"
+      ]
+    },
+    {
+      "code": "poland",
+      "zone": "europe",
+      "name": {
+        "zh": "波兰",
+        "en": "Poland",
+        "fr": "Pologne"
+      },
+      "countryCodes": [
+        "pl"
+      ]
+    },
+    {
+      "code": "portugal",
+      "zone": "europe",
+      "name": {
+        "zh": "葡萄牙（本土）",
+        "en": "Portugal",
+        "fr": "Portugal"
+      },
+      "countryCodes": [
+        "pt"
+      ]
+    },
+    {
+      "code": "romania",
+      "zone": "europe",
+      "name": {
+        "zh": "罗马尼亚",
+        "en": "Romania",
+        "fr": "Roumanie"
+      },
+      "countryCodes": [
+        "ro"
+      ]
+    },
+    {
+      "code": "russia-europe",
+      "zone": "europe",
+      "name": {
+        "zh": "俄罗斯（欧洲部分）",
+        "en": "Russia",
+        "fr": "Russie"
+      },
+      "countryCodes": [
+        "ru"
+      ]
+    },
+    {
+      "code": "san-marino",
+      "zone": "europe",
+      "name": {
+        "zh": "圣马力诺",
+        "en": "San Marino",
+        "fr": "Saint-Marin"
+      },
+      "countryCodes": [
+        "sm"
+      ]
+    },
+    {
+      "code": "sardinia",
+      "zone": "europe",
+      "name": {
+        "zh": "撒丁岛",
+        "en": "Sardinia",
+        "fr": "Sardaigne"
+      },
+      "countryCodes": [
+        "it"
+      ],
+      "when": [
+        {
+          "bbox": [
+            8.0,
+            38.8,
+            9.95,
+            41.35
+          ]
+        }
+      ]
+    },
+    {
+      "code": "scotland",
+      "zone": "europe",
+      "name": {
+        "zh": "苏格兰",
+        "en": "Scotland",
+        "fr": "Écosse"
+      },
+      "countryCodes": [
+        "gb"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "苏格兰",
+            "Scotland",
+            "Alba"
+          ]
+        },
+        {
+          "bbox": [
+            -8.7,
+            56.0,
+            -0.7,
+            61.1
+          ]
+        }
+      ]
+    },
+    {
+      "code": "serbia",
+      "zone": "europe",
+      "name": {
+        "zh": "塞尔维亚",
+        "en": "Serbia",
+        "fr": "Serbie"
+      },
+      "countryCodes": [
+        "rs"
+      ]
+    },
+    {
+      "code": "sicily",
+      "zone": "europe",
+      "name": {
+        "zh": "西西里岛",
+        "en": "Sicily",
+        "fr": "Sicile"
+      },
+      "countryCodes": [
+        "it"
+      ],
+      "when": [
+        {
+          "bbox": [
+            12.3,
+            36.6,
+            15.62,
+            38.35
+          ]
+        }
+      ]
+    },
+    {
+      "code": "slovakia",
+      "zone": "europe",
+      "name": {
+        "zh": "斯洛伐克",
+        "en": "Slovakia",
+        "fr": "Slovaquie"
+      },
+      "countryCodes": [
+        "sk"
+      ]
+    },
+    {
+      "code": "slovenia",
+      "zone": "europe",
+      "name": {
+        "zh": "斯洛文尼亚",
+        "en": "Slovenia",
+        "fr": "Slovénie"
+      },
+      "countryCodes": [
+        "si"
+      ]
+    },
+    {
+      "code": "spain",
+      "zone": "europe",
+      "name": {
+        "zh": "西班牙（本土）",
+        "en": "Spain",
+        "fr": "Espagne"
+      },
+      "countryCodes": [
+        "es"
+      ]
+    },
+    {
+      "code": "spitsbergen",
+      "zone": "europe",
+      "name": {
+        "zh": "斯匹次卑尔根（斯瓦尔巴）",
+        "en": "Spitsbergen",
+        "fr": "Spitzberg"
+      },
+      "countryCodes": [
+        "sj"
+      ]
+    },
+    {
+      "code": "srpska",
+      "zone": "europe",
+      "name": {
+        "zh": "塞族共和国",
+        "en": "Srpska",
+        "fr": "République serbe de Bosnie"
+      },
+      "countryCodes": [
+        "ba"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "塞族共和国",
+            "波黑塞族共和国",
+            "Republika Srpska"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sweden",
+      "zone": "europe",
+      "name": {
+        "zh": "瑞典",
+        "en": "Sweden",
+        "fr": "Suède"
+      },
+      "countryCodes": [
+        "se"
+      ]
+    },
+    {
+      "code": "switzerland",
+      "zone": "europe",
+      "name": {
+        "zh": "瑞士",
+        "en": "Switzerland",
+        "fr": "Suisse"
+      },
+      "countryCodes": [
+        "ch"
+      ]
+    },
+    {
+      "code": "transnistria",
+      "zone": "europe",
+      "name": {
+        "zh": "德涅斯特河沿岸",
+        "en": "Transnistria",
+        "fr": "Transnistrie"
+      },
+      "countryCodes": [
+        "md"
+      ],
+      "when": [
+        {
+          "bbox": [
+            29.0,
+            46.35,
+            30.2,
+            48.6
+          ]
+        }
+      ]
+    },
+    {
+      "code": "turkey-europe",
+      "zone": "europe",
+      "name": {
+        "zh": "土耳其（欧洲部分，伊斯坦布尔）",
+        "en": "Turkey in Europe",
+        "fr": "Turquie d'Europe"
+      },
+      "countryCodes": [
+        "tr"
+      ],
+      "when": [
+        {
+          "bbox": [
+            25.5,
+            40.0,
+            29.5,
+            42.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ukraine",
+      "zone": "europe",
+      "name": {
+        "zh": "乌克兰",
+        "en": "Ukraine",
+        "fr": "Ukraine"
+      },
+      "countryCodes": [
+        "ua"
+      ]
+    },
+    {
+      "code": "vatican-city",
+      "zone": "europe",
+      "name": {
+        "zh": "梵蒂冈",
+        "en": "Vatican City",
+        "fr": "Vatican"
+      },
+      "countryCodes": [
+        "va"
+      ]
+    },
+    {
+      "code": "wales",
+      "zone": "europe",
+      "name": {
+        "zh": "威尔士",
+        "en": "Wales",
+        "fr": "Pays de Galles"
+      },
+      "countryCodes": [
+        "gb"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "威尔士",
+            "Wales",
+            "Cymru"
+          ]
+        },
+        {
+          "bbox": [
+            -5.5,
+            51.35,
+            -2.9,
+            53.45
+          ]
+        }
+      ]
+    },
+    {
+      "code": "argentine-antarctica",
+      "zone": "antarctica",
+      "name": {
+        "zh": "阿根廷南极领地",
+        "en": "Argentine Antarctica",
+        "fr": "Antarctique argentin"
+      },
+      "pending": true,
+      "parents": [
+        "aq"
+      ]
+    },
+    {
+      "code": "australian-antarctic",
+      "zone": "antarctica",
+      "name": {
+        "zh": "澳大利亚南极领地",
+        "en": "Australian Antarctic Territory",
+        "fr": "Territoire antarctique australien"
+      },
+      "countryCodes": [
+        "aq",
+        "hm"
+      ],
+      "when": [
+        {
+          "bbox": [
+            45,
+            -90,
+            136,
+            -60
+          ]
+        },
+        {
+          "bbox": [
+            142,
+            -90,
+            160,
+            -60
+          ]
+        },
+        {
+          "bbox": [
+            72,
+            -54,
+            75,
+            -52
+          ]
+        }
+      ]
+    },
+    {
+      "code": "british-antarctic",
+      "zone": "antarctica",
+      "name": {
+        "zh": "英属南极领地",
+        "en": "British Antarctic Territory",
+        "fr": "Territoire antarctique britannique"
+      },
+      "pending": true,
+      "parents": [
+        "aq"
+      ]
+    },
+    {
+      "code": "chilean-antarctic",
+      "zone": "antarctica",
+      "name": {
+        "zh": "智利南极领地",
+        "en": "Chilean Antarctic Territory",
+        "fr": "Antarctique chilien"
+      },
+      "pending": true,
+      "parents": [
+        "aq"
+      ]
+    },
+    {
+      "code": "french-antarctica",
+      "zone": "antarctica",
+      "name": {
+        "zh": "法属南极（阿黛利地、凯尔盖朗）",
+        "en": "French Antarctica",
+        "fr": "Terres australes françaises"
+      },
+      "countryCodes": [
+        "aq",
+        "tf"
+      ],
+      "when": [
+        {
+          "bbox": [
+            136,
+            -90,
+            142,
+            -60
+          ]
+        },
+        {
+          "bbox": [
+            50,
+            -50,
+            80,
+            -37
+          ]
+        }
+      ]
+    },
+    {
+      "code": "new-zealand-antarctica",
+      "zone": "antarctica",
+      "name": {
+        "zh": "新西兰南极（罗斯属地）",
+        "en": "New Zealand Antarctica",
+        "fr": "Dépendance de Ross"
+      },
+      "countryCodes": [
+        "aq"
+      ],
+      "when": [
+        {
+          "bbox": [
+            160,
+            -90,
+            180,
+            -60
+          ]
+        },
+        {
+          "bbox": [
+            -180,
+            -90,
+            -150,
+            -60
+          ]
+        }
+      ]
+    },
+    {
+      "code": "norwegian-dependencies",
+      "zone": "antarctica",
+      "name": {
+        "zh": "挪威南极属地（布韦岛等）",
+        "en": "Norwegian Dependencies",
+        "fr": "Dépendances norvégiennes"
+      },
+      "countryCodes": [
+        "aq",
+        "bv"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -20,
+            -90,
+            45,
+            -60
+          ]
+        },
+        {
+          "bbox": [
+            3.0,
+            -54.6,
+            3.6,
+            -54.3
+          ]
+        },
+        {
+          "bbox": [
+            -90.9,
+            -68.95,
+            -90.2,
+            -68.7
+          ]
+        }
+      ]
+    },
+    {
+      "code": "algeria",
+      "zone": "africa",
+      "name": {
+        "zh": "阿尔及利亚",
+        "en": "Algeria",
+        "fr": "Algérie"
+      },
+      "countryCodes": [
+        "dz"
+      ]
+    },
+    {
+      "code": "angola",
+      "zone": "africa",
+      "name": {
+        "zh": "安哥拉",
+        "en": "Angola",
+        "fr": "Angola"
+      },
+      "countryCodes": [
+        "ao"
+      ]
+    },
+    {
+      "code": "benin",
+      "zone": "africa",
+      "name": {
+        "zh": "贝宁",
+        "en": "Benin",
+        "fr": "Bénin"
+      },
+      "countryCodes": [
+        "bj"
+      ]
+    },
+    {
+      "code": "botswana",
+      "zone": "africa",
+      "name": {
+        "zh": "博茨瓦纳",
+        "en": "Botswana",
+        "fr": "Botswana"
+      },
+      "countryCodes": [
+        "bw"
+      ]
+    },
+    {
+      "code": "burkina-faso",
+      "zone": "africa",
+      "name": {
+        "zh": "布基纳法索",
+        "en": "Burkina Faso",
+        "fr": "Burkina Faso"
+      },
+      "countryCodes": [
+        "bf"
+      ]
+    },
+    {
+      "code": "burundi",
+      "zone": "africa",
+      "name": {
+        "zh": "布隆迪",
+        "en": "Burundi",
+        "fr": "Burundi"
+      },
+      "countryCodes": [
+        "bi"
+      ]
+    },
+    {
+      "code": "cabinda",
+      "zone": "africa",
+      "name": {
+        "zh": "卡宾达",
+        "en": "Cabinda",
+        "fr": "Cabinda"
+      },
+      "countryCodes": [
+        "ao"
+      ],
+      "when": [
+        {
+          "bbox": [
+            11.9,
+            -5.95,
+            13.15,
+            -4.35
+          ]
+        }
+      ]
+    },
+    {
+      "code": "cameroon",
+      "zone": "africa",
+      "name": {
+        "zh": "喀麦隆",
+        "en": "Cameroon",
+        "fr": "Cameroun"
+      },
+      "countryCodes": [
+        "cm"
+      ]
+    },
+    {
+      "code": "central-african-republic",
+      "zone": "africa",
+      "name": {
+        "zh": "中非共和国",
+        "en": "Central African Republic",
+        "fr": "République centrafricaine"
+      },
+      "countryCodes": [
+        "cf"
+      ]
+    },
+    {
+      "code": "chad",
+      "zone": "africa",
+      "name": {
+        "zh": "乍得",
+        "en": "Chad",
+        "fr": "Tchad"
+      },
+      "countryCodes": [
+        "td"
+      ]
+    },
+    {
+      "code": "congo-kinshasa",
+      "zone": "africa",
+      "name": {
+        "zh": "刚果（金）",
+        "en": "Congo, Democratic Republic of",
+        "fr": "République démocratique du Congo"
+      },
+      "countryCodes": [
+        "cd"
+      ]
+    },
+    {
+      "code": "congo-brazzaville",
+      "zone": "africa",
+      "name": {
+        "zh": "刚果（布）",
+        "en": "Congo, Republic of",
+        "fr": "République du Congo"
+      },
+      "countryCodes": [
+        "cg"
+      ]
+    },
+    {
+      "code": "cote-divoire",
+      "zone": "africa",
+      "name": {
+        "zh": "科特迪瓦",
+        "en": "Côte d'Ivoire",
+        "fr": "Côte d'Ivoire"
+      },
+      "countryCodes": [
+        "ci"
+      ]
+    },
+    {
+      "code": "djibouti",
+      "zone": "africa",
+      "name": {
+        "zh": "吉布提",
+        "en": "Djibouti",
+        "fr": "Djibouti"
+      },
+      "countryCodes": [
+        "dj"
+      ]
+    },
+    {
+      "code": "egypt-africa",
+      "zone": "africa",
+      "name": {
+        "zh": "埃及（非洲部分）",
+        "en": "Egypt in Africa",
+        "fr": "Égypte africaine"
+      },
+      "countryCodes": [
+        "eg"
+      ]
+    },
+    {
+      "code": "bioko",
+      "zone": "africa",
+      "name": {
+        "zh": "赤道几内亚（比奥科岛）",
+        "en": "Equatorial Guinea (Bioko)",
+        "fr": "Guinée équatoriale (Bioko)"
+      },
+      "countryCodes": [
+        "gq"
+      ],
+      "when": [
+        {
+          "bbox": [
+            8.3,
+            3.1,
+            9.0,
+            3.9
+          ]
+        }
+      ]
+    },
+    {
+      "code": "rio-muni",
+      "zone": "africa",
+      "name": {
+        "zh": "赤道几内亚（木尼河区）",
+        "en": "Equatorial Guinea (Rio Muni)",
+        "fr": "Guinée équatoriale (Rio Muni)"
+      },
+      "countryCodes": [
+        "gq"
+      ]
+    },
+    {
+      "code": "eritrea",
+      "zone": "africa",
+      "name": {
+        "zh": "厄立特里亚",
+        "en": "Eritrea",
+        "fr": "Érythrée"
+      },
+      "countryCodes": [
+        "er"
+      ]
+    },
+    {
+      "code": "eswatini",
+      "zone": "africa",
+      "name": {
+        "zh": "埃斯瓦蒂尼（斯威士兰）",
+        "en": "Eswatini",
+        "fr": "Eswatini"
+      },
+      "countryCodes": [
+        "sz"
+      ]
+    },
+    {
+      "code": "ethiopia",
+      "zone": "africa",
+      "name": {
+        "zh": "埃塞俄比亚",
+        "en": "Ethiopia",
+        "fr": "Éthiopie"
+      },
+      "countryCodes": [
+        "et"
+      ]
+    },
+    {
+      "code": "gabon",
+      "zone": "africa",
+      "name": {
+        "zh": "加蓬",
+        "en": "Gabon",
+        "fr": "Gabon"
+      },
+      "countryCodes": [
+        "ga"
+      ]
+    },
+    {
+      "code": "gambia",
+      "zone": "africa",
+      "name": {
+        "zh": "冈比亚",
+        "en": "Gambia, The",
+        "fr": "Gambie"
+      },
+      "countryCodes": [
+        "gm"
+      ]
+    },
+    {
+      "code": "ghana",
+      "zone": "africa",
+      "name": {
+        "zh": "加纳",
+        "en": "Ghana",
+        "fr": "Ghana"
+      },
+      "countryCodes": [
+        "gh"
+      ]
+    },
+    {
+      "code": "guinea",
+      "zone": "africa",
+      "name": {
+        "zh": "几内亚",
+        "en": "Guinea",
+        "fr": "Guinée"
+      },
+      "countryCodes": [
+        "gn"
+      ]
+    },
+    {
+      "code": "guinea-bissau",
+      "zone": "africa",
+      "name": {
+        "zh": "几内亚比绍",
+        "en": "Guinea-Bissau",
+        "fr": "Guinée-Bissau"
+      },
+      "countryCodes": [
+        "gw"
+      ]
+    },
+    {
+      "code": "kenya",
+      "zone": "africa",
+      "name": {
+        "zh": "肯尼亚",
+        "en": "Kenya",
+        "fr": "Kenya"
+      },
+      "countryCodes": [
+        "ke"
+      ]
+    },
+    {
+      "code": "lesotho",
+      "zone": "africa",
+      "name": {
+        "zh": "莱索托",
+        "en": "Lesotho",
+        "fr": "Lesotho"
+      },
+      "countryCodes": [
+        "ls"
+      ]
+    },
+    {
+      "code": "liberia",
+      "zone": "africa",
+      "name": {
+        "zh": "利比里亚",
+        "en": "Liberia",
+        "fr": "Liberia"
+      },
+      "countryCodes": [
+        "lr"
+      ]
+    },
+    {
+      "code": "libya",
+      "zone": "africa",
+      "name": {
+        "zh": "利比亚",
+        "en": "Libya",
+        "fr": "Libye"
+      },
+      "countryCodes": [
+        "ly"
+      ]
+    },
+    {
+      "code": "malawi",
+      "zone": "africa",
+      "name": {
+        "zh": "马拉维",
+        "en": "Malawi",
+        "fr": "Malawi"
+      },
+      "countryCodes": [
+        "mw"
+      ]
+    },
+    {
+      "code": "mali",
+      "zone": "africa",
+      "name": {
+        "zh": "马里",
+        "en": "Mali",
+        "fr": "Mali"
+      },
+      "countryCodes": [
+        "ml"
+      ]
+    },
+    {
+      "code": "mauritania",
+      "zone": "africa",
+      "name": {
+        "zh": "毛里塔尼亚",
+        "en": "Mauritania",
+        "fr": "Mauritanie"
+      },
+      "countryCodes": [
+        "mr"
+      ]
+    },
+    {
+      "code": "morocco",
+      "zone": "africa",
+      "name": {
+        "zh": "摩洛哥",
+        "en": "Morocco",
+        "fr": "Maroc"
+      },
+      "countryCodes": [
+        "ma"
+      ]
+    },
+    {
+      "code": "spanish-morocco",
+      "zone": "africa",
+      "name": {
+        "zh": "西属摩洛哥（休达、梅利利亚）",
+        "en": "Morocco, Spanish (Ceuta, Melilla)",
+        "fr": "Maroc espagnol (Ceuta, Melilla)"
+      },
+      "countryCodes": [
+        "es",
+        "ma"
+      ],
+      "when": [
+        {
+          "bbox": [
+            -5.42,
+            35.85,
+            -5.25,
+            35.93
+          ]
+        },
+        {
+          "bbox": [
+            -3.02,
+            35.26,
+            -2.9,
+            35.34
+          ]
+        }
+      ]
+    },
+    {
+      "code": "mozambique",
+      "zone": "africa",
+      "name": {
+        "zh": "莫桑比克",
+        "en": "Mozambique",
+        "fr": "Mozambique"
+      },
+      "countryCodes": [
+        "mz"
+      ]
+    },
+    {
+      "code": "namibia",
+      "zone": "africa",
+      "name": {
+        "zh": "纳米比亚",
+        "en": "Namibia",
+        "fr": "Namibie"
+      },
+      "countryCodes": [
+        "na"
+      ]
+    },
+    {
+      "code": "niger",
+      "zone": "africa",
+      "name": {
+        "zh": "尼日尔",
+        "en": "Niger",
+        "fr": "Niger"
+      },
+      "countryCodes": [
+        "ne"
+      ]
+    },
+    {
+      "code": "nigeria",
+      "zone": "africa",
+      "name": {
+        "zh": "尼日利亚",
+        "en": "Nigeria",
+        "fr": "Nigeria"
+      },
+      "countryCodes": [
+        "ng"
+      ]
+    },
+    {
+      "code": "rwanda",
+      "zone": "africa",
+      "name": {
+        "zh": "卢旺达",
+        "en": "Rwanda",
+        "fr": "Rwanda"
+      },
+      "countryCodes": [
+        "rw"
+      ]
+    },
+    {
+      "code": "sao-tome-principe",
+      "zone": "africa",
+      "name": {
+        "zh": "圣多美和普林西比",
+        "en": "Sao Tome & Principe",
+        "fr": "Sao Tomé-et-Principe"
+      },
+      "countryCodes": [
+        "st"
+      ]
+    },
+    {
+      "code": "senegal",
+      "zone": "africa",
+      "name": {
+        "zh": "塞内加尔",
+        "en": "Senegal",
+        "fr": "Sénégal"
+      },
+      "countryCodes": [
+        "sn"
+      ]
+    },
+    {
+      "code": "sierra-leone",
+      "zone": "africa",
+      "name": {
+        "zh": "塞拉利昂",
+        "en": "Sierra Leone",
+        "fr": "Sierra Leone"
+      },
+      "countryCodes": [
+        "sl"
+      ]
+    },
+    {
+      "code": "somalia",
+      "zone": "africa",
+      "name": {
+        "zh": "索马里",
+        "en": "Somalia",
+        "fr": "Somalie"
+      },
+      "countryCodes": [
+        "so"
+      ]
+    },
+    {
+      "code": "somaliland",
+      "zone": "africa",
+      "name": {
+        "zh": "索马里兰",
+        "en": "Somaliland (British)",
+        "fr": "Somaliland"
+      },
+      "countryCodes": [
+        "somaliland"
+      ]
+    },
+    {
+      "code": "south-africa",
+      "zone": "africa",
+      "name": {
+        "zh": "南非",
+        "en": "South Africa",
+        "fr": "Afrique du Sud"
+      },
+      "countryCodes": [
+        "za"
+      ]
+    },
+    {
+      "code": "south-sudan",
+      "zone": "africa",
+      "name": {
+        "zh": "南苏丹",
+        "en": "South Sudan",
+        "fr": "Soudan du Sud"
+      },
+      "countryCodes": [
+        "ss"
+      ]
+    },
+    {
+      "code": "sudan",
+      "zone": "africa",
+      "name": {
+        "zh": "苏丹",
+        "en": "Sudan",
+        "fr": "Soudan"
+      },
+      "countryCodes": [
+        "sd"
+      ]
+    },
+    {
+      "code": "tanzania",
+      "zone": "africa",
+      "name": {
+        "zh": "坦桑尼亚",
+        "en": "Tanzania",
+        "fr": "Tanzanie"
+      },
+      "countryCodes": [
+        "tz"
+      ]
+    },
+    {
+      "code": "togo",
+      "zone": "africa",
+      "name": {
+        "zh": "多哥",
+        "en": "Togo",
+        "fr": "Togo"
+      },
+      "countryCodes": [
+        "tg"
+      ]
+    },
+    {
+      "code": "tunisia",
+      "zone": "africa",
+      "name": {
+        "zh": "突尼斯",
+        "en": "Tunisia",
+        "fr": "Tunisie"
+      },
+      "countryCodes": [
+        "tn"
+      ]
+    },
+    {
+      "code": "uganda",
+      "zone": "africa",
+      "name": {
+        "zh": "乌干达",
+        "en": "Uganda",
+        "fr": "Ouganda"
+      },
+      "countryCodes": [
+        "ug"
+      ]
+    },
+    {
+      "code": "western-sahara",
+      "zone": "africa",
+      "name": {
+        "zh": "西撒哈拉",
+        "en": "Western Sahara",
+        "fr": "Sahara occidental"
+      },
+      "countryCodes": [
+        "eh"
+      ]
+    },
+    {
+      "code": "zambia",
+      "zone": "africa",
+      "name": {
+        "zh": "赞比亚",
+        "en": "Zambia",
+        "fr": "Zambie"
+      },
+      "countryCodes": [
+        "zm"
+      ]
+    },
+    {
+      "code": "zanzibar",
+      "zone": "africa",
+      "name": {
+        "zh": "桑给巴尔",
+        "en": "Zanzibar",
+        "fr": "Zanzibar"
+      },
+      "countryCodes": [
+        "tz"
+      ],
+      "when": [
+        {
+          "bbox": [
+            38.9,
+            -6.65,
+            39.95,
+            -4.8
+          ]
+        }
+      ]
+    },
+    {
+      "code": "zimbabwe",
+      "zone": "africa",
+      "name": {
+        "zh": "津巴布韦",
+        "en": "Zimbabwe",
+        "fr": "Zimbabwe"
+      },
+      "countryCodes": [
+        "zw"
+      ]
+    },
+    {
+      "code": "abu-dhabi",
+      "zone": "middle-east",
+      "name": {
+        "zh": "阿布扎比",
+        "en": "Abu Dhabi",
+        "fr": "Abou Dabi"
+      },
+      "countryCodes": [
+        "ae"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "阿布扎比",
+            "阿布扎比酋长国",
+            "Abu Dhabi",
+            "Abou Dabi"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "ajman",
+      "zone": "middle-east",
+      "name": {
+        "zh": "阿治曼",
+        "en": "Ajman",
+        "fr": "Ajman"
+      },
+      "countryCodes": [
+        "ae"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "阿治曼",
+            "阿治曼酋长国",
+            "Ajman"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "bahrain",
+      "zone": "middle-east",
+      "name": {
+        "zh": "巴林",
+        "en": "Bahrain",
+        "fr": "Bahreïn"
+      },
+      "countryCodes": [
+        "bh"
+      ]
+    },
+    {
+      "code": "dubai",
+      "zone": "middle-east",
+      "name": {
+        "zh": "迪拜",
+        "en": "Dubai",
+        "fr": "Dubaï"
+      },
+      "countryCodes": [
+        "ae"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "迪拜",
+            "迪拜酋长国",
+            "Dubai"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "egypt-asia",
+      "zone": "middle-east",
+      "name": {
+        "zh": "埃及（亚洲部分，西奈半岛）",
+        "en": "Egypt in Asia (Sinai Peninsula)",
+        "fr": "Égypte asiatique (Sinaï)"
+      },
+      "countryCodes": [
+        "eg"
+      ],
+      "when": [
+        {
+          "bbox": [
+            32.3,
+            27.6,
+            34.95,
+            31.4
+          ]
+        }
+      ]
+    },
+    {
+      "code": "fujairah",
+      "zone": "middle-east",
+      "name": {
+        "zh": "富查伊拉",
+        "en": "Fujairah",
+        "fr": "Foujaïrah"
+      },
+      "countryCodes": [
+        "ae"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "富查伊拉",
+            "Fujairah",
+            "Foujairah"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "iran",
+      "zone": "middle-east",
+      "name": {
+        "zh": "伊朗",
+        "en": "Iran",
+        "fr": "Iran"
+      },
+      "countryCodes": [
+        "ir"
+      ]
+    },
+    {
+      "code": "iraq",
+      "zone": "middle-east",
+      "name": {
+        "zh": "伊拉克",
+        "en": "Iraq",
+        "fr": "Irak"
+      },
+      "countryCodes": [
+        "iq"
+      ]
+    },
+    {
+      "code": "israel",
+      "zone": "middle-east",
+      "name": {
+        "zh": "以色列",
+        "en": "Israel",
+        "fr": "Israël"
+      },
+      "countryCodes": [
+        "il"
+      ]
+    },
+    {
+      "code": "jordan",
+      "zone": "middle-east",
+      "name": {
+        "zh": "约旦",
+        "en": "Jordan",
+        "fr": "Jordanie"
+      },
+      "countryCodes": [
+        "jo"
+      ]
+    },
+    {
+      "code": "kuwait",
+      "zone": "middle-east",
+      "name": {
+        "zh": "科威特",
+        "en": "Kuwait",
+        "fr": "Koweït"
+      },
+      "countryCodes": [
+        "kw"
+      ]
+    },
+    {
+      "code": "lebanon",
+      "zone": "middle-east",
+      "name": {
+        "zh": "黎巴嫩",
+        "en": "Lebanon",
+        "fr": "Liban"
+      },
+      "countryCodes": [
+        "lb"
+      ]
+    },
+    {
+      "code": "oman",
+      "zone": "middle-east",
+      "name": {
+        "zh": "阿曼",
+        "en": "Oman",
+        "fr": "Oman"
+      },
+      "countryCodes": [
+        "om"
+      ]
+    },
+    {
+      "code": "palestine",
+      "zone": "middle-east",
+      "name": {
+        "zh": "巴勒斯坦",
+        "en": "Palestine",
+        "fr": "Palestine"
+      },
+      "countryCodes": [
+        "ps"
+      ]
+    },
+    {
+      "code": "qatar",
+      "zone": "middle-east",
+      "name": {
+        "zh": "卡塔尔",
+        "en": "Qatar",
+        "fr": "Qatar"
+      },
+      "countryCodes": [
+        "qa"
+      ]
+    },
+    {
+      "code": "ras-al-khaimah",
+      "zone": "middle-east",
+      "name": {
+        "zh": "哈伊马角",
+        "en": "Ras Al Khaimah",
+        "fr": "Ras el Khaïmah"
+      },
+      "countryCodes": [
+        "ae"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "哈伊马角",
+            "拉斯海马",
+            "Ras Al Khaimah",
+            "Ras al-Khaimah"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "saudi-arabia",
+      "zone": "middle-east",
+      "name": {
+        "zh": "沙特阿拉伯",
+        "en": "Saudi Arabia",
+        "fr": "Arabie saoudite"
+      },
+      "countryCodes": [
+        "sa"
+      ]
+    },
+    {
+      "code": "sharjah",
+      "zone": "middle-east",
+      "name": {
+        "zh": "沙迦",
+        "en": "Sharjah",
+        "fr": "Charjah"
+      },
+      "countryCodes": [
+        "ae"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "沙迦",
+            "Sharjah",
+            "Charjah"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "syria",
+      "zone": "middle-east",
+      "name": {
+        "zh": "叙利亚",
+        "en": "Syria",
+        "fr": "Syrie"
+      },
+      "countryCodes": [
+        "sy"
+      ]
+    },
+    {
+      "code": "umm-al-qaiwain",
+      "zone": "middle-east",
+      "name": {
+        "zh": "乌姆盖万",
+        "en": "Umm Al Qaiwain",
+        "fr": "Oumm al Qaïwaïn"
+      },
+      "countryCodes": [
+        "ae"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "乌姆盖万",
+            "Umm Al Quwain",
+            "Umm Al Qaiwain"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "yemen",
+      "zone": "middle-east",
+      "name": {
+        "zh": "也门",
+        "en": "Yemen",
+        "fr": "Yémen"
+      },
+      "countryCodes": [
+        "ye"
+      ]
+    },
+    {
+      "code": "andaman-nicobar",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "安达曼-尼科巴群岛",
+        "en": "Andaman-Nicobar Islands",
+        "fr": "Îles Andaman-et-Nicobar"
+      },
+      "countryCodes": [
+        "in"
+      ],
+      "when": [
+        {
+          "bbox": [
+            92.0,
+            6.0,
+            94.6,
+            14.0
+          ]
+        }
+      ]
+    },
+    {
+      "code": "biot",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "英属印度洋领地（迪戈加西亚）",
+        "en": "British Indian Ocean Territory",
+        "fr": "Territoire britannique de l'océan Indien"
+      },
+      "countryCodes": [
+        "io"
+      ]
+    },
+    {
+      "code": "christmas-island",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "圣诞岛",
+        "en": "Christmas Island",
+        "fr": "Île Christmas"
+      },
+      "countryCodes": [
+        "cx"
+      ]
+    },
+    {
+      "code": "cocos-islands",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "科科斯（基林）群岛",
+        "en": "Cocos (Keeling) Islands",
+        "fr": "Îles Cocos"
+      },
+      "countryCodes": [
+        "cc"
+      ]
+    },
+    {
+      "code": "comoros",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "科摩罗",
+        "en": "Comoros",
+        "fr": "Comores"
+      },
+      "countryCodes": [
+        "km"
+      ]
+    },
+    {
+      "code": "lakshadweep",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "拉克沙群岛",
+        "en": "Lakshadweep",
+        "fr": "Lakshadweep"
+      },
+      "countryCodes": [
+        "in"
+      ],
+      "when": [
+        {
+          "bbox": [
+            71.5,
+            8.0,
+            74.0,
+            12.5
+          ]
+        }
+      ]
+    },
+    {
+      "code": "madagascar",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "马达加斯加",
+        "en": "Madagascar",
+        "fr": "Madagascar"
+      },
+      "countryCodes": [
+        "mg"
+      ]
+    },
+    {
+      "code": "maldives",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "马尔代夫",
+        "en": "Maldives",
+        "fr": "Maldives"
+      },
+      "countryCodes": [
+        "mv"
+      ]
+    },
+    {
+      "code": "mauritius",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "毛里求斯",
+        "en": "Mauritius & Dependencies",
+        "fr": "Maurice et dépendances"
+      },
+      "countryCodes": [
+        "mu"
+      ]
+    },
+    {
+      "code": "mayotte",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "马约特",
+        "en": "Mayotte",
+        "fr": "Mayotte"
+      },
+      "countryCodes": [
+        "yt"
+      ]
+    },
+    {
+      "code": "reunion",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "留尼汪",
+        "en": "Reunion",
+        "fr": "La Réunion"
+      },
+      "countryCodes": [
+        "re"
+      ]
+    },
+    {
+      "code": "rodrigues",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "罗德里格斯岛",
+        "en": "Rodrigues Island",
+        "fr": "Île Rodrigues"
+      },
+      "countryCodes": [
+        "mu"
+      ],
+      "when": [
+        {
+          "bbox": [
+            63.2,
+            -19.9,
+            63.6,
+            -19.6
+          ]
+        }
+      ]
+    },
+    {
+      "code": "seychelles",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "塞舌尔",
+        "en": "Seychelles",
+        "fr": "Seychelles"
+      },
+      "countryCodes": [
+        "sc"
+      ]
+    },
+    {
+      "code": "socotra",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "索科特拉岛",
+        "en": "Socotra",
+        "fr": "Socotra"
+      },
+      "countryCodes": [
+        "ye"
+      ],
+      "when": [
+        {
+          "bbox": [
+            53.0,
+            12.0,
+            54.7,
+            12.8
+          ]
+        }
+      ]
+    },
+    {
+      "code": "zil-elwannyen-sesel",
+      "zone": "indian-ocean",
+      "name": {
+        "zh": "塞舌尔外岛（阿尔达布拉等）",
+        "en": "Zil Elwannyen Sesel",
+        "fr": "Zil Elwannyen Sesel"
+      },
+      "countryCodes": [
+        "sc"
+      ],
+      "when": [
+        {
+          "bbox": [
+            45.5,
+            -10.6,
+            54.0,
+            -4.4
+          ]
+        }
+      ]
+    },
+    {
+      "code": "abkhazia",
+      "zone": "asia",
+      "name": {
+        "zh": "阿布哈兹",
+        "en": "Abkhazia",
+        "fr": "Abkhazie"
+      },
+      "countryCodes": [
+        "ge"
+      ],
+      "when": [
+        {
+          "bbox": [
+            39.9,
+            42.3,
+            42.25,
+            43.65
+          ]
+        }
+      ]
+    },
+    {
+      "code": "afghanistan",
+      "zone": "asia",
+      "name": {
+        "zh": "阿富汗",
+        "en": "Afghanistan",
+        "fr": "Afghanistan"
+      },
+      "countryCodes": [
+        "af"
+      ]
+    },
+    {
+      "code": "armenia",
+      "zone": "asia",
+      "name": {
+        "zh": "亚美尼亚",
+        "en": "Armenia",
+        "fr": "Arménie"
+      },
+      "countryCodes": [
+        "am"
+      ]
+    },
+    {
+      "code": "azerbaijan",
+      "zone": "asia",
+      "name": {
+        "zh": "阿塞拜疆",
+        "en": "Azerbaijan",
+        "fr": "Azerbaïdjan"
+      },
+      "countryCodes": [
+        "az"
+      ]
+    },
+    {
+      "code": "bangladesh",
+      "zone": "asia",
+      "name": {
+        "zh": "孟加拉国",
+        "en": "Bangladesh",
+        "fr": "Bangladesh"
+      },
+      "countryCodes": [
+        "bd"
+      ]
+    },
+    {
+      "code": "bhutan",
+      "zone": "asia",
+      "name": {
+        "zh": "不丹",
+        "en": "Bhutan",
+        "fr": "Bhoutan"
+      },
+      "countryCodes": [
+        "bt"
+      ]
+    },
+    {
+      "code": "brunei",
+      "zone": "asia",
+      "name": {
+        "zh": "文莱",
+        "en": "Brunei",
+        "fr": "Brunei"
+      },
+      "countryCodes": [
+        "bn"
+      ]
+    },
+    {
+      "code": "cambodia",
+      "zone": "asia",
+      "name": {
+        "zh": "柬埔寨",
+        "en": "Cambodia",
+        "fr": "Cambodge"
+      },
+      "countryCodes": [
+        "kh"
+      ]
+    },
+    {
+      "code": "china",
+      "zone": "asia",
+      "name": {
+        "zh": "中国大陆",
+        "en": "China, People's Republic",
+        "fr": "Chine"
+      },
+      "countryCodes": [
+        "cn"
+      ]
+    },
+    {
+      "code": "georgia",
+      "zone": "asia",
+      "name": {
+        "zh": "格鲁吉亚",
+        "en": "Georgia",
+        "fr": "Géorgie"
+      },
+      "countryCodes": [
+        "ge"
+      ]
+    },
+    {
+      "code": "hainan",
+      "zone": "asia",
+      "name": {
+        "zh": "海南岛",
+        "en": "Hainan Island",
+        "fr": "Hainan"
+      },
+      "countryCodes": [
+        "cn"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "海南省",
+            "海南",
+            "Hainan",
+            "Hainan Province"
+          ]
+        },
+        {
+          "bbox": [
+            108.5,
+            18.1,
+            111.2,
+            20.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "hong-kong",
+      "zone": "asia",
+      "name": {
+        "zh": "香港",
+        "en": "Hong Kong",
+        "fr": "Hong Kong"
+      },
+      "countryCodes": [
+        "hk"
+      ]
+    },
+    {
+      "code": "india",
+      "zone": "asia",
+      "name": {
+        "zh": "印度",
+        "en": "India",
+        "fr": "Inde"
+      },
+      "countryCodes": [
+        "in"
+      ]
+    },
+    {
+      "code": "java",
+      "zone": "asia",
+      "name": {
+        "zh": "印度尼西亚（爪哇）",
+        "en": "Indonesia (Java)",
+        "fr": "Indonésie (Java)"
+      },
+      "countryCodes": [
+        "id"
+      ],
+      "when": [
+        {
+          "bbox": [
+            105.0,
+            -9.0,
+            114.6,
+            -5.5
+          ]
+        }
+      ]
+    },
+    {
+      "code": "japan",
+      "zone": "asia",
+      "name": {
+        "zh": "日本",
+        "en": "Japan",
+        "fr": "Japon"
+      },
+      "countryCodes": [
+        "jp"
+      ]
+    },
+    {
+      "code": "jeju",
+      "zone": "asia",
+      "name": {
+        "zh": "济州岛",
+        "en": "Jeju Island",
+        "fr": "Île de Jeju"
+      },
+      "countryCodes": [
+        "kr"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "济州",
+            "济州道",
+            "济州特别自治道",
+            "Jeju",
+            "Jeju-do"
+          ]
+        },
+        {
+          "bbox": [
+            126.0,
+            33.05,
+            126.99,
+            33.68
+          ]
+        }
+      ]
+    },
+    {
+      "code": "kalimantan",
+      "zone": "asia",
+      "name": {
+        "zh": "加里曼丹（印尼婆罗洲）",
+        "en": "Kalimantan",
+        "fr": "Kalimantan"
+      },
+      "countryCodes": [
+        "id"
+      ],
+      "when": [
+        {
+          "bbox": [
+            108.8,
+            -4.4,
+            118.9,
+            4.4
+          ]
+        }
+      ]
+    },
+    {
+      "code": "kashmir",
+      "zone": "asia",
+      "name": {
+        "zh": "克什米尔",
+        "en": "Kashmir",
+        "fr": "Cachemire"
+      },
+      "countryCodes": [
+        "in",
+        "pk"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "查谟-克什米尔",
+            "查谟和克什米尔",
+            "克什米尔",
+            "拉达克",
+            "Jammu and Kashmir",
+            "Ladakh",
+            "Azad Kashmir",
+            "Gilgit-Baltistan"
+          ]
+        },
+        {
+          "bbox": [
+            73.5,
+            33.5,
+            80.5,
+            37.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "kazakhstan",
+      "zone": "asia",
+      "name": {
+        "zh": "哈萨克斯坦",
+        "en": "Kazakhstan",
+        "fr": "Kazakhstan"
+      },
+      "countryCodes": [
+        "kz"
+      ]
+    },
+    {
+      "code": "north-korea",
+      "zone": "asia",
+      "name": {
+        "zh": "朝鲜",
+        "en": "Korea, North",
+        "fr": "Corée du Nord"
+      },
+      "countryCodes": [
+        "kp"
+      ]
+    },
+    {
+      "code": "south-korea",
+      "zone": "asia",
+      "name": {
+        "zh": "韩国",
+        "en": "Korea, South",
+        "fr": "Corée du Sud"
+      },
+      "countryCodes": [
+        "kr"
+      ]
+    },
+    {
+      "code": "kyrgyzstan",
+      "zone": "asia",
+      "name": {
+        "zh": "吉尔吉斯斯坦",
+        "en": "Kyrgyzstan",
+        "fr": "Kirghizistan"
+      },
+      "countryCodes": [
+        "kg"
+      ]
+    },
+    {
+      "code": "laos",
+      "zone": "asia",
+      "name": {
+        "zh": "老挝",
+        "en": "Laos",
+        "fr": "Laos"
+      },
+      "countryCodes": [
+        "la"
+      ]
+    },
+    {
+      "code": "lesser-sunda",
+      "zone": "asia",
+      "name": {
+        "zh": "小巽他群岛（巴厘、帝汶）",
+        "en": "Lesser Sunda Islands",
+        "fr": "Petites îles de la Sonde"
+      },
+      "countryCodes": [
+        "id"
+      ],
+      "when": [
+        {
+          "bbox": [
+            114.4,
+            -11.2,
+            125.3,
+            -7.85
+          ]
+        }
+      ]
+    },
+    {
+      "code": "macau",
+      "zone": "asia",
+      "name": {
+        "zh": "澳门",
+        "en": "Macau",
+        "fr": "Macao"
+      },
+      "countryCodes": [
+        "mo"
+      ]
+    },
+    {
+      "code": "malaysia",
+      "zone": "asia",
+      "name": {
+        "zh": "马来西亚（西马）",
+        "en": "Malaysia",
+        "fr": "Malaisie"
+      },
+      "countryCodes": [
+        "my"
+      ]
+    },
+    {
+      "code": "maluku",
+      "zone": "asia",
+      "name": {
+        "zh": "马鲁古群岛",
+        "en": "Maluku Islands",
+        "fr": "Moluques"
+      },
+      "countryCodes": [
+        "id"
+      ],
+      "when": [
+        {
+          "bbox": [
+            125.3,
+            -8.6,
+            135.2,
+            2.8
+          ]
+        }
+      ]
+    },
+    {
+      "code": "mongolia",
+      "zone": "asia",
+      "name": {
+        "zh": "蒙古",
+        "en": "Mongolia, Republic",
+        "fr": "Mongolie"
+      },
+      "countryCodes": [
+        "mn"
+      ]
+    },
+    {
+      "code": "myanmar",
+      "zone": "asia",
+      "name": {
+        "zh": "缅甸",
+        "en": "Myanmar (Burma)",
+        "fr": "Birmanie"
+      },
+      "countryCodes": [
+        "mm"
+      ]
+    },
+    {
+      "code": "nakhchivan",
+      "zone": "asia",
+      "name": {
+        "zh": "纳希切万",
+        "en": "Nakhchivan",
+        "fr": "Nakhitchevan"
+      },
+      "countryCodes": [
+        "az"
+      ],
+      "when": [
+        {
+          "bbox": [
+            44.7,
+            38.8,
+            46.6,
+            39.85
+          ]
+        }
+      ]
+    },
+    {
+      "code": "nepal",
+      "zone": "asia",
+      "name": {
+        "zh": "尼泊尔",
+        "en": "Nepal",
+        "fr": "Népal"
+      },
+      "countryCodes": [
+        "np"
+      ]
+    },
+    {
+      "code": "pakistan",
+      "zone": "asia",
+      "name": {
+        "zh": "巴基斯坦",
+        "en": "Pakistan",
+        "fr": "Pakistan"
+      },
+      "countryCodes": [
+        "pk"
+      ]
+    },
+    {
+      "code": "papua",
+      "zone": "asia",
+      "name": {
+        "zh": "巴布亚（伊里安查亚）",
+        "en": "Papua (Irian Jaya)",
+        "fr": "Papouasie (Irian Jaya)"
+      },
+      "countryCodes": [
+        "id"
+      ],
+      "when": [
+        {
+          "bbox": [
+            130.8,
+            -9.3,
+            141.1,
+            0.5
+          ]
+        }
+      ]
+    },
+    {
+      "code": "philippines",
+      "zone": "asia",
+      "name": {
+        "zh": "菲律宾",
+        "en": "Philippines",
+        "fr": "Philippines"
+      },
+      "countryCodes": [
+        "ph"
+      ]
+    },
+    {
+      "code": "russia-asia",
+      "zone": "asia",
+      "name": {
+        "zh": "俄罗斯（亚洲部分，西伯利亚）",
+        "en": "Russia in Asia",
+        "fr": "Russie d'Asie"
+      },
+      "countryCodes": [
+        "ru"
+      ],
+      "when": [
+        {
+          "bbox": [
+            60,
+            41,
+            180,
+            82
+          ]
+        },
+        {
+          "bbox": [
+            -180,
+            63,
+            -168,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sabah",
+      "zone": "asia",
+      "name": {
+        "zh": "沙巴（北婆罗洲）",
+        "en": "Sabah",
+        "fr": "Sabah"
+      },
+      "countryCodes": [
+        "my"
+      ],
+      "when": [
+        {
+          "bbox": [
+            115.2,
+            4.0,
+            119.4,
+            7.5
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sarawak",
+      "zone": "asia",
+      "name": {
+        "zh": "砂拉越",
+        "en": "Sarawak",
+        "fr": "Sarawak"
+      },
+      "countryCodes": [
+        "my"
+      ],
+      "when": [
+        {
+          "bbox": [
+            109.4,
+            0.8,
+            115.3,
+            5.1
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sikkim",
+      "zone": "asia",
+      "name": {
+        "zh": "锡金",
+        "en": "Sikkim",
+        "fr": "Sikkim"
+      },
+      "countryCodes": [
+        "in"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "锡金",
+            "锡金邦",
+            "Sikkim"
+          ]
+        },
+        {
+          "bbox": [
+            88.0,
+            27.0,
+            89.0,
+            28.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "singapore",
+      "zone": "asia",
+      "name": {
+        "zh": "新加坡",
+        "en": "Singapore",
+        "fr": "Singapour"
+      },
+      "countryCodes": [
+        "sg"
+      ]
+    },
+    {
+      "code": "south-ossetia",
+      "zone": "asia",
+      "name": {
+        "zh": "南奥塞梯",
+        "en": "South Ossetia",
+        "fr": "Ossétie du Sud"
+      },
+      "countryCodes": [
+        "ge"
+      ],
+      "when": [
+        {
+          "bbox": [
+            43.3,
+            42.1,
+            44.6,
+            42.85
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sri-lanka",
+      "zone": "asia",
+      "name": {
+        "zh": "斯里兰卡",
+        "en": "Sri Lanka (Ceylon)",
+        "fr": "Sri Lanka"
+      },
+      "countryCodes": [
+        "lk"
+      ]
+    },
+    {
+      "code": "sulawesi",
+      "zone": "asia",
+      "name": {
+        "zh": "苏拉威西",
+        "en": "Sulawesi",
+        "fr": "Sulawesi"
+      },
+      "countryCodes": [
+        "id"
+      ],
+      "when": [
+        {
+          "bbox": [
+            118.95,
+            -6.2,
+            125.3,
+            2.2
+          ]
+        }
+      ]
+    },
+    {
+      "code": "sumatra",
+      "zone": "asia",
+      "name": {
+        "zh": "苏门答腊",
+        "en": "Sumatra",
+        "fr": "Sumatra"
+      },
+      "countryCodes": [
+        "id"
+      ],
+      "when": [
+        {
+          "bbox": [
+            94.5,
+            -6.5,
+            107.0,
+            6.6
+          ]
+        }
+      ]
+    },
+    {
+      "code": "taiwan",
+      "zone": "asia",
+      "name": {
+        "zh": "台湾",
+        "en": "Taiwan. R.O.C.",
+        "fr": "Taïwan"
+      },
+      "countryCodes": [
+        "tw"
+      ]
+    },
+    {
+      "code": "tajikistan",
+      "zone": "asia",
+      "name": {
+        "zh": "塔吉克斯坦",
+        "en": "Tajikistan",
+        "fr": "Tadjikistan"
+      },
+      "countryCodes": [
+        "tj"
+      ]
+    },
+    {
+      "code": "thailand",
+      "zone": "asia",
+      "name": {
+        "zh": "泰国",
+        "en": "Thailand",
+        "fr": "Thaïlande"
+      },
+      "countryCodes": [
+        "th"
+      ]
+    },
+    {
+      "code": "tibet",
+      "zone": "asia",
+      "name": {
+        "zh": "西藏",
+        "en": "Tibet",
+        "fr": "Tibet"
+      },
+      "countryCodes": [
+        "cn"
+      ],
+      "when": [
+        {
+          "stateNames": [
+            "西藏自治区",
+            "西藏",
+            "西藏自治區",
+            "Tibet",
+            "Tibet Autonomous Region",
+            "Xizang"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "timor-leste",
+      "zone": "asia",
+      "name": {
+        "zh": "东帝汶",
+        "en": "Timor-Leste",
+        "fr": "Timor oriental"
+      },
+      "countryCodes": [
+        "tl"
+      ]
+    },
+    {
+      "code": "turkey-asia",
+      "zone": "asia",
+      "name": {
+        "zh": "土耳其（亚洲部分，安纳托利亚）",
+        "en": "Turkey in Asia",
+        "fr": "Turquie d'Asie"
+      },
+      "countryCodes": [
+        "tr"
+      ]
+    },
+    {
+      "code": "turkmenistan",
+      "zone": "asia",
+      "name": {
+        "zh": "土库曼斯坦",
+        "en": "Turkmenistan",
+        "fr": "Turkménistan"
+      },
+      "countryCodes": [
+        "tm"
+      ]
+    },
+    {
+      "code": "uzbekistan",
+      "zone": "asia",
+      "name": {
+        "zh": "乌兹别克斯坦",
+        "en": "Uzbekistan",
+        "fr": "Ouzbékistan"
+      },
+      "countryCodes": [
+        "uz"
+      ]
+    },
+    {
+      "code": "vietnam",
+      "zone": "asia",
+      "name": {
+        "zh": "越南",
+        "en": "Vietnam",
+        "fr": "Viêt Nam"
+      },
+      "countryCodes": [
+        "vn"
+      ]
+    }
+  ]
+}

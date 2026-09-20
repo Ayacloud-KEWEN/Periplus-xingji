@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据统计 · TCC 名单</title>
+    <link rel="stylesheet" href="lists.css">
+</head>
+
+<body>
+    <script type="module">
+        import {
+            LANGS, SHELL, buildShell, escapeHtml, fill, localized, makeFilter, otherNames, pickLang,
+            pinsMeta, renderChrome, renderSummary, renderTabs, wireControls, zoneHtml
+        } from './lists.js';
+
+        const GOAL = 100; // TCC 的入会门槛：去过 100 个及以上
+
+        const UI = {
+            tab: { zh: 'TCC 名单', en: 'TCC List', fr: 'Liste TCC' },
+            scoreLabel: {
+                zh: '已去过 / 共 {total} 个国家和地区',
+                en: 'visited of {total} countries & territories',
+                fr: 'visités sur {total} pays et territoires'
+            },
+            search: { zh: '搜索地区名称（三种语言都可以）…', en: 'Search a place (any of the three languages)…', fr: 'Rechercher un lieu (dans les trois langues)…' },
+            goalToGo: {
+                zh: '离入会门槛（100 个）还差 {count} 个。',
+                en: '{count} to go to reach the 100 needed to join the club.',
+                fr: 'Encore {count} pour atteindre les 100 requis pour adhérer.'
+            },
+            goalReached: {
+                zh: '已经超过入会门槛（100 个）。',
+                en: 'Past the 100 needed to join the club.',
+                fr: 'Au-delà des 100 requis pour adhérer.'
+            },
+            rule: {
+                zh: '按 TCC 的规矩，哪怕只是中途停靠、加油经停，只要下了飞机、船或车，踏上当地土地就算去过。',
+                en: 'By TCC rules even the shortest visit counts — a port of call or a fuel stop — provided you set foot in the territory.',
+                fr: "Selon le TCC, même la visite la plus brève compte — escale ou arrêt ravitaillement — à condition de poser le pied sur le territoire."
+            },
+            unknownNote: {
+                zh: '虚线框的 {count} 个是南极洲互相重叠的领地声索，没法从坐标自动判定，需要你自己核对。',
+                en: 'The {count} dashed entries are the overlapping Antarctic claims: they cannot be told apart from coordinates, so check them yourself.',
+                fr: "Les {count} entrées en pointillés sont les revendications antarctiques qui se chevauchent : impossible de les distinguer par coordonnées, à vérifier vous-même."
+            },
+            source: {
+                zh: '名单版本 {version}，来自 <a href="{url}" target="_blank" rel="noopener">Travelers’ Century Club 官方页面</a>。标注的归属和地图统计用的是同一套规则。',
+                en: 'List version {version}, from the <a href="{url}" target="_blank" rel="noopener">Travelers’ Century Club official page</a>. Pins are matched with the same rules as the map statistics.',
+                fr: 'Liste version {version}, depuis la <a href="{url}" target="_blank" rel="noopener">page officielle du Travelers’ Century Club</a>. Les points sont rattachés selon les mêmes règles que les statistiques.'
+            }
+        };
+
+        const state = { lang: pickLang(), filter: 'all', keyword: '' };
+        let data = null;
+        let hits = new Map();
+        let failed = false;
+
+        function itemHtml(region) {
+            const hit = hits.get(region.code);
+            const primary = localized(region.name, state.lang) || region.code;
+            const others = otherNames(region.name, state.lang);
+            const meta = pinsMeta(hit, state.lang);
+            const classes = ['item', hit ? 'visited' : '', region.pending ? 'unknown' : ''].filter(Boolean).join(' ');
+            return `<div class="${classes}">
+                <span class="mark" aria-hidden="true">${hit ? '✓' : ''}</span>
+                <div class="names">
+                    <div class="primary">${escapeHtml(primary)}</div>
+                    <div class="alt">${escapeHtml(others.join(' · '))}</div>
+                    ${meta ? `<div class="meta">${escapeHtml(meta)}</div>` : ''}
+                </div>
+            </div>`;
+        }
+
+        function render() {
+            renderChrome(state, UI.tab, UI.search);
+            renderTabs('tcc', state.lang, data ? { tcc: `${hits.size} / ${data.total}` } : {});
+
+            const list = document.getElementById('list');
+            if (failed) {
+                list.innerHTML = `<p class="empty">${escapeHtml(SHELL.loadError[state.lang])}</p>`;
+                return;
+            }
+            if (!data) {
+                list.innerHTML = `<p class="empty">${escapeHtml(SHELL.loading[state.lang])}</p>`;
+                return;
+            }
+
+            renderSummary({
+                done: hits.size,
+                total: data.total,
+                goal: GOAL,
+                label: fill(UI.scoreLabel[state.lang], { total: data.total }),
+                note: [
+                    hits.size >= GOAL ? UI.goalReached[state.lang] : fill(UI.goalToGo[state.lang], { count: GOAL - hits.size }),
+                    UI.rule[state.lang]
+                ].join(' ')
+            });
+
+            const wanted = makeFilter(state, region => hits.has(region.code), region => Object.values(region.name));
+            const sections = data.zones.map(zone => {
+                const all = data.regions.filter(region => region.zone === zone.code);
+                const shown = all.filter(wanted);
+                if (!shown.length) return '';
+                return zoneHtml({
+                    title: localized(zone.name, state.lang) || zone.code,
+                    subtitle: otherNames(zone.name, state.lang).join(' · '),
+                    done: all.filter(region => hits.has(region.code)).length,
+                    total: all.length,
+                    body: { html: shown.map(itemHtml).join('') }
+                });
+            }).join('');
+
+            list.innerHTML = sections || `<p class="empty">${escapeHtml(SHELL.noMatch[state.lang])}</p>`;
+
+            const pending = data.regions.filter(region => region.pending).length;
+            document.getElementById('footer').innerHTML =
+                (pending ? `<div>${escapeHtml(fill(UI.unknownNote[state.lang], { count: pending }))}</div>` : '')
+                + `<div>${fill(UI.source[state.lang], { version: escapeHtml(data.version), url: escapeHtml(data.source) })}</div>`;
+        }
+
+        buildShell('tcc');
+        wireControls(state, render);
+        render();
+
+        fetch('/api/lists/tcc')
+            .then(response => response.ok ? response.json() : Promise.reject(new Error(response.status)))
+            .then(json => {
+                data = json;
+                hits = new Map(json.visited.map(region => [region.code, region]));
+                render();
+            })
+            .catch(() => {
+                failed = true;
+                render();
+            });
+    </script>
+</body>
+
+</html>
