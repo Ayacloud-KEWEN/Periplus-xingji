@@ -1,6 +1,6 @@
 // Service Worker：缓存应用本身，服务器暂时连不上时也能打开并查看上次的标注
 // 发布新版本时修改 VERSION，页面会提示刷新
-const VERSION = 'v2.20.0';
+const VERSION = 'v2.21.0';
 const SHELL_CACHE = `mapweb-shell-${VERSION}`;
 const RUNTIME_CACHE = 'mapweb-runtime';
 

@@ -1,5 +1,6 @@
 // 分类图标：数据库和备份里仍然用 emoji 作为分类标识，这里把它映射成 SVG 图标和颜色。
 // 图标来自 Lucide v1.44.0（ISC License，https://lucide.dev），由 lucide-static 包里的 SVG 原样提取。
+// 只有"火山"是照 Lucide 的画法自己画的（24×24、2px 描边、圆角端点）——Lucide 里没有火山图标。
 
 export const CATEGORIES = [
     { emoji: "📍", icon: "map-pin", color: "#5a3e2b" },
@@ -12,11 +13,13 @@ export const CATEGORIES = [
     { emoji: "🏛️", icon: "landmark", color: "#a0522d" },
     { emoji: "🏰", icon: "castle", color: "#9c6644" },
     { emoji: "🏖️", icon: "tree-palm", color: "#1098ad" },
+    { emoji: "🤿", icon: "waves-arrow-down", color: "#3b5bdb" },
     { emoji: "⛳", icon: "flag", color: "#0ca678" },
     { emoji: "⛷️", icon: "mountain-snow", color: "#1c7ed6" },
     { emoji: "🐦", icon: "bird", color: "#66a80f" },
     { emoji: "🎣", icon: "fish", color: "#1971c2" },
     { emoji: "⛰️", icon: "mountain", color: "#5c940d" },
+    { emoji: "🌋", icon: "volcano", color: "#d9480f" },
     { emoji: "🏢", icon: "building-2", color: "#495057" },
     { emoji: "🎭", icon: "drama", color: "#ae3ec9" },
     { emoji: "⛪", icon: "church", color: "#862e9c" },
@@ -44,6 +47,8 @@ const ICONS = {
     "bird": "<path d=\"M16 7h.01\" /><path d=\"M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20\" /><path d=\"m20 7 2 .5-2 .5\" /><path d=\"M10 18v3\" /><path d=\"M14 17.75V21\" /><path d=\"M7 18a6 6 0 0 0 3.84-10.61\" />",
     "fish": "<path d=\"M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z\" /><path d=\"M18 12v.5\" /><path d=\"M16 17.93a9.77 9.77 0 0 1 0-11.86\" /><path d=\"M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33\" /><path d=\"M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4\" /><path d=\"m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98\" />",
     "mountain": "<path d=\"m8 3 4 8 5-5 5 15H2L8 3z\" />",
+    "volcano": "<path d=\"M3.5 21 9 11h6l5.5 10Z\" /><path d=\"M12 8V3.5\" /><path d=\"M8.8 8.5 7.6 5.2\" /><path d=\"M15.2 8.5l1.2-3.3\" />",
+    "waves-arrow-down": "<path d=\"M12 10V2\" /><path d=\"m16 6-4 4-4-4\" /><path d=\"M2 15c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1\" /><path d=\"M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1\" />",
     "building-2": "<path d=\"M10 12h4\" /><path d=\"M10 8h4\" /><path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" /><path d=\"M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2\" /><path d=\"M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16\" />",
     "drama": "<path d=\"M10 11h.01\" /><path d=\"M14 6h.01\" /><path d=\"M18 6h.01\" /><path d=\"M6.5 13.1h.01\" /><path d=\"M22 5c0 9-4 12-6 12s-6-3-6-12c0-2 2-3 6-3s6 1 6 3\" /><path d=\"M17.4 9.9c-.8.8-2 .8-2.8 0\" /><path d=\"M10.1 7.1C9 7.2 7.7 7.7 6 8.6c-3.5 2-4.7 3.9-3.7 5.6 4.5 7.8 9.5 8.4 11.2 7.4.9-.5 1.9-2.1 1.9-4.7\" /><path d=\"M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4\" />",
     "church": "<path d=\"M10 9h4\" /><path d=\"M12 7v5\" /><path d=\"M14 21v-3a2 2 0 0 0-4 0v3\" /><path d=\"m18 9 3.52 2.147a1 1 0 0 1 .48.854V19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6.999a1 1 0 0 1 .48-.854L6 9\" /><path d=\"M6 21V7a1 1 0 0 1 .376-.782l5-3.999a1 1 0 0 1 1.249.001l5 4A1 1 0 0 1 18 7v14\" />",

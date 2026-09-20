@@ -258,8 +258,8 @@
   "continents": { "AF": "Africa", "AS": "Asia", "EU": "Europe", "NA": "North America", "SA": "South America", "OC": "Oceania", "AN": "Antarctica" },
   "categories": {
     "📍": "General", "🍽️": "Restaurant", "🛍️": "Shopping", "🌲": "Forest", "🏞️": "Park", "🏠": "House",
-    "🏨": "Hotel", "🏛️": "Museum", "🏰": "Historic site", "🏖️": "Beach", "⛳": "Golf", "⛷️": "Ski resort",
-    "🐦": "Bird watching", "🎣": "Fishing", "⛰️": "Mountain", "🏢": "Office", "🎭": "Entertainment", "⛪": "Religious",
+    "🏨": "Hotel", "🏛️": "Museum", "🏰": "Historic site", "🏖️": "Beach", "🤿": "Dive site", "⛳": "Golf", "⛷️": "Ski resort",
+    "🐦": "Bird watching", "🎣": "Fishing", "⛰️": "Mountain", "🌋": "Volcano", "🏢": "Office", "🎭": "Entertainment", "⛪": "Religious",
     "🏫": "Education", "🏥": "Medical", "⛽": "Gas station", "🚆": "Station", "✈️": "Airport", "📷": "Photo"
   }
 }
