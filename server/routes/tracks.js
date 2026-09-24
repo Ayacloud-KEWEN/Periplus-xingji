@@ -63,8 +63,8 @@ router.get('/', async (req, res) => {
     const { rows } = await pool.query(
         `SELECT id, name, sport, started_at, ended_at, distance_m, ascent_m, pace_profile,
                 ST_AsGeoJSON(ST_SimplifyPreserveTopology(geom, $1), 5)::json AS geometry
-         FROM tracks ORDER BY started_at DESC`,
-        [SIMPLIFY_TOLERANCE]
+         FROM tracks WHERE user_id = $2 ORDER BY started_at DESC`,
+        [SIMPLIFY_TOLERANCE, req.user.id]
     );
     res.json(rows.map(toTrack));
 });
@@ -83,10 +83,10 @@ router.post('/', async (req, res) => {
     const geojson = JSON.stringify({ type: 'MultiLineString', coordinates: segments });
 
     const { rows } = await pool.query(
-        `INSERT INTO tracks (name, sport, started_at, ended_at, distance_m, ascent_m, geom, pace_profile)
-         SELECT $1, $2, $3::timestamptz, $4::timestamptz, $5, $6, g, $8::jsonb
+        `INSERT INTO tracks (name, sport, started_at, ended_at, distance_m, ascent_m, geom, pace_profile, user_id)
+         SELECT $1, $2, $3::timestamptz, $4::timestamptz, $5, $6, g, $8::jsonb, $9
          FROM (SELECT ST_Multi(ST_SetSRID(ST_GeomFromGeoJSON($7), 4326)) AS g) s
-         ON CONFLICT (started_at) DO UPDATE
+         ON CONFLICT (user_id, started_at) DO UPDATE
              SET pace_profile = EXCLUDED.pace_profile
              WHERE tracks.pace_profile IS NULL AND EXCLUDED.pace_profile IS NOT NULL
          RETURNING id, name, sport, started_at, ended_at, distance_m, ascent_m, pace_profile,
@@ -96,7 +96,7 @@ router.post('/', async (req, res) => {
          Number(body.distance_m) || 0, Number.isFinite(Number(body.ascent_m)) ? Number(body.ascent_m) : null, geojson,
          // 没有配速数据时要存真正的 NULL：存成 jsonb 的 'null' 的话，
          // 下次重新导入就不会认为"缺数据"，也就补不上了
-         profile ? JSON.stringify(profile) : null]
+         profile ? JSON.stringify(profile) : null, req.user.id]
     );
     // 已经导入过、也没有新数据可补：告诉前端跳过了，不当作错误
     if (!rows.length) return res.status(200).json({ duplicate: true });
@@ -106,7 +106,7 @@ router.post('/', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-    const { rowCount } = await pool.query('DELETE FROM tracks WHERE id = $1', [parseId(req.params.id)]);
+    const { rowCount } = await pool.query('DELETE FROM tracks WHERE id = $1 AND user_id = $2', [parseId(req.params.id), req.user.id]);
     if (!rowCount) throw httpError(404, 'track not found');
     res.status(204).end();
 });

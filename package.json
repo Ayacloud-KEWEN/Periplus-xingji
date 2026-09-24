@@ -16,7 +16,8 @@
     "build:heritage": "node scripts/build-heritage.js",
     "places:reset": "node scripts/reset-places.js",
     "import:regions": "node scripts/import-regions.js",
-    "build:polity-names": "node scripts/build-polity-names.js"
+    "build:polity-names": "node scripts/build-polity-names.js",
+    "user": "node scripts/user.js"
   },
   "dependencies": {
     "compression": "^1.8.0",

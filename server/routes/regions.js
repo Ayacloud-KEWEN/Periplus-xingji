@@ -16,7 +16,7 @@ const CODE = /^[a-z][a-z0-9-]{1,30}$/;
 const NEAREST_DEGREES = 0.5; // 约 50 公里：坐标不在任何边界里时，往外找多远
 
 // 每个标注所属的国家代码；place 为 {}（海上等查不到的地方）的不计，和足迹统计一致
-async function pinCountries() {
+async function pinCountries(userId) {
     const { rows } = await pool.query(
         `SELECT p.id, ST_Y(p.geom) AS lat, ST_X(p.geom) AS lng, p.visited_at, p.place, p.place_manual,
                 CASE WHEN p.place IS NULL THEN COALESCE(
@@ -24,8 +24,8 @@ async function pinCountries() {
                     (SELECT r.code FROM admin_regions r WHERE r.level = 0 AND ST_DWithin(r.geom, p.geom, $1)
                      ORDER BY r.geom <-> p.geom LIMIT 1)
                 ) END AS spatial
-         FROM points p`,
-        [NEAREST_DEGREES]
+         FROM points p WHERE p.user_id = $2`,
+        [NEAREST_DEGREES, userId]
     );
     return rows.map(row => ({
         id: row.id,
@@ -51,7 +51,7 @@ router.get('/', async (req, res) => {
         }
     }
 
-    const pins = await pinCountries();
+    const pins = await pinCountries(req.user.id);
     const counts = new Map(); // 区域代码 → { pins, firstVisit }
     if (level === 0) {
         for (const pin of pins) tally(counts, pin.country, pin.visitedAt);

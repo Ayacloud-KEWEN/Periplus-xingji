@@ -375,6 +375,8 @@ textarea.input { min-height: 96px; resize: vertical; }
 .btn-primary { background: var(--brand); border-color: var(--brand); color: #fff; }
 .btn-danger { background: var(--danger); border-color: var(--danger); color: #fff; }
 .btn-ghost { background: transparent; }
+.account-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.account-actions .btn { color: var(--text); text-decoration: none; }
 .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }
 .actions .spacer { flex: 1; }
 

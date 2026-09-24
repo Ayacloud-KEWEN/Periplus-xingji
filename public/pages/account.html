@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#3D2B1F">
+    <title>Periplus · 行纪</title>
+    <link rel="icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../css/auth.css">
+</head>
+
+<body>
+    <main class="card wide">
+        <div class="topbar">
+            <h1 data-t="title"></h1>
+            <a class="button" href="../" data-t="back"></a>
+        </div>
+
+        <h2 data-t="changePassword"></h2>
+        <form id="password-form">
+            <p id="whoami"></p>
+            <label><span data-t="current"></span>
+                <input name="current" type="password" autocomplete="current-password" required></label>
+            <label><span data-t="newPassword"></span>
+                <input name="password" type="password" autocomplete="new-password" minlength="8" required></label>
+            <p class="error" id="password-msg" role="status"></p>
+            <button type="submit" data-t="save"></button>
+        </form>
+
+        <section id="admin" hidden>
+            <h2 data-t="users"></h2>
+            <div class="table-wrap">
+                <table class="users">
+                    <thead><tr><th data-t="username"></th><th data-t="pins"></th><th data-t="created"></th><th></th></tr></thead>
+                    <tbody id="user-rows"></tbody>
+                </table>
+            </div>
+
+            <h2 data-t="addUser"></h2>
+            <form id="add-form">
+                <div class="row">
+                    <label><span data-t="username"></span>
+                        <input name="username" autocomplete="off" autocapitalize="off" spellcheck="false" pattern="[A-Za-z0-9_.\-]{2,32}" required></label>
+                    <label><span data-t="initialPassword"></span>
+                        <input name="password" type="text" autocomplete="off" minlength="8" required></label>
+                </div>
+                <label class="check"><input name="isAdmin" type="checkbox"><span data-t="makeAdmin"></span></label>
+                <p class="error" id="add-msg" role="status"></p>
+                <button type="submit" data-t="create"></button>
+            </form>
+        </section>
+    </main>
+
+    <script type="module">
+        // 账户页：所有人都能改自己的密码；管理员还能建号、重设密码、删号。
+        // 独立页面，自带三语文案，语言跟随应用（mapweb.lang）
+        const TEXT = {
+            zh: {
+                title: '账户', back: '返回地图', changePassword: '修改密码', whoami: '当前登录：{name}',
+                current: '当前密码', newPassword: '新密码（至少 8 位）', save: '保存', saved: '密码已修改，其他设备上的登录已退出',
+                wrongCurrent: '当前密码不对', users: '所有账户', username: '用户名', pins: '标注', created: '创建日期',
+                admin: '管理员', you: '（你）', resetPassword: '重设密码', makeAdminShort: '设为管理员', removeAdmin: '取消管理员', delete: '删除',
+                promptPassword: '给 {name} 设一个新密码（至少 8 位）：', passwordReset: '已重设 {name} 的密码',
+                confirmDelete: '删除账户 {name}？它的 {pins} 个标注、全部照片和轨迹都会一起删除，无法恢复。\n\n请输入用户名确认：',
+                addUser: '新建账户', initialPassword: '初始密码（至少 8 位，告诉对方后让对方自己改）', makeAdmin: '设为管理员', create: '创建',
+                createdOk: '已创建 {name}', exists: '用户名已经存在', invalid: '用户名只能用 2–32 个字母、数字或 _ . -，密码至少 8 位', failed: '操作失败：{msg}'
+            },
+            en: {
+                title: 'Account', back: 'Back to map', changePassword: 'Change password', whoami: 'Signed in as {name}',
+                current: 'Current password', newPassword: 'New password (8+ characters)', save: 'Save', saved: 'Password changed; other devices were signed out',
+                wrongCurrent: 'Current password is wrong', users: 'All accounts', username: 'Username', pins: 'Pins', created: 'Created',
+                admin: 'admin', you: ' (you)', resetPassword: 'Reset password', makeAdminShort: 'Make admin', removeAdmin: 'Remove admin', delete: 'Delete',
+                promptPassword: 'New password for {name} (8+ characters):', passwordReset: 'Password for {name} was reset',
+                confirmDelete: 'Delete account {name}? Its {pins} pins, all photos and tracks will be deleted permanently.\n\nType the username to confirm:',
+                addUser: 'New account', initialPassword: 'Initial password (8+ characters; ask them to change it)', makeAdmin: 'Administrator', create: 'Create',
+                createdOk: 'Created {name}', exists: 'Username already exists', invalid: 'Username: 2–32 letters, digits, _ . -; password: 8+ characters', failed: 'Failed: {msg}'
+            },
+            fr: {
+                title: 'Compte', back: 'Retour à la carte', changePassword: 'Changer le mot de passe', whoami: 'Connecté : {name}',
+                current: 'Mot de passe actuel', newPassword: 'Nouveau mot de passe (8 caractères min.)', save: 'Enregistrer', saved: 'Mot de passe modifié ; les autres appareils ont été déconnectés',
+                wrongCurrent: 'Mot de passe actuel incorrect', users: 'Tous les comptes', username: 'Nom d’utilisateur', pins: 'Repères', created: 'Créé le',
+                admin: 'admin', you: ' (vous)', resetPassword: 'Réinitialiser', makeAdminShort: 'Rendre admin', removeAdmin: 'Retirer admin', delete: 'Supprimer',
+                promptPassword: 'Nouveau mot de passe pour {name} (8 caractères min.) :', passwordReset: 'Mot de passe de {name} réinitialisé',
+                confirmDelete: 'Supprimer le compte {name} ? Ses {pins} repères, photos et traces seront supprimés définitivement.\n\nSaisissez le nom d’utilisateur pour confirmer :',
+                addUser: 'Nouveau compte', initialPassword: 'Mot de passe initial (8 caractères min. ; à changer ensuite)', makeAdmin: 'Administrateur', create: 'Créer',
+                createdOk: '{name} créé', exists: 'Ce nom existe déjà', invalid: 'Nom : 2 à 32 lettres, chiffres, _ . - ; mot de passe : 8 caractères min.', failed: 'Échec : {msg}'
+            }
+        };
+        let lang = 'zh';
+        try { lang = localStorage.getItem('mapweb.lang') || (navigator.language || 'zh').slice(0, 2); } catch { /* 忽略 */ }
+        if (!(lang in TEXT)) lang = 'en';
+        document.documentElement.lang = lang;
+        const t = (key, params = {}) => TEXT[lang][key].replace(/\{(\w+)\}/g, (m, name) => params[name] ?? m);
+        document.querySelectorAll('[data-t]').forEach(el => { el.textContent = t(el.dataset.t); });
+
+        const escapeHtml = (value) => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+
+        async function call(method, url, body) {
+            const response = await fetch(url, {
+                method,
+                headers: body ? { 'content-type': 'application/json' } : {},
+                body: body ? JSON.stringify(body) : undefined
+            });
+            if (response.status === 401) {
+                location.href = `/login.html?next=${encodeURIComponent(location.pathname)}`;
+                throw new Error('login required');
+            }
+            if (!response.ok) {
+                const error = new Error((await response.json().catch(() => ({}))).error || response.statusText);
+                error.status = response.status;
+                throw error;
+            }
+            return response.status === 204 ? null : response.json();
+        }
+
+        const me = await call('GET', '/api/auth/me');
+        document.getElementById('whoami').textContent = t('whoami', { name: me.username });
+
+        // ---------- 改自己的密码 ----------
+        const passwordForm = document.getElementById('password-form');
+        const passwordMsg = document.getElementById('password-msg');
+        passwordForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            passwordMsg.className = 'error';
+            try {
+                await call('POST', '/api/auth/password', { current: passwordForm.current.value, password: passwordForm.password.value });
+                passwordForm.reset();
+                passwordMsg.className = 'error ok';
+                passwordMsg.textContent = t('saved');
+            } catch (err) {
+                passwordMsg.textContent = err.status === 403 ? t('wrongCurrent') : err.status === 400 ? t('invalid') : t('failed', { msg: err.message });
+            }
+        });
+
+        // ---------- 管理员 ----------
+        if (me.isAdmin) {
+            document.getElementById('admin').hidden = false;
+            const rows = document.getElementById('user-rows');
+            let users = [];
+
+            async function refresh() {
+                users = await call('GET', '/api/auth/users');
+                rows.innerHTML = users.map(user => `
+                    <tr data-id="${user.id}">
+                        <td>${escapeHtml(user.username)}${user.id === me.id ? escapeHtml(t('you')) : ''}${user.isAdmin ? `<span class="badge">${escapeHtml(t('admin'))}</span>` : ''}</td>
+                        <td>${user.points}</td>
+                        <td>${new Date(user.createdAt).toLocaleDateString(lang)}</td>
+                        <td class="actions">
+                            <button class="small" data-act="reset">${escapeHtml(t('resetPassword'))}</button>
+                            ${user.id === me.id ? '' : `
+                            <button class="small" data-act="admin">${escapeHtml(t(user.isAdmin ? 'removeAdmin' : 'makeAdminShort'))}</button>
+                            <button class="small danger" data-act="delete">${escapeHtml(t('delete'))}</button>`}
+                        </td>
+                    </tr>`).join('');
+            }
+
+            rows.addEventListener('click', async (e) => {
+                const button = e.target.closest('[data-act]');
+                if (!button) return;
+                const user = users.find(item => item.id === Number(button.closest('tr').dataset.id));
+                try {
+                    if (button.dataset.act === 'reset') {
+                        const password = prompt(t('promptPassword', { name: user.username }));
+                        if (!password) return;
+                        await call('PATCH', `/api/auth/users/${user.id}`, { password });
+                        alert(t('passwordReset', { name: user.username }));
+                    } else if (button.dataset.act === 'admin') {
+                        await call('PATCH', `/api/auth/users/${user.id}`, { isAdmin: !user.isAdmin });
+                    } else if (button.dataset.act === 'delete') {
+                        // 删号会连带删掉全部数据，要求把用户名再输一遍
+                        const typed = prompt(t('confirmDelete', { name: user.username, pins: user.points }));
+                        if (typed?.trim().toLowerCase() !== user.username.toLowerCase()) return;
+                        await call('DELETE', `/api/auth/users/${user.id}`);
+                    }
+                    await refresh();
+                } catch (err) {
+                    alert(err.status === 400 ? t('invalid') : t('failed', { msg: err.message }));
+                }
+            });
+
+            const addForm = document.getElementById('add-form');
+            const addMsg = document.getElementById('add-msg');
+            addForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                addMsg.className = 'error';
+                try {
+                    const user = await call('POST', '/api/auth/users', {
+                        username: addForm.username.value.trim(),
+                        password: addForm.password.value,
+                        isAdmin: addForm.isAdmin.checked
+                    });
+                    addForm.reset();
+                    addMsg.className = 'error ok';
+                    addMsg.textContent = t('createdOk', { name: user.username });
+                    await refresh();
+                } catch (err) {
+                    addMsg.textContent = err.status === 409 ? t('exists') : err.status === 400 ? t('invalid') : t('failed', { msg: err.message });
+                }
+            });
+
+            await refresh();
+        }
+    </script>
+</body>
+
+</html>

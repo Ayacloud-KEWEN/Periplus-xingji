@@ -44,7 +44,8 @@ function chainOf(place) {
 
 router.get('/', async (req, res) => {
     const { rows } = await pool.query(
-        `SELECT id, ST_Y(geom) AS lat, ST_X(geom) AS lng, visited_at, place, place_manual FROM points`
+        `SELECT id, ST_Y(geom) AS lat, ST_X(geom) AS lng, visited_at, place, place_manual FROM points WHERE user_id = $1`,
+        [req.user.id]
     );
 
     // 各级去重计数（顶部数字卡片）：用完整路径去重，不同省的同名区县分开算

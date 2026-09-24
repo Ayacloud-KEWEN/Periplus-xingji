@@ -1,6 +1,11 @@
 // 后端 API 封装
 import { t } from './i18n.js';
 
+// 没登录或登录过期：带上当前地址去登录页，登录完再回来
+export function goToLogin() {
+    location.href = `/login.html?next=${encodeURIComponent(location.pathname + location.search)}`;
+}
+
 async function request(method, url, body) {
     const options = { method, headers: {} };
     if (body instanceof FormData) {
@@ -17,6 +22,10 @@ async function request(method, url, body) {
         throw new Error(t('networkError'));
     }
 
+    if (response.status === 401) {
+        goToLogin();
+        throw Object.assign(new Error(t('loginRequired')), { status: 401 });
+    }
     if (!response.ok) {
         let message = `${response.status} ${response.statusText}`;
         try {
@@ -28,6 +37,9 @@ async function request(method, url, body) {
 }
 
 export const api = {
+    me: () => request('GET', '/api/auth/me'),
+    logout: () => request('POST', '/api/auth/logout'),
+
     config: () => request('GET', '/api/config'),
     countries: () => request('GET', '/api/countries'),
 

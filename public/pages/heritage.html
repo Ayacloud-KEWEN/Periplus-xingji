@@ -144,7 +144,11 @@
         render();
 
         fetch('/api/lists/heritage')
-            .then(response => response.ok ? response.json() : Promise.reject(new Error(response.status)))
+            .then(response => {
+                // 多用户版：没登录先去登录，登录完回到这一页
+                if (response.status === 401) location.href = `/login.html?next=${encodeURIComponent(location.pathname)}`;
+                return response.ok ? response.json() : Promise.reject(new Error(response.status));
+            })
             .then(data => {
                 sites = data.sites;
                 hits = new Map(data.visited.map(site => [site.id, site]));

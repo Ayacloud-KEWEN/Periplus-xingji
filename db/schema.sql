@@ -1,6 +1,26 @@
 -- Periplus · 行纪 数据库结构（可重复执行）
 CREATE EXTENSION IF NOT EXISTS postgis;
 
+-- 用户（多用户版）。没有公开注册，账户由管理员在"账户"页或 npm run user 创建
+CREATE TABLE IF NOT EXISTS users (
+    id            BIGSERIAL PRIMARY KEY,
+    username      TEXT        NOT NULL,
+    password_hash TEXT        NOT NULL,                 -- scrypt，见 server/auth.js
+    is_admin      BOOLEAN     NOT NULL DEFAULT false,
+    created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+-- 用户名不区分大小写
+CREATE UNIQUE INDEX IF NOT EXISTS users_username_uniq ON users (lower(username));
+
+-- 登录会话：token_hash 是 Cookie 里令牌的 SHA-256，数据库里不存原文
+CREATE TABLE IF NOT EXISTS sessions (
+    token_hash TEXT        PRIMARY KEY,
+    user_id    BIGINT      NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    expires_at TIMESTAMPTZ NOT NULL
+);
+CREATE INDEX IF NOT EXISTS sessions_user_idx ON sessions (user_id);
+
 -- 个人标注
 CREATE TABLE IF NOT EXISTS points (
     id          BIGSERIAL PRIMARY KEY,
@@ -23,6 +43,9 @@ ALTER TABLE points ADD COLUMN IF NOT EXISTS place_checked_at TIMESTAMPTZ;
 -- 用户手动修改过所在地区：自动识别不会覆盖，places:reset 也会保留
 ALTER TABLE points ADD COLUMN IF NOT EXISTS place_manual BOOLEAN NOT NULL DEFAULT false;
 CREATE INDEX IF NOT EXISTS points_place_pending_idx ON points (id) WHERE place IS NULL;
+-- 标注属于哪个用户。单用户版升级上来的旧数据是 NULL，启动时归给最早的管理员（server/auth.js 的 adoptOrphanData）
+ALTER TABLE points ADD COLUMN IF NOT EXISTS user_id BIGINT REFERENCES users(id) ON DELETE CASCADE;
+CREATE INDEX IF NOT EXISTS points_user_idx ON points (user_id, visited_at);
 
 -- 标注的照片，一个标注可以有多张；sort 小的排在前面，第一张作为封面
 CREATE TABLE IF NOT EXISTS point_photos (
@@ -33,6 +56,8 @@ CREATE TABLE IF NOT EXISTS point_photos (
     created_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS point_photos_point_idx ON point_photos (point_id, sort, id);
+-- /uploads 按路径查照片属于谁，只给主人看
+CREATE INDEX IF NOT EXISTS point_photos_path_idx ON point_photos (path);
 
 -- 以前每个标注只有一张照片，存在 points.image_path。搬到 point_photos 后清空原字段，
 -- 否则每次启动都会再搬一次（照片被删掉后又冒出来）
@@ -47,6 +72,10 @@ CREATE TABLE IF NOT EXISTS app_settings (
     value      JSONB       NOT NULL,
     updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+-- 多用户：设置按用户分开，主键从 key 改成 (user_id, key)
+ALTER TABLE app_settings ADD COLUMN IF NOT EXISTS user_id BIGINT REFERENCES users(id) ON DELETE CASCADE;
+ALTER TABLE app_settings DROP CONSTRAINT IF EXISTS app_settings_pkey;
+CREATE UNIQUE INDEX IF NOT EXISTS app_settings_user_key_uniq ON app_settings (user_id, key);
 
 -- 中国"县 → 地级市"缓存：Nominatim 的逆地理编码不返回地级市，要额外查一次上级行政区，查过的县不再重复查
 CREATE TABLE IF NOT EXISTS cn_prefectures (
@@ -94,8 +123,11 @@ UPDATE tracks SET pace_profile = NULL WHERE pace_profile = 'null'::jsonb;
 
 CREATE INDEX IF NOT EXISTS tracks_geom_idx ON tracks USING GIST (geom);
 CREATE INDEX IF NOT EXISTS tracks_started_idx ON tracks (started_at);
--- 同一次活动只存一条：重复导入同一个 GPX 文件时按开始时间去重
-CREATE UNIQUE INDEX IF NOT EXISTS tracks_started_uniq ON tracks (started_at);
+ALTER TABLE tracks ADD COLUMN IF NOT EXISTS user_id BIGINT REFERENCES users(id) ON DELETE CASCADE;
+-- 同一次活动只存一条：重复导入同一个 GPX 文件时按开始时间去重。多用户版改成每个用户各自去重
+-- （两个朋友一起跑步，开始时间可能完全一样）
+DROP INDEX IF EXISTS tracks_started_uniq;
+CREATE UNIQUE INDEX IF NOT EXISTS tracks_user_started_uniq ON tracks (user_id, started_at);
 
 -- 现代行政区边界（Natural Earth，公共领域），用于"点亮地图"。导入：npm run import:regions
 CREATE TABLE IF NOT EXISTS admin_regions (

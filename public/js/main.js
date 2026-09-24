@@ -16,7 +16,7 @@ import { openSettingsPanel, openDataPanel, togglePersonalTimeline } from './pane
 import { importPhotos, importBackup } from './io.js';
 import { panel, toast, toastError } from './ui.js';
 import { refreshTimebarLabel, timebarOwner } from './timebar.js';
-import { settings, saveSettings } from './settings.js';
+import { settings, saveSettings, setCurrentUser } from './settings.js';
 
 const PANELS = { settings: openSettingsPanel, journeys: openJourneysPanel, trips: openTripsPanel,
     review: openReviewPanel, stats: openStatsPanel, data: openDataPanel, gallery: openGalleryPanel };
@@ -140,6 +140,14 @@ function registerServiceWorker() {
 
 async function main() {
     await loadLanguage(initialLanguage()).catch(() => loadLanguage('en'));
+
+    // 多用户版：先确认登录了，没登录 api.js 会跳到登录页。
+    // 断网等其他错误照常往下走，离线时还能看 Service Worker 缓存的数据
+    try {
+        setCurrentUser(await api.me());
+    } catch (err) {
+        if (err.status === 401) return;
+    }
 
     let config = { maptilerKey: '' };
     try {

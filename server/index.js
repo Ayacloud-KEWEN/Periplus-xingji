@@ -13,16 +13,30 @@ import regionsRouter from './routes/regions.js';
 import backupRouter from './routes/backup.js';
 import tracksRouter from './routes/tracks.js';
 import settingsRouter from './routes/settings.js';
+import authRouter from './routes/auth.js';
+import { loadUser, requireUser, checkOrigin, adoptOrphanData, createUser } from './auth.js';
 import { startGeocoder, stopGeocoder } from './geocoder.js';
 import { COUNTRY_CODES } from './continents.js';
 import { specialRegions } from './special-regions.js';
 
 const app = express();
 app.disable('x-powered-by');
+// 部署在 VPS 上一般前面有 Caddy / nginx 做 HTTPS：信任本机的反向代理，req.secure、req.ip 才对
+app.set('trust proxy', config.trustProxy);
 app.use(compression());
 app.use(express.json({ limit: '25mb' })); // 一条 GPX 轨迹可能有好几万个点
 
 // --- API ---
+app.get('/api/health', async (req, res) => {
+    await pool.query('SELECT 1');
+    res.json({ ok: true });
+});
+
+app.use('/api', checkOrigin, loadUser);
+app.use('/api/auth', authRouter);
+// 以下全部要登录
+app.use('/api', requireUser);
+
 app.get('/api/config', (req, res) => {
     res.json({ maptilerKey: config.maptilerKey });
 });
@@ -30,11 +44,6 @@ app.get('/api/config', (req, res) => {
 // 国家 / 地区代码，以及 config/special-regions.json 里的特殊地区
 app.get('/api/countries', (req, res) => {
     res.json({ codes: COUNTRY_CODES, special: specialRegions() });
-});
-
-app.get('/api/health', async (req, res) => {
-    await pool.query('SELECT 1');
-    res.json({ ok: true });
 });
 
 app.use('/api/points', pointsRouter);
@@ -48,8 +57,20 @@ app.use('/api/settings', settingsRouter);
 app.use('/api', (req, res) => res.status(404).json({ error: 'not found' }));
 
 // --- 静态文件 ---
-// 上传的图片文件名唯一且不会被修改，可以长期缓存
-app.use('/uploads', express.static(config.uploadDir, { maxAge: '365d', immutable: true, index: false }));
+// 照片只给主人看：按路径查它属于哪个标注、标注属于谁。
+// 文件名唯一且不会被修改，可以长期缓存，但只能是 private（不让中间的代理缓存给别人）
+app.use('/uploads', loadUser, async (req, res, next) => {
+    if (!req.user) return res.status(401).end();
+    const relativePath = decodeURIComponent(req.path.replace(/^\//, ''));
+    const { rows } = await pool.query(
+        `SELECT 1 FROM point_photos ph JOIN points p ON p.id = ph.point_id
+         WHERE ph.path = $1 AND p.user_id = $2 LIMIT 1`, [relativePath, req.user.id]);
+    if (!rows.length) return res.status(404).end();
+    next();
+}, express.static(config.uploadDir, {
+    index: false,
+    setHeaders: (res) => res.setHeader('Cache-Control', 'private, max-age=31536000, immutable')
+}));
 
 const vendorDir = path.join(ROOT_DIR, 'public', 'vendor') + path.sep;
 app.use(express.static(path.join(ROOT_DIR, 'public'), {
@@ -76,6 +97,19 @@ try {
     console.error('数据库结构更新失败:', err.message);
 }
 await fs.mkdir(config.uploadDir, { recursive: true });
+
+// 第一次启动还没有任何账户：可以用 ADMIN_USERNAME / ADMIN_PASSWORD 自动建一个管理员，
+// 否则提示用 npm run user 建
+const { rows: [{ count: userCount }] } = await pool.query('SELECT count(*)::int AS count FROM users');
+if (userCount === 0 && config.adminUsername && config.adminPassword) {
+    await createUser(config.adminUsername, config.adminPassword, true);
+    console.log(`已创建管理员账户 ${config.adminUsername}，登录后请尽快修改密码，并从 .env 删掉 ADMIN_PASSWORD`);
+} else if (userCount === 0) {
+    console.warn('还没有任何账户，请运行 npm run user -- add <用户名> --admin 创建管理员');
+}
+// 单用户版升级上来的数据归给最早的管理员
+const adopted = await adoptOrphanData();
+if (adopted) console.log(`已把 ${adopted} 条原有数据归到最早的管理员名下`);
 
 const server = app.listen(config.port, config.host, () => {
     console.log(`Periplus · 行纪 已启动: http://${config.host}:${config.port}`);

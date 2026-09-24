@@ -4,6 +4,9 @@
 
 一个装在自己电脑或树莓派上的个人地图：打卡记录足迹和照片，自动统计去过的国家、地区和世界遗产；导入跑步、徒步、骑行等运动轨迹；拖动时间轴浏览公元前 3400 年至今的历史疆域，重温历史上旅行家的路线。电脑和手机上都能用，所有数据都保存在你自己的设备里。
 
+> **这是多用户分支（`multi-user`）。** 在单人版的基础上加了账户和登录，适合放在 VPS 上给几个朋友一起用：每个人登录自己的账户，标注、照片、轨迹、旅程调整和统计都互相看不到。没有公开注册，账户由管理员创建。只给自己用的话，`main` 分支更简单。部署方法见下面的[多用户版：部署到 VPS](#多用户版部署到-vps)。
+
+
 ## 亮点
 
 ### 足迹和照片
@@ -85,6 +88,68 @@ npm run import:regions                                          # 点亮地图
 | 地名搜索 | Nominatim 或 MapTiler | 你输入的搜索词（只在按回车时发送） | 不使用地名搜索即可 |
 
 世界遗产统计、历史地图、照片处理（读取 GPS、HEIC 转换、压缩）都在本地完成。
+
+## 多用户版：部署到 VPS
+
+多用户版和单人版的区别：
+
+- 所有 `/api` 接口和 `/uploads` 下的照片都要登录；每个人只能读写自己的标注、照片、轨迹和设置，照片按路径核对主人，猜到文件名也拿不到别人的。
+- 没有公开注册。账户由管理员在应用里的「设置 → 账户管理」创建，或者在服务器上用 `npm run user`。
+- 密码用 scrypt 加盐散列保存；登录状态是 30 天的 HttpOnly Cookie，常用会自动续期；同一 IP 15 分钟内输错 10 次会暂停登录。
+- 改密码后，这个账户在其他设备上的登录会退出；管理员重设某人的密码后，那个人所有设备都要重新登录。
+- 管理员删除账户时，这个人的标注、照片文件、轨迹、设置一起删除，不可恢复。
+
+### 1. 安装
+
+在 Debian / Ubuntu 的 VPS 上，获取代码并切到本分支：
+
+```bash
+git clone -b multi-user https://github.com/Ayacloud-KEWEN/Periplus-xingji.git && cd Periplus-xingji
+```
+
+之后的安装步骤和[部署到树莓派 5](#部署到树莓派-5)一样（`deploy/setup-pi.sh` 在普通的 Debian / Ubuntu 上也能用）。区别是 `.env` 里要把 `HOST` 设为 `127.0.0.1`，只让本机的反向代理访问，不要把应用端口直接开到公网。
+
+### 2. 创建管理员
+
+```bash
+npm run user -- add 你的用户名 --admin    # 会提示输入两次密码（至少 8 位）
+```
+
+也可以在第一次启动前，在 `.env` 里填 `ADMIN_USERNAME` 和 `ADMIN_PASSWORD`：还没有任何账户时，服务启动会自动建这个管理员。建好后记得从 `.env` 里删掉密码。
+
+**从单人版升级**：原来的数据（标注、照片、轨迹、旅程调整）会在建好第一个管理员后自动归到这个管理员名下，不需要重新导入。
+
+### 3. HTTPS（必须）
+
+放在公网上一定要用 HTTPS，否则密码和登录 Cookie 是明文传输的。最省事的是 [Caddy](https://caddyserver.com/)，它会自动申请和续期证书。先把域名解析到 VPS，然后 `/etc/caddy/Caddyfile` 写：
+
+```
+map.example.com {
+    reverse_proxy 127.0.0.1:8080
+}
+```
+
+`sudo systemctl reload caddy` 之后，用 https://map.example.com 访问。应用默认信任本机反向代理发来的 `X-Forwarded-*`（`TRUST_PROXY=loopback`），这样才能认出 HTTPS、给 Cookie 加上 `Secure`，登录限流也按访客的真实 IP 计算。反向代理在别的机器上时，把 `TRUST_PROXY` 改成它的 IP。
+
+### 4. 给朋友建账户
+
+用管理员账户登录，「设置 → 账户管理」里填用户名和初始密码，把地址、用户名、密码告诉朋友，让对方登录后在同一页改成自己的密码。忘了密码时，管理员可以在列表里点「重设密码」。
+
+命令行也能做同样的事：
+
+```bash
+npm run user -- list
+npm run user -- add alice
+npm run user -- passwd alice
+npm run user -- admin alice on
+```
+
+### 5. 隐私：朋友需要知道的
+
+- **管理员能看到所有人的数据**：数据库和照片都在服务器上，有服务器权限的人都能直接读。请只邀请信任你的朋友，也要告诉他们这一点。
+- **足迹统计的行政区识别**（`GEOCODER=on` 时）会把**所有用户**标注的坐标发给 OpenStreetMap Nominatim，服务器是 VPS 的 IP。不希望这样就设 `GEOCODER=off`，行政区统计就不可用了。
+- 每个人可以在「数据」面板导出自己的备份（只含自己的数据），也可以导入。服务器上的 `deploy/backup.sh` 备份的是整个数据库，包含所有人。
+- 没有给每个账户设照片空间上限，请留意 VPS 的硬盘。
 
 ## 部署到树莓派 5
 
@@ -360,6 +425,8 @@ git pull && npm ci --omit=dev && sudo systemctl restart mapweb
 | `MAPTILER_KEY` | 空 | 可选。填写后可以切换到 MapTiler 底图（包括卫星图）和地名搜索。key 会发送到浏览器，建议在 MapTiler 后台限制允许的来源 |
 | `GEOCODER` | `on` | 足迹统计的行政区查询。设为 `off` 则不向 Nominatim 发送任何坐标 |
 | `GEOCODER_EMAIL` | 空 | 可选。Nominatim 在请求异常时可以通过这个邮箱联系你 |
+| `TRUST_PROXY` | `loopback` | 多用户版。信任哪些反向代理的 `X-Forwarded-*`，默认只信本机 |
+| `ADMIN_USERNAME` / `ADMIN_PASSWORD` | 空 | 多用户版。还没有任何账户时，启动会自动建这个管理员；建好后删掉密码 |
 
 ## 技术实现
 
@@ -432,8 +499,16 @@ Periplus-xingji/
 
 ### API
 
+多用户版除 `/api/health` 和 `/api/auth/login` 外都要登录（Cookie），没登录返回 401；下面的数据接口都只读写当前用户自己的数据。
+
 | 方法 | 路径 | 说明 |
 |---|---|---|
+| POST | `/api/auth/login` | 登录 `{ username, password }`，成功后设置 Cookie |
+| POST | `/api/auth/logout` | 退出登录 |
+| GET | `/api/auth/me` | 当前用户 `{ id, username, isAdmin }` |
+| POST | `/api/auth/password` | 改自己的密码 `{ current, password }`，其他设备上的登录会退出 |
+| GET / POST | `/api/auth/users` | 管理员：列出账户 / 新建账户 `{ username, password, isAdmin }` |
+| PATCH / DELETE | `/api/auth/users/:id` | 管理员：重设密码、设置管理员 `{ password?, isAdmin? }` / 删除账户及其全部数据 |
 | GET | `/api/points` | 所有标注；加 `?ids=1,2,3` 只取指定的几个 |
 | POST | `/api/points` | 新建 `{ lat, lng, title?, description?, emoji?, visited_at? }` |
 | POST | `/api/points/batch` | 批量新建（1–5000 条，一个事务） |

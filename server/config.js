@@ -15,5 +15,10 @@ export const config = {
     maptilerKey: process.env.MAPTILER_KEY || '',
     // 足迹统计需要把标注坐标发给 OpenStreetMap Nominatim 查询所在行政区；设为 off 则不发送
     geocoder: (process.env.GEOCODER || 'on').toLowerCase() !== 'off',
-    geocoderEmail: process.env.GEOCODER_EMAIL || ''
+    geocoderEmail: process.env.GEOCODER_EMAIL || '',
+    // 多用户版：信任哪些反向代理的 X-Forwarded-*。默认只信本机（Caddy / nginx 和本服务在同一台机器上）
+    trustProxy: process.env.TRUST_PROXY || 'loopback',
+    // 第一次启动时自动创建的管理员（只在还没有任何账户时生效）
+    adminUsername: process.env.ADMIN_USERNAME || '',
+    adminPassword: process.env.ADMIN_PASSWORD || ''
 };

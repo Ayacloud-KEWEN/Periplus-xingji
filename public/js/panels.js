@@ -1,5 +1,6 @@
 // 设置面板、数据面板、个人时间轴
-import { settings } from './settings.js';
+import { settings, currentUser } from './settings.js';
+import { api } from './api.js';
 import { getStyles, setBasemap, hasMaptiler } from './map.js';
 import { getPins, setClustering, setPinsVisible, setDateFilter } from './pins.js';
 import { t, LANGUAGES, getLanguage, loadLanguage, formatDate } from './i18n.js';
@@ -44,7 +45,16 @@ function renderSettings() {
         <section class="section">
             <h3 class="section-title">${escapeHtml(t('language'))}</h3>
             ${segmented('language', Object.entries(LANGUAGES), getLanguage())}
+        </section>
+        <section class="section">
+            <h3 class="section-title">${escapeHtml(t('account'))}</h3>
+            <p class="muted">${escapeHtml(t('signedInAs', { name: currentUser?.username ?? '' }))}</p>
+            <div class="account-actions">
+                <a class="btn" href="pages/account.html">${escapeHtml(t(currentUser?.isAdmin ? 'manageAccounts' : 'changePassword'))}</a>
+                <button type="button" class="btn" data-logout>${escapeHtml(t('logout'))}</button>
+            </div>
         </section>`);
+    body.querySelector('[data-logout]').addEventListener('click', logout);
 
     body.querySelectorAll('[data-segment="provider"] button').forEach(button => {
         button.addEventListener('click', () => {
@@ -60,6 +70,19 @@ function renderSettings() {
     });
 
     return { title: t('settings'), body };
+}
+
+async function logout() {
+    try {
+        await api.logout();
+    } catch (err) {
+        return toastError('', err);
+    }
+    // Service Worker 缓存过这个人的接口数据，退出时清掉，同一台设备换人登录也看不到
+    try {
+        await caches.delete('mapweb-runtime');
+    } catch { /* 不支持 Cache API 时忽略 */ }
+    location.href = '/login.html';
 }
 
 export function openSettingsPanel() {

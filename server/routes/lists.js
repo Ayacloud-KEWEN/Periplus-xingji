@@ -27,9 +27,10 @@ try {
 const router = Router();
 
 // 所有标注，套用过特殊地区规则；两个名录的匹配都从这里取
-async function locatedPoints() {
+async function locatedPoints(userId) {
     const { rows } = await pool.query(
-        `SELECT id, ST_Y(geom) AS lat, ST_X(geom) AS lng, visited_at, place, place_manual FROM points`
+        `SELECT id, ST_Y(geom) AS lat, ST_X(geom) AS lng, visited_at, place, place_manual FROM points WHERE user_id = $1`,
+        [userId]
     );
     return rows.map(point => {
         const place = resolvePlace(point.place, point.lat, point.lng, point.place_manual);
@@ -72,11 +73,11 @@ router.get('/countries', async (req, res) => {
         };
     }).sort((a, b) => a.code.localeCompare(b.code));
 
-    res.json({ total: countries.length, countries, visited: visitedCountries(await locatedPoints()) });
+    res.json({ total: countries.length, countries, visited: visitedCountries(await locatedPoints(req.user.id)) });
 });
 
 router.get('/tcc', async (req, res) => {
-    const points = await locatedPoints();
+    const points = await locatedPoints(req.user.id);
     res.json({
         ...tccMeta(),
         regions: tccRegions(),
@@ -85,7 +86,7 @@ router.get('/tcc', async (req, res) => {
 });
 
 router.get('/heritage', async (req, res) => {
-    const points = await locatedPoints();
+    const points = await locatedPoints(req.user.id);
     res.json({
         total: heritageTotal(),
         sites: heritageSites(),

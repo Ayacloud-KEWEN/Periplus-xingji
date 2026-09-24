@@ -261,5 +261,11 @@
     "🏨": "Hôtel", "🏛️": "Musée", "🏰": "Site historique", "🏖️": "Plage", "🤿": "Site de plongée", "⛳": "Golf", "⛷️": "Station de ski",
     "🐦": "Ornithologie", "🎣": "Pêche", "⛰️": "Montagne", "🌋": "Volcan", "🏢": "Bureau", "🎭": "Spectacle", "⛪": "Religieux",
     "🏫": "Éducation", "🏥": "Médical", "⛽": "Station-service", "🚆": "Gare", "✈️": "Aéroport", "📷": "Photo"
-  }
+  },
+  "account": "Compte",
+  "signedInAs": "Connecté : {name}",
+  "manageAccounts": "Gérer les comptes",
+  "changePassword": "Changer le mot de passe",
+  "logout": "Se déconnecter",
+  "loginRequired": "Veuillez vous connecter"
 }

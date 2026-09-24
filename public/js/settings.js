@@ -22,6 +22,12 @@ function read() {
 
 export const settings = { ...defaults, ...read() };
 
+// 当前登录的用户 { id, username, isAdmin }，启动时由 main.js 设置
+export let currentUser = null;
+export function setCurrentUser(user) {
+    currentUser = user;
+}
+
 export function saveSettings() {
     try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));

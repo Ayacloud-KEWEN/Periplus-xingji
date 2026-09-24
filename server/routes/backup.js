@@ -34,7 +34,8 @@ router.get('/', async (req, res) => {
         `SELECT p.id, p.title, p.description, p.emoji, ST_Y(p.geom) AS lat, ST_X(p.geom) AS lng,
                 p.visited_at, p.place, p.place_manual,
                 COALESCE((SELECT json_agg(ph.path ORDER BY ph.sort, ph.id) FROM point_photos ph WHERE ph.point_id = p.id), '[]') AS photos
-         FROM points p ORDER BY p.visited_at`
+         FROM points p WHERE p.user_id = $1 ORDER BY p.visited_at`,
+        [req.user.id]
     );
 
     const zip = new yazl.ZipFile();
@@ -70,7 +71,8 @@ router.get('/', async (req, res) => {
     const { rows: trackRows } = await pool.query(
         `SELECT name, sport, started_at, ended_at, distance_m, ascent_m, pace_profile,
                 ST_AsGeoJSON(geom, 6)::json AS geometry
-         FROM tracks ORDER BY started_at`
+         FROM tracks WHERE user_id = $1 ORDER BY started_at`,
+        [req.user.id]
     );
     if (trackRows.length) {
         const tracks = trackRows.map(row => ({
@@ -87,7 +89,7 @@ router.get('/', async (req, res) => {
     }
 
     // 手动调整（旅程的拆分 / 合并 / 改名）也一起备份
-    const { rows: settingRows } = await pool.query('SELECT key, value FROM app_settings');
+    const { rows: settingRows } = await pool.query('SELECT key, value FROM app_settings WHERE user_id = $1', [req.user.id]);
     if (settingRows.length) {
         const settings = Object.fromEntries(settingRows.map(row =>
             [row.key, row.key === 'trips' ? tripsForBackup(row.value, entryIndex) : row.value]));

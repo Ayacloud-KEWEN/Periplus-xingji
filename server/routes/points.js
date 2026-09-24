@@ -107,21 +107,21 @@ function parsePointInput(body, { partial, lenientPlace = false }) {
 
 // 带着地区创建的（比如从备份导入）：手动填写的标记为手动，不再自动识别；
 // 自动识别过的（regionAuto）只是把结果一起带过来，place_manual 仍是 false
-async function insertPoint(client, values) {
+async function insertPoint(client, userId, values) {
     const place = values.place ? JSON.stringify(values.place) : null;
     const { rows } = await client.query(
-        `INSERT INTO points (title, description, emoji, geom, visited_at, place, place_manual, place_checked_at)
+        `INSERT INTO points (title, description, emoji, geom, visited_at, place, place_manual, place_checked_at, user_id)
          VALUES ($1, $2, $3, ST_SetSRID(ST_MakePoint($4, $5), 4326), COALESCE($6::timestamptz, now()),
-                 $7::jsonb, $7::jsonb IS NOT NULL AND $8, CASE WHEN $7::jsonb IS NULL THEN NULL ELSE now() END)
+                 $7::jsonb, $7::jsonb IS NOT NULL AND $8, CASE WHEN $7::jsonb IS NULL THEN NULL ELSE now() END, $9)
          RETURNING ${SELECT_COLUMNS}`,
         [values.title ?? '', values.description ?? '', values.emoji ?? '📍', values.lng, values.lat, values.visited_at ?? null,
-         place, values.placeManual !== false]
+         place, values.placeManual !== false, userId]
     );
     return toPoint(rows[0]);
 }
 
 // 只删除 UPLOAD_DIR 内的文件，防止路径穿越
-async function removeImageFile(relativePath) {
+export async function removeImageFile(relativePath) {
     if (!relativePath) return;
     const absolute = path.resolve(config.uploadDir, relativePath);
     if (!absolute.startsWith(config.uploadDir + path.sep)) return;
@@ -132,15 +132,16 @@ router.get('/', async (req, res) => {
     // ?ids=1,2,3：只取这几个标注（前端新建标注后，用它刷新后台查到的所在地区）
     if (req.query.ids !== undefined) {
         const ids = String(req.query.ids).split(',').filter(Boolean).slice(0, 1000).map(parseId);
-        const { rows } = await pool.query(`SELECT ${SELECT_COLUMNS} FROM points WHERE id = ANY($1::bigint[])`, [ids]);
+        const { rows } = await pool.query(
+            `SELECT ${SELECT_COLUMNS} FROM points WHERE id = ANY($1::bigint[]) AND user_id = $2`, [ids, req.user.id]);
         return res.json(rows.map(toPoint));
     }
-    const { rows } = await pool.query(`SELECT ${SELECT_COLUMNS} FROM points ORDER BY visited_at`);
+    const { rows } = await pool.query(`SELECT ${SELECT_COLUMNS} FROM points WHERE user_id = $1 ORDER BY visited_at`, [req.user.id]);
     res.json(rows.map(toPoint));
 });
 
 router.post('/', async (req, res) => {
-    const point = await insertPoint(pool, parsePointInput(req.body, { partial: false }));
+    const point = await insertPoint(pool, req.user.id, parsePointInput(req.body, { partial: false }));
     wakeGeocoder();
     res.status(201).json(point);
 });
@@ -155,7 +156,7 @@ router.post('/batch', async (req, res) => {
     try {
         await client.query('BEGIN');
         const created = [];
-        for (const values of inputs) created.push(await insertPoint(client, values));
+        for (const values of inputs) created.push(await insertPoint(client, req.user.id, values));
         await client.query('COMMIT');
         wakeGeocoder();
         res.status(201).json(created);
@@ -193,9 +194,10 @@ router.patch('/:id', async (req, res) => {
     }
     if (sets.length === 0) throw httpError(400, 'nothing to update');
 
-    params.push(id);
+    params.push(id, req.user.id);
     const { rows } = await pool.query(
-        `UPDATE points SET ${sets.join(', ')}, updated_at = now() WHERE id = $${params.length} RETURNING ${SELECT_COLUMNS}`,
+        `UPDATE points SET ${sets.join(', ')}, updated_at = now()
+         WHERE id = $${params.length - 1} AND user_id = $${params.length} RETURNING ${SELECT_COLUMNS}`,
         params
     );
     if (rows.length === 0) throw httpError(404, 'point not found');
@@ -203,8 +205,8 @@ router.patch('/:id', async (req, res) => {
     res.json(toPoint(rows[0]));
 });
 
-async function selectPoint(id) {
-    const { rows } = await pool.query(`SELECT ${SELECT_COLUMNS} FROM points WHERE id = $1`, [id]);
+async function selectPoint(id, userId) {
+    const { rows } = await pool.query(`SELECT ${SELECT_COLUMNS} FROM points WHERE id = $1 AND user_id = $2`, [id, userId]);
     if (rows.length === 0) throw httpError(404, 'point not found');
     return toPoint(rows[0]);
 }
@@ -215,12 +217,15 @@ router.post('/:id/photos', upload.single('image'), async (req, res) => {
     if (!req.file) throw httpError(400, 'image required (jpeg/png/webp/gif)');
 
     const { rows: existing } = await pool.query(
-        'SELECT (SELECT count(*) FROM point_photos WHERE point_id = $1)::int AS count FROM points WHERE id = $1', [id]);
+        'SELECT (SELECT count(*) FROM point_photos WHERE point_id = $1)::int AS count FROM points WHERE id = $1 AND user_id = $2',
+        [id, req.user.id]);
     if (existing.length === 0) throw httpError(404, 'point not found');
     if (existing[0].count >= MAX_PHOTOS) throw httpError(400, `at most ${MAX_PHOTOS} photos per point`);
 
     const now = new Date();
+    // 多用户版按用户分目录，删号、迁移时好找
     const relativePath = path.posix.join(
+        `u${req.user.id}`,
         String(now.getFullYear()),
         String(now.getMonth() + 1).padStart(2, '0'),
         `${id}-${crypto.randomUUID()}.${IMAGE_EXTENSIONS[req.file.mimetype]}`
@@ -240,25 +245,27 @@ router.post('/:id/photos', upload.single('image'), async (req, res) => {
         throw err;
     }
     await pool.query('UPDATE points SET updated_at = now() WHERE id = $1', [id]);
-    res.json(await selectPoint(id));
+    res.json(await selectPoint(id, req.user.id));
 });
 
 router.delete('/:id/photos/:photoId', async (req, res) => {
     const id = parseId(req.params.id);
     const photoId = parseId(req.params.photoId);
     const { rows } = await pool.query(
-        'DELETE FROM point_photos WHERE id = $1 AND point_id = $2 RETURNING path', [photoId, id]);
+        `DELETE FROM point_photos WHERE id = $1 AND point_id = $2
+           AND EXISTS (SELECT 1 FROM points WHERE id = $2 AND user_id = $3) RETURNING path`, [photoId, id, req.user.id]);
     if (rows.length === 0) throw httpError(404, 'photo not found');
     await pool.query('UPDATE points SET updated_at = now() WHERE id = $1', [id]);
     await removeImageFile(rows[0].path);
-    res.json(await selectPoint(id));
+    res.json(await selectPoint(id, req.user.id));
 });
 
 router.delete('/:id', async (req, res) => {
     const id = parseId(req.params.id);
     // 照片记录会随标注级联删除，文件要先查出来自己删
-    const { rows: photos } = await pool.query('SELECT path FROM point_photos WHERE point_id = $1', [id]);
-    const { rowCount } = await pool.query('DELETE FROM points WHERE id = $1', [id]);
+    const { rows: photos } = await pool.query(
+        'SELECT ph.path FROM point_photos ph JOIN points p ON p.id = ph.point_id WHERE p.id = $1 AND p.user_id = $2', [id, req.user.id]);
+    const { rowCount } = await pool.query('DELETE FROM points WHERE id = $1 AND user_id = $2', [id, req.user.id]);
     if (rowCount === 0) throw httpError(404, 'point not found');
     for (const photo of photos) await removeImageFile(photo.path);
     res.status(204).end();
