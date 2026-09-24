@@ -184,6 +184,7 @@ sudo tailscale serve --bg 8080   # 换成实际用的端口
 - 数据来自 Wikidata，保存在 `server/data/world-heritage.json`，共 1263 处，包括组合遗产的 4400 多个组成部分。
 - 标注落在遗产点周围一定范围内就算去过，范围按遗产面积估算。沿河、沿运河分布的遗产（比如巴黎塞纳河畔、大运河）只有一个坐标点，这类遗产的匹配只是近似。
 - 教科文组织每年更新一次名录，更新后运行 `npm run build:heritage` 重新生成数据。
+- Wikidata 上个别遗产的坐标有错（比如圣埃米利永的经度符号反了，位置偏出去 24 公里）。这类更正写在生成脚本 `scripts/build-heritage.js` 的 `COORD_FIXES` 里，重新生成不会被覆盖回去；上游改对之后，生成时会提示某条更正没用上，可以删掉。
 
 **TCC 名单**
 - [旅行家世纪俱乐部](https://travelerscenturyclub.org/countries-and-territories/)（Travelers' Century Club）的官方名单，共 330 个"国家和地区"，2022 年 1 月版，保存在 `server/data/tcc-regions.json`。
