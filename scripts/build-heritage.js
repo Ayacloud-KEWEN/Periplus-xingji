@@ -33,6 +33,21 @@ const COORD_FIXES = [
 
 const usedFixes = new Set();
 
+// 补充坐标点：范围很大、但 Wikidata 上只有一个中心点又查不到面积的遗产，2 公里的默认半径罩不住，
+// 这里按实际范围手工补几个点。等 Wikidata 补上组成部分（编号形如 1581-001），脚本会自动取到，
+// 那时候这里就可以删掉。半径尽量收紧，免得把附近不相干的地方也算成去过。
+const EXTRA_POINTS = {
+    // 1944 年诺曼底登陆海滩：五处登陆滩沿岸排开约 80 公里，Wikidata 只有一个点，还落在奥马哈西端
+    '1581': [
+        { lat: 49.4250, lng: -1.1720, km: 4, what: '犹他海滩' },
+        { lat: 49.3710, lng: -0.8770, km: 3.5, what: '奥马哈海滩' },
+        { lat: 49.3390, lng: -0.5730, km: 4.5, what: '黄金海滩' },
+        { lat: 49.3326, lng: -0.4245, km: 3.5, what: '朱诺海滩' },
+        { lat: 49.2970, lng: -0.2840, km: 3.5, what: '宝剑海滩' }
+    ]
+};
+
+
 // 已知的国家记录不全：这几处是跨国遗产，Wikidata 只记了其中一部分国家（1393 干脆没有 P17）。
 // 只影响「世界遗产」页面按国家分组，不影响"去过没去过"的判定——那个只看坐标。
 const COUNTRY_FIXES = {
@@ -215,7 +230,9 @@ async function main() {
             points.push([round(lat, 5), round(lng, 5), round(radiusKm(area, 1), 1)]);
             componentCount++;
         }
-        const fixed = applyFixes(site.id, points);
+        const extra = (EXTRA_POINTS[site.id] || []).map(({ lat, lng, km }) => [round(lat, 5), round(lng, 5), km]);
+        if (extra.length) console.log(`  补充 ${site.id}：${extra.length} 个坐标点（${EXTRA_POINTS[site.id].map(point => point.what).join('、')}）`);
+        const fixed = [...applyFixes(site.id, points), ...extra];
         if (!fixed.length) continue;
         output.push({
             id: site.id,
