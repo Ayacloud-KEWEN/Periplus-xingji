@@ -249,6 +249,7 @@ sudo tailscale serve --bg 8080   # 换成实际用的端口
 - 数据来自 Wikidata，保存在 `server/data/world-heritage.json`，共 1263 处，包括组合遗产的 4400 多个组成部分。
 - 标注落在遗产点周围一定范围内就算去过，范围按遗产面积估算。沿河、沿运河分布的遗产（比如巴黎塞纳河畔、大运河）只有一个坐标点，这类遗产的匹配只是近似。
 - 教科文组织每年更新一次名录，更新后运行 `npm run build:heritage` 重新生成数据。
+- `npm run check:heritage` 会下载 UNESCO 官网的官方名录，和生成好的数据比对，列出哪里对不上（官方有而本地没有的、坐标罩不住的、疑似错的），并给出可以粘进脚本的片段。**官方数据只在本机比对，不写进仓库、不参与分发**——它的条款要求转载需事先书面授权、不得修改内容；按需摘取少量坐标作为更正是可以的（单个坐标是事实，不受版权保护）。
 - Wikidata 上个别遗产的坐标有错（比如圣埃米利永的经度符号反了，位置偏出去 24 公里）。这类更正写在生成脚本 `scripts/build-heritage.js` 的 `COORD_FIXES` 里，重新生成不会被覆盖回去；上游改对之后，生成时会提示某条更正没用上，可以删掉。
 
 **TCC 名单**
@@ -561,6 +562,7 @@ Periplus-xingji/
 
 ```bash
 npm run build:heritage       # 世界遗产（Wikidata），教科文组织每年更新名录后运行
+npm run check:heritage       # 用 UNESCO 官方名录校对上面生成的数据，只在本机比对
 npm run build:polity-names   # 历史政权的中文、法文名称（需要先导入历史疆域）
 ```
 
