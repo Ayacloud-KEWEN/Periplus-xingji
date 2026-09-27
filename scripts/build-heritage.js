@@ -44,7 +44,102 @@ const EXTRA_POINTS = {
         { lat: 49.3390, lng: -0.5730, km: 4.5, what: '黄金海滩' },
         { lat: 49.3326, lng: -0.4245, km: 3.5, what: '朱诺海滩' },
         { lat: 49.2970, lng: -0.2840, km: 3.5, what: '宝剑海滩' }
-    ]
+    ],
+
+    // 下面这些 Wikidata 上没有坐标（生成时会被整处跳过），坐标取自 UNESCO 官方名录，
+    // 由 npm run check:heritage 找出来。官方数据本身不进仓库，这里只摘了这 10 处的坐标。
+    // Mosi-oa-Tunya / Victoria Falls（Zambia,Zimbabwe，1989 年）
+    '509': [
+        { lat: -17.92453, lng: 25.85539, km: 2 },
+    ],
+    // Old Bridge Area of the Old City of Mostar（Bosnia and Herzegovina，2005 年）
+    '946': [
+        { lat: 43.33731, lng: 17.815, km: 2 },
+    ],
+    // Aalto Works（Finland，2026 年）
+    '1752': [
+        { lat: 60.17609, lng: 24.93339, km: 2 },
+        { lat: 60.18747, lng: 24.91711, km: 2 },
+        { lat: 60.18827, lng: 24.94418, km: 2 },
+        { lat: 60.19677, lng: 24.87642, km: 2 },
+        { lat: 60.19814, lng: 24.86951, km: 2 },
+        { lat: 60.465, lng: 22.73528, km: 2 },
+        { lat: 60.49621, lng: 26.95751, km: 2 },
+        { lat: 61.2367, lng: 28.85611, km: 2 },
+        { lat: 61.59741, lng: 21.87458, km: 2 },
+        { lat: 62.1148, lng: 25.745, km: 2 },
+        { lat: 62.14021, lng: 25.76911, km: 2 },
+        { lat: 62.23602, lng: 25.73018, km: 2 },
+        { lat: 62.78639, lng: 22.84218, km: 2 },
+    ],
+    // Royal Capetian Fortresses of Languedoc（France，2026 年）
+    '1755': [
+        { lat: 42.80381, lng: 2.29961, km: 2 },
+        { lat: 42.83678, lng: 2.62146, km: 2 },
+        { lat: 42.8709, lng: 2.55529, km: 2 },
+        { lat: 42.87583, lng: 1.8323, km: 2 },
+        { lat: 42.89065, lng: 2.74704, km: 2 },
+        { lat: 43.00228, lng: 2.55665, km: 2 },
+        { lat: 43.20696, lng: 2.36379, km: 2 },
+        { lat: 43.33701, lng: 2.37798, km: 2 },
+    ],
+    // Town of Bamberg（Germany，1993 年）
+    '624': [
+        { lat: 49.89167, lng: 10.88889, km: 2 },
+    ],
+    // The system of Italian-style &lt;em&gt;condominio&lt;/em&gt; theatres of the 18th and 19th centuries in Central Italy（Italy，2026 年）
+    '1762': [
+        { lat: 42.73558, lng: 12.73527, km: 2 },
+        { lat: 42.85572, lng: 13.57444, km: 2 },
+        { lat: 42.93503, lng: 13.69128, km: 2 },
+        { lat: 43.16033, lng: 13.7175, km: 2 },
+        { lat: 43.22875, lng: 13.17883, km: 2 },
+        { lat: 43.30011, lng: 13.45372, km: 2 },
+        { lat: 43.33614, lng: 12.90505, km: 2 },
+        { lat: 43.52185, lng: 13.24392, km: 2 },
+        { lat: 43.66789, lng: 12.52169, km: 2 },
+        { lat: 43.864, lng: 12.20839, km: 2 },
+    ],
+    // Rock Mosques and Associated Sacred Sites of Mangystau（Kazakhstan，2026 年）
+    '1760': [
+        { lat: 43.5482, lng: 53.38786, km: 2 },
+        { lat: 43.59713, lng: 54.07016, km: 2 },
+        { lat: 43.89978, lng: 51.87494, km: 2 },
+        { lat: 44.43356, lng: 51.13889, km: 2 },
+        { lat: 44.47172, lng: 51.00975, km: 2 },
+    ],
+    // Historic Town of Guanajuato and Adjacent Mines（Mexico，1988 年）
+    '482': [
+        { lat: 21.01694, lng: -101.25556, km: 2 },
+    ],
+    // The Cemetery Complexes of the Xiongnu Nobility（Mongolia，2026 年）
+    '1759': [
+        { lat: 46.59806, lng: 107.08142, km: 2 },
+        { lat: 47.40172, lng: 92.09817, km: 2 },
+        { lat: 48.00603, lng: 101.21397, km: 2 },
+        { lat: 48.32708, lng: 101.91483, km: 2 },
+        { lat: 48.54661, lng: 111.08242, km: 2 },
+        { lat: 48.54853, lng: 106.55133, km: 2 },
+        { lat: 48.55231, lng: 106.53061, km: 2 },
+        { lat: 48.56244, lng: 106.50897, km: 2 },
+    ],
+    // Complex of Hué Monuments（Viet Nam，1993 年）
+    '678': [
+        { lat: 16.36197, lng: 107.59571, km: 2 },
+        { lat: 16.38773, lng: 107.56888, km: 2 },
+        { lat: 16.39897, lng: 107.59032, km: 2 },
+        { lat: 16.41667, lng: 107.57211, km: 2 },
+        { lat: 16.42196, lng: 107.56283, km: 2 },
+        { lat: 16.43013, lng: 107.56991, km: 2 },
+        { lat: 16.43228, lng: 107.56589, km: 2 },
+        { lat: 16.43769, lng: 107.58256, km: 2 },
+        { lat: 16.44861, lng: 107.55464, km: 2 },
+        { lat: 16.45146, lng: 107.59295, km: 2 },
+        { lat: 16.45278, lng: 107.53906, km: 2 },
+        { lat: 16.45463, lng: 107.54455, km: 2 },
+        { lat: 16.46944, lng: 107.57778, km: 2 },
+        { lat: 16.55468, lng: 107.65493, km: 2 },
+    ],
 };
 
 
@@ -84,6 +179,24 @@ SELECT ?item ?whs ?coord ?area ?country ?year ?en ?zh ?zhHans ?zhCn ?fr WHERE {
   ?designation ps:P1435 wd:Q9259 .
   FILTER NOT EXISTS { ?designation pq:P582 ?removed }
   OPTIONAL { ?designation pq:P580 ?inscribed . BIND(YEAR(?inscribed) AS ?year) }
+  OPTIONAL { ?item wdt:P625 ?coord }
+  OPTIONAL { ?item p:P2046/psn:P2046/wikibase:quantityAmount ?area }
+  OPTIONAL { ?item wdt:P17 ?country }
+  OPTIONAL { ?item rdfs:label ?en FILTER(LANG(?en) = "en") }
+  OPTIONAL { ?item rdfs:label ?zh FILTER(LANG(?zh) = "zh") }
+  OPTIONAL { ?item rdfs:label ?zhHans FILTER(LANG(?zhHans) = "zh-hans") }
+  OPTIONAL { ?item rdfs:label ?zhCn FILTER(LANG(?zhCn) = "zh-cn") }
+  OPTIONAL { ?item rdfs:label ?fr FILTER(LANG(?fr) = "fr") }
+}`;
+
+// 兜底：个别遗产条目上压根没有 P1435「认定」语句（瓜纳华托、顺化），主查询要求必须有，就把它们漏掉了。
+// 这一句单独捞出来，只补进主查询里没有的编号——这个条件也会命中一些"挂着编号的组成部分"
+// （帕坦博物馆之于加德满都谷地）和垃圾编号（sportif、RL/02139），它们的编号要么已经有了、要么不是数字，会被滤掉。
+const FALLBACK_QUERY = `
+SELECT ?item ?whs ?coord ?area ?country ?en ?zh ?zhHans ?zhCn ?fr WHERE {
+  ?item wdt:P757 ?whs .
+  FILTER(!CONTAINS(?whs, "-"))
+  FILTER NOT EXISTS { ?item p:P1435 ?any }
   OPTIONAL { ?item wdt:P625 ?coord }
   OPTIONAL { ?item p:P2046/psn:P2046/wikibase:quantityAmount ?area }
   OPTIONAL { ?item wdt:P17 ?country }
@@ -169,6 +282,18 @@ const round = (value, digits) => Number(value.toFixed(digits));
 async function main() {
     console.log('正在查询世界遗产...');
     const siteRows = await query(SITES_QUERY);
+    console.log('正在查询漏掉认定语句的条目...');
+    const knownIds = new Set(siteRows.map(row => baseId(row.whs.value)));
+    const fallbackRows = (await query(FALLBACK_QUERY)).filter(row => {
+        const id = baseId(row.whs.value);
+        return /^\d+$/.test(id) && !knownIds.has(id);
+    });
+    if (fallbackRows.length) {
+        console.log(`  补进 ${new Set(fallbackRows.map(row => baseId(row.whs.value))).size} 处：`
+            + `${[...new Set(fallbackRows.map(row => `${baseId(row.whs.value)} ${row.en?.value || ''}`))].join('、')}`);
+        siteRows.push(...fallbackRows);
+    }
+
     console.log('正在查询组合遗产的组成部分...');
     const componentRows = await query(COMPONENTS_QUERY);
 
@@ -231,7 +356,10 @@ async function main() {
             componentCount++;
         }
         const extra = (EXTRA_POINTS[site.id] || []).map(({ lat, lng, km }) => [round(lat, 5), round(lng, 5), km]);
-        if (extra.length) console.log(`  补充 ${site.id}：${extra.length} 个坐标点（${EXTRA_POINTS[site.id].map(point => point.what).join('、')}）`);
+        if (extra.length) {
+            const what = EXTRA_POINTS[site.id].map(point => point.what).filter(Boolean).join('、');
+            console.log(`  补充 ${site.id}：${extra.length} 个坐标点${what ? `（${what}）` : ''}`);
+        }
         const fixed = [...applyFixes(site.id, points), ...extra];
         if (!fixed.length) continue;
         output.push({
