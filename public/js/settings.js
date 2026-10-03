@@ -9,6 +9,7 @@ const defaults = {
     view: null,           // 上次的地图位置 { center: [lat, lng], zoom }
     tripGapDays: 3,       // 我的旅程：到访时间相隔超过几天算新的一次旅程
     lightenLevel: 0,      // 点亮地图：0 按国家，1 按省 / 州
+    graticule: false,     // 地图上是否画赤道、回归线、极圈、本初子午线和日期变更线
     toolbarCollapsed: false // 左侧工具栏是否收起
 };
 

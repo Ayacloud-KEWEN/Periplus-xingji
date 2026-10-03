@@ -1,6 +1,7 @@
 // 设置面板、数据面板、个人时间轴
 import { settings } from './settings.js';
 import { getStyles, setBasemap, hasMaptiler } from './map.js';
+import { setGraticule } from './graticule.js';
 import { getPins, setClustering, setPinsVisible, setDateFilter } from './pins.js';
 import { t, LANGUAGES, getLanguage, loadLanguage, formatDate } from './i18n.js';
 import { escapeHtml, fragment, panel, toast, toastError } from './ui.js';
@@ -32,6 +33,9 @@ function renderSettings() {
             <select class="input" data-style style="margin-top:8px">
                 ${styles.map((style, i) => `<option value="${i}" ${i === settings.styleIndex ? 'selected' : ''}>${escapeHtml(t(style.key))}</option>`).join('')}
             </select>
+            <label class="row"><span>${escapeHtml(t('graticule'))}</span>
+                <span class="switch"><input type="checkbox" data-graticule ${settings.graticule ? 'checked' : ''}><span></span></span></label>
+            <p class="muted">${escapeHtml(t('graticuleHint'))}</p>
         </section>
         <section class="section">
             <h3 class="section-title">${escapeHtml(t('myPinsResults'))}</h3>
@@ -53,6 +57,7 @@ function renderSettings() {
         });
     });
     body.querySelector('[data-style]').addEventListener('change', (e) => setBasemap(settings.provider, Number(e.target.value)));
+    body.querySelector('[data-graticule]').addEventListener('change', (e) => setGraticule(e.target.checked));
     body.querySelector('[data-show]').addEventListener('change', (e) => setPinsVisible(e.target.checked));
     body.querySelector('[data-cluster]').addEventListener('change', (e) => setClustering(e.target.checked));
     body.querySelectorAll('[data-segment="language"] button').forEach(button => {

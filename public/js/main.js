@@ -2,6 +2,7 @@
 import { loadLanguage, initialLanguage, t } from './i18n.js';
 import { api } from './api.js';
 import { initMap, locate } from './map.js';
+import { initGraticule, refreshGraticule } from './graticule.js';
 import { initPins, loadPins, toggleAddMode, checkIn } from './pins.js';
 import { initSearch } from './search.js';
 import { enableHistory, disableHistory, isHistoryActive } from './history.js';
@@ -78,6 +79,7 @@ function bindActions() {
     window.addEventListener('languagechange', () => {
         panel.refresh();
         refreshTimebarLabel();
+        refreshGraticule();
     });
 
     const photoInput = document.getElementById('photo-input');
@@ -149,6 +151,7 @@ async function main() {
     }
 
     initMap(config.maptilerKey);
+    initGraticule();
     initPins();
     initSearch();
     bindActions();
